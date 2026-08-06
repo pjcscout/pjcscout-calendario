@@ -25,16 +25,23 @@ const COLORES = {
   verde: '#1E7A3C',
   verdes: '#1E7A3C',
   naranja: '#F07C1E',
+  naranjas: '#F07C1E',
   granate: '#6D1B2E',
   granates: '#6D1B2E',
   rosa: '#E85D9C',
   marino: '#16305C',
+  'azul oscuro': '#16305C',
+  crema: '#F0E6C8',
+  morada: '#6A1B7A',
+  morado: '#6A1B7A',
 }
 
 const COMPUESTOS = {
   blanquiazul: ['#FFFFFF', '#0A5FA8'],
   'blanca y roja': ['#FFFFFF', '#C81E2C'],
   'blanco y negro': ['#FFFFFF', '#111111'],
+  rojiblanca: ['#C81E2C', '#FFFFFF'],
+  rojiblanco: ['#C81E2C', '#FFFFFF'],
 }
 
 function normalizar(nombre) {
