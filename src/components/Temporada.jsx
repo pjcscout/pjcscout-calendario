@@ -1,11 +1,13 @@
 import { useMemo } from 'react'
 import { GRUPOS, buscarEquipoPorNombre, escudoUrl } from '../data/equipos.js'
 import { fixturesDeEquipo } from '../utils/fixtures.js'
+import { fichaEquipo } from '../data/fichas.js'
 import { formatearFecha } from '../utils/fecha.js'
 
 export default function Temporada({ equipo, onCambiar }) {
   const hoy = new Date().toISOString().slice(0, 10)
   const grupo = GRUPOS[equipo.grupo]
+  const ficha = fichaEquipo(equipo.id)
 
   const fixtures = useMemo(() => fixturesDeEquipo(equipo.nombre, equipo.grupo), [equipo])
 
@@ -104,6 +106,38 @@ export default function Temporada({ equipo, onCambiar }) {
           )
         })}
       </ol>
+
+      {ficha && (
+        <div className="temporada__ficha">
+          <h2 className="temporada__ficha-titulo">Sobre el equipo</h2>
+          {ficha.campo && (
+            <p className="temporada__ficha-linea">
+              <strong>Campo:</strong> {ficha.campo}
+            </p>
+          )}
+          {ficha.direccion && (
+            <p className="temporada__ficha-linea">
+              <strong>Dirección:</strong> {ficha.direccion}
+            </p>
+          )}
+          {(ficha.primera || ficha.segunda) && (
+            <div className="temporada__ficha-equipaciones">
+              {ficha.primera && (
+                <p className="temporada__ficha-linea">
+                  <strong>1ª equipación:</strong> camiseta {ficha.primera.camiseta}, pantalón{' '}
+                  {ficha.primera.pantalon}, medias {ficha.primera.medias}
+                </p>
+              )}
+              {ficha.segunda && (
+                <p className="temporada__ficha-linea">
+                  <strong>2ª equipación:</strong> camiseta {ficha.segunda.camiseta}, pantalón{' '}
+                  {ficha.segunda.pantalon}, medias {ficha.segunda.medias}
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="temporada__stats-teaser">
         <span className="temporada__stats-icono" aria-hidden="true">▲</span>

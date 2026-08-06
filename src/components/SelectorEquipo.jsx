@@ -36,13 +36,13 @@ export default function SelectorEquipo({ onElegir }) {
             className={`selector__categoria ${g.id === grupoId ? 'selector__categoria--activa' : ''}`}
             onClick={() => setGrupoId(g.id)}
           >
-            {g.nombre}
+            {g.subnombre ? `${g.nombre} ${g.subnombre}` : g.nombre}
           </button>
         ))}
       </div>
 
       <p className="selector__sub">
-        {grupo.subnombre} — Temporada {grupo.temporada}
+        {grupo.subnombre ? `${grupo.subnombre} — ` : ''}Temporada {grupo.temporada}
       </p>
 
       <input

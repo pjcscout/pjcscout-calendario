@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { EQUIPOS, GRUPOS } from '../src/data/equipos.js'
+import { tieneCalendario } from '../src/utils/fixtures.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = join(__dirname, '..', 'dist')
@@ -39,8 +40,10 @@ function replaceMeta(html, selectorAttr, selectorValue, newContent) {
 let generated = 0
 for (const equipo of EQUIPOS) {
   const grupo = GRUPOS[equipo.grupo]
-  const titulo = `${equipo.nombre} · Calendario ${grupo.nombre} · PJC Scout`
-  const descripcion = `Calendario completo de ${equipo.nombre} en ${grupo.nombre} ${grupo.subnombre}, temporada ${grupo.temporada}. Jornada a jornada, gratis.`
+  const titulo = `${equipo.nombre} · ${grupo.nombre} · PJC Scout`
+  const descripcion = tieneCalendario(equipo.grupo)
+    ? `Calendario completo de ${equipo.nombre} en ${grupo.nombre} ${grupo.subnombre}, temporada ${grupo.temporada}. Jornada a jornada, gratis.`
+    : `${equipo.nombre} en ${grupo.nombre} ${grupo.subnombre}, temporada ${grupo.temporada}. PJC Scout.`
   const imagenAbsoluta = `${siteUrl}/escudos/${equipo.id}.png`
   const urlAbsoluta = `${siteUrl}/equipo/${equipo.id}`
 
