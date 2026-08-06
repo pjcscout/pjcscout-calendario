@@ -1,8 +1,12 @@
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { GRUPOS, buscarEquipoPorNombre, escudoUrl } from '../data/equipos.js'
 import { fixturesDeEquipo } from '../utils/fixtures.js'
 import { fichaEquipo } from '../data/fichas.js'
 import { formatearFecha } from '../utils/fecha.js'
+import { urlMapa } from '../utils/mapa.js'
+import EquipacionIcon from './EquipacionIcon.jsx'
+import CompartirProximoPartido from './CompartirProximoPartido.jsx'
 
 export default function Temporada({ equipo, onCambiar }) {
   const hoy = new Date().toISOString().slice(0, 10)
@@ -51,7 +55,14 @@ export default function Temporada({ equipo, onCambiar }) {
             Jornada {Math.min(jugadas + 1, totalJornadas)} de {totalJornadas}
           </span>
         </div>
+        <Link className="temporada__clasificacion-link" to={`/clasificacion/${equipo.grupo}`}>
+          Ver clasificación →
+        </Link>
       </header>
+
+      {!fixtures[indiceProxima]?.bye && (
+        <CompartirProximoPartido equipo={equipo} partido={fixtures[indiceProxima]} />
+      )}
 
       <ol className="temporada__linea" aria-label="Calendario completo de la temporada">
         {fixtures.map((f, indice) => {
@@ -117,22 +128,31 @@ export default function Temporada({ equipo, onCambiar }) {
           )}
           {ficha.direccion && (
             <p className="temporada__ficha-linea">
-              <strong>Dirección:</strong> {ficha.direccion}
+              <strong>Dirección:</strong>{' '}
+              <a href={urlMapa(ficha.direccion)} target="_blank" rel="noreferrer">
+                {ficha.direccion}
+              </a>
             </p>
           )}
           {(ficha.primera || ficha.segunda) && (
             <div className="temporada__ficha-equipaciones">
               {ficha.primera && (
-                <p className="temporada__ficha-linea">
-                  <strong>1ª equipación:</strong> camiseta {ficha.primera.camiseta}, pantalón{' '}
-                  {ficha.primera.pantalon}, medias {ficha.primera.medias}
-                </p>
+                <div className="temporada__ficha-equipacion">
+                  <EquipacionIcon {...ficha.primera} etiqueta="1ª equipación" />
+                  <p className="temporada__ficha-linea">
+                    <strong>1ª equipación:</strong> camiseta {ficha.primera.camiseta}, pantalón{' '}
+                    {ficha.primera.pantalon}, medias {ficha.primera.medias}
+                  </p>
+                </div>
               )}
               {ficha.segunda && (
-                <p className="temporada__ficha-linea">
-                  <strong>2ª equipación:</strong> camiseta {ficha.segunda.camiseta}, pantalón{' '}
-                  {ficha.segunda.pantalon}, medias {ficha.segunda.medias}
-                </p>
+                <div className="temporada__ficha-equipacion">
+                  <EquipacionIcon {...ficha.segunda} etiqueta="2ª equipación" />
+                  <p className="temporada__ficha-linea">
+                    <strong>2ª equipación:</strong> camiseta {ficha.segunda.camiseta}, pantalón{' '}
+                    {ficha.segunda.pantalon}, medias {ficha.segunda.medias}
+                  </p>
+                </div>
               )}
             </div>
           )}

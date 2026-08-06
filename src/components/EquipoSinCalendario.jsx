@@ -1,5 +1,7 @@
 import { GRUPOS, escudoUrl } from '../data/equipos.js'
 import { fichaEquipo } from '../data/fichas.js'
+import { urlMapa } from '../utils/mapa.js'
+import EquipacionIcon from './EquipacionIcon.jsx'
 
 export default function EquipoSinCalendario({ equipo, onCambiar }) {
   const grupo = GRUPOS[equipo.grupo]
@@ -36,22 +38,31 @@ export default function EquipoSinCalendario({ equipo, onCambiar }) {
           )}
           {ficha.direccion && (
             <p className="temporada__ficha-linea">
-              <strong>Dirección:</strong> {ficha.direccion}
+              <strong>Dirección:</strong>{' '}
+              <a href={urlMapa(ficha.direccion)} target="_blank" rel="noreferrer">
+                {ficha.direccion}
+              </a>
             </p>
           )}
           {(ficha.primera || ficha.segunda) && (
             <div className="temporada__ficha-equipaciones">
               {ficha.primera && (
-                <p className="temporada__ficha-linea">
-                  <strong>1ª equipación:</strong> camiseta {ficha.primera.camiseta}, pantalón{' '}
-                  {ficha.primera.pantalon}, medias {ficha.primera.medias}
-                </p>
+                <div className="temporada__ficha-equipacion">
+                  <EquipacionIcon {...ficha.primera} etiqueta="1ª equipación" />
+                  <p className="temporada__ficha-linea">
+                    <strong>1ª equipación:</strong> camiseta {ficha.primera.camiseta}, pantalón{' '}
+                    {ficha.primera.pantalon}, medias {ficha.primera.medias}
+                  </p>
+                </div>
               )}
               {ficha.segunda && (
-                <p className="temporada__ficha-linea">
-                  <strong>2ª equipación:</strong> camiseta {ficha.segunda.camiseta}, pantalón{' '}
-                  {ficha.segunda.pantalon}, medias {ficha.segunda.medias}
-                </p>
+                <div className="temporada__ficha-equipacion">
+                  <EquipacionIcon {...ficha.segunda} etiqueta="2ª equipación" />
+                  <p className="temporada__ficha-linea">
+                    <strong>2ª equipación:</strong> camiseta {ficha.segunda.camiseta}, pantalón{' '}
+                    {ficha.segunda.pantalon}, medias {ficha.segunda.medias}
+                  </p>
+                </div>
               )}
             </div>
           )}

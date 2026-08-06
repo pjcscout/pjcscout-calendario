@@ -16,6 +16,11 @@ export function tieneCalendario(grupo) {
   return Boolean(CALENDARIOS[grupo])
 }
 
+/** Jornadas en bruto de un grupo (para calcular clasificación), o null si no tiene calendario. */
+export function jornadasDeGrupo(grupo) {
+  return CALENDARIOS[grupo] ?? null
+}
+
 /**
  * Devuelve, para un equipo y grupo dados, la lista de jornadas con su rival,
  * si juega en casa o fuera, si esa jornada descansa (número impar de equipos),
