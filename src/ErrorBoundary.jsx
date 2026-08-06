@@ -22,7 +22,7 @@ export default class ErrorBoundary extends Component {
     if (this.state.error) {
       return (
         <div className="app">
-          <div className="error-boundary">
+          <div className="error-boundary" role="alert">
             <h1 className="error-boundary__titulo">Algo ha fallado</h1>
             <p className="error-boundary__texto">
               Ha ocurrido un error inesperado al cargar el calendario. Puedes intentarlo de nuevo.

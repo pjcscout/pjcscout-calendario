@@ -28,12 +28,11 @@ export default function SelectorEquipo({ onElegir }) {
         </h1>
       </div>
 
-      <div className="selector__categorias" role="tablist" aria-label="Categoría">
+      <div className="selector__categorias" role="group" aria-label="Categoría">
         {Object.values(GRUPOS).map((g) => (
           <button
             key={g.id}
-            role="tab"
-            aria-selected={g.id === grupoId}
+            aria-pressed={g.id === grupoId}
             className={`selector__categoria ${g.id === grupoId ? 'selector__categoria--activa' : ''}`}
             onClick={() => setGrupoId(g.id)}
           >
