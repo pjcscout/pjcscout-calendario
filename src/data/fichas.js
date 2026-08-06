@@ -1,7 +1,7 @@
-// Ficha de equipo (campo, dirección, equipación) para los equipos de Lliga Comunitat,
-// extraída de los PDFs oficiales de calendario de la FFCV (sección "Datos de interés").
-// Solo existe para los equipos donde la federación publica esta información; el resto
-// de categorías no tienen ficha todavía.
+// Ficha de equipo (campo, dirección, equipación) para Lliga Comunitat Amateur y Tercera
+// Federación, extraída de los PDFs oficiales de calendario de la FFCV (sección "Datos de
+// interés"). Solo existe para los equipos donde la federación publica esta información;
+// el resto de categorías no tienen ficha todavía.
 
 export const FICHAS = {
   "llcsud-thader": {
@@ -195,6 +195,114 @@ export const FICHAS = {
     direccion: "Calle Llibertat, s/n, 12181, Benlloch, (Castellón)",
     primera: { camiseta: "Blanca", pantalon: "Blanco", medias: "Blanco" },
     segunda: { camiseta: "Roja", pantalon: "Rojo", medias: "Rojas" },
+  },
+  "saguntino": {
+    campo: "Camp Nou de Morvedre F-11 Sagunto - Hierba Artificial (HA)",
+    direccion: "Plaça Nº 9 Camp de futbol, 192, 46500, Sagunto, (Valencia)",
+    primera: { camiseta: "Roja", pantalon: "Azul", medias: "Rojas" },
+    segunda: { camiseta: "Blanca", pantalon: "Rojo", medias: "Blancas" },
+  },
+  "atzeneta": {
+    campo: "Estadi Mpal. El Regit F-11 Atzeneta Albaida - Hierba Artificial (HA)",
+    direccion: "Partida del Regit, s/n, 46869, Atzeneta D'Albaida, (Valencia)",
+    primera: { camiseta: "Naranja", pantalon: "Naranja", medias: "Naranja" },
+    segunda: { camiseta: "Verde", pantalon: "Verde", medias: "Negras" },
+  },
+  "levante-b": {
+    campo: "Ciudad Dptva. del Levante U.D. F-11 - Hierba Artificial (HA)",
+    direccion: "Avenida Blasco Ibañez, 156, 46360, Buñol, (Valencia)",
+    primera: null,
+    segunda: null,
+  },
+  "eldense-b": {
+    campo: "Campo Futbol Mpal. Viejo Pepico Amat F-11 Elda - Hierba Natural (HN)",
+    direccion: "Avda. de las Olimpiadas, s/n, 03600, Elda, (Alicante)",
+    primera: { camiseta: "Roja", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Crema", pantalon: "Crema", medias: "Crema" },
+  },
+  "ontinyent": {
+    campo: "Estadi Mpal. El Clariano F-11 Ontinyent - Hierba Artificial (HA)",
+    direccion: "Avda. del Textil, 18, 46870, Ontinyent, (Valencia)",
+    primera: { camiseta: "Blanca", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Negra", pantalon: "Blanco", medias: "Negras" },
+  },
+  "torrent-a": {
+    campo: "Campo de Futbol Mpal. San Gregorio F-11 Campo A - Hierba Artificial (HA)",
+    direccion: "Avenida Perez Galdos, 2, 46900, Torrent, (Valencia)",
+    primera: null,
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
+  },
+  "villarreal-c": {
+    campo: "Ciudad Dptva. Jose Manuel Llaneza F-11 Vila-real Mini Estadi - Hierba Natural (HN)",
+    direccion: "Carrer Miralcamp, 128, 12540, Vila-real, (Castellón)",
+    primera: null,
+    segunda: null,
+  },
+  "hercules-b": {
+    campo: "Ciudad Dptva. de Alicante F-11 - Hierba Artificial (HA)",
+    direccion: "Calle Foguerer José Romeu, 03005, Alicante, (Alicante)",
+    primera: { camiseta: "Azul", pantalon: "Negro", medias: "Azules" },
+    segunda: null,
+  },
+  "crevillente": {
+    campo: "Ciutat del Futbol Juanfran Torres F-11 Campo Enrique Miralles - Hierba Artificial (HA)",
+    direccion: "Calle Manuel Sanchis Guarner, 0, 03330, Crevillent, (Alicante)",
+    primera: { camiseta: "Azul", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Negra", pantalon: "Blanco", medias: "Blancas" },
+  },
+  "valldeuxo-a": {
+    campo: "Estadio Mpal. Jose Mangriñan F-11 Vall d`Uxó Campo 1 - Hierba Artificial (HA)",
+    direccion: "Av. d'Europa, 10, 12600, Vall D'Uixó (La), (Castellón)",
+    primera: { camiseta: "Blanca", pantalon: "Azul", medias: "Blancas" },
+    segunda: { camiseta: "Roja", pantalon: "Blanco", medias: "Rojas" },
+  },
+  "utiel": {
+    campo: "Estadio Mpal. La Celadilla F-11 Utiel - Hierba Artificial (HA)",
+    direccion: "Avenida del Deporte, 26,, 46300, Utiel, (Valencia)",
+    primera: { camiseta: "Roja", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Azul", pantalon: "Azul", medias: "Azules" },
+  },
+  "acero": {
+    campo: "Estadio El Fornas F-11 - Hierba Artificial (HA)",
+    direccion: "Avda. Camp de Morvedre, 40, 46520, Sagunto, (Valencia)",
+    primera: { camiseta: "Rojiblanca", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Azul oscuro", pantalon: "Blanco", medias: "Azul oscuro" },
+  },
+  "torrevieja-a": {
+    campo: "Estadio Mpal. Nelson Mandela F-11 Torrevieja - Hierba Artificial (HA)",
+    direccion: "Av. Delfina Viudes, 128, 03183, Torrevieja, (Alicante)",
+    primera: { camiseta: "Blanca", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Amarilla", pantalon: "Amarillo", medias: "Amarillas" },
+  },
+  "soneja": {
+    campo: "Campo Mpal. El Arco F-11 Soneja - Hierba Artificial (HA)",
+    direccion: "Campo de Fútbol El Arco, 12480, Soneja, (Castellón)",
+    primera: null,
+    segunda: { camiseta: "Blanca", pantalon: "Blanco", medias: "Blancas" },
+  },
+  "espanol-sv": {
+    campo: "Ciudad Dptva. San Vicente del Raspeig F-11 - Hierba Artificial (HA)",
+    direccion: "Carrer Denia, 2, 03690, San Vicente Del Raspeig, (Alicante)",
+    primera: { camiseta: "Roja", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Roja", pantalon: "Verde", medias: "Verdes" },
+  },
+  "roda-a": {
+    campo: "Ciutat Esptva. Pamesa Ceramica F-11 Vila-real Campo 3 - Hierba Artificial (HA)",
+    direccion: "Camí Primer Sedeny, 1, 12540, Vila-real, (Castellón)",
+    primera: null,
+    segunda: { camiseta: "Roja", pantalon: "Rojo", medias: "Rojas" },
+  },
+  "torrellano": {
+    campo: "Campo Mpal. de Torrellano F-11 - Hierba Natural (HN)",
+    direccion: "Carrer Violeta, 26, 03320, Elche, (Alicante)",
+    primera: { camiseta: "Morada", pantalon: "Blanco", medias: "Blancas" },
+    segunda: { camiseta: "Naranja", pantalon: "Naranja", medias: "Naranjas" },
+  },
+  "bunol-a": {
+    campo: "Campo Beltran Baguena Buñol F-11 - Hierba Artificial (HA)",
+    direccion: "Avenida Del Prado, s/n, 46360, Buñol, (Valencia)",
+    primera: { camiseta: "Blanca", pantalon: "Negro", medias: "Blancas" },
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Azules" },
   },
 }
 
