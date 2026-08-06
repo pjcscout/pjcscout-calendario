@@ -1,10 +1,9 @@
 // Script de reconocimiento (no forma parte todavía del pipeline diario).
-// Objetivo: descargar páginas candidatas del portal de resultados de la FFCV
-// e imprimir en los logs de la propia ejecución los enlaces/fragmentos que
-// contengan palabras clave de nuestras competiciones, para poder localizar
-// los IDs de competición/grupo reales sin necesidad de bajar el HTML entero
-// (este entorno de desarrollo no tiene acceso general a internet, pero sí
-// puede leer los logs de GitHub Actions).
+// Objetivo: localizar los IDs de competición/grupo reales de cada una de
+// nuestras categorías en el portal de resultados de la FFCV, imprimiendo en
+// los logs de la propia ejecución los enlaces/fragmentos relevantes (este
+// entorno de desarrollo no tiene acceso general a internet, pero sí puede
+// leer los logs de GitHub Actions).
 
 const PALABRAS_CLAVE = [
   'tercera federaci',
@@ -18,9 +17,13 @@ const PALABRAS_CLAVE = [
   'preferente juvenil',
   'resultadosffcv',
   'isquad',
+  'calendario',
+  'clasificacion',
+  'resultados',
+  'competicion',
 ]
 
-function extraerLineasConEnlaces(html, contexto = 60) {
+function extraerLineasConEnlaces(html) {
   const encontrados = new Set()
   const regexHref = /href=["']([^"']+)["'][^>]*>([^<]{0,120})/gi
   let m
@@ -35,8 +38,9 @@ function extraerLineasConEnlaces(html, contexto = 60) {
 }
 
 const candidatos = [
-  { nombre: 'ffcv-home', url: 'https://ffcv.es/wp/' },
-  { nombre: 'isquad-root', url: 'https://resultadosffcv.isquad.es/' },
+  { nombre: 'ffcv-noticia-tercera', url: 'https://ffcv.es/wp/blog/2026/08/este-es-el-grupo-vi-de-tercera-federacion-rfef-para-la-temporada-2026-2027/' },
+  { nombre: 'ffcv-noticia-lliga-comunitat', url: 'https://ffcv.es/wp/blog/2026/08/estos-son-los-dos-grupos-de-lliga-comunitat-para-la-temporada-2026-2027/' },
+  { nombre: 'isquad-hub', url: 'https://hub.isquad.es/isquad-futbol/' },
 ]
 
 for (const { nombre, url } of candidatos) {
@@ -51,11 +55,15 @@ for (const { nombre, url } of candidatos) {
     if (titulo) console.log(`title: ${titulo[1]}`)
     const enlaces = extraerLineasConEnlaces(texto)
     console.log(`enlaces relevantes encontrados: ${enlaces.length}`)
-    for (const e of enlaces.slice(0, 60)) console.log(`  - ${e}`)
-    if (enlaces.length === 0) {
-      console.log('primeros 500 caracteres del body para inspección manual:')
-      const bodyStart = texto.indexOf('<body')
-      console.log(texto.slice(bodyStart, bodyStart + 500).replace(/\s+/g, ' '))
+    for (const e of enlaces.slice(0, 80)) console.log(`  - ${e}`)
+
+    // Además, busca cualquier URL absoluta hacia isquad.es en el HTML (aunque
+    // no vaya envuelta en un <a>, por si el enlace real está en un script/JSON).
+    const regexIsquad = /https?:\/\/[^\s"'<>]*isquad\.es[^\s"'<>]*/gi
+    const urlsIsquad = new Set(texto.match(regexIsquad) || [])
+    if (urlsIsquad.size > 0) {
+      console.log(`URLs isquad.es sueltas en el HTML: ${urlsIsquad.size}`)
+      for (const u of [...urlsIsquad].slice(0, 40)) console.log(`  * ${u}`)
     }
   } catch (err) {
     console.log(`ERROR: ${err.message}`)
