@@ -9,7 +9,7 @@ const CALENDARIOS = {
   'dh-g7': JORNADAS_DH7,
   'llc-sud': JORNADAS_LLC_SUD,
   'llc-nord': JORNADAS_LLC_NORD,
-  // 'cadete-autonomico' y 'liga-nacional' no tienen calendario todavía.
+  // 'cadete-autonomico', 'liga-nacional', 'llc-juv-sud' y 'llc-juv-nord' no tienen calendario todavía.
 }
 
 export function tieneCalendario(grupo) {

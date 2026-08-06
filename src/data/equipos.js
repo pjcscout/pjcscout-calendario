@@ -1,15 +1,20 @@
-// Datos reales de equipos: Tercera Federación Grupo VI, División de Honor Juvenil Grupo 7,
-// Lliga Comunitat (Grup Sud y Grup Nord), Cadete Autonómico y Liga Nacional.
+// Datos reales de equipos: Tercera Federación Grupo VI, Lliga Comunitat Amateur (Grup Sud y
+// Grup Nord), División de Honor Juvenil Grupo 7, Liga Nacional Juvenil, Lliga Comunitat Juvenil
+// (Grup Sud y Grup Nord) y Cadete Autonómico.
 // Los escudos se sirven en local desde /public/escudos/<id>.png — ya no se hotlinkea a Google Drive.
-// Cadete Autonómico y Liga Nacional aún no tienen calendario (ver src/utils/fixtures.js).
+// Cadete Autonómico, Liga Nacional y Lliga Comunitat Juvenil aún no tienen calendario (ver
+// src/utils/fixtures.js).
+// El orden de este objeto determina el orden de las pestañas de categoría en el selector.
 
 export const GRUPOS = {
   'tercera-vi': { id: 'tercera-vi', nombre: 'Tercera Federación', subnombre: 'Grupo VI', temporada: '2026-2027' },
+  'llc-sud': { id: 'llc-sud', nombre: 'Lliga Comunitat Amateur', subnombre: 'Grup Sud', temporada: '2026-2027' },
+  'llc-nord': { id: 'llc-nord', nombre: 'Lliga Comunitat Amateur', subnombre: 'Grup Nord', temporada: '2026-2027' },
   'dh-g7': { id: 'dh-g7', nombre: 'División de Honor Juvenil', subnombre: 'Grupo 7', temporada: '2026-2027' },
-  'llc-sud': { id: 'llc-sud', nombre: 'Lliga Comunitat', subnombre: 'Grup Sud', temporada: '2026-2027' },
-  'llc-nord': { id: 'llc-nord', nombre: 'Lliga Comunitat', subnombre: 'Grup Nord', temporada: '2026-2027' },
-  'cadete-autonomico': { id: 'cadete-autonomico', nombre: 'Cadete Autonómico', subnombre: '', temporada: '2026-2027' },
   'liga-nacional': { id: 'liga-nacional', nombre: 'Liga Nacional', subnombre: 'Juvenil', temporada: '2026-2027' },
+  'llc-juv-sud': { id: 'llc-juv-sud', nombre: 'Lliga Comunitat Juvenil', subnombre: 'Grup Sud', temporada: '2026-2027' },
+  'llc-juv-nord': { id: 'llc-juv-nord', nombre: 'Lliga Comunitat Juvenil', subnombre: 'Grup Nord', temporada: '2026-2027' },
+  'cadete-autonomico': { id: 'cadete-autonomico', nombre: 'Cadete Autonómico', subnombre: '', temporada: '2026-2027' },
 }
 
 export const EQUIPOS = [
@@ -122,6 +127,44 @@ export const EQUIPOS = [
   { id: "liganac-roda", nombre: "Roda", grupo: "liga-nacional", localidad: "Vila-real", color: "#8a8a80" },
   { id: "liganac-valencia", nombre: "Valencia", grupo: "liga-nacional", localidad: "Valencia", color: "#8a8a80" },
   { id: "liganac-levante", nombre: "Levante", grupo: "liga-nacional", localidad: "Valencia", color: "#8a8a80" },
+
+  // --- Lliga Comunitat Juvenil, Grup Sud (sin calendario todavía) ---
+  { id: "llcjuvsud-catral-castrum", nombre: "Catral-Castrum", grupo: "llc-juv-sud", localidad: "Catral", color: "#8a8a80" },
+  { id: "llcjuvsud-alcoyano", nombre: "C.D. Alcoyano", grupo: "llc-juv-sud", localidad: "Alcoi", color: "#8a8a80" },
+  { id: "llcjuvsud-orihuela", nombre: "Orihuela", grupo: "llc-juv-sud", localidad: "Orihuela", color: "#8a8a80" },
+  { id: "llcjuvsud-catarroja", nombre: "F.B.C.D. Catarroja", grupo: "llc-juv-sud", localidad: "Catarroja", color: "#8a8a80" },
+  { id: "llcjuvsud-oliva", nombre: "U.D. Oliva", grupo: "llc-juv-sud", localidad: "Oliva", color: "#8a8a80" },
+  { id: "llcjuvsud-scd-intangco", nombre: "SCD Intangco", grupo: "llc-juv-sud", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvsud-pablo-iglesias", nombre: "C.D. Pablo Iglesias", grupo: "llc-juv-sud", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvsud-tavernes-valldigna", nombre: "C.F.U.E. Tavernes de la Valldigna", grupo: "llc-juv-sud", localidad: "Tavernes De La Valldigna", color: "#8a8a80" },
+  { id: "llcjuvsud-olimpic", nombre: "C.D. Olímpic", grupo: "llc-juv-sud", localidad: "Xàtiva", color: "#8a8a80" },
+  { id: "llcjuvsud-benidorm", nombre: "C.F. Benidorm", grupo: "llc-juv-sud", localidad: "Benidorm", color: "#8a8a80" },
+  { id: "llcjuvsud-aldaya", nombre: "U.D. Aldaia", grupo: "llc-juv-sud", localidad: "Aldaia", color: "#8a8a80" },
+  { id: "llcjuvsud-silla", nombre: "Silla C.F.", grupo: "llc-juv-sud", localidad: "Silla", color: "#8a8a80" },
+  { id: "llcjuvsud-la-nucia", nombre: "La Nucía", grupo: "llc-juv-sud", localidad: "la Nucia", color: "#8a8a80" },
+  { id: "llcjuvsud-eldense", nombre: "C.D. Eldense", grupo: "llc-juv-sud", localidad: "Elda", color: "#8a8a80" },
+  { id: "llcjuvsud-hercules", nombre: "Hércules C.F.", grupo: "llc-juv-sud", localidad: "Alicante", color: "#8a8a80" },
+  { id: "llcjuvsud-kelme", nombre: "Kelme C.F.", grupo: "llc-juv-sud", localidad: "Elche", color: "#8a8a80" },
+
+  // --- Lliga Comunitat Juvenil, Grup Nord (sin calendario todavía) ---
+  { id: "llcjuvnord-scd-intangco", nombre: "SCD Intangco", grupo: "llc-juv-nord", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvnord-burriana-salesianos", nombre: "At. Burriana-Salesianos", grupo: "llc-juv-nord", localidad: "Burriana", color: "#8a8a80" },
+  { id: "llcjuvnord-massamagrell", nombre: "Ath. Massamagrell", grupo: "llc-juv-nord", localidad: "Massamagrell", color: "#8a8a80" },
+  { id: "llcjuvnord-col-salgui", nombre: "Col. Salgui", grupo: "llc-juv-nord", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvnord-paterna", nombre: "Paterna", grupo: "llc-juv-nord", localidad: "Paterna", color: "#8a8a80" },
+  { id: "llcjuvnord-cf-cracks", nombre: "C.F. Cracks", grupo: "llc-juv-nord", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvnord-historics-valencia", nombre: "Històrics de València", grupo: "llc-juv-nord", localidad: "València", color: "#8a8a80" },
+  { id: "llcjuvnord-torre-levante", nombre: "C.F. Torre Levante", grupo: "llc-juv-nord", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvnord-betera", nombre: "Bétera C.F.", grupo: "llc-juv-nord", localidad: "Bétera", color: "#8a8a80" },
+  { id: "llcjuvnord-primer-toque", nombre: "Primer Toque", grupo: "llc-juv-nord", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvnord-cdf-canet", nombre: "C.D.F. Canet", grupo: "llc-juv-nord", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvnord-benidorm", nombre: "C.F. Benidorm", grupo: "llc-juv-nord", localidad: "Benidorm", color: "#8a8a80" },
+  { id: "llcjuvnord-manises", nombre: "Manises C.F.", grupo: "llc-juv-nord", localidad: "Manises", color: "#8a8a80" },
+  { id: "llcjuvnord-san-jose", nombre: "San José", grupo: "llc-juv-nord", localidad: "", color: "#8a8a80" },
+  { id: "llcjuvnord-alboraya", nombre: "Alboraya", grupo: "llc-juv-nord", localidad: "Alboraia", color: "#8a8a80" },
+  { id: "llcjuvnord-acero", nombre: "C.D. Acero", grupo: "llc-juv-nord", localidad: "Sagunto", color: "#8a8a80" },
+  { id: "llcjuvnord-patacona", nombre: "Patacona", grupo: "llc-juv-nord", localidad: "Alboraia", color: "#8a8a80" },
+  { id: "llcjuvnord-villarreal", nombre: "Villarreal", grupo: "llc-juv-nord", localidad: "Vila-real", color: "#8a8a80" },
 ]
 
 export function equiposPorGrupo(grupo) {
@@ -132,7 +175,7 @@ export function buscarEquipoPorNombre(nombre, grupo) {
   return EQUIPOS.find((equipo) => equipo.nombre === nombre && (!grupo || equipo.grupo === grupo))
 }
 
-// Escudo local (101/101 equipos tienen archivo real en /public/escudos).
+// Escudo local (135/135 equipos tienen archivo real en /public/escudos).
 export function escudoUrl(equipo) {
   return `/escudos/${equipo.id}.png`
 }

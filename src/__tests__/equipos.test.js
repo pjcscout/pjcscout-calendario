@@ -19,8 +19,8 @@ function nombresUsadosEn(jornadas) {
 const CALENDARIOS_CON_ARCHIVO = [
   { grupo: 'tercera-vi', archivo: 'calendario.js', etiqueta: 'Tercera Federación', jornadas: JORNADAS_TERCERA_VI },
   { grupo: 'dh-g7', archivo: 'calendarioDH7.js', etiqueta: 'División de Honor Juvenil', jornadas: JORNADAS_DH7 },
-  { grupo: 'llc-sud', archivo: 'calendarioLLCSud.js', etiqueta: 'Lliga Comunitat Sud', jornadas: JORNADAS_LLC_SUD },
-  { grupo: 'llc-nord', archivo: 'calendarioLLCNord.js', etiqueta: 'Lliga Comunitat Nord', jornadas: JORNADAS_LLC_NORD },
+  { grupo: 'llc-sud', archivo: 'calendarioLLCSud.js', etiqueta: 'Lliga Comunitat Amateur Sud', jornadas: JORNADAS_LLC_SUD },
+  { grupo: 'llc-nord', archivo: 'calendarioLLCNord.js', etiqueta: 'Lliga Comunitat Amateur Nord', jornadas: JORNADAS_LLC_NORD },
 ]
 
 describe('consistencia entre los calendarios y equipos.js', () => {
