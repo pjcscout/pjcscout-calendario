@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'icons/pwa-192.png', 'icons/pwa-512.png', 'icons/maskable-512.png'],
+      includeAssets: ['favicon.png', 'icons/pwa-192.png', 'icons/pwa-512.png', 'icons/maskable-512.png'],
       manifest: {
         lang: 'es',
         name: 'PJC Scout · Mi Calendario',
