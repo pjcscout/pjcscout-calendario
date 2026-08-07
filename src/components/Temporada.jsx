@@ -35,6 +35,15 @@ export default function Temporada({ equipo, onCambiar }) {
   const jugadas = fixtures.filter((f) => !f.bye && f.fecha < hoy).length
   const totalJornadas = fixtures.filter((f) => !f.bye).length
 
+  const racha = useMemo(
+    () =>
+      fixtures
+        .filter((f) => !f.bye && f.resultado)
+        .map((f) => resultadoDelEquipo(f)[0].toUpperCase())
+        .slice(-5),
+    [fixtures]
+  )
+
   return (
     <div className="temporada">
       <header className="temporada__cabecera">
@@ -68,6 +77,16 @@ export default function Temporada({ equipo, onCambiar }) {
             Jornada {Math.min(jugadas + 1, totalJornadas)} de {totalJornadas}
           </span>
         </div>
+        {racha.length > 0 && (
+          <div className="temporada__racha">
+            <span className="temporada__racha-etiqueta">Racha</span>
+            {racha.map((r, i) => (
+              <span key={i} className={`racha-punto racha-punto--${r.toLowerCase()}`}>
+                {r}
+              </span>
+            ))}
+          </div>
+        )}
         <div className="temporada__acciones-header">
           <Link className="temporada__clasificacion-link" to={`/clasificacion/${equipo.grupo}`}>
             Ver clasificación →
