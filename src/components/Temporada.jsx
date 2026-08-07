@@ -146,6 +146,17 @@ export default function Temporada({ equipo, onCambiar }) {
                   <span className="jornada__vs">vs</span>
                 )}
               </span>
+              {f.eventos?.some((e) => e.tipo === 'gol') && (
+                <span className="jornada__goleadores">
+                  {f.eventos
+                    .filter((e) => e.tipo === 'gol')
+                    .map((e, i) => (
+                      <span key={i}>
+                        ⚽ {e.jugador} {e.minuto}'
+                      </span>
+                    ))}
+                </span>
+              )}
             </li>
           )
         })}
