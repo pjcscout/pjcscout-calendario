@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import BotonTema from './BotonTema.jsx'
 
 export default function Layout() {
   const { pathname } = useLocation()
@@ -19,6 +20,7 @@ export default function Layout() {
 
   return (
     <div className="app">
+      <BotonTema />
       <main ref={mainRef} tabIndex={-1}>
         <Outlet />
       </main>
