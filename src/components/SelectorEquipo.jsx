@@ -1,16 +1,55 @@
 import { useMemo, useState } from 'react'
 import { EQUIPOS, GRUPOS, equiposPorGrupo, escudoUrl } from '../data/equipos.js'
 import { obtenerFavoritos } from '../utils/favoritos.js'
+import { obtenerHistorial } from '../utils/historial.js'
+
+function FilaEquipo({ equipo, onElegir }) {
+  return (
+    <li>
+      <button className="selector__equipo" onClick={() => onElegir(equipo)}>
+        <img
+          className="selector__escudo"
+          src={escudoUrl(equipo)}
+          alt=""
+          width={28}
+          height={28}
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none'
+            e.currentTarget.nextSibling.style.display = 'inline-block'
+          }}
+        />
+        <span
+          className="selector__punto"
+          style={{ background: equipo.color, display: 'none' }}
+          aria-hidden="true"
+        />
+        <span className="selector__nombre">{equipo.nombre}</span>
+        <span className="selector__localidad">{equipo.localidad}</span>
+      </button>
+    </li>
+  )
+}
 
 export default function SelectorEquipo({ onElegir }) {
   const [busqueda, setBusqueda] = useState('')
   const [grupoId, setGrupoId] = useState('tercera-vi')
   const [favoritos] = useState(() => obtenerFavoritos())
+  const [historial] = useState(() => obtenerHistorial())
   const grupo = GRUPOS[grupoId]
 
   const equiposFavoritos = useMemo(
     () => favoritos.map((id) => EQUIPOS.find((e) => e.id === id)).filter(Boolean),
     [favoritos]
+  )
+
+  const equiposRecientes = useMemo(
+    () =>
+      historial
+        .map((id) => EQUIPOS.find((e) => e.id === id))
+        .filter(Boolean)
+        .filter((equipo) => !favoritos.includes(equipo.id)),
+    [historial, favoritos]
   )
 
   const equipos = useMemo(() => {
@@ -27,11 +66,11 @@ export default function SelectorEquipo({ onElegir }) {
   return (
     <div className="selector">
       <div className="selector__intro">
-        <span className="selector__eyebrow">PJC Scout · Gratis, siempre</span>
+        <span className="selector__eyebrow">PJC Scout · Gratis, sin anuncios, siempre</span>
         <h1 className="selector__titulo">
-          Elige tu equipo.
+          Tu equipo.
           <br />
-          Ve toda la liga <span className="acento">de un vistazo</span>.
+          Toda la temporada <span className="acento">de un vistazo</span>.
         </h1>
       </div>
 
@@ -40,29 +79,18 @@ export default function SelectorEquipo({ onElegir }) {
           <p className="selector__favoritos-titulo">Tus equipos</p>
           <ul className="selector__lista">
             {equiposFavoritos.map((equipo) => (
-              <li key={equipo.id}>
-                <button className="selector__equipo" onClick={() => onElegir(equipo)}>
-                  <img
-                    className="selector__escudo"
-                    src={escudoUrl(equipo)}
-                    alt=""
-                    width={28}
-                    height={28}
-                    loading="lazy"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none'
-                      e.currentTarget.nextSibling.style.display = 'inline-block'
-                    }}
-                  />
-                  <span
-                    className="selector__punto"
-                    style={{ background: equipo.color, display: 'none' }}
-                    aria-hidden="true"
-                  />
-                  <span className="selector__nombre">{equipo.nombre}</span>
-                  <span className="selector__localidad">{equipo.localidad}</span>
-                </button>
-              </li>
+              <FilaEquipo key={equipo.id} equipo={equipo} onElegir={onElegir} />
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {equiposRecientes.length > 0 && (
+        <div className="selector__favoritos">
+          <p className="selector__favoritos-titulo">Vistos recientemente</p>
+          <ul className="selector__lista">
+            {equiposRecientes.map((equipo) => (
+              <FilaEquipo key={equipo.id} equipo={equipo} onElegir={onElegir} />
             ))}
           </ul>
         </div>
@@ -96,29 +124,7 @@ export default function SelectorEquipo({ onElegir }) {
 
       <ul className="selector__lista">
         {equipos.map((equipo) => (
-          <li key={equipo.id}>
-            <button className="selector__equipo" onClick={() => onElegir(equipo)}>
-              <img
-                className="selector__escudo"
-                src={escudoUrl(equipo)}
-                alt=""
-                width={28}
-                height={28}
-                loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none'
-                  e.currentTarget.nextSibling.style.display = 'inline-block'
-                }}
-              />
-              <span
-                className="selector__punto"
-                style={{ background: equipo.color, display: 'none' }}
-                aria-hidden="true"
-              />
-              <span className="selector__nombre">{equipo.nombre}</span>
-              <span className="selector__localidad">{equipo.localidad}</span>
-            </button>
-          </li>
+          <FilaEquipo key={equipo.id} equipo={equipo} onElegir={onElegir} />
         ))}
         {equipos.length === 0 && (
           <li className="selector__vacio">

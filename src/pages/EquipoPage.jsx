@@ -5,6 +5,7 @@ import EquipoSinCalendario from '../components/EquipoSinCalendario.jsx'
 import { EQUIPOS, GRUPOS } from '../data/equipos.js'
 import { tieneCalendario } from '../utils/fixtures.js'
 import { CLAVE_EQUIPO_ELEGIDO } from '../utils/almacenEquipo.js'
+import { registrarVisita } from '../utils/historial.js'
 
 export default function EquipoPage() {
   const { id } = useParams()
@@ -16,6 +17,7 @@ export default function EquipoPage() {
   useEffect(() => {
     if (!equipo) return
     localStorage.setItem(CLAVE_EQUIPO_ELEGIDO, equipo.id)
+    registrarVisita(equipo.id)
 
     const grupo = GRUPOS[equipo.grupo]
     const titulo = `${equipo.nombre} · ${grupo.nombre} · PJC Scout`

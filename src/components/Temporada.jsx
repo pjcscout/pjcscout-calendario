@@ -8,6 +8,7 @@ import { urlMapa } from '../utils/mapa.js'
 import EquipacionIcon from './EquipacionIcon.jsx'
 import CompartirProximoPartido from './CompartirProximoPartido.jsx'
 import BotonFavorito from './BotonFavorito.jsx'
+import BotonVolverArriba from './BotonVolverArriba.jsx'
 
 export default function Temporada({ equipo, onCambiar }) {
   const hoy = new Date().toISOString().slice(0, 10)
@@ -170,6 +171,8 @@ export default function Temporada({ equipo, onCambiar }) {
           </p>
         </div>
       </div>
+
+      <BotonVolverArriba />
     </div>
   )
 }
