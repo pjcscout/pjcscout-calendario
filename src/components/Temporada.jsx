@@ -11,6 +11,7 @@ import BotonFavorito from './BotonFavorito.jsx'
 import BotonVolverArriba from './BotonVolverArriba.jsx'
 import { descargarCalendarioPDF } from '../utils/calendarioPdf.js'
 import { descargarCalendarioCSV } from '../utils/calendarioCsv.js'
+import BotonAvisos from './BotonAvisos.jsx'
 
 function resultadoDelEquipo(f) {
   const golesEquipo = f.esLocal ? f.resultado.golesLocal : f.resultado.golesVisitante
@@ -87,6 +88,7 @@ export default function Temporada({ equipo, onCambiar }) {
             ))}
           </div>
         )}
+        <BotonAvisos equipoId={equipo.id} />
         <div className="temporada__acciones-header">
           <Link className="temporada__clasificacion-link" to={`/clasificacion/${equipo.grupo}`}>
             Ver clasificación →

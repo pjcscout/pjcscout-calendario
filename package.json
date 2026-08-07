@@ -10,15 +10,19 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@netlify/blobs": "^10.7.12",
     "jspdf": "^4.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.18.2"
+    "react-router-dom": "^7.18.2",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
     "vite": "^5.4.0",
     "vite-plugin-pwa": "^1.3.0",
-    "vitest": "^2.0.5"
+    "vitest": "^2.0.5",
+    "workbox-precaching": "^7.4.1",
+    "workbox-routing": "^7.4.1"
   }
 }
