@@ -12,6 +12,14 @@ import BotonVolverArriba from './BotonVolverArriba.jsx'
 import { descargarCalendarioPDF } from '../utils/calendarioPdf.js'
 import { descargarCalendarioCSV } from '../utils/calendarioCsv.js'
 
+function resultadoDelEquipo(f) {
+  const golesEquipo = f.esLocal ? f.resultado.golesLocal : f.resultado.golesVisitante
+  const golesRival = f.esLocal ? f.resultado.golesVisitante : f.resultado.golesLocal
+  if (golesEquipo > golesRival) return 'victoria'
+  if (golesEquipo < golesRival) return 'derrota'
+  return 'empate'
+}
+
 export default function Temporada({ equipo, onCambiar }) {
   const hoy = new Date().toISOString().slice(0, 10)
   const grupo = GRUPOS[equipo.grupo]
@@ -128,7 +136,11 @@ export default function Temporada({ equipo, onCambiar }) {
               )}
               <span className="jornada__rival">{f.rival}</span>
               <span className="jornada__resultado">
-                {yaJugada ? (
+                {f.resultado ? (
+                  <span className={`jornada__marcador jornada__marcador--${resultadoDelEquipo(f)}`}>
+                    {f.resultado.golesLocal}-{f.resultado.golesVisitante}
+                  </span>
+                ) : yaJugada ? (
                   <span className="jornada__pendiente">—</span>
                 ) : (
                   <span className="jornada__vs">vs</span>
