@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import SelectorEquipo from '../components/SelectorEquipo.jsx'
 import { EQUIPOS } from '../data/equipos.js'
 import { CLAVE_EQUIPO_ELEGIDO } from '../utils/almacenEquipo.js'
+import { establecerCanonical } from '../utils/seo.js'
 
 const TITULO_POR_DEFECTO = 'PJC Scout · Mi Calendario'
 const DESCRIPCION_POR_DEFECTO =
@@ -26,6 +27,7 @@ export default function Inicio() {
     // EquipoPage sobrescribe el título y las meta tags al ver un equipo;
     // si se vuelve al selector hay que devolverlos a los genéricos.
     if (!listo) return
+    establecerCanonical('/')
     document.title = TITULO_POR_DEFECTO
     document
       .querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]')

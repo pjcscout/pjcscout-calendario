@@ -57,6 +57,10 @@ for (const equipo of EQUIPOS) {
   html = replaceMeta(html, 'name', 'twitter:title', titulo)
   html = replaceMeta(html, 'name', 'twitter:description', descripcion)
   html = replaceMeta(html, 'name', 'twitter:image', imagenAbsoluta)
+  html = html.replace(
+    /<link rel="canonical" href="[^"]*" \/>/,
+    `<link rel="canonical" href="${urlAbsoluta}" />`
+  )
 
   const outDir = join(distDir, 'equipo', equipo.id)
   mkdirSync(outDir, { recursive: true })

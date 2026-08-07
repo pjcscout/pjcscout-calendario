@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { GRUPOS, escudoUrl } from '../data/equipos.js'
 import { clasificacionDeGrupo } from '../utils/clasificacion.js'
+import { establecerCanonical } from '../utils/seo.js'
 
 const SITIO = 'https://calendario.pjcscout.es'
 
@@ -15,7 +16,8 @@ export default function ClasificacionPage() {
   useEffect(() => {
     if (!grupo) return
     document.title = `Clasificación · ${grupo.nombre} ${grupo.subnombre} · PJC Scout`
-  }, [grupo])
+    establecerCanonical(`/clasificacion/${grupoId}`)
+  }, [grupo, grupoId])
 
   if (!grupo || !tabla) return <Navigate to="/" replace />
 

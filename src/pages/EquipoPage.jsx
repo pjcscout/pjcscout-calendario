@@ -6,6 +6,7 @@ import { EQUIPOS, GRUPOS } from '../data/equipos.js'
 import { tieneCalendario } from '../utils/fixtures.js'
 import { CLAVE_EQUIPO_ELEGIDO } from '../utils/almacenEquipo.js'
 import { registrarVisita } from '../utils/historial.js'
+import { establecerCanonical } from '../utils/seo.js'
 
 export default function EquipoPage() {
   const { id } = useParams()
@@ -18,6 +19,7 @@ export default function EquipoPage() {
     if (!equipo) return
     localStorage.setItem(CLAVE_EQUIPO_ELEGIDO, equipo.id)
     registrarVisita(equipo.id)
+    establecerCanonical(`/equipo/${equipo.id}`)
 
     const grupo = GRUPOS[equipo.grupo]
     const titulo = `${equipo.nombre} · ${grupo.nombre} · PJC Scout`
