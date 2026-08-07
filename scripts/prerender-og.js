@@ -65,3 +65,19 @@ for (const equipo of EQUIPOS) {
 }
 
 console.log(`prerender-og: generadas ${generated} páginas en dist/equipo/<id>/index.html`)
+
+const rutas = ['/']
+for (const equipo of EQUIPOS) rutas.push(`/equipo/${equipo.id}`)
+for (const grupoId of Object.keys(GRUPOS)) {
+  if (tieneCalendario(grupoId)) rutas.push(`/clasificacion/${grupoId}`)
+}
+
+const hoy = new Date().toISOString().slice(0, 10)
+const urlset = rutas
+  .map((ruta) => `  <url><loc>${siteUrl}${ruta}</loc><lastmod>${hoy}</lastmod></url>`)
+  .join('\n')
+writeFileSync(
+  join(distDir, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlset}\n</urlset>\n`
+)
+console.log(`prerender-og: generado sitemap.xml con ${rutas.length} URLs`)
