@@ -23,6 +23,7 @@ export function clasificacionDeGrupo(grupo) {
       gf: 0,
       gc: 0,
       pts: 0,
+      racha: [],
     })
   }
 
@@ -47,21 +48,34 @@ export function clasificacionDeGrupo(grupo) {
         filaLocal.pg++
         filaLocal.pts += 3
         filaVisitante.pp++
+        filaLocal.racha.push({ jornada: jornada.numero, resultado: 'V' })
+        filaVisitante.racha.push({ jornada: jornada.numero, resultado: 'D' })
       } else if (golesLocal < golesVisitante) {
         filaVisitante.pg++
         filaVisitante.pts += 3
         filaLocal.pp++
+        filaLocal.racha.push({ jornada: jornada.numero, resultado: 'D' })
+        filaVisitante.racha.push({ jornada: jornada.numero, resultado: 'V' })
       } else {
         filaLocal.pe++
         filaVisitante.pe++
         filaLocal.pts++
         filaVisitante.pts++
+        filaLocal.racha.push({ jornada: jornada.numero, resultado: 'E' })
+        filaVisitante.racha.push({ jornada: jornada.numero, resultado: 'E' })
       }
     }
   }
 
   return [...tabla.values()]
-    .map((fila) => ({ ...fila, dg: fila.gf - fila.gc }))
+    .map((fila) => ({
+      ...fila,
+      dg: fila.gf - fila.gc,
+      racha: fila.racha
+        .sort((a, b) => a.jornada - b.jornada)
+        .slice(-5)
+        .map((r) => r.resultado),
+    }))
     .sort(
       (a, b) =>
         b.pts - a.pts ||

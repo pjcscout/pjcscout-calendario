@@ -65,6 +65,7 @@ export default function ClasificacionPage() {
               <th scope="col">GC</th>
               <th scope="col">DG</th>
               <th scope="col">Pts</th>
+              <th scope="col">Racha</th>
             </tr>
           </thead>
           <tbody>
@@ -90,6 +91,15 @@ export default function ClasificacionPage() {
                 <td>{fila.gc}</td>
                 <td>{fila.dg}</td>
                 <td className="clasificacion__pts">{fila.pts}</td>
+                <td>
+                  <div className="clasificacion__racha">
+                    {fila.racha.map((r, i) => (
+                      <span key={i} className={`racha-punto racha-punto--${r.toLowerCase()}`}>
+                        {r}
+                      </span>
+                    ))}
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>
