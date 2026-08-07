@@ -12,6 +12,7 @@ import BotonVolverArriba from './BotonVolverArriba.jsx'
 import { descargarCalendarioPDF } from '../utils/calendarioPdf.js'
 import { descargarCalendarioCSV } from '../utils/calendarioCsv.js'
 import BotonAvisos from './BotonAvisos.jsx'
+import ChatIA from './ChatIA.jsx'
 
 function resultadoDelEquipo(f) {
   const golesEquipo = f.esLocal ? f.resultado.golesLocal : f.resultado.golesVisitante
@@ -233,6 +234,8 @@ export default function Temporada({ equipo, onCambiar }) {
           </p>
         </div>
       </div>
+
+      <ChatIA equipoId={equipo.id} />
 
       <BotonVolverArriba />
     </div>
