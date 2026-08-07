@@ -7,6 +7,7 @@ import { formatearFecha } from '../utils/fecha.js'
 import { urlMapa } from '../utils/mapa.js'
 import EquipacionIcon from './EquipacionIcon.jsx'
 import CompartirProximoPartido from './CompartirProximoPartido.jsx'
+import BotonFavorito from './BotonFavorito.jsx'
 
 export default function Temporada({ equipo, onCambiar }) {
   const hoy = new Date().toISOString().slice(0, 10)
@@ -43,6 +44,7 @@ export default function Temporada({ equipo, onCambiar }) {
               {grupo.nombre} · {grupo.subnombre} · {grupo.temporada}
             </p>
           </div>
+          <BotonFavorito equipoId={equipo.id} />
         </div>
         <div className="temporada__progreso">
           <div className="temporada__progreso-barra">

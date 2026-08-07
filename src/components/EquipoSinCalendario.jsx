@@ -2,6 +2,7 @@ import { GRUPOS, escudoUrl } from '../data/equipos.js'
 import { fichaEquipo } from '../data/fichas.js'
 import { urlMapa } from '../utils/mapa.js'
 import EquipacionIcon from './EquipacionIcon.jsx'
+import BotonFavorito from './BotonFavorito.jsx'
 
 export default function EquipoSinCalendario({ equipo, onCambiar }) {
   const grupo = GRUPOS[equipo.grupo]
@@ -19,7 +20,9 @@ export default function EquipoSinCalendario({ equipo, onCambiar }) {
         width={64}
         height={64}
       />
-      <h1 className="sin-calendario__nombre">{equipo.nombre}</h1>
+      <h1 className="sin-calendario__nombre">
+        {equipo.nombre} <BotonFavorito equipoId={equipo.id} />
+      </h1>
       <p className="sin-calendario__meta">
         {grupo.nombre} {grupo.subnombre} · {grupo.temporada}
       </p>
