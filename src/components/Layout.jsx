@@ -25,11 +25,20 @@ export default function Layout() {
         <Outlet />
       </main>
       <footer className="app__footer">
-        <a href="https://www.pjcscout.es" target="_blank" rel="noreferrer">
-          PJC Scout & Analytics
-        </a>
-        <span>·</span>
-        <span>Datos: FFCV</span>
+        <div className="app__footer-fila">
+          <a href="https://www.pjcscout.es" target="_blank" rel="noreferrer">
+            PJC Scout & Analytics
+          </a>
+          <span>·</span>
+          <span>Datos: FFCV</span>
+        </div>
+        <div className="app__footer-legal">
+          <a href="/legal/aviso-legal.html">Aviso legal</a>
+          <span>·</span>
+          <a href="/legal/privacidad.html">Privacidad</a>
+          <span>·</span>
+          <a href="/legal/cookies.html">Cookies</a>
+        </div>
       </footer>
     </div>
   )
