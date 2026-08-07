@@ -67,6 +67,10 @@ export default function Temporada({ equipo, onCambiar }) {
           </div>
           <BotonFavorito equipoId={equipo.id} />
         </div>
+        <p className="temporada__intro">
+          Calendario completo, resultados y clasificación de {equipo.nombre} en {grupo.nombre}{' '}
+          {grupo.subnombre}, temporada {grupo.temporada}.
+        </p>
         <div className="temporada__progreso">
           <div className="temporada__progreso-barra">
             <div
