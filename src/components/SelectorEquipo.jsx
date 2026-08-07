@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { EQUIPOS, GRUPOS, equiposPorGrupo, escudoUrl } from '../data/equipos.js'
 import { obtenerFavoritos } from '../utils/favoritos.js'
 import { obtenerHistorial } from '../utils/historial.js'
+import { normalizarTexto } from '../utils/normalizarTexto.js'
 
 function FilaEquipo({ equipo, onElegir }) {
   return (
@@ -54,12 +55,12 @@ export default function SelectorEquipo({ onElegir }) {
 
   const equipos = useMemo(() => {
     const lista = equiposPorGrupo(grupoId)
-    const texto = busqueda.trim().toLowerCase()
+    const texto = normalizarTexto(busqueda.trim())
     if (!texto) return lista
     return lista.filter(
       (equipo) =>
-        equipo.nombre.toLowerCase().includes(texto) ||
-        equipo.localidad.toLowerCase().includes(texto)
+        normalizarTexto(equipo.nombre).includes(texto) ||
+        normalizarTexto(equipo.localidad).includes(texto)
     )
   }, [busqueda, grupoId])
 
