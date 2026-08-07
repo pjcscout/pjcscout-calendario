@@ -3,11 +3,14 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { GRUPOS, escudoUrl } from '../data/equipos.js'
 import { clasificacionDeGrupo } from '../utils/clasificacion.js'
 
+const SITIO = 'https://calendario.pjcscout.es'
+
 export default function ClasificacionPage() {
   const { grupo: grupoId } = useParams()
   const navigate = useNavigate()
   const grupo = GRUPOS[grupoId]
   const tabla = grupo ? clasificacionDeGrupo(grupoId) : null
+  const hayPartidosJugados = tabla ? !tabla.every((fila) => fila.pj === 0) : false
 
   useEffect(() => {
     if (!grupo) return
@@ -15,6 +18,15 @@ export default function ClasificacionPage() {
   }, [grupo])
 
   if (!grupo || !tabla) return <Navigate to="/" replace />
+
+  const textoWhatsapp =
+    `📊 Clasificación de ${grupo.nombre} ${grupo.subnombre}:\n` +
+    tabla
+      .slice(0, 5)
+      .map((fila, indice) => `${indice + 1}. ${fila.equipo.nombre} — ${fila.pts} pts`)
+      .join('\n') +
+    `\nTabla completa: ${SITIO}/clasificacion/${grupoId}`
+  const urlWhatsapp = `https://wa.me/?text=${encodeURIComponent(textoWhatsapp)}`
 
   return (
     <div className="clasificacion">
@@ -25,6 +37,17 @@ export default function ClasificacionPage() {
       <p className="clasificacion__meta">
         {grupo.nombre} {grupo.subnombre} · {grupo.temporada}
       </p>
+
+      {hayPartidosJugados && (
+        <a
+          className="temporada__compartir-boton clasificacion__compartir"
+          href={urlWhatsapp}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Compartir por WhatsApp
+        </a>
+      )}
 
       <div className="clasificacion__tabla-scroll">
         <table className="clasificacion__tabla">
@@ -73,7 +96,7 @@ export default function ClasificacionPage() {
         </table>
       </div>
 
-      {tabla.every((fila) => fila.pj === 0) && (
+      {!hayPartidosJugados && (
         <p className="clasificacion__aviso">
           La clasificación se irá completando jornada a jornada en cuanto arranque la liga.
         </p>
