@@ -9,6 +9,7 @@ import EquipacionIcon from './EquipacionIcon.jsx'
 import CompartirProximoPartido from './CompartirProximoPartido.jsx'
 import BotonFavorito from './BotonFavorito.jsx'
 import BotonVolverArriba from './BotonVolverArriba.jsx'
+import { descargarCalendarioPDF } from '../utils/calendarioPdf.js'
 
 export default function Temporada({ equipo, onCambiar }) {
   const hoy = new Date().toISOString().slice(0, 10)
@@ -58,9 +59,18 @@ export default function Temporada({ equipo, onCambiar }) {
             Jornada {Math.min(jugadas + 1, totalJornadas)} de {totalJornadas}
           </span>
         </div>
-        <Link className="temporada__clasificacion-link" to={`/clasificacion/${equipo.grupo}`}>
-          Ver clasificación →
-        </Link>
+        <div className="temporada__acciones-header">
+          <Link className="temporada__clasificacion-link" to={`/clasificacion/${equipo.grupo}`}>
+            Ver clasificación →
+          </Link>
+          <button
+            type="button"
+            className="temporada__pdf-link"
+            onClick={() => descargarCalendarioPDF({ equipo, grupo, fixtures })}
+          >
+            Descargar PDF
+          </button>
+        </div>
       </header>
 
       {!fixtures[indiceProxima]?.bye && (
