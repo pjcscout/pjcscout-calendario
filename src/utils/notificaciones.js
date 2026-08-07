@@ -31,6 +31,20 @@ export function soportaNotificaciones() {
   return typeof window !== 'undefined' && 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window
 }
 
+/**
+ * En iOS, Safari (y cualquier navegador ahí, todos usan WebKit) solo expone
+ * la Push API cuando la web está instalada en la pantalla de inicio. Fuera
+ * de eso, soportaNotificaciones() da false sin más explicación; esto sirve
+ * para poder mostrarle al usuario de iPhone cómo activarlo, en vez de
+ * ocultar el botón sin decir nada.
+ */
+export function esIOSSinInstalar() {
+  if (typeof window === 'undefined') return false
+  const esIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
+  const instalada = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches
+  return esIOS && !instalada
+}
+
 export async function activarAvisos(equipoId) {
   const permiso = await Notification.requestPermission()
   if (permiso !== 'granted') return false

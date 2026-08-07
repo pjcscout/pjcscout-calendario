@@ -3,18 +3,30 @@ import {
   activarAvisos,
   avisosActivos,
   desactivarAvisos,
+  esIOSSinInstalar,
   soportaNotificaciones,
 } from '../utils/notificaciones.js'
 
 export default function BotonAvisos({ equipoId }) {
   const [soportado, setSoportado] = useState(false)
+  const [necesitaInstalarIOS, setNecesitaInstalarIOS] = useState(false)
   const [activo, setActivo] = useState(false)
   const [cargando, setCargando] = useState(false)
 
   useEffect(() => {
     setSoportado(soportaNotificaciones())
+    setNecesitaInstalarIOS(esIOSSinInstalar())
     setActivo(avisosActivos(equipoId))
   }, [equipoId])
+
+  if (necesitaInstalarIOS) {
+    return (
+      <p className="boton-avisos boton-avisos--aviso">
+        📲 Para activar avisos en iPhone: toca <strong>Compartir</strong> →{' '}
+        <strong>Añadir a pantalla de inicio</strong>, y abre la web desde ahí.
+      </p>
+    )
+  }
 
   if (!soportado) return null
 

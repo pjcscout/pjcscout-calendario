@@ -229,7 +229,7 @@ export const FICHAS = {
   "torrent-a": {
     campo: "Campo de Futbol Mpal. San Gregorio F-11 Campo A - Hierba Artificial (HA)",
     direccion: "Avenida Perez Galdos, 2, 46900, Torrent, (Valencia)",
-    primera: null,
+    primera: { camiseta: "Naranja", pantalon: "Negro", medias: "Naranjas" },
     segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
   },
   "villarreal-c": {
@@ -277,7 +277,7 @@ export const FICHAS = {
   "soneja": {
     campo: "Campo Mpal. El Arco F-11 Soneja - Hierba Artificial (HA)",
     direccion: "Campo de Fútbol El Arco, 12480, Soneja, (Castellón)",
-    primera: null,
+    primera: { camiseta: "Naranja", pantalon: "Naranja", medias: "Naranjas" },
     segunda: { camiseta: "Blanca", pantalon: "Blanco", medias: "Blancas" },
   },
   "espanol-sv": {
