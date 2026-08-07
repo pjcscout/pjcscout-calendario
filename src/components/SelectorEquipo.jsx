@@ -4,7 +4,8 @@ import { obtenerFavoritos } from '../utils/favoritos.js'
 import { obtenerHistorial } from '../utils/historial.js'
 import { normalizarTexto } from '../utils/normalizarTexto.js'
 
-function FilaEquipo({ equipo, onElegir }) {
+function FilaEquipo({ equipo, onElegir, mostrarCategoria }) {
+  const grupo = GRUPOS[equipo.grupo]
   return (
     <li>
       <button className="selector__equipo" onClick={() => onElegir(equipo)}>
@@ -26,7 +27,15 @@ function FilaEquipo({ equipo, onElegir }) {
           aria-hidden="true"
         />
         <span className="selector__nombre">{equipo.nombre}</span>
-        <span className="selector__localidad">{equipo.localidad}</span>
+        <span className="selector__localidad">
+          {equipo.localidad}
+          {mostrarCategoria && (
+            <span className="selector__categoria-etiqueta">
+              {' '}
+              · {grupo.subnombre ? `${grupo.nombre} ${grupo.subnombre}` : grupo.nombre}
+            </span>
+          )}
+        </span>
       </button>
     </li>
   )
@@ -53,16 +62,18 @@ export default function SelectorEquipo({ onElegir }) {
     [historial, favoritos]
   )
 
+  const texto = normalizarTexto(busqueda.trim())
+  const buscando = texto.length > 0
+
   const equipos = useMemo(() => {
-    const lista = equiposPorGrupo(grupoId)
-    const texto = normalizarTexto(busqueda.trim())
-    if (!texto) return lista
+    const lista = buscando ? EQUIPOS : equiposPorGrupo(grupoId)
+    if (!buscando) return lista
     return lista.filter(
       (equipo) =>
         normalizarTexto(equipo.nombre).includes(texto) ||
         normalizarTexto(equipo.localidad).includes(texto)
     )
-  }, [busqueda, grupoId])
+  }, [texto, buscando, grupoId])
 
   return (
     <div className="selector">
@@ -125,7 +136,7 @@ export default function SelectorEquipo({ onElegir }) {
 
       <ul className="selector__lista">
         {equipos.map((equipo) => (
-          <FilaEquipo key={equipo.id} equipo={equipo} onElegir={onElegir} />
+          <FilaEquipo key={equipo.id} equipo={equipo} onElegir={onElegir} mostrarCategoria={buscando} />
         ))}
         {equipos.length === 0 && (
           <li className="selector__vacio">
