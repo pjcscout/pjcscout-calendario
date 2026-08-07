@@ -61,7 +61,7 @@ export default function Temporada({ equipo, onCambiar }) {
       </header>
 
       {!fixtures[indiceProxima]?.bye && (
-        <CompartirProximoPartido equipo={equipo} partido={fixtures[indiceProxima]} />
+        <CompartirProximoPartido equipo={equipo} partido={fixtures[indiceProxima]} ficha={ficha} />
       )}
 
       <ol className="temporada__linea" aria-label="Calendario completo de la temporada">
