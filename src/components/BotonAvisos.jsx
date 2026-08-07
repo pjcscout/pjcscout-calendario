@@ -22,7 +22,7 @@ export default function BotonAvisos({ equipoId }) {
   if (necesitaInstalarIOS) {
     return (
       <p className="boton-avisos boton-avisos--aviso">
-        📲 Para activar avisos en iPhone: toca <strong>Compartir</strong> →{' '}
+        📲 Para activar avisos en iPhone o iPad: toca <strong>Compartir</strong> →{' '}
         <strong>Añadir a pantalla de inicio</strong>, y abre la web desde ahí.
       </p>
     )
