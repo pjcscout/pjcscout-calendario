@@ -10,6 +10,7 @@ import CompartirProximoPartido from './CompartirProximoPartido.jsx'
 import BotonFavorito from './BotonFavorito.jsx'
 import BotonVolverArriba from './BotonVolverArriba.jsx'
 import { descargarCalendarioPDF } from '../utils/calendarioPdf.js'
+import { descargarCalendarioCSV } from '../utils/calendarioCsv.js'
 
 export default function Temporada({ equipo, onCambiar }) {
   const hoy = new Date().toISOString().slice(0, 10)
@@ -69,6 +70,13 @@ export default function Temporada({ equipo, onCambiar }) {
             onClick={() => descargarCalendarioPDF({ equipo, grupo, fixtures })}
           >
             Descargar PDF
+          </button>
+          <button
+            type="button"
+            className="temporada__pdf-link"
+            onClick={() => descargarCalendarioCSV({ equipo, fixtures })}
+          >
+            Descargar Excel
           </button>
         </div>
       </header>
