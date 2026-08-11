@@ -122,11 +122,11 @@ export const EQUIPOS = [
   { id: "liganac-hercules", nombre: "Hércules", grupo: "liga-nacional", localidad: "Alicante", color: "#0A5FA8" },
   { id: "liganac-castellon", nombre: "Castellón", grupo: "liga-nacional", localidad: "Castellón de la Plana", color: "#111111" },
   { id: "liganac-elche", nombre: "Elche", grupo: "liga-nacional", localidad: "Elche", color: "#FBF8EF" },
-  { id: "liganac-torrent", nombre: "Torrent", grupo: "liga-nacional", localidad: "Torrent", color: "#8a8a80" },
-  { id: "liganac-villarreal", nombre: "Villarreal", grupo: "liga-nacional", localidad: "Vila-real", color: "#8a8a80" },
-  { id: "liganac-roda", nombre: "Roda", grupo: "liga-nacional", localidad: "Vila-real", color: "#8a8a80" },
+  { id: "liganac-torrent", nombre: "Torrent", grupo: "liga-nacional", localidad: "Torrent", color: "#FBF8EF" },
+  { id: "liganac-villarreal", nombre: "Villarreal", grupo: "liga-nacional", localidad: "Vila-real", color: "#F7D117" },
+  { id: "liganac-roda", nombre: "Roda", grupo: "liga-nacional", localidad: "Vila-real", color: "#C81E2C" },
   { id: "liganac-valencia", nombre: "Valencia", grupo: "liga-nacional", localidad: "Valencia", color: "#FBF8EF" },
-  { id: "liganac-levante", nombre: "Levante", grupo: "liga-nacional", localidad: "Valencia", color: "#8a8a80" },
+  { id: "liganac-levante", nombre: "Levante", grupo: "liga-nacional", localidad: "Valencia", color: "#0A5FA8" },
 
   // --- Lliga Comunitat Juvenil, Grup Sud (sin calendario todavía) ---
   { id: "llcjuvsud-catral-castrum", nombre: "Catral-Castrum", grupo: "llc-juv-sud", localidad: "Catral", color: "#8a8a80" },
