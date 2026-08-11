@@ -91,7 +91,7 @@ export const FICHAS = {
   "llcsud-rayo-ibense-a": {
     campo: "Estadio Mpal. Francisco Vilaplana Mariel F-11 Ibi - Hierba Artificial (HA)",
     direccion: "Calle Sevilla, 6, 03440, Ibi, (Alicante)",
-    primera: { camiseta: "Roja y azul", pantalon: "Rojo", medias: "Blancas" },
+    primera: { camiseta: "Roja", pantalon: "Azul", medias: "Roja y blanca" },
     segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
   },
   "llcsud-beniganim": {
