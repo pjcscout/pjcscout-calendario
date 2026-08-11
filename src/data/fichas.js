@@ -31,8 +31,8 @@ export const FICHAS = {
   "llcsud-redovan-a": {
     campo: "Campo Mpal. Antonio Pascual Gil F-11 - Hierba Artificial (HA)",
     direccion: "Diseminado los Cuartos, 77, 03370, Redován, (Alicante)",
-    primera: null,
-    segunda: null,
+    primera: { camiseta: "Azul", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Blanca", pantalon: "Rojo", medias: "Rojas" },
   },
   "llcsud-olimpic": {
     campo: "Campo Futbol Mpal. La Murta F-11 Xativa - Hierba Artificial (HA)",
@@ -43,8 +43,8 @@ export const FICHAS = {
   "llcsud-tavernes-valldigna": {
     campo: "Poliesportiu Mpal. de Tavernes Valldigna F-11 - Hierba Artificial (HA)",
     direccion: "Carrer Metge Paco Valiente, s/n,, 46760, Tavernes De La Valldigna, (Valencia)",
-    primera: null,
-    segunda: null,
+    primera: { camiseta: "Roja", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Blanca", pantalon: "Azul", medias: "Azules" },
   },
   "llcsud-alberic": {
     campo: "Estadio Mpal. Manolo Sanchis F-11 Alberic - Hierba Artificial (HA)",
@@ -55,7 +55,7 @@ export const FICHAS = {
   "llcsud-javea": {
     campo: "Camp D' Esport Mpal. Javea F-11 - Hierba Artificial (HA)",
     direccion: "Carrer del Molí de la Safranera, 4, 03737, Jávea, (Alicante)",
-    primera: { camiseta: "1", pantalon: "1", medias: "1" },
+    primera: { camiseta: "Roja y blanca", pantalon: "Azul", medias: "Azules" },
     segunda: { camiseta: "Azul", pantalon: "Azul", medias: "Azules" },
   },
   "llcsud-benidorm-a": {
@@ -73,7 +73,7 @@ export const FICHAS = {
   "llcsud-santa-pola": {
     campo: "Estadio Mpal. Manolo Macia F-11 Santa Pola - Hierba Natural (HN)",
     direccion: "Av. Albacete, 10, 03130, Santa Pola, (Alicante)",
-    primera: null,
+    primera: { camiseta: "Roja y blanca", pantalon: "Azul", medias: "Rojas" },
     segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
   },
   "llcsud-gandia-a": {
@@ -91,7 +91,7 @@ export const FICHAS = {
   "llcsud-rayo-ibense-a": {
     campo: "Estadio Mpal. Francisco Vilaplana Mariel F-11 Ibi - Hierba Artificial (HA)",
     direccion: "Calle Sevilla, 6, 03440, Ibi, (Alicante)",
-    primera: null,
+    primera: { camiseta: "Roja y azul", pantalon: "Rojo", medias: "Blancas" },
     segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
   },
   "llcsud-beniganim": {
@@ -157,8 +157,8 @@ export const FICHAS = {
   "llcnord-alqueries-a": {
     campo: "Instalaciones Dptvas. Alquerias F-11 Campo 1 - Hierba Artificial (HA)",
     direccion: "Camino La Regenta, s/n, 12539, Alquerías Del Niño Perdido, (Castellón)",
-    primera: null,
-    segunda: null,
+    primera: { camiseta: "Amarilla y azul", pantalon: "Amarillo", medias: "Amarillas" },
+    segunda: { camiseta: "Naranja y blanca", pantalon: "Negro", medias: "Negras" },
   },
   "llcnord-paiporta": {
     campo: "Campo de Fútbol Mpal. El Terrer F-11 Paiporta - Hierba Artificial (HA)",
@@ -181,14 +181,14 @@ export const FICHAS = {
   "llcnord-burriana-a": {
     campo: "Campo Mpal. Joan B. Planelles Marco F-11 Burriana - Hierba Artificial (HA)",
     direccion: "Camí Artana, s/n, 12530, Burriana, (Castellón)",
-    primera: null,
-    segunda: null,
+    primera: { camiseta: "Azul", pantalon: "Blanco", medias: "Blancas" },
+    segunda: { camiseta: "Roja", pantalon: "Negro", medias: "Negras" },
   },
   "llcnord-at-quart-a": {
     campo: "Campos Mpales. La Moleta F-11 Vall d`Uxó Campo A - Hierba Artificial (HA)",
     direccion: "Ronda Enrique Marco Zaragoza, 5, 12600, Vall D'Uixó (La), (Castellón)",
-    primera: null,
-    segunda: { camiseta: "-", pantalon: "Negro", medias: "Negras" },
+    primera: { camiseta: "Roja", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Blanca", pantalon: "Negro", medias: "Negras" },
   },
   "llcnord-nou-jove-castello-a": {
     campo: "Campo Mpal. Agustin Sancho Benlloch F-11 - Hierba Artificial (HA)",
