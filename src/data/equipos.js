@@ -2,7 +2,7 @@
 // Grup Nord), División de Honor Juvenil Grupo 7, Liga Nacional Juvenil, Lliga Comunitat Juvenil
 // (Grup Sud y Grup Nord) y Cadete Autonómico.
 // Los escudos se sirven en local desde /public/escudos/<id>.png — ya no se hotlinkea a Google Drive.
-// Cadete Autonómico, Liga Nacional y Lliga Comunitat Juvenil aún no tienen calendario (ver
+// Cadete Autonómico y Lliga Comunitat Juvenil aún no tienen calendario (ver
 // src/utils/fixtures.js).
 // El orden de este objeto determina el orden de las pestañas de categoría en el selector.
 
@@ -108,7 +108,7 @@ export const EQUIPOS = [
   { id: "cadete-levante", nombre: "Levante", grupo: "cadete-autonomico", localidad: "Valencia", color: "#8a8a80" },
   { id: "cadete-valencia", nombre: "Valencia", grupo: "cadete-autonomico", localidad: "Valencia", color: "#8a8a80" },
 
-  // --- Liga Nacional (sin calendario todavía) ---
+  // --- Liga Nacional ---
   { id: "liganac-elda-union", nombre: "Elda Unión", grupo: "liga-nacional", localidad: "Elda", color: "#8a8a80" },
   { id: "liganac-san-pedro", nombre: "San Pedro", grupo: "liga-nacional", localidad: "Castellón de la Plana", color: "#8a8a80" },
   { id: "liganac-tavernes-blanques", nombre: "Tavernes Blanques", grupo: "liga-nacional", localidad: "Tavernes Blanques", color: "#8a8a80" },

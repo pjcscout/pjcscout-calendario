@@ -2,6 +2,7 @@ import { JORNADAS as JORNADAS_TERCERA_VI } from '../data/calendario.js'
 import { JORNADAS as JORNADAS_DH7 } from '../data/calendarioDH7.js'
 import { JORNADAS as JORNADAS_LLC_SUD } from '../data/calendarioLLCSud.js'
 import { JORNADAS as JORNADAS_LLC_NORD } from '../data/calendarioLLCNord.js'
+import { JORNADAS as JORNADAS_LIGA_NACIONAL } from '../data/calendarioLigaNacional.js'
 import { RESULTADOS, idPartido } from '../data/resultados.js'
 
 const CALENDARIOS = {
@@ -9,7 +10,8 @@ const CALENDARIOS = {
   'dh-g7': JORNADAS_DH7,
   'llc-sud': JORNADAS_LLC_SUD,
   'llc-nord': JORNADAS_LLC_NORD,
-  // 'cadete-autonomico', 'liga-nacional', 'llc-juv-sud' y 'llc-juv-nord' no tienen calendario todavía.
+  'liga-nacional': JORNADAS_LIGA_NACIONAL,
+  // 'cadete-autonomico', 'llc-juv-sud' y 'llc-juv-nord' no tienen calendario todavía.
 }
 
 export function tieneCalendario(grupo) {

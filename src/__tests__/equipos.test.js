@@ -4,6 +4,7 @@ import { JORNADAS as JORNADAS_TERCERA_VI } from '../data/calendario.js'
 import { JORNADAS as JORNADAS_DH7 } from '../data/calendarioDH7.js'
 import { JORNADAS as JORNADAS_LLC_SUD } from '../data/calendarioLLCSud.js'
 import { JORNADAS as JORNADAS_LLC_NORD } from '../data/calendarioLLCNord.js'
+import { JORNADAS as JORNADAS_LIGA_NACIONAL } from '../data/calendarioLigaNacional.js'
 
 function nombresUsadosEn(jornadas) {
   const nombres = new Set()
@@ -21,6 +22,7 @@ const CALENDARIOS_CON_ARCHIVO = [
   { grupo: 'dh-g7', archivo: 'calendarioDH7.js', etiqueta: 'División de Honor Juvenil', jornadas: JORNADAS_DH7 },
   { grupo: 'llc-sud', archivo: 'calendarioLLCSud.js', etiqueta: 'Lliga Comunitat Amateur Sud', jornadas: JORNADAS_LLC_SUD },
   { grupo: 'llc-nord', archivo: 'calendarioLLCNord.js', etiqueta: 'Lliga Comunitat Amateur Nord', jornadas: JORNADAS_LLC_NORD },
+  { grupo: 'liga-nacional', archivo: 'calendarioLigaNacional.js', etiqueta: 'Liga Nacional Juvenil', jornadas: JORNADAS_LIGA_NACIONAL },
 ]
 
 describe('consistencia entre los calendarios y equipos.js', () => {
