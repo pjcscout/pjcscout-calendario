@@ -1,7 +1,7 @@
-// Ficha de equipo (campo, dirección, equipación) para Lliga Comunitat Amateur y Tercera
-// Federación, extraída de los PDFs oficiales de calendario de la FFCV (sección "Datos de
-// interés"). Solo existe para los equipos donde la federación publica esta información;
-// el resto de categorías no tienen ficha todavía.
+// Ficha de equipo (campo, dirección, equipación) para Lliga Comunitat Amateur, Tercera
+// Federación y Liga Nacional Juvenil, extraída de los PDFs oficiales de calendario de la FFCV
+// (sección "Datos de interés"). Solo existe para los equipos donde la federación publica esta
+// información; el resto de categorías no tienen ficha todavía.
 
 export const FICHAS = {
   "llcsud-thader": {
@@ -303,6 +303,116 @@ export const FICHAS = {
     direccion: "Avenida Del Prado, s/n, 46360, Buñol, (Valencia)",
     primera: { camiseta: "Blanca", pantalon: "Negro", medias: "Blancas" },
     segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Azules" },
+  },
+
+  // --- Liga Nacional Juvenil, Grup VIII ---
+  "liganac-san-pedro": {
+    campo: "Campo Mpal. Javier Marquina F-11 Castellón - Hierba Artificial (HA)",
+    direccion: "C/ Astronom Faust Valles, 11, 12100, Castellón De La Plana, (Castellón)",
+    primera: { camiseta: "Azul", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Granate", pantalon: "Negro", medias: "Granate" },
+  },
+  "liganac-jove-espanol": {
+    campo: "Ciudad Dptva. San Vicente del Raspeig F-11 - Hierba Artificial (HA)",
+    direccion: "Carrer Denia, 2, 03690, San Vicente Del Raspeig, (Alicante)",
+    primera: { camiseta: "Roja", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Roja", pantalon: "Verde", medias: "Verdes" },
+  },
+  "liganac-levante": {
+    campo: "Ciudad Dptva. del Levante U.D. F-11 Campo 4 - Hierba Artificial (HA)",
+    direccion: "Avenida Blasco Ibañez, 156, 46360, Buñol, (Valencia)",
+    primera: null,
+    segunda: null,
+  },
+  "liganac-hercules": {
+    campo: "Ciudad Dptva. de Alicante F-11 - Hierba Artificial (HA)",
+    direccion: "Calle Foguerer José Romeu, 03005, Alicante, (Alicante)",
+    primera: { camiseta: "Azul", pantalon: "Negro", medias: "Azules" },
+    segunda: null,
+  },
+  "liganac-alzira": {
+    campo: "Campo Mpal. Venecia F-11 Alzira - Hierba Artificial (HA)",
+    direccion: "Calle Verge de la Murta, 53, 46600, Alzira, (Valencia)",
+    primera: { camiseta: "Azul", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Blanca", pantalon: "-", medias: "-" },
+  },
+  "liganac-valencia": {
+    campo: "Ciudad Dptva. Valencia CF F-11 Campo 4 - Hierba Natural (HN)",
+    direccion: "ctra, s/n, el Mas de Camarena, 46980, Paterna, (Valencia)",
+    primera: { camiseta: "Blanca", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Azul", pantalon: "Azul", medias: "Azul" },
+  },
+  "liganac-villarreal": {
+    campo: "Ciudad Dptva. José Manuel Llaneza F-11 Vila-real Campo 5 - Hierba Artificial (HA)",
+    direccion: "Carrer Miralcamp, 128, 12540, Vila-real, (Castellón)",
+    primera: null,
+    segunda: null,
+  },
+  "liganac-castellon": {
+    campo: "Campos Gaeta Huguet Castellón F-11 Campo B - Hierba Artificial (HA)",
+    direccion: "Carretera de Ribesalbes, s/n, 12006, Castellón De La Plana, (Castellón)",
+    primera: { camiseta: "Negra", pantalon: "Blanco", medias: "Blancas" },
+    segunda: { camiseta: "-", pantalon: "Negro", medias: "-" },
+  },
+  "liganac-san-jose": {
+    campo: "Campo de Fútbol Mpal. de Beniferri F-11 - Hierba Artificial (HA)",
+    direccion: "Carrer de Favanella, 18, 46035, Valencia, (Valencia)",
+    primera: { camiseta: "Azul/blanco", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Verde", pantalon: "Verde", medias: "Verde" },
+  },
+  "liganac-alboraya": {
+    campo: "Estadio Mpal. Francisco Cardona F-11 Alboraya - Hierba Artificial (HA)",
+    direccion: "Carrer Sant Isidre Llaurador, s/n, 46120, Alboraya, (Valencia)",
+    primera: { camiseta: "Roja", pantalon: "Negro", medias: "Rojas" },
+    segunda: { camiseta: "Amarilla", pantalon: "Negro", medias: "Negras" },
+  },
+  "liganac-la-nucia": {
+    campo: "Ciutat Esptva. Camilo Cano F-11 La Nucia Anexo - Hierba Artificial (HA)",
+    direccion: "Partida Muixara, s/n, 03530, La Nucia, (Alicante)",
+    primera: null,
+    segunda: { camiseta: "Azul", pantalon: "Blanco", medias: "Blancas" },
+  },
+  "liganac-tavernes-blanques": {
+    campo: "Campo Mpal. Carraixet F-11 Tavernes Blanques - Hierba Artificial (HA)",
+    direccion: "Carrer Dr. Barraquer, 53, 46016, Tavernes Blanques, (Valencia)",
+    primera: { camiseta: "Verde", pantalon: "Blanco", medias: "Blancas" },
+    segunda: { camiseta: "Naranja", pantalon: "Negro", medias: "Negras" },
+  },
+  "liganac-elda-union": {
+    campo: "Campos Sismat de Elda F-11 Campo 1 - Hierba Artificial (HA)",
+    direccion: "P.º de la Mora, 0, 03600, Elda, (Alicante)",
+    primera: null,
+    segunda: null,
+  },
+  "liganac-roda": {
+    campo: "Ciutat Esptva. Pamesa Ceramica F-11 Vila-real Campo 3 - Hierba Artificial (HA)",
+    direccion: "Camí Primer Sedeny, 1, 12540, Vila-real, (Castellón)",
+    primera: null,
+    segunda: { camiseta: "Roja", pantalon: "Rojo", medias: "Rojas" },
+  },
+  "liganac-elche": {
+    campo: "Polideportivo Mpal. Altabix Enrique Cervera F-11 - Hierba Artificial (HA)",
+    direccion: "Carrer Josefina Manresa, 14, 03202, Elche, (Alicante)",
+    primera: { camiseta: "Blanca con franja verde", pantalon: "Blanco", medias: "Blancas" },
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
+  },
+  "liganac-moncadense": {
+    campo: "Polidep. Mpal. David Casinos Miguel Tendillo F-11 Moncada Campo 2 - Hierba Artificial (HA)",
+    direccion: "Camino de la Pelosa, 3,, 46113, Moncada, (Valencia)",
+    primera: { camiseta: "Blanca", pantalon: "Rojo", medias: "Rojas" },
+    segunda: { camiseta: "Azul", pantalon: "Azul", medias: "Azules" },
+  },
+  "liganac-rumbo": {
+    campo: "Campo Tramo II Parque del Turia F-11 - Hierba Artificial (HA)",
+    direccion: "Paseg de la Petxina, 147, 46018, Valencia, (Valencia)",
+    primera: { camiseta: "Azul", pantalon: "Azul", medias: "Azul" },
+    segunda: { camiseta: "Gris", pantalon: "Negro", medias: "Negras" },
+  },
+  "liganac-torrent": {
+    campo: "Campo de Futbol Mpal. San Gregorio F-11 Campo A - Hierba Artificial (HA)",
+    direccion: "Avenida Perez Galdos, 2, 46900, Torrent, (Valencia)",
+    primera: null,
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
   },
 }
 
