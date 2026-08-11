@@ -369,7 +369,7 @@ export const FICHAS = {
   "liganac-la-nucia": {
     campo: "Ciutat Esptva. Camilo Cano F-11 La Nucia Anexo - Hierba Artificial (HA)",
     direccion: "Partida Muixara, s/n, 03530, La Nucia, (Alicante)",
-    primera: null,
+    primera: { camiseta: "Roja", pantalon: "Negro", medias: "Negras" },
     segunda: { camiseta: "Azul", pantalon: "Blanco", medias: "Blancas" },
   },
   "liganac-tavernes-blanques": {
@@ -381,8 +381,8 @@ export const FICHAS = {
   "liganac-elda-union": {
     campo: "Campos Sismat de Elda F-11 Campo 1 - Hierba Artificial (HA)",
     direccion: "P.º de la Mora, 0, 03600, Elda, (Alicante)",
-    primera: null,
-    segunda: null,
+    primera: { camiseta: "Roja", pantalon: "Rojo", medias: "Rojas" },
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
   },
   "liganac-roda": {
     campo: "Ciutat Esptva. Pamesa Ceramica F-11 Vila-real Campo 3 - Hierba Artificial (HA)",

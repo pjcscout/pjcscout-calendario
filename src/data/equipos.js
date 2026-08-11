@@ -109,13 +109,13 @@ export const EQUIPOS = [
   { id: "cadete-valencia", nombre: "Valencia", grupo: "cadete-autonomico", localidad: "Valencia", color: "#8a8a80" },
 
   // --- Liga Nacional ---
-  { id: "liganac-elda-union", nombre: "Elda Unión", grupo: "liga-nacional", localidad: "Elda", color: "#8a8a80" },
+  { id: "liganac-elda-union", nombre: "Elda Unión", grupo: "liga-nacional", localidad: "Elda", color: "#C81E2C" },
   { id: "liganac-san-pedro", nombre: "San Pedro", grupo: "liga-nacional", localidad: "Castellón de la Plana", color: "#0A5FA8" },
   { id: "liganac-tavernes-blanques", nombre: "Tavernes Blanques", grupo: "liga-nacional", localidad: "Tavernes Blanques", color: "#1E7A3C" },
   { id: "liganac-rumbo", nombre: "Rumbo", grupo: "liga-nacional", localidad: "Valencia", color: "#0A5FA8" },
   { id: "liganac-alzira", nombre: "Alzira", grupo: "liga-nacional", localidad: "Alzira", color: "#0A5FA8" },
   { id: "liganac-san-jose", nombre: "San José", grupo: "liga-nacional", localidad: "Valencia", color: "#0A5FA8" },
-  { id: "liganac-la-nucia", nombre: "La Nucía", grupo: "liga-nacional", localidad: "la Nucia", color: "#8a8a80" },
+  { id: "liganac-la-nucia", nombre: "La Nucía", grupo: "liga-nacional", localidad: "la Nucia", color: "#C81E2C" },
   { id: "liganac-moncadense", nombre: "Moncadense", grupo: "liga-nacional", localidad: "Moncada", color: "#FBF8EF" },
   { id: "liganac-alboraya", nombre: "Alboraya", grupo: "liga-nacional", localidad: "Alboraia", color: "#C81E2C" },
   { id: "liganac-jove-espanol", nombre: "Jove Español", grupo: "liga-nacional", localidad: "San Vicente del Raspeig", color: "#C81E2C" },
