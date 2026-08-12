@@ -2,8 +2,7 @@
 // Grup Nord), División de Honor Juvenil Grupo 7, Liga Nacional Juvenil, Lliga Comunitat Juvenil
 // (Grup Sud y Grup Nord) y Cadete Autonómico.
 // Los escudos se sirven en local desde /public/escudos/<id>.png — ya no se hotlinkea a Google Drive.
-// Cadete Autonómico y Lliga Comunitat Juvenil aún no tienen calendario (ver
-// src/utils/fixtures.js).
+// Cadete Autonómico aún no tiene calendario (ver src/utils/fixtures.js).
 // El orden de este objeto determina el orden de las pestañas de categoría en el selector.
 
 export const GRUPOS = {
@@ -128,43 +127,41 @@ export const EQUIPOS = [
   { id: "liganac-valencia", nombre: "Valencia", grupo: "liga-nacional", localidad: "Valencia", color: "#FBF8EF" },
   { id: "liganac-levante", nombre: "Levante", grupo: "liga-nacional", localidad: "Valencia", color: "#0A5FA8" },
 
-  // --- Lliga Comunitat Juvenil, Grup Sud (sin calendario todavía) ---
-  { id: "llcjuvsud-catral-castrum", nombre: "Catral-Castrum", grupo: "llc-juv-sud", localidad: "Catral", color: "#8a8a80" },
-  { id: "llcjuvsud-alcoyano", nombre: "C.D. Alcoyano", grupo: "llc-juv-sud", localidad: "Alcoi", color: "#8a8a80" },
-  { id: "llcjuvsud-orihuela", nombre: "Orihuela", grupo: "llc-juv-sud", localidad: "Orihuela", color: "#8a8a80" },
-  { id: "llcjuvsud-catarroja", nombre: "F.B.C.D. Catarroja", grupo: "llc-juv-sud", localidad: "Catarroja", color: "#8a8a80" },
-  { id: "llcjuvsud-oliva", nombre: "U.D. Oliva", grupo: "llc-juv-sud", localidad: "Oliva", color: "#8a8a80" },
-  { id: "llcjuvsud-scd-intangco", nombre: "SCD Intangco", grupo: "llc-juv-sud", localidad: "Elche", color: "#8a8a80" },
-  { id: "llcjuvsud-pablo-iglesias", nombre: "C.D. Pablo Iglesias", grupo: "llc-juv-sud", localidad: "Elche", color: "#8a8a80" },
-  { id: "llcjuvsud-tavernes-valldigna", nombre: "C.F.U.E. Tavernes de la Valldigna", grupo: "llc-juv-sud", localidad: "Tavernes De La Valldigna", color: "#8a8a80" },
-  { id: "llcjuvsud-olimpic", nombre: "C.D. Olímpic", grupo: "llc-juv-sud", localidad: "Xàtiva", color: "#8a8a80" },
-  { id: "llcjuvsud-benidorm", nombre: "C.F. Benidorm", grupo: "llc-juv-sud", localidad: "Benidorm", color: "#8a8a80" },
-  { id: "llcjuvsud-aldaya", nombre: "U.D. Aldaia", grupo: "llc-juv-sud", localidad: "Aldaia", color: "#8a8a80" },
-  { id: "llcjuvsud-silla", nombre: "Silla C.F.", grupo: "llc-juv-sud", localidad: "Silla", color: "#8a8a80" },
-  { id: "llcjuvsud-la-nucia", nombre: "La Nucía", grupo: "llc-juv-sud", localidad: "la Nucia", color: "#8a8a80" },
-  { id: "llcjuvsud-eldense", nombre: "C.D. Eldense", grupo: "llc-juv-sud", localidad: "Elda", color: "#8a8a80" },
-  { id: "llcjuvsud-hercules", nombre: "Hércules C.F.", grupo: "llc-juv-sud", localidad: "Alicante", color: "#8a8a80" },
-  { id: "llcjuvsud-kelme", nombre: "Kelme C.F.", grupo: "llc-juv-sud", localidad: "Elche", color: "#8a8a80" },
+  // --- Lliga Comunitat Juvenil, Grup Sud ---
+  { id: "llcjuvsud-catral-castrum", nombre: "Catral-Castrum", grupo: "llc-juv-sud", localidad: "Catral", color: "#F07C1E" },
+  { id: "llcjuvsud-alcoyano", nombre: "C.D. Alcoyano", grupo: "llc-juv-sud", localidad: "Alcoi", color: "#0A5FA8" },
+  { id: "llcjuvsud-orihuela", nombre: "Orihuela", grupo: "llc-juv-sud", localidad: "Orihuela", color: "#F7D117" },
+  { id: "llcjuvsud-catarroja", nombre: "F.B.C.D. Catarroja", grupo: "llc-juv-sud", localidad: "Catarroja", color: "#0A5FA8" },
+  { id: "llcjuvsud-oliva", nombre: "U.D. Oliva", grupo: "llc-juv-sud", localidad: "Oliva", color: "#0A5FA8" },
+  { id: "llcjuvsud-scd-intangco", nombre: "SCD Intangco", grupo: "llc-juv-sud", localidad: "Elche", color: "#FBF8EF" },
+  { id: "llcjuvsud-pablo-iglesias", nombre: "C.D. Pablo Iglesias", grupo: "llc-juv-sud", localidad: "Elche", color: "#0A5FA8" },
+  { id: "llcjuvsud-tavernes-valldigna", nombre: "C.F.U.E. Tavernes de la Valldigna", grupo: "llc-juv-sud", localidad: "Tavernes De La Valldigna", color: "#C81E2C" },
+  { id: "llcjuvsud-olimpic", nombre: "C.D. Olímpic", grupo: "llc-juv-sud", localidad: "Xàtiva", color: "#FBF8EF" },
+  { id: "llcjuvsud-benidorm", nombre: "C.F. Benidorm", grupo: "llc-juv-sud", localidad: "Benidorm", color: "#0A5FA8" },
+  { id: "llcjuvsud-aldaya", nombre: "U.D. Aldaia", grupo: "llc-juv-sud", localidad: "Aldaia", color: "#C81E2C" },
+  { id: "llcjuvsud-silla", nombre: "Silla C.F.", grupo: "llc-juv-sud", localidad: "Silla", color: "#FBF8EF" },
+  { id: "llcjuvsud-la-nucia", nombre: "La Nucía", grupo: "llc-juv-sud", localidad: "la Nucia", color: "#C81E2C" },
+  { id: "llcjuvsud-eldense", nombre: "C.D. Eldense", grupo: "llc-juv-sud", localidad: "Elda", color: "#C81E2C" },
+  { id: "llcjuvsud-hercules", nombre: "Hércules C.F.", grupo: "llc-juv-sud", localidad: "Alicante", color: "#0A5FA8" },
+  { id: "llcjuvsud-kelme", nombre: "Kelme C.F.", grupo: "llc-juv-sud", localidad: "Elche", color: "#0A5FA8" },
 
-  // --- Lliga Comunitat Juvenil, Grup Nord (sin calendario todavía) ---
-  { id: "llcjuvnord-scd-intangco", nombre: "SCD Intangco", grupo: "llc-juv-nord", localidad: "Elche", color: "#8a8a80" },
-  { id: "llcjuvnord-burriana-salesianos", nombre: "At. Burriana-Salesianos", grupo: "llc-juv-nord", localidad: "Burriana", color: "#8a8a80" },
-  { id: "llcjuvnord-massamagrell", nombre: "Ath. Massamagrell", grupo: "llc-juv-nord", localidad: "Massamagrell", color: "#8a8a80" },
-  { id: "llcjuvnord-col-salgui", nombre: "Col. Salgui", grupo: "llc-juv-nord", localidad: "Valencia", color: "#8a8a80" },
-  { id: "llcjuvnord-paterna", nombre: "Paterna", grupo: "llc-juv-nord", localidad: "Paterna", color: "#8a8a80" },
-  { id: "llcjuvnord-cf-cracks", nombre: "C.F. Cracks", grupo: "llc-juv-nord", localidad: "San Antonio de Benagéber", color: "#8a8a80" },
-  { id: "llcjuvnord-historics-valencia", nombre: "Històrics de València", grupo: "llc-juv-nord", localidad: "València", color: "#8a8a80" },
-  { id: "llcjuvnord-torre-levante", nombre: "C.F. Torre Levante", grupo: "llc-juv-nord", localidad: "Valencia", color: "#8a8a80" },
-  { id: "llcjuvnord-betera", nombre: "Bétera C.F.", grupo: "llc-juv-nord", localidad: "Bétera", color: "#8a8a80" },
-  { id: "llcjuvnord-primer-toque", nombre: "Primer Toque", grupo: "llc-juv-nord", localidad: "Castellón de la Plana", color: "#8a8a80" },
-  { id: "llcjuvnord-cdf-canet", nombre: "C.D.F. Canet", grupo: "llc-juv-nord", localidad: "Canet d'En Berenguer", color: "#8a8a80" },
-  { id: "llcjuvnord-benidorm", nombre: "C.F. Benidorm", grupo: "llc-juv-nord", localidad: "Benidorm", color: "#8a8a80" },
-  { id: "llcjuvnord-manises", nombre: "Manises C.F.", grupo: "llc-juv-nord", localidad: "Manises", color: "#8a8a80" },
-  { id: "llcjuvnord-san-jose", nombre: "San José", grupo: "llc-juv-nord", localidad: "Valencia", color: "#8a8a80" },
-  { id: "llcjuvnord-alboraya", nombre: "Alboraya", grupo: "llc-juv-nord", localidad: "Alboraia", color: "#8a8a80" },
-  { id: "llcjuvnord-acero", nombre: "C.D. Acero", grupo: "llc-juv-nord", localidad: "Sagunto", color: "#8a8a80" },
-  { id: "llcjuvnord-patacona", nombre: "Patacona", grupo: "llc-juv-nord", localidad: "Alboraia", color: "#8a8a80" },
-  { id: "llcjuvnord-villarreal", nombre: "Villarreal", grupo: "llc-juv-nord", localidad: "Vila-real", color: "#8a8a80" },
+  // --- Lliga Comunitat Juvenil, Grup Nord ---
+  { id: "llcjuvnord-burriana-salesianos", nombre: "At. Burriana-Salesianos", grupo: "llc-juv-nord", localidad: "Burriana", color: "#C81E2C" },
+  { id: "llcjuvnord-massamagrell", nombre: "Ath. Massamagrell", grupo: "llc-juv-nord", localidad: "Massamagrell", color: "#E6399B" },
+  { id: "llcjuvnord-col-salgui", nombre: "Col. Salgui", grupo: "llc-juv-nord", localidad: "Valencia", color: "#1E7A3C" },
+  { id: "llcjuvnord-paterna", nombre: "Paterna", grupo: "llc-juv-nord", localidad: "Paterna", color: "#F7D117" },
+  { id: "llcjuvnord-cf-cracks", nombre: "C.F. Cracks", grupo: "llc-juv-nord", localidad: "San Antonio de Benagéber", color: "#FBF8EF" },
+  { id: "llcjuvnord-historics-valencia", nombre: "Històrics de València", grupo: "llc-juv-nord", localidad: "València", color: "#C81E2C" },
+  { id: "llcjuvnord-torre-levante", nombre: "C.F. Torre Levante", grupo: "llc-juv-nord", localidad: "Valencia", color: "#F07C1E" },
+  { id: "llcjuvnord-betera", nombre: "Bétera C.F.", grupo: "llc-juv-nord", localidad: "Bétera", color: "#1E7A3C" },
+  { id: "llcjuvnord-primer-toque", nombre: "Primer Toque", grupo: "llc-juv-nord", localidad: "Castellón de la Plana", color: "#0A5FA8" },
+  { id: "llcjuvnord-cdf-canet", nombre: "C.D.F. Canet", grupo: "llc-juv-nord", localidad: "Canet d'En Berenguer", color: "#FBF8EF" },
+  { id: "llcjuvnord-manises", nombre: "Manises C.F.", grupo: "llc-juv-nord", localidad: "Manises", color: "#0A5FA8" },
+  { id: "llcjuvnord-san-jose", nombre: "San José", grupo: "llc-juv-nord", localidad: "Valencia", color: "#0A5FA8" },
+  { id: "llcjuvnord-alboraya", nombre: "Alboraya", grupo: "llc-juv-nord", localidad: "Alboraia", color: "#C81E2C" },
+  { id: "llcjuvnord-acero", nombre: "C.D. Acero", grupo: "llc-juv-nord", localidad: "Sagunto", color: "#C81E2C" },
+  { id: "llcjuvnord-patacona", nombre: "Patacona", grupo: "llc-juv-nord", localidad: "Alboraia", color: "#F07C1E" },
+  { id: "llcjuvnord-villarreal", nombre: "Villarreal", grupo: "llc-juv-nord", localidad: "Vila-real", color: "#F7D117" },
 ]
 
 export function equiposPorGrupo(grupo) {
