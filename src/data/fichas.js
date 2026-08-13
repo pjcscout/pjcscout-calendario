@@ -609,6 +609,116 @@ export const FICHAS = {
     primera: { camiseta: "Verde y blanca", pantalon: "Negro", medias: "Verdes/blancas" },
     segunda: { camiseta: "Morada", pantalon: "Blanco", medias: "Blancas/Moradas" },
   },
+
+  // --- Liga Autonómica Cadete ---
+  "cadete-levante": {
+    campo: "Ciudad Dptva. del Levante U.D. F-11 Campo 4 - Hierba Artificial (HA)",
+    direccion: "Avenida Blasco Ibañez, 156, 46360, Buñol, (Valencia)",
+    primera: { camiseta: "Azul y granate", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "-", pantalon: "Verde", medias: "Verdes" },
+  },
+  "cadete-roda": {
+    campo: "Ciudad Dptva. José Manuel Llaneza F-11 Vila-real Campo 5 - Hierba Artificial (HA)",
+    direccion: "Carrer Miralcamp, 128, 12540, Vila-real, (Castellón)",
+    primera: { camiseta: "Negra y amarilla", pantalon: "Negro y amarillo", medias: "Negras" },
+    segunda: { camiseta: "Roja", pantalon: "Rojo", medias: "Rojas" },
+  },
+  "cadete-san-jose": {
+    campo: "Campo de Fútbol Mpal. de Beniferri F-11 - Hierba Artificial (HA)",
+    direccion: "Carrer de Favanella, 18, 46035, Valencia, (Valencia)",
+    primera: { camiseta: "Azul/blanco", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Verde", pantalon: "Verde", medias: "Verde" },
+  },
+  "cadete-scd-intangco": {
+    campo: "Ciudad Dptva. Elche Campo 5 Palmeral D'Elx F-11 - Hierba Artificial (HA)",
+    direccion: "Avinguda de la Universitat d'Elx, 71L, 03202, Elche, (Alicante)",
+    primera: { camiseta: "Blanca", pantalon: "Verde", medias: "Blancas" },
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
+  },
+  "cadete-patacona": {
+    campo: "Campo Mpal. de la Patacona F-11 - Hierba Artificial (HA)",
+    direccion: "Avenida de la Sierra Calderona, s/n, 46120, Alboraya, (Valencia)",
+    primera: { camiseta: "Naranja y negra", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Negra", pantalon: "Naranja", medias: "Naranjas" },
+  },
+  "cadete-benidorm": {
+    campo: "Ciudad Dptva. \"Guillermo Amor\" F-11 Benidorm Campo Futbol Juan Martinez",
+    direccion: "Avda. Ciudad Deportiva, 21, 03502, Benidorm, (Alicante)",
+    primera: { camiseta: "Azul", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Blanca", pantalon: "Blanco", medias: "Blancas" },
+  },
+  "cadete-torre-levante": {
+    campo: "Campo Torre Levante-Orriols F-11 - Hierba Artificial (HA)",
+    direccion: "Calle d´Alfahuir, 35,, 46019, Valencia, (Valencia)",
+    primera: { camiseta: "Naranja", pantalon: "Naranja", medias: "Naranja" },
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
+  },
+  "cadete-la-nucia": {
+    campo: "Ciutat Esptva. Camilo Cano F-11 La Nucia Anexo - Hierba Artificial (HA)",
+    direccion: "Partida Muixara, s/n, 03530, La Nucia, (Alicante)",
+    primera: { camiseta: "Roja", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Azul", pantalon: "Blanco", medias: "Blancas" },
+  },
+  "cadete-alboraya": {
+    campo: "Estadio Mpal. Francisco Cardona F-11 Alboraya - Hierba Artificial (HA)",
+    direccion: "Carrer Sant Isidre Llaurador, s/n, 46120, Alboraya, (Valencia)",
+    primera: { camiseta: "Roja", pantalon: "Negro", medias: "Rojas" },
+    segunda: { camiseta: "Amarilla", pantalon: "Negro", medias: "Negras" },
+  },
+  "cadete-elda-union": {
+    campo: "Campo de Futbol Fernando Tomas F-11 Campo 3 - Hierba Artificial (HA)",
+    direccion: "Paseo Paseo de la Mora, 0, 03600, Elda, (Alicante)",
+    primera: { camiseta: "Azul y blanca", pantalon: "Azul", medias: "Azules" },
+    segunda: { camiseta: "Verde", pantalon: "Verde", medias: "Verdes" },
+  },
+  "cadete-fundacion-valencia": {
+    campo: "Ciudad Dptva. Valencia CF F-11 Campo 4 - Hierba Natural (HN)",
+    direccion: "ctra, s/n, el Mas de Camarena, 46980, Paterna, (Valencia)",
+    primera: { camiseta: "Blanca", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
+  },
+  "cadete-valencia": {
+    campo: "Ciudad Dptva. Valencia CF F-11 Campo 4 - Hierba Natural (HN)",
+    direccion: "ctra, s/n, el Mas de Camarena, 46980, Paterna, (Valencia)",
+    primera: { camiseta: "Blanca", pantalon: "Negro", medias: "Negras" },
+    segunda: { camiseta: "Azul", pantalon: "Azul", medias: "Azul" },
+  },
+  "cadete-castellon": {
+    campo: "Ciudad Dptva. Chencho Campo C F-11 Castellón - Hierba Artificial (HA)",
+    direccion: "Calle Pl Numero 125, 50R, 12004, Castellón De La Plana, (Castellón)",
+    primera: { camiseta: "Negra", pantalon: "Blanco", medias: "Blancas" },
+    segunda: { camiseta: "-", pantalon: "Negro", medias: "-" },
+  },
+  "cadete-celtic-elche": {
+    campo: "Ciudad Dptva. Elche Campo 6 José Ant. Morante \"Lico\" F-11 - Hierba Artificial (HA)",
+    direccion: "Avinguda de la Universitat d'Elx, 71L, 03202, Elche, (Alicante)",
+    primera: { camiseta: "verde blanca", pantalon: "Blanco", medias: "Blancas" },
+    segunda: { camiseta: "Amarilla", pantalon: "Amarillo", medias: "Amarillas" },
+  },
+  "cadete-elche": {
+    campo: "Polideportivo Mpal. Altabix Enrique Cervera F-11 - Hierba Artificial (HA)",
+    direccion: "Carrer Josefina Manresa, 14, 03202, Elche, (Alicante)",
+    primera: { camiseta: "Blanca con franja verde", pantalon: "Blanco", medias: "Blancas" },
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
+  },
+  "cadete-kelme": {
+    campo: "Polideportivo Mpal. Altabix Enrique Cervera F-11 - Hierba Artificial (HA)",
+    direccion: "Carrer Josefina Manresa, 14, 03202, Elche, (Alicante)",
+    primera: { camiseta: "Azul", pantalon: "Rojo", medias: "Blancas" },
+    segunda: { camiseta: "Negra", pantalon: "Negro", medias: "Negras" },
+  },
+  "cadete-primer-toque": {
+    campo: "Ciudad Dptva. Chencho Campo C F-11 Castellón - Hierba Artificial (HA)",
+    direccion: "Calle Pl Numero 125, 50R, 12004, Castellón De La Plana, (Castellón)",
+    primera: { camiseta: "Azul", pantalon: "Blanco", medias: "Azul" },
+    segunda: { camiseta: "-", pantalon: "Blanco", medias: "-" },
+  },
+  "cadete-villarreal": {
+    campo: "Ciudad Dptva. José Manuel Llaneza F-11 Vila-real Campo 5 - Hierba Artificial (HA)",
+    direccion: "Carrer Miralcamp, 128, 12540, Vila-real, (Castellón)",
+    primera: { camiseta: "Amarilla", pantalon: "Amarillo", medias: "Amarillas" },
+    segunda: { camiseta: "Morada", pantalon: "Morado", medias: "Moradas" },
+  },
 }
 
 export function fichaEquipo(id) {

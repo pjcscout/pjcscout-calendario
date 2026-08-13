@@ -7,6 +7,7 @@ import { JORNADAS as JORNADAS_LLC_NORD } from '../data/calendarioLLCNord.js'
 import { JORNADAS as JORNADAS_LIGA_NACIONAL } from '../data/calendarioLigaNacional.js'
 import { JORNADAS as JORNADAS_LLC_JUV_SUD } from '../data/calendarioLLCJuvSud.js'
 import { JORNADAS as JORNADAS_LLC_JUV_NORD } from '../data/calendarioLLCJuvNord.js'
+import { JORNADAS as JORNADAS_CADETE } from '../data/calendarioCadete.js'
 
 function nombresUsadosEn(jornadas) {
   const nombres = new Set()
@@ -27,6 +28,7 @@ const CALENDARIOS_CON_ARCHIVO = [
   { grupo: 'liga-nacional', archivo: 'calendarioLigaNacional.js', etiqueta: 'Liga Nacional Juvenil', jornadas: JORNADAS_LIGA_NACIONAL },
   { grupo: 'llc-juv-sud', archivo: 'calendarioLLCJuvSud.js', etiqueta: 'Lliga Comunitat Juvenil Sud', jornadas: JORNADAS_LLC_JUV_SUD },
   { grupo: 'llc-juv-nord', archivo: 'calendarioLLCJuvNord.js', etiqueta: 'Lliga Comunitat Juvenil Nord', jornadas: JORNADAS_LLC_JUV_NORD },
+  { grupo: 'cadete-autonomico', archivo: 'calendarioCadete.js', etiqueta: 'Liga Autonómica Cadete', jornadas: JORNADAS_CADETE },
 ]
 
 describe('consistencia entre los calendarios y equipos.js', () => {

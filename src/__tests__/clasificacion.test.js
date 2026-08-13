@@ -68,6 +68,6 @@ describe('clasificacionDeGrupo', () => {
   })
 
   it('devuelve null para un grupo sin calendario', () => {
-    expect(clasificacionDeGrupo('cadete-autonomico')).toBeNull()
+    expect(clasificacionDeGrupo('grupo-inexistente')).toBeNull()
   })
 })

@@ -2,7 +2,8 @@
 // Grup Nord), División de Honor Juvenil Grupo 7, Liga Nacional Juvenil, Lliga Comunitat Juvenil
 // (Grup Sud y Grup Nord) y Cadete Autonómico.
 // Los escudos se sirven en local desde /public/escudos/<id>.png — ya no se hotlinkea a Google Drive.
-// Cadete Autonómico aún no tiene calendario (ver src/utils/fixtures.js).
+// A falta de las estadísticas de jugadores (goles, asistencias, minutos), todas las
+// categorías tienen ya calendario real (ver src/utils/fixtures.js).
 // El orden de este objeto determina el orden de las pestañas de categoría en el selector.
 
 export const GRUPOS = {
@@ -88,24 +89,25 @@ export const EQUIPOS = [
   { id: "llcnord-at-quart-a", nombre: "IDA C.F. At. Quart \"A\"", grupo: "llc-nord", localidad: "Vall D'Uixó (La)", color: "#C81E2C" },
   { id: "llcnord-nou-jove-castello-a", nombre: "C.F. Nou Jove Castelló \"A\"", grupo: "llc-nord", localidad: "Benlloch", color: "#FBF8EF" },
 
-  // --- Cadete Autonómico (sin calendario todavía) ---
-  { id: "cadete-celtic-elche", nombre: "Celtic Elche", grupo: "cadete-autonomico", localidad: "Elche", color: "#8a8a80" },
-  { id: "cadete-fundacion-valencia", nombre: "Fundación Valencia", grupo: "cadete-autonomico", localidad: "Paterna", color: "#8a8a80" },
-  { id: "cadete-elda-union", nombre: "Elda Unión", grupo: "cadete-autonomico", localidad: "Elda", color: "#8a8a80" },
-  { id: "cadete-scd-intangco", nombre: "SCD Intangco", grupo: "cadete-autonomico", localidad: "Elche", color: "#8a8a80" },
-  { id: "cadete-torre-levante", nombre: "CF Torre Levante", grupo: "cadete-autonomico", localidad: "Valencia", color: "#8a8a80" },
-  { id: "cadete-primer-toque", nombre: "Primer Toque", grupo: "cadete-autonomico", localidad: "Castellón de la Plana", color: "#8a8a80" },
-  { id: "cadete-benidorm", nombre: "CF Benidorm", grupo: "cadete-autonomico", localidad: "Benidorm", color: "#8a8a80" },
-  { id: "cadete-san-jose", nombre: "San José", grupo: "cadete-autonomico", localidad: "Valencia", color: "#8a8a80" },
-  { id: "cadete-la-nucia", nombre: "La Nucía", grupo: "cadete-autonomico", localidad: "la Nucia", color: "#8a8a80" },
-  { id: "cadete-alboraya", nombre: "Alboraya", grupo: "cadete-autonomico", localidad: "Alboraia", color: "#8a8a80" },
-  { id: "cadete-castellon", nombre: "Castellón", grupo: "cadete-autonomico", localidad: "Castellón de la Plana", color: "#8a8a80" },
-  { id: "cadete-patacona", nombre: "Patacona", grupo: "cadete-autonomico", localidad: "Alboraia", color: "#8a8a80" },
-  { id: "cadete-elche", nombre: "Elche", grupo: "cadete-autonomico", localidad: "Elche", color: "#8a8a80" },
-  { id: "cadete-kelme", nombre: "Kelme", grupo: "cadete-autonomico", localidad: "Elche", color: "#8a8a80" },
-  { id: "cadete-villarreal", nombre: "Villarreal", grupo: "cadete-autonomico", localidad: "Vila-real", color: "#8a8a80" },
-  { id: "cadete-levante", nombre: "Levante", grupo: "cadete-autonomico", localidad: "Valencia", color: "#8a8a80" },
-  { id: "cadete-valencia", nombre: "Valencia", grupo: "cadete-autonomico", localidad: "Valencia", color: "#8a8a80" },
+  // --- Cadete Autonómico ---
+  { id: "cadete-celtic-elche", nombre: "Celtic Elche", grupo: "cadete-autonomico", localidad: "Elche", color: "#1E7A3C" },
+  { id: "cadete-fundacion-valencia", nombre: "Fundación Valencia", grupo: "cadete-autonomico", localidad: "Paterna", color: "#FBF8EF" },
+  { id: "cadete-elda-union", nombre: "Elda Unión", grupo: "cadete-autonomico", localidad: "Elda", color: "#0A5FA8" },
+  { id: "cadete-scd-intangco", nombre: "SCD Intangco", grupo: "cadete-autonomico", localidad: "Elche", color: "#FBF8EF" },
+  { id: "cadete-torre-levante", nombre: "CF Torre Levante", grupo: "cadete-autonomico", localidad: "Valencia", color: "#F07C1E" },
+  { id: "cadete-primer-toque", nombre: "Primer Toque", grupo: "cadete-autonomico", localidad: "Castellón de la Plana", color: "#0A5FA8" },
+  { id: "cadete-benidorm", nombre: "CF Benidorm", grupo: "cadete-autonomico", localidad: "Benidorm", color: "#0A5FA8" },
+  { id: "cadete-san-jose", nombre: "San José", grupo: "cadete-autonomico", localidad: "Valencia", color: "#0A5FA8" },
+  { id: "cadete-la-nucia", nombre: "La Nucía", grupo: "cadete-autonomico", localidad: "la Nucia", color: "#C81E2C" },
+  { id: "cadete-alboraya", nombre: "Alboraya", grupo: "cadete-autonomico", localidad: "Alboraia", color: "#C81E2C" },
+  { id: "cadete-castellon", nombre: "Castellón", grupo: "cadete-autonomico", localidad: "Castellón de la Plana", color: "#111111" },
+  { id: "cadete-patacona", nombre: "Patacona", grupo: "cadete-autonomico", localidad: "Alboraia", color: "#F07C1E" },
+  { id: "cadete-elche", nombre: "Elche", grupo: "cadete-autonomico", localidad: "Elche", color: "#FBF8EF" },
+  { id: "cadete-kelme", nombre: "Kelme", grupo: "cadete-autonomico", localidad: "Elche", color: "#0A5FA8" },
+  { id: "cadete-villarreal", nombre: "Villarreal", grupo: "cadete-autonomico", localidad: "Vila-real", color: "#F7D117" },
+  { id: "cadete-levante", nombre: "Levante", grupo: "cadete-autonomico", localidad: "Valencia", color: "#0A5FA8" },
+  { id: "cadete-valencia", nombre: "Valencia", grupo: "cadete-autonomico", localidad: "Valencia", color: "#FBF8EF" },
+  { id: "cadete-roda", nombre: "Roda", grupo: "cadete-autonomico", localidad: "Vila-real", color: "#111111" },
 
   // --- Liga Nacional ---
   { id: "liganac-elda-union", nombre: "Elda Unión", grupo: "liga-nacional", localidad: "Elda", color: "#C81E2C" },

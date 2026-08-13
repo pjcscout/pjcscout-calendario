@@ -5,6 +5,7 @@ import { JORNADAS as JORNADAS_LLC_NORD } from '../data/calendarioLLCNord.js'
 import { JORNADAS as JORNADAS_LIGA_NACIONAL } from '../data/calendarioLigaNacional.js'
 import { JORNADAS as JORNADAS_LLC_JUV_SUD } from '../data/calendarioLLCJuvSud.js'
 import { JORNADAS as JORNADAS_LLC_JUV_NORD } from '../data/calendarioLLCJuvNord.js'
+import { JORNADAS as JORNADAS_CADETE } from '../data/calendarioCadete.js'
 import { RESULTADOS, idPartido } from '../data/resultados.js'
 
 const CALENDARIOS = {
@@ -15,7 +16,7 @@ const CALENDARIOS = {
   'liga-nacional': JORNADAS_LIGA_NACIONAL,
   'llc-juv-sud': JORNADAS_LLC_JUV_SUD,
   'llc-juv-nord': JORNADAS_LLC_JUV_NORD,
-  // 'cadete-autonomico' no tiene calendario todavía.
+  'cadete-autonomico': JORNADAS_CADETE,
 }
 
 export function tieneCalendario(grupo) {
