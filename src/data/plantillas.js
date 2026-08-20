@@ -349,6 +349,159 @@ export const PLANTILLAS = {
     "David Javaloyes Marco", "Carles Guanter Sanchez", "Marc Gómez Casinos", "Juan Jose Gil Calisalvo",
     "Adrián Civera Gallach", "David Ciobotaru", "Lucas Amoros Tello", "Bruno Aguilar Baya",
   ],
+
+  // Lliga Comunitat Juvenil Sud
+  "llcjuvsud-tavernes-valldigna": [
+    "Marc Torres Benavent", "David Ruiz Blasco", "Luis Perez Gascon", "David Marques Luna", "Iker Ferrer Beltran",
+    "Vicent Chover Melo", "Juan Manuel Chiva Morant", "Arnau Castro Nicolas", "Alex Brines Ferrer",
+    "Andres Borull Cuadros", "Arnau Ahullo Muñoz",
+  ],
+  "llcjuvsud-olimpic": [
+    "Rafael Vila Sifre", "Hugo Tormos Gomis", "Iker Tomas Nova", "Abel Tamayo Canut", "Josue Soler Ramon",
+    "Daniel Serradell Perales", "Bruno Sanfelix Vercher", "Andres Felipe Molina Campo", "Abel Martinez",
+    "Joan Llobell Martinez", "Victor Jorques Jorques", "Aaron Gomez Olivares", "Ivan Gandia Navalon",
+    "Hugo Flores Sancho", "Jose Estrada Presencia", "Victor Chorques Grau", "Pablo Ignacio Caballero Llacer",
+    "Alvaro Pelayo Blach Segura", "Joan Albelda Ribero",
+  ],
+  "llcjuvsud-orihuela": [
+    "Roberto Vivancos Muñoz", "David Vaca Durendez", "Jose Vicente Torregrosa Molino", "Nacho Rodriguez Ubeda",
+    "Arturo Rodriguez Botella", "Rafael Rodenas Rodriguez", "José Manuel Rocamora Rodriguez",
+    "Victor Rocamora Diaz", "Mario Riquelme Zaplana", "Nicolas Reina Hernandez", "Leandro Monzillo Ghiglia",
+    "Samuel Alassane Konate Mbeti", "Javier Gomez Bravo", "Jesus Christian Conesa Chirila",
+    "Alexander Baeza Goralskiy",
+  ],
+  "llcjuvsud-benidorm": [
+    "Nicolay Filipov Todorov", "Matias Sulbaran Sanchez", "David Myumyun Rahim", "Pablo Llinares Llorca",
+    "Aleix Llinares Llorca", "Maximo Jara Torres", "Xavi Hernandez Pinto", "Pavel Genov Zhelyazkov",
+    "Alberto Rafael Dominguez Sanchez", "Pablo Del Estal Alarcon", "Kai Anthony Rodrigues De Groot",
+    "Lucas Andrei Cucerzan", "Miguel Cabrera Morcillo", "Rayan Boumlik Abouach", "Hugo Banuls Cayon",
+    "Oscar Aranega Gallardo", "Alex Ambach", "Diego Alonso Sorribes",
+  ],
+  "llcjuvsud-kelme": [
+    "Mauro Valero Molina", "Nicolas Sebastian Tumini", "David Stefan Sasu", "Cristian Santonja Berenguer",
+    "Mario Sanchez Moreno", "Pau Sagasta Mateo", "Alejandro Navarro Navarro", "Daniel Martinez Berenguer",
+    "Eric Marin Rodriguez", "Luca Ioan Maier", "Oscar Garcia Ortin", "Hugo Garcia Llorente", "Raul Diaz Verdu",
+    "Arnau Davalos Ortin", "Xavi Cardos Belda", "Ivan Manuel Cañizares Pucheta", "Sergio Campos Bonete",
+    "Luka Bibileishvili Mamaladze", "Iroito Biacho Bueicheku", "Pedro Berenguer Rodriguez",
+  ],
+  "llcjuvsud-eldense": [
+    "Armando Rubio Martinez", "Hugo Rico Poveda", "Aaron Piñero Mondejar", "Pablo Gomez Ballester",
+    "Robert Ionut Alexandru Cristescu",
+  ],
+  "llcjuvsud-la-nucia": [
+    "Izan Ros Soler", "Jairo Reus Avella", "Lukas Mercapide Faccio", "Hector Martinez Galipienso",
+    "Alvaro Lacalle Lopez", "Hugo Gonzalez Alvarez", "Jorge Carrasco Carratalá", "Marwan Benaboura Morales",
+    "Eduard Beniamin Arjoca",
+  ],
+  "llcjuvsud-catral-castrum": [
+    "Pablo Vitaloni Pedauye", "Antonio Vazquez Molina", "Lionel Rodriguez Piñero", "Joel Roca Cerda",
+    "Carlos Najar Perez", "Unai Martinez Vidal", "Ivan Khodatay", "Yassin Jarmouni Chouari",
+    "Juan Jose Gutierrez Idarraga", "Luis Miguel Gimenez Asin", "Marouane Dahbani Bergad",
+    "Juan Sebastian Berrio Lopez",
+  ],
+  "llcjuvsud-aldaya": [
+    "Pablo Vela Pozo", "Iker Vaca Parra", "Arturo Tarazona Calaforra", "Javier Santervás Monleón",
+    "Saul Rojas Quiroz", "Jesus Antonio Rodriguez Uzcategui", "Alvaro Paños Monton", "Rodrigo Navarro Gallego",
+    "Khalil Maghrab Gourji", "Miquel Hernandez Martinez", "Javier Gimenez Cervera", "Bautista Garvin Cardozo",
+    "Jose Ignacio Garcia Vera", "Marc Gallego Martinez", "Nacho Fernandez Alfaro", "David Cayetano Muñoz",
+    "Angel Castillo Garcia", "Hector Ardid Gomez",
+  ],
+  "llcjuvsud-scd-intangco": [
+    "Adrian Sanz Garcia", "Aitor Rodriguez Bobada Palomera", "Jose Joaquin Muñoz Albiñana", "Pablo Mazon Valero",
+    "Feliciano Martinez Mesples", "Javier Barrie Anaya", "Iker Baeza Ruiz", "Altair Alonso Mateu",
+  ],
+
+  // Lliga Comunitat Juvenil Nord
+  "llcjuvnord-villarreal": [
+    "Hugo Zoroa Domingo", "Raul Estephano Varzaru Varzaru", "Pablo Tortajada Balaguer", "Manolo Rubert Colonques",
+    "Franklin Chinedu Okolie Okolie", "David Navarro Cruz", "Ian Mendez Untiveros", "Kaiyuan Liu",
+    "Yago Lapuente Martin", "Salim Khassanov", "Darlington Oghosa Izekor Osazuwa", "Adrian Gregori Villanueva",
+    "Hector Garcia Vaca", "Dennis Adrian Ene", "Gabriel Duarte Santacruz", "Daniil Didenko Rohava",
+    "Adrian Diaz Fuentes", "Adrian Cantalapiedra Cocho", "Jesús Caballero Huguet", "Andres Borras Maestre",
+    "Nahuel Abadia Garcia",
+  ],
+  "llcjuvnord-torre-levante": [
+    "Alberto Villalba Uceda", "Gaspar Vasseur Gómez", "Alejandro San Jeronimo Perez", "Victor Montijano Gadea",
+    "Hector Martinez Collado", "Mansur Lucha-A Belda", "Jorge Lopez Melendez", "Izan Llorens Balaguer",
+    "Antonio Jimenez Notario", "Oliver Gimenez Del Pino", "Oscar Garcia Chiner", "Andreu Gallardo Salavert",
+    "Ruben Fortea Martinez", "Nicolas Cardoso Castaño", "Fabian Alejandro Camacho Guerra",
+    "Marvin Santiago Caicedo Obregon", "Mario Blesa Peiró", "Yasser Benlatreche",
+  ],
+  "llcjuvnord-patacona": [
+    "Marc Valiente Gallart", "Carlos Rangel Ferrer", "Alejandro Palmer Hernando", "Borja Morales Diaz",
+    "Jose Maria Matias Gorbe", "Nicolás Martin Muria", "Izan Martin Martinez", "Daniel Lopez Argandoña",
+    "Guillermo Gil Sanchez", "Alvaro Gargallo Belchi", "Dennys Garcia Lopez", "Mario Garcia Ferrando",
+    "Antonio Gallur Valencia", "Lucas Ferrandis Paredes", "Alvaro Cordero Pastor", "Julio Casero Girona",
+    "Andrea Cafarelli Piccolo", "Rayan Bououd Mazouz", "Marco Antonio Barba Hernandez",
+  ],
+  "llcjuvnord-primer-toque": [
+    "Antonio Varella Hernandez", "Ian Michael Sperschneider Arango", "Ayman Sbaii", "Carlos Sanchez Beltran",
+    "Abderrahman Ounajar Oumadine", "Marcos Nuñez Gual", "Jordi Mata Flor", "Dennis Manzanet Garcia",
+    "Moise Otniel Floarea", "Fran Fernandez Traver", "Marc Climent Alcon", "Amr Chelli El Hadri",
+    "Juan Sebastian Caicedo Viveros", "Xavi Bullon Ondoño", "Pablo Blazquez Soria", "Alessio Barbosa Garcia",
+    "Pedro Arrizabalaga Martinez", "Bilal Aboussaid El Hamdaoui",
+  ],
+  "llcjuvnord-col-salgui": [
+    "Carlos Vidal Ferriols", "Saul Valera Montesinos", "Fabio Aurelio Ruggeri Perez", "Ivan Romero Tur",
+    "Pau Pujada Celda", "Hugo Perez Palacios", "Marcos Monleon Gomez", "Andres Miro Andres",
+    "Alvaro Llinares Barata", "Alex Aleksander Jurczykowski", "Jesus Miguel Judez Montero",
+    "Alvaro Gomez Pastrana Ivars", "Miguel Exposito Juan", "Ian Destre Roda", "Luciano Cubells Ruiz",
+    "Pedro Cortes Blasco", "Aday Atienzar Afonso", "Carlos Andreu Gil", "Marcos Abalos Cañada",
+  ],
+  "llcjuvnord-massamagrell": [
+    "Guillem Uso Alcover", "Manuel Tajuidje Pérez", "Adrian Sanfelix Rojo", "Jaime Romero Arias",
+    "Santiago Peco Ortiz", "Ignacio Parreño Mir", "Daniel Palanca Feito", "Julian Hugo Oyarzun",
+    "Alex Marzal Martinez", "Pau Marqués Jiménez", "Anton Korolevskiy Pogozheva", "David Gonzalez Belert",
+    "Francisco Garcia Cantero", "Izan Corman Tarazona", "Jaylin Arnold Christie", "Albert Carceller Barbera",
+    "David Barranco Peris", "Isaac Barba Silla", "Pablo Ariño Palanca", "Enrique Alcover Soler",
+  ],
+  "llcjuvnord-historics-valencia": [
+    "Lev Tibeikin", "Ramos Marc De Fez", "Aitor Fernandez Aragones", "Ezekiel Chigozie Edwin Festus",
+    "Alejandro Calvo Calipienso", "Joel Balaguer Delgado", "Pablo Aviles Saez",
+  ],
+  "llcjuvnord-manises": [
+    "Jaime Treviño Perez", "Hugo Torres Navarro", "Javier Sevillano Aparicio", "Izan Saiz Escobar",
+    "David Ruiz Sanchez", "Salvador Rives Gonzalez", "Hugo Pastor Femenia", "Sergio Ortiz Campos",
+    "Enzo Moreton Soriano", "Alvaro Mateo Canovas", "Alejandro Grau Barcenas", "Isidro Fernandez Monedero",
+    "Guilherme Colomino Mota", "Pablo Aliaga Ortega", "Alejandro Aliaga Ortega", "Hugo Albiach Serrano",
+  ],
+  "llcjuvnord-cf-cracks": [
+    "Sebastian Ioan Varga Bacaran", "Savelii Syniato", "Platon Shangin", "Carlos Rodriguez Aragon",
+    "Alejandro Perez Maras", "Rodrigo Gijón Martinez", "Javi Garrido Cortes", "Nicolas Dapcich Ferrando",
+    "Jorge Benavent Cervera", "Esam Baddour", "Carlos Amores Kotlewski", "Alvaro Alfonso Bueso",
+  ],
+  "llcjuvnord-san-jose": [
+    "Alejandro Vidal Castillo", "Alejandro Urbina Rubio", "Enzo Soldado Millan", "Pablo Siñuela Lara",
+    "Alberto Serrano Sanz", "Sergio Sanz Navarro", "Angel Roselló Soler", "Luca Alessandro Pinedo",
+    "Pablo Paniagua Sibaute", "Pablo Olcina Aparicio", "Mateo Navarro Pizcueta", "Leo Lozano Sendra",
+    "Marc Llopes Inarejos", "Boyu Li Lin", "Jose Miguel Huesa Oliver", "Rafael Hernandez Claramunt",
+    "Hugo Castillo Garcia", "Aitor Cano Gutierrez", "Daniel Alcaina Bonet",
+  ],
+  "llcjuvnord-cdf-canet": [
+    "Marcos Vicente Garcia", "Xavi Salvador Granell", "Aitor Murillo Soria", "Alejandro David Julia Zalvez",
+    "Gines Gil Agüera", "Pau Bernet Sanchez", "Samuel Amoraga Garcia",
+  ],
+  "llcjuvnord-alboraya": [
+    "Leonardo Zeka Valencia", "He Xie", "Mario Villavicencio Fernández", "Hugo Turegano Perales",
+    "Hugo Tarazona Mateos", "Javier Soriano Perez",
+  ],
+  "llcjuvnord-burriana-salesianos": [
+    "Vladislav Zbrozhek", "Albert Vines Cerezo", "Alvaro Vila Diaz", "David Rubert Morano", "Marc Roca Gari",
+    "Matteo Morra Climent", "Victor Mesado Vicente", "Dani Hernandez Ballester", "Jordi Gonzalez Lopez",
+    "Guillem Gimenez Llopis", "David Gil Ibañez", "Miguel Galera Sanz", "Alvaro Fuentes Segura",
+    "Marcos Espada Sanchez", "Eduardo Aurelian Ciutacu", "Mario Casino Esteve", "Pablo Cabrera Gilabert",
+    "Matias Eros Budassi Sellart", "Alexandre Alemany Torrat", "Marcelo Albert Guinot", "Jorge Agustina Llopis",
+  ],
+  "llcjuvnord-betera": [
+    "Guillem Vazquez Sahuquillo", "Raul Romero Civera", "Mykhailo Posternak", "Jose Antonio Peña Hernandez",
+    "Hugo Jose Morte Garcia", "Marc Lozano Rodrigo", "Adrian Cervera Balaguer", "Daniel Bosque Diaz",
+    "Marc Bosch Campos", "Hugo Armiñana Santamaria", "Iker Argandoña Roch", "David Aparisi Martinez",
+    "Hugo Alabau Rodrigo",
+  ],
+  "llcjuvnord-acero": [
+    "Elias Zamora", "Abel Martinez Vaquero", "Hector Martin Baron", "Aaron Madrid Garcia", "Jorge Lopez Vila",
+    "Alejandro De Haro Rodriguez", "Saul Clemente Rambla",
+  ],
 }
 
 export function plantillaEquipo(id) {
