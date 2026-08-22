@@ -1,9 +1,9 @@
-// Cuarta pasada: marcadores.rfef.es/pnfg/?accion=1 es el portal público real
-// (redirige desde resultados.rfef.es). Es una página de menú ("CONSULTAR POR
-// COMPETICIONES"), sin desplegables todavía — hay que entrar en Fútbol >
-// Masculino y buscar División de Honor Juvenil Grupo 7 desde ahí,
-// capturando las peticiones AJAX por el camino (la URL usa "pnfg", el mismo
-// patrón que los escudos de FFCV, así que puede compartir plataforma).
+// Quinta pasada: la portada (accion=1) ya usa AJAX ("obtener(...)") para
+// cargar paneles de competición, y trae un enlace directo a
+// "CONSULTAR POR COMPETICIONES" (NPortada?CodPortada=1000181), que debería
+// listar todas las categorías (incluida División de Honor Juvenil) con sus
+// grupo_categoria/cod_competicion/cod_grupo. Vamos directamente ahí y
+// volcamos todo el árbol de enlaces + peticiones AJAX, buscando "Juvenil".
 import { chromium } from 'playwright'
 
 function log(seccion, datos) {
@@ -19,40 +19,47 @@ page.on('request', (req) => {
   if (/\.(js|css|png|jpg|jpeg|svg|woff2?|ico|gif)(\?|$)/i.test(url)) return
   peticiones.push(`${req.method()} ${url}`)
 })
+page.on('response', async (res) => {
+  const url = res.url()
+  if (/NPcd\/NFG_CMP_Paneles|obtener/i.test(url) || res.request().method() === 'POST') {
+    try {
+      const body = await res.text()
+      if (/juvenil/i.test(body)) {
+        log(`RESPUESTA con "Juvenil" - ${url}`, body.slice(0, 4000))
+      }
+    } catch {}
+  }
+})
 
-await page.goto('https://marcadores.rfef.es/pnfg/?accion=1', { waitUntil: 'networkidle', timeout: 30000 })
+await page.goto('https://marcadores.rfef.es/pnfg/NPortada?CodPortada=1000181', {
+  waitUntil: 'networkidle',
+  timeout: 30000,
+})
+log('url tras cargar CONSULTAR POR COMPETICIONES', page.url())
 
 const enlaces = await page.$$eval('a', (els) =>
   els.map((el) => ({ texto: el.textContent.trim(), href: el.href })).filter((e) => e.texto)
 )
-log('enlaces en la página de menú', enlaces.slice(0, 80))
+log('enlaces en la página', enlaces)
 
-// Buscamos un enlace que lleve a "Fútbol" masculino (no fútbol sala/playa)
-const enlaceFutbol = enlaces.find(
-  (e) => /f.tbol/i.test(e.texto) && !/sala|playa/i.test(e.texto) && /masculin/i.test(e.texto)
-)
-log('enlace fútbol masculino elegido', enlaceFutbol)
+const textoVisible = await page.evaluate(() => document.body.innerText.slice(0, 3000))
+log('texto visible', textoVisible)
 
-if (enlaceFutbol) {
-  await page.goto(enlaceFutbol.href, { waitUntil: 'networkidle', timeout: 30000 }).catch((e) =>
-    log('error navegando a fútbol masculino', e.message)
-  )
-  log('tras entrar en fútbol masculino - url', page.url())
-
-  const selects2 = await page.$$eval('select', (els) =>
-    els.map((el) => ({
-      id: el.id,
-      name: el.name,
-      options: [...el.options].slice(0, 60).map((o) => ({ value: o.value, text: o.textContent.trim() })),
+// Buscamos cualquier elemento (no solo <a>) cuyo texto mencione "Juvenil"
+const elementosJuvenil = await page.$$eval('*', (els) =>
+  els
+    .filter((el) => el.children.length === 0 && /juvenil/i.test(el.textContent || ''))
+    .slice(0, 40)
+    .map((el) => ({
+      tag: el.tagName,
+      texto: el.textContent.trim().slice(0, 200),
+      onclick: el.getAttribute('onclick'),
+      href: el.getAttribute('href'),
     }))
-  )
-  log('selects tras entrar en fútbol masculino', selects2)
-
-  const textoVisible = await page.evaluate(() => document.body.innerText.slice(0, 1500))
-  log('texto visible', textoVisible)
-}
+)
+log('elementos que mencionan "Juvenil"', elementosJuvenil)
 
 log('peticiones no-estáticas capturadas', peticiones)
 
 await browser.close()
-console.log('\n=== FIN RECON 4 ===')
+console.log('\n=== FIN RECON 5 ===')
