@@ -13,10 +13,9 @@
 //     https://ffcv.es/competiciones/api/clasificaciones/clasificaciones_ajax.php
 //       ?cod_grupo=<codGrupo>&cod_jornada=<n>
 //
-// Todavía sin resolver: RFEF (grupo "dh-g7", División de Honor Juvenil Grupo 7)
-// no está aquí — rfef.isquad.es/indexcompeticiones.php es una pantalla de
-// login, no el portal público; hace falta seguir investigando su fuente
-// pública de resultados por separado.
+// RFEF (grupo "dh-g7", División de Honor Juvenil Grupo 7) no está aquí porque
+// usa una plataforma distinta (marcadores.rfef.es/pnfg/...) con sus propios
+// IDs — ver src/data/competicionRfef.js.
 export const COMPETICIONES_FFCV = {
   'tercera-vi': { codCompeticion: '905431604', codGrupo: '905431605', nombreGrupo: 'GRUP - VI' },
   'llc-nord': { codCompeticion: '905431821', codGrupo: '905431822', nombreGrupo: 'Grup Nord' },
