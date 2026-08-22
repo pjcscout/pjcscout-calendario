@@ -1,9 +1,9 @@
-// Quinta pasada: la portada (accion=1) ya usa AJAX ("obtener(...)") para
-// cargar paneles de competición, y trae un enlace directo a
-// "CONSULTAR POR COMPETICIONES" (NPortada?CodPortada=1000181), que debería
-// listar todas las categorías (incluida División de Honor Juvenil) con sus
-// grupo_categoria/cod_competicion/cod_grupo. Vamos directamente ahí y
-// volcamos todo el árbol de enlaces + peticiones AJAX, buscando "Juvenil".
+// Sexta pasada: en NPortada?CodPortada=1000181 hay un <select> con la opción
+// "Division de Honor Juvenil" (confirmado en la 5ª pasada). Hace falta:
+//  1) leer todas las opciones del select (value = cod_competicion, texto)
+//  2) seleccionar "Division de Honor Juvenil" para disparar su onchange
+//     (WDBuscarGrupos_..., que llama a /pnfg/NPcd/NFG_CmpResultados_POR_Grupos)
+//  3) capturar esa respuesta para sacar los grupos y encontrar "Grupo 7"
 import { chromium } from 'playwright'
 
 function log(seccion, datos) {
@@ -13,20 +13,13 @@ function log(seccion, datos) {
 
 const browser = await chromium.launch()
 const page = await browser.newPage()
-const peticiones = []
-page.on('request', (req) => {
-  const url = req.url()
-  if (/\.(js|css|png|jpg|jpeg|svg|woff2?|ico|gif)(\?|$)/i.test(url)) return
-  peticiones.push(`${req.method()} ${url}`)
-})
+const respuestasGrupos = []
 page.on('response', async (res) => {
   const url = res.url()
-  if (/NPcd\/NFG_CMP_Paneles|obtener/i.test(url) || res.request().method() === 'POST') {
+  if (/NFG_CmpResultados_POR_Grupos/i.test(url)) {
     try {
       const body = await res.text()
-      if (/juvenil/i.test(body)) {
-        log(`RESPUESTA con "Juvenil" - ${url}`, body.slice(0, 4000))
-      }
+      respuestasGrupos.push({ url, body })
     } catch {}
   }
 })
@@ -35,31 +28,33 @@ await page.goto('https://marcadores.rfef.es/pnfg/NPortada?CodPortada=1000181', {
   waitUntil: 'networkidle',
   timeout: 30000,
 })
-log('url tras cargar CONSULTAR POR COMPETICIONES', page.url())
 
-const enlaces = await page.$$eval('a', (els) =>
-  els.map((el) => ({ texto: el.textContent.trim(), href: el.href })).filter((e) => e.texto)
+const selects = await page.$$eval('select', (els) =>
+  els.map((el) => ({
+    id: el.id,
+    name: el.name,
+    onchange: el.getAttribute('onchange'),
+    options: [...el.options].map((o) => ({ value: o.value, text: o.textContent.trim() })),
+  }))
 )
-log('enlaces en la página', enlaces)
+log('selects en la página', selects)
 
-const textoVisible = await page.evaluate(() => document.body.innerText.slice(0, 3000))
-log('texto visible', textoVisible)
-
-// Buscamos cualquier elemento (no solo <a>) cuyo texto mencione "Juvenil"
-const elementosJuvenil = await page.$$eval('*', (els) =>
-  els
-    .filter((el) => el.children.length === 0 && /juvenil/i.test(el.textContent || ''))
-    .slice(0, 40)
-    .map((el) => ({
-      tag: el.tagName,
-      texto: el.textContent.trim().slice(0, 200),
-      onclick: el.getAttribute('onclick'),
-      href: el.getAttribute('href'),
-    }))
+const selectCompeticion = selects.find((s) =>
+  s.options.some((o) => o.text === 'Division de Honor Juvenil')
 )
-log('elementos que mencionan "Juvenil"', elementosJuvenil)
+log('select de competición identificado', selectCompeticion ? { id: selectCompeticion.id, onchange: selectCompeticion.onchange } : null)
 
-log('peticiones no-estáticas capturadas', peticiones)
+if (selectCompeticion) {
+  const opcionJuvenil = selectCompeticion.options.find((o) => o.text === 'Division de Honor Juvenil')
+  log('opción Division de Honor Juvenil', opcionJuvenil)
+
+  await page.selectOption(`#${selectCompeticion.id}`, opcionJuvenil.value).catch((e) =>
+    log('error al seleccionar en el <select> por id', e.message)
+  )
+  await page.waitForTimeout(3000)
+
+  log('respuestas de NFG_CmpResultados_POR_Grupos', respuestasGrupos)
+}
 
 await browser.close()
-console.log('\n=== FIN RECON 5 ===')
+console.log('\n=== FIN RECON 6 ===')
