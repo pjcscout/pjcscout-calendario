@@ -1,17 +1,10 @@
-// Tercera pasada: rfef.isquad.es/indexcompeticiones.php resultó ser una
-// pantalla de login ("Accede al sistema"), no el portal público de
-// resultados. FFCV tenía resultadosffcv.isquad.es como portal público
-// aparte del de gestión; probamos el mismo patrón de nombre para RFEF, y
-// alternativas razonables.
+// Cuarta pasada: marcadores.rfef.es/pnfg/?accion=1 es el portal público real
+// (redirige desde resultados.rfef.es). Es una página de menú ("CONSULTAR POR
+// COMPETICIONES"), sin desplegables todavía — hay que entrar en Fútbol >
+// Masculino y buscar División de Honor Juvenil Grupo 7 desde ahí,
+// capturando las peticiones AJAX por el camino (la URL usa "pnfg", el mismo
+// patrón que los escudos de FFCV, así que puede compartir plataforma).
 import { chromium } from 'playwright'
-
-const CANDIDATOS = [
-  'https://resultadosrfef.isquad.es/',
-  'https://rfef.isquad.es/',
-  'https://competiciones.rfef.es/',
-  'https://www.rfef.es/competiciones',
-  'https://resultados.rfef.es/',
-]
 
 function log(seccion, datos) {
   console.log(`\n=== ${seccion} ===`)
@@ -19,24 +12,47 @@ function log(seccion, datos) {
 }
 
 const browser = await chromium.launch()
+const page = await browser.newPage()
+const peticiones = []
+page.on('request', (req) => {
+  const url = req.url()
+  if (/\.(js|css|png|jpg|jpeg|svg|woff2?|ico|gif)(\?|$)/i.test(url)) return
+  peticiones.push(`${req.method()} ${url}`)
+})
 
-for (const url of CANDIDATOS) {
-  const page = await browser.newPage()
-  try {
-    const res = await page.goto(url, { waitUntil: 'networkidle', timeout: 20000 })
-    log(`${url}`, {
-      status: res?.status(),
-      urlFinal: page.url(),
-      title: await page.title(),
-    })
-    const selects = await page.$$eval('select', (els) => els.length)
-    const textoBody = await page.evaluate(() => document.body.innerText.slice(0, 400))
-    log(`${url} - detalle`, { numSelects: selects, textoBody })
-  } catch (e) {
-    log(`${url} - ERROR`, e.message)
-  }
-  await page.close()
+await page.goto('https://marcadores.rfef.es/pnfg/?accion=1', { waitUntil: 'networkidle', timeout: 30000 })
+
+const enlaces = await page.$$eval('a', (els) =>
+  els.map((el) => ({ texto: el.textContent.trim(), href: el.href })).filter((e) => e.texto)
+)
+log('enlaces en la página de menú', enlaces.slice(0, 80))
+
+// Buscamos un enlace que lleve a "Fútbol" masculino (no fútbol sala/playa)
+const enlaceFutbol = enlaces.find(
+  (e) => /f.tbol/i.test(e.texto) && !/sala|playa/i.test(e.texto) && /masculin/i.test(e.texto)
+)
+log('enlace fútbol masculino elegido', enlaceFutbol)
+
+if (enlaceFutbol) {
+  await page.goto(enlaceFutbol.href, { waitUntil: 'networkidle', timeout: 30000 }).catch((e) =>
+    log('error navegando a fútbol masculino', e.message)
+  )
+  log('tras entrar en fútbol masculino - url', page.url())
+
+  const selects2 = await page.$$eval('select', (els) =>
+    els.map((el) => ({
+      id: el.id,
+      name: el.name,
+      options: [...el.options].slice(0, 60).map((o) => ({ value: o.value, text: o.textContent.trim() })),
+    }))
+  )
+  log('selects tras entrar en fútbol masculino', selects2)
+
+  const textoVisible = await page.evaluate(() => document.body.innerText.slice(0, 1500))
+  log('texto visible', textoVisible)
 }
 
+log('peticiones no-estáticas capturadas', peticiones)
+
 await browser.close()
-console.log('\n=== FIN RECON 3 ===')
+console.log('\n=== FIN RECON 4 ===')
