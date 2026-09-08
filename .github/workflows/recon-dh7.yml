@@ -18,9 +18,8 @@ jobs:
 
       - run: node scripts/scraper/recon-dh7.mjs
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: recon-dh7
-          path: |
-            recon-dh7-texto.txt
-            recon-dh7-html.txt
+      - name: Volcar texto al log
+        run: |
+          echo "===INICIO-TEXTO==="
+          cat recon-dh7-texto.txt
+          echo "===FIN-TEXTO==="
