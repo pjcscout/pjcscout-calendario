@@ -1,18 +1,27 @@
-NAVEGACION a https://ffcv.es/competiciones/
-NAVEGACION a https://ffcv.es/competiciones/#partidos
-Navegando a: https://ffcv.es/competiciones/partidos/partido.php?cod_partido=26470658#cronologia
-NAVEGACION a https://ffcv.es/competiciones/partidos/partido.php?cod_partido=26470658#cronologia
-NAVEGACION a https://ffcv.es/
-NAVEGACION a https://ffcv.es/wp/
-REDIRECT 302 https://pixel.quantserve.com/cs?a=p-t1eCwQvZQhz69&gdpr=0&sf2=1 -> https://pixel.quantserve.com/cs?a=p-t1eCwQvZQhz69&gdpr=0&sf2=1&__qcmcs=1
-REDIRECT 307 https://idsync.rlcdn.com/380609.gif?gdpr=0&partner_uid=7sEOC-iWVwr1mV4J7sVCWeiSXVj1kVsL7ZKJliL6 -> https://idsync.rlcdn.com/1000.gif?memo=CMGdFxIzCi8IARCfOBooN3NFT0MtaVdWd3IxbVY0SjdzVkNXZWlTWFZqMWtWc0w3WktKbGlMNhAAGg0Igo2A1QYSBQjoBxAAQgBKAA
-REDIRECT 302 https://dsum-sec.casalemedia.com/rum?cm_dsp_id=81&gdpr=0&external_user_id=5A7kTOJZvU3_VrRO5AqoHuJdtx__XrFM513Xz_JO -> /rum?cm_dsp_id=81&gdpr=0&external_user_id=5A7kTOJZvU3_VrRO5AqoHuJdtx__XrFM513Xz_JO&C=1
-REDIRECT 307 https://idsync.rlcdn.com/1000.gif?memo=CMGdFxIzCi8IARCfOBooN3NFT0MtaVdWd3IxbVY0SjdzVkNXZWlTWFZqMWtWc0w3WktKbGlMNhAAGg0Igo2A1QYSBQjoBxAAQgBKAA -> https://pippio.com/api/sync?pid=5324&it=1&iv=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&_=2
-REDIRECT 307 https://pippio.com/api/sync?pid=5324&it=1&iv=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&_=2 -> https://px.ads.linkedin.com/db_sync?pid=10339&puuid=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&rand=06481745
-REDIRECT 302 https://px.ads.linkedin.com/db_sync?pid=10339&puuid=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&rand=06481745 -> /db_sync?pid=10339&puuid=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&rand=06481745&expected_cookie=ed532062-a599-4d46-8025-27bdd6c6b611
-URL final: https://ffcv.es/wp/
-Titulo: Inicio – FFCV
-REDIRECT 301 https://ffcv.es/wp/blog/2026/02/08/%f0%9f%8f%86-la-seleccio-sub14-hace-historia-en-zaragoza-som-campions-despanya%e2%80%bc%ef%b8%8f%f0%9f%92%aa%f0%9f%8f%bd-catalunya-%f0%9f%86%9a-seleccio-valenciana-sub14-0-2/ -> https://ffcv.es/wp/blog/2026/02/%f0%9f%8f%86-la-seleccio-sub14-hace-historia-en-zaragoza-som-campions-despanya%e2%80%bc%ef%b8%8f%f0%9f%92%aa%f0%9f%8f%bd-catalunya-%f0%9f%86%9a-seleccio-valenciana-sub14-0-2/
+Bloques candidatos con C.D. Acero : 1
+Total "Ver detalles" en la página: 9
+Match 0 contiene ambos equipos. Texto: TEMPORADA
+Temporada
+2026-2027
+2025-2026
+2024-2025
+2023-2024
+2022-2023
+2021-2022
+2020-2021
+2019-2020
+2018-2019
+2017-2018
+2016-2017
+2015-2016
+2014-2015
+2013-2014
+2012-2013
+MODALIDAD
+MASCULÍ F11
+MASCULÍ 
+URL tras clicar Ver detalles: https://ffcv.es/competiciones/partidos/partido.php?cod_partido=26470668#info
+Titulo: Ficha de partido
 --- Cronología ERROR: locator.click: Timeout 5000ms exceeded.
 Call log:
   - waiting for getByText('Cronología', { exact: true }).first()
@@ -21,17 +30,178 @@ Call log:
 Call log:
   - waiting for getByText('Alineaciones', { exact: true }).first()
  ---
-REDIRECT 301 https://ffcv.es/wp/blog/2025/12/02/la-marea-valenta-hace-historia-6-300-personas-inundan-el-estadio-riyadh-air-metropolitano-de-madrid-para-celebrar-la-uefa-womens-nations-league/ -> https://ffcv.es/wp/blog/2025/12/la-marea-valenta-hace-historia-6-300-personas-inundan-el-estadio-riyadh-air-metropolitano-de-madrid-para-celebrar-la-uefa-womens-nations-league/
---- Plantillas ERROR: locator.click: Timeout 5000ms exceeded.
-Call log:
-  - waiting for getByText('Plantillas', { exact: true }).first()
- ---
-REDIRECT 301 https://ffcv.es/wp/blog/2025/09/10/la-ffcv-inaugura-la-reconstruccion-del-camp-municipal-de-benetusser-uno-de-los-mas-devastados-por-la-dana/ -> https://ffcv.es/wp/blog/2025/09/la-ffcv-inaugura-la-reconstruccion-del-camp-municipal-de-benetusser-uno-de-los-mas-devastados-por-la-dana/
---- Información del partido ERROR: locator.click: Timeout 5000ms exceeded.
-Call log:
-  - waiting for getByText('Información del partido', { exact: true }).first()
- ---
-ERROR estructura cronologia: locator.click: Timeout 5000ms exceeded.
-Call log:
-  - waiting for getByText('Cronología', { exact: true }).first()
 
+=== Pestaña: Plantillas ===
+PARTIDOS
+CLASIFICACIONES
+SANCIONES
+RANKINGS
+NOTICIAS
+Tercera Federación - GRUP - VI
+12 sept •Jornada 2
+Estadio Mpal. La Celadilla F-11 Utiel
+⛅ 28°C
+Parcialmente nuboso · Viento 8 km/h
+C.D. Utiel
+17:30
+C.D. Acero
+Información del partido
+Clasificación
+Plantillas
+4 días | 04:28:34
+PUBLICIDAD
+Ver más
+Fútbol Sala
+Actualidad deportiva
+Fútbol
+fútbol sala
+Juegos deportivos
+Referencia general
+Deportivo
+Deportes
+← Volver
+home
+C.D. Utiel
+travel_explore
+C.D. Acero
+sports_soccer
+Guardametas
+:
+#13
+LOPEZ GARCIA, JAVIER JESUS
+Portero/a
+shield
+Defensas
+:
+#2
+DELORENZI GUTIERREZ, FRANCISCO MANUEL
+Central
+#3
+DA SILVA FELISBINO, KEVIN
+Lateral izquierdo
+#4
+MARTINEZ DOMINGO, DANIEL
+Central
+#5
+NUÑEZ GARIJO, JAVIER
+Central
+#12
+CAÑADA JIMENEZ, RICARDO
+Central
+#20
+PELETEIRO ALONSO, ABRAHAM
+Lateral derecho
+#21
+GUILLEN CAMPAYO, ALVARO
+Lateral izquierdo
+sync_alt
+Centrocampistas
+:
+#7
+BALLESTER TOLA, SERGIO
+Medio centro
+#8
+GRANADOS GONZALEZ, SERGIO
+Medio centro
+#10
+BONILLO AGUSTI, RAUL
+Medio derecho
+#11
+RIBES TORRES, AITOR
+Medio Izquierdo
+#14
+BALLESTER TOLA, RUBÉN
+Medio centro
+#15
+CASTAÑEDA MINGUET, IGNACIO
+Medio centro
+#18
+GIMÉNEZ NOTARIO, FRANCISCO
+Medio Izquierdo
+#22
+JAWO , ABDOULIE
+Medio derecho
+sports_score
+Atacantes
+:
+#16
+PÉREZ DE VIÑASPRE CASTELLAR, FERNANDO
+Delantero/a
+#19
+FERNANDEZ VALLS, ALEJANDRO
+Delantero/a
+#23
+GENOVES HERRERAS, MARIO
+Delantero/a
+help
+Sin posición
+:
+ANDREU ALEMANY, DANIEL
+COLLASOS GARCIA, ESTEBAN
+GIMENO LLOPIS, OSCAR
+JUNQUERO CHICANO, DIEGO
+groups Staff Técnico:
+FERNANDEZ ARROYO, JESUS
+LOPEZ GARCIA, ANTONIO J
+engineering Otros Técnicos:
+BALLESTEROS MASIP, ERIC
+Herrero Alba, RAFAEL VICENTE
+MARTINEZ GARCIA, AMPARO
+SAEZ AGUILAR, RODRIGO
+supervisor_account Delegados:
+MASCAROS VILLAESCUSA, MANUEL JOSE
+MASCAROS VILLAESCUSA, MIGUEL ANGEL
+
+Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
+
+Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
+
+=== Pestaña: Información del partido ===
+PARTIDOS
+CLASIFICACIONES
+SANCIONES
+RANKINGS
+NOTICIAS
+Tercera Federación - GRUP - VI
+12 sept •Jornada 2
+Estadio Mpal. La Celadilla F-11 Utiel
+⛅ 28°C
+Parcialmente nuboso · Viento 8 km/h
+C.D. Utiel
+17:30
+C.D. Acero
+Información del partido
+Clasificación
+Plantillas
+4 días | 04:28:33
+PUBLICIDAD
+Ver más
+Fútbol Sala
+Actualidad deportiva
+Fútbol
+fútbol sala
+Juegos deportivos
+Referencia general
+Deportivo
+Deportes
+← Volver
+location_on Estadio Mpal. La Celadilla F-11 Utiel
+Utiel
+calendar_month
+sábado, 12 de septiembre de 2026
+schedule
+17:30
+C.D. Utiel : Posición 9º · 1 pts
+C.D. Acero : Posición 16º · 0 pts
+sports
+Equipo arbitral
+Árbitro principal
+Adrián Goñi
+Árbitro asistente
+Cristina Mansanet
+Árbitro asistente
+Santiago Leon
+
+Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
+
+Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
