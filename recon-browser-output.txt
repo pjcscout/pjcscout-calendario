@@ -1,13 +1,123 @@
-=== FFCV: página humana de resultados (varias rutas candidatas) ===
---- https://ffcv.es/competiciones/resultados.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605&cod_jornada=1 -> status 404 url final: https://ffcv.es/competiciones/resultados.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605&cod_jornada=1 ---
-enlaces con "acta": []
-texto visible (800 chars): File not found.
---- https://ffcv.es/competiciones/partidos.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605&cod_jornada=1 -> status 404 url final: https://ffcv.es/competiciones/partidos.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605&cod_jornada=1 ---
-enlaces con "acta": []
-texto visible (800 chars): File not found.
---- https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605 -> status 200 url final: https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605#partidos ---
-enlaces con "acta": []
-texto visible (800 chars): PARTIDOS
+=== RFEF DH-G7: pestañas Goleadores y Porteros ===
+--- Goleadores: url=https://marcadores.rfef.es/pnfg/NPcd/NFG_CMP_Goleadores?cod_primaria=1000120&CodJornada=1&codcompeticion=33836116&codtemporada=22&codgrupo=33836123 ---
+      
+Competiciones
+Tabla de Goleadores
+    
+Agrupación
+--Todas--
+Selecciones
+Fútbol Masculino
+Fútbol Femenino
+Juveniles
+Fútbol Sala
+Fútbol Playa
+Competiciones Canarias
+Competiciones Vascas
+Territoriales Sala
+Competición
+-- Seleccione --
+Campeonato Nacional de Liga de Primera División
+Campeonato Nacional de Liga de Segunda División
+Campeonato Nacional de Liga de Primera Federación
+Campeonato Nacional de Liga de Segunda Federación
+Primera División de Fútbol Femenino
+Primera Federación de Fútbol Femenino
+Segunda Federación de Fútbol Femenino
+Liga Prime Futsal
+Segunda División B Fútbol Sala
+División de Honor Juvenil Fútbol Sala
+Primera División Fútbol Sala Femenino
+Segunda División Fútbol Sala Femenino
+Division de Honor Juvenil
+Campeonato de Primera División de Fútbol Playa Masculino
+Copa RFEF de Fútbol Playa Femenino
+Copa RFEF Fútbol Playa Masculino
+Campeonato de Primera División de Futbol Playa Femenino
+Campeonato de Segunda División de Futbol Playa Masculino
+Campeonato de Segunda División de Futbol Playa Femenino
+División Honor Cadete Playa
+Diversidad Funcional Intelectual
+Campeonato de Selecciones Autonómicas de Futbol Playa SUB-17 femenino
+Campeonato de Selecciones Autonómicas de Futbol Playa SUB-20 femenino
+Campeonato de Selecciones Autonómicas de Fútbol Playa Alevin Masculino
+Campeonato de Selecciones Autonómicas de Fútbol Playa Infantil Masculino
+Campeonato de Selecciones Autonómicas de Fútbol Playa Cadete Masculino
+Campeonato de España de Futbol Playa Infantil Femenino
+Campeonato de España de Futbol Playa Juvenil Femenino
+Campeonato de España de Futbol Playa Alevín
+Campeonato de España de Futbol Playa Infantil
+Campeonato de España de Futbol Playa Cadete
+Campeonato de España de futbol playa Juvenil
+Grupo
+-- Todos --
+Grupo 1
+Grupo 2
+Grupo 3
+Grupo 4
+Grupo 5
+Grupo 6
+Grupo 7
+
+
+Division de Honor Juvenil, Grupo 7
+
+Temporada 2026-2027
+Ver Calendario
+Ver Clasificación
+Ver Resultados
+Tabla Cruzada
+Tabla Porteros
+Todos los grupos
+Jugador	Equipo	Grupo	Partidos Jugados	Goles	Goles partido
+MANTILLA ROMERO, IKER IVAN	RCD Mallorca	Grupo 7	1	2	2,0000
+JARA MORENO, SERGIO	Elche CF	Grupo 7	1	2	2,0000
+BIBILONI ISERN, SEBASTIA	C.D. San Francisco	Grupo 7	1	1	1,0000
+MASCARÓ SERVERA, ANGEL	RCD Mallorca	Grupo 7	1	1	1,0000
+GUTIERREZ ESCALONA, BIEL	Levante U.D.	Grupo 7	1	1	1,0000
+SAJID HAMMOURI, MOHAMED	Real Murcia CF	Grupo 7	1	1	1,0000
+DEL RIO PIÑEIRO, SANTIAGO TOMAS	Valencia CF	Grupo 7	1	1	1,0000
+GARCIA PALOMAR, RAUL	Villarreal C.F.	Grupo 7	1	1
+(1 P)	1,0000
+RUIZ BARBERA, RAUL	CD Castellón	Grupo 7	1	1	1,0000
+FERNANDEZ MOYA, MARCOS	CD Castellón	Grupo 7	1	1	1,0000
+BAILE PASTOR, ANDRES	Elche CF	Grupo 7	1	1	1,0000
+VALLS NAVARRO, JOSE VICENTE	Patacona C.F.	Grupo 7	1	1
+(1 P)	1,0000
+PAVON SAN JUAN, DANIEL	C.D. Roda	Grupo 7	1	1	1,0000
+KISAK, YURII	Villarreal C.F.	Grupo 7	1	1	1,0000
+
+
+       © 2023 Real Federación Española de Fútbol
+  
+Contacto
+  
+Política de cookies
+  
+Protección de datos
+  
+Aviso legal
+     
+...(fin, longitud total 2934)
+--- Porteros ERROR: locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for getByText('Porteros', { exact: true }).first()
+ ---
+ERROR tabla goleadores: locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for getByText('Goleadores', { exact: true }).first()
+
+
+=== FFCV: pestaña RANKINGS ===
+ERROR RANKINGS: locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for getByText('RANKINGS', { exact: true }).first()
+
+
+--- FFCV: pestaña PARTIDOS, buscar enlaces reales de partido/acta ---
+Todos los hrefs (no anclas): ["https://ffcv.es","clasificaciones/clasificaciones.php","estadisticas/estadisticas.php","https://ffcv.es/wp/noticias/","https://ffcv.es/wp/aviso-legal/","https://ffcv.es/wp/politica-de-privacidad/","https://ffcv.es/wp/politica-cookies/","https://ffcv.es/wp/politica-privacidad-redes-sociales/"]
+
+Texto pestaña PARTIDOS (2500 chars): PARTIDOS
 CLASIFICACIONES
 SANCIONES
 RANKINGS
@@ -15,14 +125,14 @@ NOTICIAS
 TERCERA FEDERACIÓN - GRUP - VI
 PUBLICIDAD
 Ver más
-Internet y telecomunicaciones
-Deportivo
-Deportes
-Privacidad
-Legislación empresarial
+Consulta Asesoría Corporativa
 privacidad
-Fútbol
-Juegos deportivos
+Descargar Navegadores Web
+Elige Juegos Deportivos
+Privacidad
+Protege Tus Datos
+Contrata Internet Rápido
+Deportivo
 TEMPORADA
 Temporada
 2026-2027
@@ -62,251 +172,136 @@ Segona FFCV Juvenil
 Tercera FFCV Juvenil
 Lliga Autonòmica Cadet
 Lliga Preferent Cadet
-Lliga
---- https://ffcv.es/competiciones/ -> status 200 url final: https://ffcv.es/competiciones/#partidos ---
-enlaces con "acta": []
-texto visible (800 chars): PARTIDOS
-CLASIFICACIONES
-SANCIONES
-RANKINGS
-NOTICIAS
+Lliga Autonòmica Infantil
+Lliga Preferent Infantil
+GRUPO
+GRUP - VI
+‹
+J.1
+06 sept
+J.2
+13 sept
+J.3
+20 sept
+J.4
+27 sept
+J.5
+04 oct
+J.6
+11 oct
+J.7
+18 oct
+J.8
+25 oct
+J.9
+01 nov
+J.10
+08 nov
+J.11
+15 nov
+J.12
+22 nov
+J.13
+29 nov
+J.14
+06 dic
+J.15
+13 dic
+J.16
+20 dic
+J.17
+10 ene
+J.18
+17 ene
+J.19
+24 ene
+J.20
+31 ene
+J.21
+06 feb
+J.22
+14 feb
+J.23
+21 feb
+J.24
+28 feb
+J.25
+07 mar
+J.26
+14 mar
+J.27
+21 mar
+J.28
+28 mar
+J.29
+04 abr
+J.30
+11 abr
+J.31
+18 abr
+J.32
+25 abr
+J.33
+02 may
+J.34
+09 may
+›
 TERCERA FEDERACIÓN - GRUP - VI
-PUBLICIDAD
-Ver más
-Licencias federativas
-Resultados en vivo
-Reserva Canchas Deportivas
-Calendario de partidos
-Compra Botas Fútbol
-Clasificaciones de liga
-Sanciones deportivas
-Entradas para partidos
-TEMPORADA
-Temporada
-2026-2027
-2025-2026
-2024-2025
-2023-2024
-2022-2023
-2021-2022
-2020-2021
-2019-2020
-2018-2019
-2017-2018
-2016-2017
-2015-2016
-2014-2015
-2013-2014
-2012-2013
-MODALIDAD
-MASCULÍ F11
-MASCULÍ FUTSAL
-VALENTA FUTBOL
-FUTBOL PLATJA VALENTA
-FUTBOL PLATJA MASCULÍ
-COMPETICIÓN
-Tercera Federación
-Fase Autonómica Copa Federación
-Lliga Comunitat
-Primera FFCV
-Segona FFCV
-Tercera FFCV
-VI La Nostra Copa
-Lliga de Veterans
-Liga Nacional Juvenil
-Lliga Comunitat Juvenil
-Primera FFCV Juvenil
-Segona FFCV Juvenil
-Tercera FFCV
+print
+visibility
+Vista
+Tarjetas
+Lista
+Sábado 12 de Septiembre de 2026
+Jornada 2
+C.D. Utiel
+C.D. Acero
+17:30
+Ver detalles
+Levante U.D. 'B'
+C.D. Buñol 'A'
+18:30
+Ver detalles
+Domingo 13 de Septiembre de 2026
+Jornada 2
+S.C. Torrevieja C.F. 'A'
+U.D. Vall de Uxó 'A'
+11:30
+Ver detalles
+Athletic Club Torrellano
+Torrent C.F. 'A'
+11:30
+Ver detalles
+C.D. Español de San Vicente
+Hércules C.F. 'B'
+12:00
+Ver detalles
+Atzeneta U.E. 'A'
+C.D. Eldense 'B'
+17:30
+Ver detalles
+Ontinyent 1931 C.F.
+At. Saguntino
+18:00
+Ver detalles
+Villarreal C.F. 'C'
+C.D. Roda 'A'
+18:00
+Ver detalles
+Crevillente Deportivo
+C.D. Soneja
+18:30
+Ver detalles
 
-=== RFEF DH-G7: jornada 1 con navegador real ===
-status 200, url final: https://marcadores.rfef.es/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120&CodCompeticion=33836116&CodGrupo=33836123&CodTemporada=22&CodJornada=1
-texto visible tras intentar aceptar cookies:       
-Competiciones
-Acciones 
-Calendario, Clasificaciones y Resultados
-    
-  Búsqueda por competición
-Temporada 2026-2027
-Division de Honor Juvenil Grupo 7
-Jornada 1
-Siguiente  
- Definitivo  Provisional ( Datos provisionales hasta cierre del acta oficial )
-Calendario
-Clasificación
-Tabla Cruzada
-Goleadores
-Porteros
-Resultados
-  Elche CF
-	
- - 1
+Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
 
-  
- 
-05-09-2026
-11:00	
-Valencia CF
+Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
 
+Usamos cookies de analítica para mejorar la experiencia. Puedes aceptar o rechazar su uso. 
+Aviso Legal
+Política de Privacidad
+Política de Cookies
+Política de privacidad redes sociales
 
-Polideportivo Mpal. Altabix - Diego Quiles
-Hierba Natural
-
-
-  
-Árbitro:
- Selva Vicente, Cristian
-
-
-  RCD Mallorca
-	
- - 0
-
-  
- 
-05-09-2026
-12:30	
-FC Cartagena
-
-
-Ciudad Deportiva Antonio Asensio
-Hierba Natural
-
-
-  
-Árbitro:
- López del Amo Franco, Angel
-
-
-  Villarreal C.F.
-	
-2 - 
-
-  
- 
-05-09-2026
-18:00	
-Real Murcia CF
-
-
-Cdad. Dva. José Manuel Llaneza - Mini Estadi
-
-
-  
-Árbitro:
- López Rodríguez, José Manuel
-
-
-
-
-  Patacona C.F.
-	
-1 - 
-
-  
- 
-05-09-2026
-19:00	
-Levante U.D.
-
-
-Campo Mpal. de la Patacona F-11
-Hierba Artificial
-
-
-  
-Árbitro:
- Castillo Lopez, Adrian
-
-
-  Murcia Promises Club de Fútbol
-	
-0 - 0
-
-  
- 
-06-09-2026
-10:00	
-Kelme C.F.
-
-
-Universidad de Murcia
-Hierba Artificial
-
-
-  
-Árbitro:
- Moreno Muñoz, Kevin Javier
-
-
-  CD Castellón
-	
-2 - 
-
-  
- 
-06-09-2026
-12:00	
-Torrent C.F.
-
-
-Instalaciones Deportivas Gaetà Huguet - Campo B
-Hierba Artificial
-
-
-  
-Árbitro:
- Valero Lucia, Javier
-
-
-
-
-  C.D. Roda
-	
- - 
-
-  
- 
-06-09-2026
-16:00	
-PENYA ARRABAL
-
-
-Ciutat Esptva. Pamesa Ceramica Campo 3 F-11
-Hierba Artificial
-
-
-  
-Árbitro:
- Ortega Herrera, Francisco José
-
-
-  UCAM Universidad Catolica de Murcia CF
-	
- - 1
-
-  
- 
-06-09-2026
-16:30	
-C.D. San Francisco
-
-
-Municipal de Santiago el Mayor
-Hierba Artificial
-
-
-  
-Árbitro:
- Béjar Caballero, Joaquín
-Siguiente   
-       © 2023 Real Federación Española de Fútbol
-  
-Contacto
-  
-Política de cookies
-  
-Protección de datos
-  
-Aviso legal
-     
+Aceptar
+Rechazar
