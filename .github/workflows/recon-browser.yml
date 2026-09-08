@@ -17,7 +17,7 @@ jobs:
           node-version: 20
       - run: npm install playwright@1.48.0
       - run: npx playwright install --with-deps chromium
-      - run: node scripts/scraper/scrape-jornada1-retry.mjs > recon-browser-output.txt 2>&1 || true
+      - run: node scripts/scraper/scrape-jornada1-final.mjs > recon-browser-output.txt 2>&1 || true
       - name: Subir resultados
         run: |
           git config user.name "recon-bot"
