@@ -14,17 +14,49 @@ OK: llc-nord - Manises C.F. 'A' vs Paiporta C.F.
 OK: llc-nord - C.D. L'Alcora vs C.D. Onda 'A'
 OK: llc-nord - C.F. Nou Jove Castelló 'A' vs C.D. Almazora 'A'
 OK: llc-nord - C.D. Burriana 'A' vs F.C. Odisea 'A'
-OK: llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A'
+Fallo intento 1: llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A': locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for getByText(/^IDA C\.F\. At\. Quart 'A'\s*\(/).first()
+
+Fallo intento 2: llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A': locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for getByText(/^IDA C\.F\. At\. Quart 'A'\s*\(/).first()
+
 OK: llc-sud - C.D. Thader vs C.F.U.D. Calpe
 OK: llc-sud - Santa Pola C.F. vs C.F.U.E. Tavernes de la Valldigna
 OK: llc-sud - C.F. Benidorm 'A' vs C.D.F. Jávea
 OK: llc-sud - C.E. Alberic Sucemart vs C.F. Independiente Alicante 'A'
 OK: llc-sud - C.D. Olímpic vs C.F. Gandia 'A'
 OK: llc-sud - Novelda Unión C.F. Cableworld 'A' vs U.D. Rayo Ibense 'A'
-OK: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A'
+Fallo intento 1: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A': locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for getByText(/^C\.D\. Almoradí 'A'\s*\(/).first()
+
+Fallo intento 2: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A': locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for getByText(/^C\.D\. Almoradí 'A'\s*\(/).first()
+
 OK: llc-sud - U.D. Alzira vs F.B. Redován C.F. 'A'
-OK: llc-juv-nord - C.F. Cracks 'A' vs C.D.F. Canet 'A'
-OK: llc-juv-nord - C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B'
+Fallo intento 1: llc-juv-nord - C.F. Cracks 'A' vs C.D.F. Canet 'A': locator.click: Timeout 8000ms exceeded.
+Call log:
+  - waiting for getByText('J.1', { exact: true }).first()
+
+Fallo intento 2: llc-juv-nord - C.F. Cracks 'A' vs C.D.F. Canet 'A': locator.click: Timeout 8000ms exceeded.
+Call log:
+  - waiting for getByText('J.1', { exact: true }).first()
+
+Fallo intento 1: llc-juv-nord - C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B': locator.click: Timeout 8000ms exceeded.
+Call log:
+  - waiting for getByText('J.1', { exact: true }).first()
+
+Fallo intento 2: llc-juv-nord - C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B': locator.click: Timeout 8000ms exceeded.
+Call log:
+  - waiting for getByText('J.1', { exact: true }).first()
+
+Fallo intento 1: llc-juv-nord - Patacona C.F. 'B' vs C.D. Acero 'A': locator.click: Timeout 8000ms exceeded.
+Call log:
+  - waiting for getByText('J.1', { exact: true }).first()
+
 OK: llc-juv-nord - Patacona C.F. 'B' vs C.D. Acero 'A'
 OK: llc-juv-nord - Paterna C.F. 'A' vs C.F. At. Burriana - Salesianos 'A'
 OK: llc-juv-nord - Villarreal C.F. 'C' vs C.F. Històrics de València 'A'
@@ -57,5 +89,22 @@ OK: liga-nacional - Torrent C.F. 'B' vs C.D. Español de San Vicente 'A'
 OK: liga-nacional - C.F. San Pedro 'A' vs Levante U.D. 'B'
 OK: liga-nacional - Alboraya U.D. 'A' vs C.F. La Nucía 'A'
 
-Errores: 0
-[]
+Errores: 4
+[
+  {
+    "grupo": "llc-nord",
+    "partido": "Massanassa C.F. vs IDA C.F. At. Quart 'A'"
+  },
+  {
+    "grupo": "llc-sud",
+    "partido": "Benigànim C.F. vs C.D. Almoradí 'A'"
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "partido": "C.F. Cracks 'A' vs C.D.F. Canet 'A'"
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "partido": "C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B'"
+  }
+]
