@@ -14,55 +14,31 @@ await page.goto(url, { waitUntil: 'networkidle', timeout: 20000 })
 await page.waitForTimeout(1500)
 try {
   await page.getByText('Rechazar', { exact: true }).first().click({ timeout: 3000 })
-  await page.waitForTimeout(500)
 } catch {}
+await page.getByText('J.1', { exact: true }).first().click({ timeout: 5000 })
+await page.waitForTimeout(2000)
+await page.getByText('C.D. Acero', { exact: true }).first().click({ timeout: 5000 })
+await page.waitForTimeout(2000)
 
-console.log('=== Texto completo tras cargar (jornada por defecto) ===')
-console.log(await page.evaluate(() => document.body.innerText))
+const tab = page.getByText('Cronología', { exact: true }).first()
+await tab.click({ timeout: 5000 })
+await page.waitForTimeout(1500)
 
-console.log('\n=== Buscando elemento clicable "J.1" ===')
-const candidatosJ1 = await page.locator('text=/^J\\.1$/').all()
-console.log('Coincidencias exactas /^J.1$/:', candidatosJ1.length)
-const candidatosJ1b = await page.getByText('J.1').all()
-console.log('Coincidencias getByText("J.1") (parcial):', candidatosJ1b.length)
-for (let i = 0; i < candidatosJ1b.length; i++) {
-  const txt = await candidatosJ1b[i].innerText().catch(() => '(err)')
-  console.log(`  [${i}] "${txt}"`)
-}
-
-if (candidatosJ1b.length > 0) {
-  await candidatosJ1b[0].click({ timeout: 5000 }).catch((e) => console.log('click error:', e.message))
-  await page.waitForTimeout(2000)
-}
-
-console.log('\n=== Texto completo tras intentar clicar J.1 ===')
-console.log(await page.evaluate(() => document.body.innerText))
-
-console.log('\n=== Intentando clicar el marcador del partido ya jugado (C.D. Acero) ===')
-try {
-  const fila = page.getByText('C.D. Acero', { exact: true }).first()
-  await fila.click({ timeout: 5000 })
-  await page.waitForTimeout(2500)
-  console.log('URL tras clic en C.D. Acero:', page.url())
-  console.log('Titulo:', await page.title())
-  if (page.url().includes('partido.php')) {
-    for (const pestana of ['Cronología', 'Alineaciones', 'Plantillas']) {
-      try {
-        const tab = page.getByText(pestana, { exact: true }).first()
-        await tab.click({ timeout: 5000 })
-        await page.waitForTimeout(1500)
-        console.log(`\n=== Pestaña: ${pestana} ===`)
-        console.log((await page.evaluate(() => document.body.innerText)).slice(0, 4500))
-      } catch (e) {
-        console.log(`--- ${pestana} ERROR: ${e.message} ---`)
-      }
-    }
-  } else {
-    console.log('No llegamos a la ficha de partido. Texto visible:')
-    console.log((await page.evaluate(() => document.body.innerText)).slice(0, 1500))
-  }
-} catch (e) {
-  console.log('ERROR clic en C.D. Acero:', e.message)
+console.log('=== HTML del contenedor de Cronología ===')
+const html = await page.evaluate(() => {
+  // Buscar el contenedor que tenga varios hijos con minutos "N'"
+  const candidatos = Array.from(document.querySelectorAll('body *')).filter((el) => {
+    const t = el.textContent || ''
+    return /\d+'/.test(t) && el.children.length > 3 && el.children.length < 60
+  })
+  // Quedarnos con el más pequeño que aún contenga varios eventos (más específico).
+  candidatos.sort((a, b) => a.innerHTML.length - b.innerHTML.length)
+  return candidatos.slice(0, 3).map((el) => el.outerHTML)
+})
+for (const h of html) {
+  console.log('--- candidato ---')
+  console.log(h.slice(0, 6000))
+  console.log('--- fin candidato (longitud total ' + h.length + ') ---\n')
 }
 
 await browser.close()
