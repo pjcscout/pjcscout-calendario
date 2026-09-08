@@ -14,15 +14,25 @@ const page = await browser.newPage({
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
 })
 
+page.on('response', (res) => {
+  if (res.status() >= 300 && res.status() < 400) {
+    console.log('REDIRECT', res.status(), res.url(), '->', res.headers()['location'])
+  }
+})
+page.on('framenavigated', (frame) => {
+  if (frame === page.mainFrame()) console.log('NAVEGACION a', frame.url())
+})
+
 // Primero visitamos la app (no un .php suelto) para que cargue el shell/JS y
 // tengamos cookies de sesión, igual que haría un navegador real siguiendo
 // enlaces internos en vez de pegar la URL directamente.
 await page.goto('https://ffcv.es/competiciones/', { waitUntil: 'networkidle', timeout: 20000 })
 await page.waitForTimeout(1000)
 
-const url = `https://ffcv.es/competiciones/partidos/partido.php?cod_partido=${CODACTA_EJEMPLO}`
-await page.goto(url, { waitUntil: 'networkidle', timeout: 20000 })
-await page.waitForTimeout(1500)
+const url = `https://ffcv.es/competiciones/partidos/partido.php?cod_partido=${CODACTA_EJEMPLO}#cronologia`
+console.log('Navegando a:', url)
+await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 })
+await page.waitForTimeout(3000)
 console.log('URL final:', page.url())
 console.log('Titulo:', await page.title())
 
