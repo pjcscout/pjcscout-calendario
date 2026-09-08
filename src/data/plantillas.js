@@ -989,6 +989,43 @@ export const PLANTILLAS = {
     "Nacho Garcia Diaz", "Omar Loum Amrouche", "Radoslav Dimitrov Palazov", "Raul Santa Lopez",
     "Rodrigo Cortejosa Lopez", "Romeo Carrilero Martinez",
   ],
+  // Convocatoria de jornada 1 pasada a mano (el scrape automático de estos
+  // partidos no capturó la alineación visitante).
+  "llcsud-tavernes-valldigna": [
+    "Aarón", "Arnau", "Artur", "Brines",
+    "Carles", "Edu", "Erik", "J. Llario",
+    "Javier", "Jorge", "Josep", "Marc",
+    "Marc Gomez Sabate", "Melo", "Morenet", "Moreno",
+    "Pepe Peris", "Toni",
+  ],
+  "llcsud-almoradi-a": [
+    "Diego Ros Ballester", "Carlos Poveda Serna", "David Escudero Lopez", "Ramiro Nicolas Cupayolo Prieto",
+    "Guillermo Martinez Escolano", "Pedro Martinez Lopez", "Manuel Rodriguez Villena", "Aaron Garcia Marco",
+    "Yeray Miguel Gonzalez Diaz Flores", "Nery Emanuel Rodas", "Yeray Solivella Terres", "Jesus Quinto Trives",
+    "Carlos Adsuar Jimenez", "Breno Faustino Porto", "Samuel Lucas Trigueros", "Aoi Tezuka",
+    "Lizardo Javier Hernández Echevarria", "Bine Kone Coulibaly",
+  ],
+  "llcnord-onda-a": [
+    "Gonzalez", "Isierte", "Chema", "Cortes",
+    "Uribe", "Pablo Sedeño", "Ivan Llorens", "Alfredo",
+    "Robert", "Joan", "Xavier Catalan Collado", "Alejandro",
+    "Oscar", "Sergio Cuesta", "Andreu", "Oriol",
+    "Nacho", "Bruno",
+  ],
+  "llcnord-nou-jove-castello-a": [
+    "Nestor", "Juanse", "Broch", "Calero",
+    "Juanes", "Valentin", "Marcos Adell Tomas", "Mose",
+    "Joan Escribano Tomás", "Udealor", "Diop", "Iker Gonzalez Collazos",
+    "Peña", "Kike", "Friday", "Benjamin",
+    "Fortu", "Oyewo Jr",
+  ],
+  "llcnord-almazora-a": [
+    "David Navarro", "Andrei Pentelescu", "Carlos Adsuara Garcia", "Landete",
+    "Marti Prera Escobedo", "Romero", "Hugo Prats Deusdad", "Luis Marcelino Mari",
+    "Albert Albiol Turch", "Sergio Font Cubedo", "Tena", "Mingol",
+    "Nico Tudor", "Llatzer", "Diego", "Moliner",
+    "Hector", "Aquiles David Ocanto Queralés",
+  ],
 }
 
 export function plantillaEquipo(id) {

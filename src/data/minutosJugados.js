@@ -217,15 +217,32 @@ export const MINUTOS_JUGADOS = {
     "Jorge Ferris Palanques": 4,
   },
   "llcnord-onda-a": {
-    "Xavier Catalan Collado": 32,
+    "Isierte": 90, "Uribe": 90, "Alfredo": 90, "Joan": 90, "Xavier Catalan Collado": 90,
+    "Robert": 69, "Chema": 84, "Pablo Sedeño": 84, "Gonzalez": 58, "Cortes": 58, "Ivan Llorens": 58,
+    "Andreu": 32, "Oriol": 32, "Bruno": 32, "Nacho": 21, "Oscar": 6, "Sergio Cuesta": 6,
   },
   "llcnord-nou-jove-castello-a": {
-    "Joan Escribano Tomás": 90, "Marcos Adell Tomas": 46, "Iker Gonzalez Collazos": 44,
+    "Nestor": 90, "Juanse": 90, "Juanes": 90, "Udealor": 90, "Diop": 90,
+    "Marcos Adell Tomas": 82, "Joan Escribano Tomás": 69, "Valentin": 69, "Calero": 58, "Broch": 58,
+    "Oyewo Jr": 44, "Mose": 46, "Friday": 32, "Benjamin": 32, "Fortu": 21, "Kike": 21, "Peña": 8,
   },
   "llcnord-almazora-a": {
-    "Albert Albiol Turch": 90, "Andrei Pentelescu": 73, "Carlos Adsuara Garcia": 73,
-    "Hugo Prats Deusdad": 73, "Luis Marcelino Mari": 73, "Marti Prera Escobedo": 60,
-    "Sergio Font Cubedo": 17, "Aquiles David Ocanto Querales": 6,
+    "David Navarro": 90, "Carlos Adsuara Garcia": 90, "Albert Albiol Turch": 90, "Sergio Font Cubedo": 90, "Tena": 90,
+    "Marti Prera Escobedo": 84, "Luis Marcelino Mari": 73, "Hugo Prats Deusdad": 73, "Andrei Pentelescu": 73, "Landete": 73,
+    "Romero": 60, "Moliner": 30, "Diego": 17, "Llatzer": 17, "Nico Tudor": 17, "Hector": 17, "Aquiles David Ocanto Queralés": 6,
+  },
+  "llcsud-tavernes-valldigna": {
+    "Arnau": 90, "Josep": 90, "Brines": 90, "Erik": 90, "Carles": 90, "Toni": 90,
+    "Edu": 81, "J. Llario": 81, "Artur": 61, "Aarón": 61, "Melo": 50, "Jorge": 29, "Marc": 29,
+    "Pepe Peris": 40, "Moreno": 9, "Marc Gomez Sabate": 9,
+  },
+  "llcsud-almoradi-a": {
+    "Diego Ros Ballester": 90, "David Escudero Lopez": 90, "Ramiro Nicolas Cupayolo Prieto": 90,
+    "Manuel Rodriguez Villena": 90, "Nery Emanuel Rodas": 90, "Carlos Poveda Serna": 79,
+    "Pedro Martinez Lopez": 75, "Yeray Miguel Gonzalez Diaz Flores": 75, "Guillermo Martinez Escolano": 62,
+    "Yeray Solivella Terres": 62, "Aaron Garcia Marco": 62, "Lizardo Javier Hernández Echevarria": 28,
+    "Samuel Lucas Trigueros": 28, "Breno Faustino Porto": 28, "Aoi Tezuka": 15, "Bine Kone Coulibaly": 15,
+    "Carlos Adsuar Jimenez": 11,
   },
   "llcnord-burriana-a": {
     "Naím Beltrán Gálvez": 90, "Oscar Prats Catala": 90, "Bruno Rodríguez Herrera": 90,
