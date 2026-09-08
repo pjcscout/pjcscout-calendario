@@ -1,151 +1,31 @@
-Grupo tercera-vi: 5 partidos procesados de 9 jugados.
-Grupo llc-nord: 4 partidos procesados de 8 jugados.
-Grupo llc-sud: 4 partidos procesados de 8 jugados.
-Grupo llc-juv-nord: 4 partidos procesados de 8 jugados.
-Grupo llc-juv-sud: 4 partidos procesados de 8 jugados.
-Grupo cadete-autonomico: 4 partidos procesados de 8 jugados.
-Grupo liga-nacional: 5 partidos procesados de 9 jugados.
+OK (reintento): tercera-vi - C.D. Roda 'A' vs Ontinyent 1931 C.F.
+OK (reintento): tercera-vi - C.D. Acero vs Crevillente Deportivo
+OK (reintento): tercera-vi - Hércules C.F. 'B' vs S.C. Torrevieja C.F. 'A'
+OK (reintento): tercera-vi - C.D. Eldense 'B' vs Athletic Club Torrellano
+OK (reintento): llc-nord - C.D. Burriana 'A' vs F.C. Odisea 'A'
+OK (reintento): llc-nord - Alqueries C.F. 'A' vs U.D. Aldaia C.F. 'A'
+OK (reintento): llc-nord - C.D. L'Alcora vs C.D. Onda 'A'
+OK (reintento): llc-nord - C.F. Nou Jove Castelló 'A' vs C.D. Almazora 'A'
+OK (reintento): llc-sud - U.D. Alzira vs F.B. Redován C.F. 'A'
+OK (reintento): llc-sud - C.F. Benidorm 'A' vs C.D.F. Jávea
+OK (reintento): llc-sud - C.D. Olímpic vs C.F. Gandia 'A'
+OK (reintento): llc-sud - Benigànim C.F. vs C.D. Almoradí 'A'
+OK (reintento): llc-juv-nord - C.F. Torre Levante 'A' vs Manises C.F. 'A'
+OK (reintento): llc-juv-nord - C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B'
+OK (reintento): llc-juv-nord - Paterna C.F. 'A' vs C.F. At. Burriana - Salesianos 'A'
+OK (reintento): llc-juv-nord - Bétera C.F. 'A' vs Col. Salgui E.D.E. 'A'
+OK (reintento): llc-juv-sud - C.D. Pablo Iglesias 'A' vs Catral-Castrum C.F. 'A'
+OK (reintento): llc-juv-sud - C.D. Eldense 'A' vs Hércules C.F. 'B'
+OK (reintento): llc-juv-sud - C.F. Benidorm 'A' vs S.C.D. Intangco 'A'
+OK (reintento): llc-juv-sud - C.D. Alcoyano 'A' vs C.D. Olímpic 'A'
+OK (reintento): cadete-autonomico - Kelme C.F. 'A' vs Patacona C.F. 'A'
+OK (reintento): cadete-autonomico - Elda Unión Cableworld C.F 'A' vs C.F. Fundació VCF 'A'
+OK (reintento): cadete-autonomico - C.F. Benidorm 'A' vs Elche C.F. 'A'
+OK (reintento): cadete-autonomico - Villarreal C.F. 'A' vs C.D. Roda 'A'
+OK (reintento): liga-nacional - C.F. At. Moncadense 'A' vs U.D. Alzira 'A'
+OK (reintento): liga-nacional - Tavernes Blanques C.F. 'A' vs C.F. Inter San José Valencia 'A'
+OK (reintento): liga-nacional - C.D. Castellón 'B' vs Elda Unión Cableworld C.F 'A'
+OK (reintento): liga-nacional - Hércules C.F. 'A' vs C.D. El Rumbo 'A'
 
-Errores: 28
-[
-  {
-    "grupo": "tercera-vi",
-    "partido": "C.D. Roda 'A' vs Ontinyent 1931 C.F.",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Roda \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "tercera-vi",
-    "partido": "C.D. Acero vs Crevillente Deportivo",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Acero', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "tercera-vi",
-    "partido": "Hércules C.F. 'B' vs S.C. Torrevieja C.F. 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Hércules C.F. \\'B\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "tercera-vi",
-    "partido": "C.D. Eldense 'B' vs Athletic Club Torrellano",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Eldense \\'B\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-nord",
-    "partido": "C.D. Burriana 'A' vs F.C. Odisea 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Burriana \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-nord",
-    "partido": "Alqueries C.F. 'A' vs U.D. Aldaia C.F. 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Alqueries C.F. \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-nord",
-    "partido": "C.D. L'Alcora vs C.D. Onda 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. L\\'Alcora', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-nord",
-    "partido": "C.F. Nou Jove Castelló 'A' vs C.D. Almazora 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Nou Jove Castelló \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-sud",
-    "partido": "U.D. Alzira vs F.B. Redován C.F. 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('U.D. Alzira', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-sud",
-    "partido": "C.F. Benidorm 'A' vs C.D.F. Jávea",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Benidorm \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-sud",
-    "partido": "C.D. Olímpic vs C.F. Gandia 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Olímpic', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-sud",
-    "partido": "Benigànim C.F. vs C.D. Almoradí 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Benigànim C.F.', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-juv-nord",
-    "partido": "C.F. Torre Levante 'A' vs Manises C.F. 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Torre Levante \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-juv-nord",
-    "partido": "C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Inter San José Valencia \\'B\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-juv-nord",
-    "partido": "Paterna C.F. 'A' vs C.F. At. Burriana - Salesianos 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Paterna C.F. \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-juv-nord",
-    "partido": "Bétera C.F. 'A' vs Col. Salgui E.D.E. 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Bétera C.F. \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-juv-sud",
-    "partido": "C.D. Pablo Iglesias 'A' vs Catral-Castrum C.F. 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Pablo Iglesias \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-juv-sud",
-    "partido": "C.D. Eldense 'A' vs Hércules C.F. 'B'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Eldense \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-juv-sud",
-    "partido": "C.F. Benidorm 'A' vs S.C.D. Intangco 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Benidorm \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "llc-juv-sud",
-    "partido": "C.D. Alcoyano 'A' vs C.D. Olímpic 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Alcoyano \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "cadete-autonomico",
-    "partido": "Kelme C.F. 'A' vs Patacona C.F. 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Kelme C.F. \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "cadete-autonomico",
-    "partido": "Elda Unión Cableworld C.F 'A' vs C.F. Fundació VCF 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Elda Unión Cableworld C.F \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "cadete-autonomico",
-    "partido": "C.F. Benidorm 'A' vs Elche C.F. 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Benidorm \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "cadete-autonomico",
-    "partido": "Villarreal C.F. 'A' vs C.D. Roda 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Villarreal C.F. \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "liga-nacional",
-    "partido": "C.F. At. Moncadense 'A' vs U.D. Alzira 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. At. Moncadense \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "liga-nacional",
-    "partido": "Tavernes Blanques C.F. 'A' vs C.F. Inter San José Valencia 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Tavernes Blanques C.F. \\'A\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "liga-nacional",
-    "partido": "C.D. Castellón 'B' vs Elda Unión Cableworld C.F 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Castellón \\'B\\'', { exact: true }).first()\n"
-  },
-  {
-    "grupo": "liga-nacional",
-    "partido": "Hércules C.F. 'A' vs C.D. El Rumbo 'A'",
-    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Hércules C.F. \\'A\\'', { exact: true }).first()\n"
-  }
-]
+Total errores tras reintento: 0
+[]
