@@ -24,6 +24,15 @@ const JORNADAS_POR_GRUPO = {
   'liga-nacional': J_LIGA_NACIONAL,
 }
 
+// Alias manuales solo para el cruce de nombres (no se guardan en ningún
+// fichero de datos): casos donde el nombre corto interno no es un simple
+// acortamiento del nombre oficial FFCV, sino otra forma reconocida del mismo
+// club (confirmado al construir fichas.js/equipos.js para estas categorías).
+const ALIAS = {
+  'Fundación Valencia': ['fundacio vcf', 'fundacion vcf'],
+  'Jove Español': ['español de san vicente', 'espanol de san vicente'],
+}
+
 function slug(texto) {
   return texto
     .toLowerCase()
@@ -32,6 +41,8 @@ function slug(texto) {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '')
 }
+// Forma "compacta" (sin guiones) para que "C.F." y "CF" se comparen igual.
+const compacto = (texto) => slug(texto).replace(/-/g, '')
 
 async function get(url) {
   const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })
@@ -40,6 +51,7 @@ async function get(url) {
 
 const resultado = {}
 const sinEmparejar = []
+const crudo = {}
 
 for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
   const jornada1 = JORNADAS_POR_GRUPO[grupo].find((j) => j.numero === 1)
@@ -47,16 +59,20 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
 
   const url = `https://ffcv.es/competiciones/api/partidos/resultados_por_grupo_jornada_data.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}&cod_jornada=1&grupo_nombre=${encodeURIComponent(cfg.nombreGrupo)}&competicion_nombre=x`
   const data = await get(url)
+  crudo[grupo] = data.partidos
 
   for (const partidoLocal of jornada1.partidos) {
     const [cLocal, cVisitante] = partidoLocal
-    const sLocal = slug(cLocal)
-    const sVisitante = slug(cVisitante)
+    const candidatosLocal = [compacto(cLocal), ...(ALIAS[cLocal] || []).map(compacto)]
+    const candidatosVisitante = [compacto(cVisitante), ...(ALIAS[cVisitante] || []).map(compacto)]
 
     const match = data.partidos.find((p) => {
-      const sPLocal = slug(p.local)
-      const sPVisitante = slug(p.visitante)
-      return sPLocal.includes(sLocal) && sPVisitante.includes(sVisitante)
+      const cpLocal = compacto(p.local)
+      const cpVisitante = compacto(p.visitante)
+      return (
+        candidatosLocal.some((c) => cpLocal.includes(c)) &&
+        candidatosVisitante.some((c) => cpVisitante.includes(c))
+      )
     })
 
     if (!match) {
@@ -78,3 +94,5 @@ console.log(JSON.stringify(resultado, null, 2))
 console.log(`\nTotal partidos importados: ${Object.keys(resultado).length}`)
 console.log('\n=== Sin emparejar (revisar manualmente) ===')
 console.log(JSON.stringify(sinEmparejar, null, 2))
+console.log('\n=== Partidos crudos de FFCV para grupos con pendientes (liga-nacional) ===')
+console.log(JSON.stringify(crudo['liga-nacional'], null, 2))
