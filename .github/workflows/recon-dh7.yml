@@ -18,8 +18,9 @@ jobs:
 
       - run: node scripts/scraper/recon-dh7.mjs
 
-      - name: Volcar fragmento de HTML al log
+      - name: Volcar captura en base64 al log
         run: |
-          echo "===INICIO-HTML==="
-          grep -o '.\{400\}Elche CF.\{1200\}' recon-dh7-html.txt | head -c 3000
-          echo "===FIN-HTML==="
+          echo "===INICIO-B64==="
+          base64 -w 200 recon-dh7.jpg
+          echo "===FIN-B64==="
+          ls -la recon-dh7.jpg
