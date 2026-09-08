@@ -1,102 +1,13 @@
-OK: tercera-vi - At. Saguntino vs Levante U.D. 'B' (eventos: 21)
-OK: tercera-vi - C.D. Roda 'A' vs Ontinyent 1931 C.F. (eventos: 20)
-OK: tercera-vi - C.D. Soneja vs Villarreal C.F. 'C' (eventos: 23)
-OK: tercera-vi - C.D. Acero vs Crevillente Deportivo (eventos: 18)
-OK: tercera-vi - U.D. Vall de Uxó 'A' vs C.D. Utiel (eventos: 15)
-OK: tercera-vi - Hércules C.F. 'B' vs S.C. Torrevieja C.F. 'A' (eventos: 20)
-OK: tercera-vi - Torrent C.F. 'A' vs C.D. Español de San Vicente (eventos: 18)
-OK: tercera-vi - C.D. Eldense 'B' vs Athletic Club Torrellano (eventos: 14)
-OK: tercera-vi - C.D. Buñol 'A' vs Atzeneta U.E. 'A' (eventos: 20)
-OK: llc-nord - Silla C.F. vs Ribarroja C.F. 'A' (eventos: 19)
-OK: llc-nord - C.F. At. Bº La Luz - Xirivella 'A' vs C.F. Recambios Colón Catarroja 'A' (eventos: 19)
-OK: llc-nord - Alqueries C.F. 'A' vs U.D. Aldaia C.F. 'A' (eventos: 18)
-OK: llc-nord - Manises C.F. 'A' vs Paiporta C.F. (eventos: 27)
-OK: llc-nord - C.D. L'Alcora vs C.D. Onda 'A' (eventos: 25)
-OK: llc-nord - C.F. Nou Jove Castelló 'A' vs C.D. Almazora 'A' (eventos: 22)
-OK: llc-sud - C.D. Thader vs C.F.U.D. Calpe (eventos: 18)
-OK: llc-sud - Santa Pola C.F. vs C.F.U.E. Tavernes de la Valldigna (eventos: 26)
-OK: llc-sud - C.F. Benidorm 'A' vs C.D.F. Jávea (eventos: 26)
-OK: llc-sud - C.E. Alberic Sucemart vs C.F. Independiente Alicante 'A' (eventos: 18)
-OK: llc-sud - C.D. Olímpic vs C.F. Gandia 'A' (eventos: 19)
-OK: llc-sud - Novelda Unión C.F. Cableworld 'A' vs U.D. Rayo Ibense 'A' (eventos: 19)
-OK: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A' (eventos: 19)
-OK: llc-juv-nord - C.F. Cracks 'A' vs C.D.F. Canet 'A' (eventos: 18)
-OK: llc-juv-nord - C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B' (eventos: 17)
-OK: llc-juv-nord - Patacona C.F. 'B' vs C.D. Acero 'A' (eventos: 21)
-OK: llc-juv-nord - Paterna C.F. 'A' vs C.F. At. Burriana - Salesianos 'A' (eventos: 20)
-OK: llc-juv-nord - Villarreal C.F. 'C' vs C.F. Històrics de València 'A' (eventos: 20)
-OK: llc-juv-nord - Bétera C.F. 'A' vs Col. Salgui E.D.E. 'A' (eventos: 16)
-OK: llc-juv-sud - C.D. Pablo Iglesias 'A' vs Catral-Castrum C.F. 'A' (eventos: 21)
-OK: llc-juv-sud - U.D. Oliva 'A' vs C.F. La Nucía 'B' (eventos: 17)
-OK: llc-juv-sud - C.D. Eldense 'A' vs Hércules C.F. 'B' (eventos: 17)
-OK: llc-juv-sud - Orihuela C.F. 'A' vs Kelme C.F. 'B' (eventos: 25)
-OK: llc-juv-sud - F.B.C.D. Catarroja - Bauhaus 'A' vs Silla C.F. 'A' (eventos: 18)
-OK: llc-juv-sud - C.D. Alcoyano 'A' vs C.D. Olímpic 'A' (eventos: 23)
-OK: cadete-autonomico - Levante U.D. 'A' vs C.F. Inter San José Valencia 'A' (eventos: 12)
-OK: cadete-autonomico - Kelme C.F. 'A' vs Patacona C.F. 'A' (eventos: 14)
-OK: cadete-autonomico - Celtic Elche C.F. 'A' vs C.F. Torre Levante 'A' (eventos: 20)
-OK: cadete-autonomico - Elda Unión Cableworld C.F 'A' vs C.F. Fundació VCF 'A' (eventos: 16)
-OK: cadete-autonomico - C.F. La Nucía 'A' vs C.D. Castellón 'A' (eventos: 25)
-OK: cadete-autonomico - C.F. Benidorm 'A' vs Elche C.F. 'A' (eventos: 14)
-OK: cadete-autonomico - S.C.D. Intangco 'A' vs Primer Toque C.F. 'A' (eventos: 18)
-OK: liga-nacional - C.F. At. Moncadense 'A' vs U.D. Alzira 'A' (eventos: 21)
-OK: liga-nacional - C.D. Roda 'B' vs Villarreal C.F. 'B' (eventos: 17)
-OK: liga-nacional - Tavernes Blanques C.F. 'A' vs C.F. Inter San José Valencia 'A' (eventos: 19)
-OK: liga-nacional - C.D. Castellón 'B' vs Elda Unión Cableworld C.F 'A' (eventos: 21)
-OK: liga-nacional - Valencia C.F. 'B' vs Elche C.F. 'B' (eventos: 14)
-OK: liga-nacional - Hércules C.F. 'A' vs C.D. El Rumbo 'A' (eventos: 14)
-OK: liga-nacional - Torrent C.F. 'B' vs C.D. Español de San Vicente 'A' (eventos: 20)
+OK (intento 1): llc-nord - C.D. Burriana 'A' vs F.C. Odisea 'A'
+OK (intento 1): llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A'
+OK (intento 1): llc-sud - U.D. Alzira vs F.B. Redován C.F. 'A'
+OK (intento 1): llc-juv-nord - Ath. Massamagrell C.F. 'A' vs Primer Toque C.F. 'A'
+OK (intento 1): llc-juv-nord - C.F. Torre Levante 'A' vs Manises C.F. 'A'
+OK (intento 1): llc-juv-sud - C.F.U.E. Tavernes de la Valldigna 'A' vs U.D. Aldaia C.F. 'A'
+OK (intento 1): llc-juv-sud - C.F. Benidorm 'A' vs S.C.D. Intangco 'A'
+OK (intento 1): cadete-autonomico - Villarreal C.F. 'A' vs C.D. Roda 'A'
+OK (intento 1): liga-nacional - C.F. San Pedro 'A' vs Levante U.D. 'B'
+OK (intento 1): liga-nacional - Alboraya U.D. 'A' vs C.F. La Nucía 'A'
 
-Errores: 10
-[
-  {
-    "grupo": "llc-nord",
-    "partido": "C.D. Burriana 'A' vs F.C. Odisea 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431821&cod_grupo=905431822\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "llc-nord",
-    "partido": "Massanassa C.F. vs IDA C.F. At. Quart 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431821&cod_grupo=905431822\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "llc-sud",
-    "partido": "U.D. Alzira vs F.B. Redován C.F. 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431821&cod_grupo=905431823\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "llc-juv-nord",
-    "partido": "Ath. Massamagrell C.F. 'A' vs Primer Toque C.F. 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431546&cod_grupo=905431547\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "llc-juv-nord",
-    "partido": "C.F. Torre Levante 'A' vs Manises C.F. 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431546&cod_grupo=905431547\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "llc-juv-sud",
-    "partido": "C.F.U.E. Tavernes de la Valldigna 'A' vs U.D. Aldaia C.F. 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431546&cod_grupo=905431548\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "llc-juv-sud",
-    "partido": "C.F. Benidorm 'A' vs S.C.D. Intangco 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431546&cod_grupo=905431548\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "cadete-autonomico",
-    "partido": "Villarreal C.F. 'A' vs C.D. Roda 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431885&cod_grupo=905431886\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "liga-nacional",
-    "partido": "C.F. San Pedro 'A' vs Levante U.D. 'B'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431878&cod_grupo=905431879\", waiting until \"networkidle\"\n"
-  },
-  {
-    "grupo": "liga-nacional",
-    "partido": "Alboraya U.D. 'A' vs C.F. La Nucía 'A'",
-    "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431878&cod_grupo=905431879\", waiting until \"networkidle\"\n"
-  }
-]
+Total errores tras reintento 2: 0
+[]
