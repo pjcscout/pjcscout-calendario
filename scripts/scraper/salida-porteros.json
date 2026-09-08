@@ -1,0 +1,408 @@
+[
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "saguntino",
+    "equipoNombre": "At. Saguntino",
+    "porteroNombre": "PARDO GOMERA, CLAUDIO",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "roda-a",
+    "equipoNombre": "C.D. Roda \"A\"",
+    "porteroNombre": "MOLINER CARBONELL, MARC",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "soneja",
+    "equipoNombre": "C.D. Soneja",
+    "porteroNombre": "DOLZ DARAS, VICENT",
+    "golesEncajados": 3
+  },
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "acero",
+    "equipoNombre": "C.D. Acero",
+    "porteroNombre": "SORIANO MARIN, RAFAEL",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "valldeuxo-a",
+    "equipoNombre": "U.D. Vall de Uxó \"A\"",
+    "porteroNombre": "PEREZ GOMIS, MANUEL",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "hercules-b",
+    "equipoNombre": "Hércules C.F. \"B\"",
+    "porteroNombre": "LIDON GARCIA, ADRIAN",
+    "golesEncajados": 2
+  },
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "torrent-a",
+    "equipoNombre": "Torrent C.F. \"A\"",
+    "porteroNombre": "RIVES LOZANO, JORGE",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "eldense-b",
+    "equipoNombre": "C.D. Eldense \"B\"",
+    "porteroNombre": "BERNABEU SANCHEZ, DAVID",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "tercera-vi",
+    "equipoId": "bunol-a",
+    "equipoNombre": "C.D. Buñol \"A\"",
+    "porteroNombre": "Coronado",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-nord",
+    "equipoId": "llcnord-silla",
+    "equipoNombre": "Silla C.F.",
+    "porteroNombre": "MICU, IONUT ROBERT",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-nord",
+    "equipoId": "llcnord-la-luz-xirivella-a",
+    "equipoNombre": "C.F. At. Bº La Luz - Xirivella \"A\"",
+    "porteroNombre": "CAÑADAS SANTOS, RUBÉN",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-nord",
+    "equipoId": "llcnord-alqueries-a",
+    "equipoNombre": "Alqueries C.F. \"A\"",
+    "porteroNombre": "LLOPIS PASTOR, JUAN",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-nord",
+    "equipoId": "llcnord-manises-a",
+    "equipoNombre": "Manises C.F. \"A\"",
+    "porteroNombre": "CASAS ALONSO, CARLOS",
+    "golesEncajados": 2
+  },
+  {
+    "grupo": "llc-nord",
+    "equipoId": "llcnord-alcora",
+    "equipoNombre": "C.D. L'Alcora",
+    "porteroNombre": "AVILES CELADES, IVAN",
+    "golesEncajados": 2
+  },
+  {
+    "grupo": "llc-nord",
+    "equipoId": "llcnord-nou-jove-castello-a",
+    "equipoNombre": "C.F. Nou Jove Castelló \"A\"",
+    "porteroNombre": "Nestor",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-nord",
+    "equipoId": "llcnord-burriana-a",
+    "equipoNombre": "C.D. Burriana \"A\"",
+    "porteroNombre": "BELTRÁN GÁLVEZ, NAÍM",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-nord",
+    "equipoId": "llcnord-massanassa",
+    "equipoNombre": "Massanassa C.F.",
+    "porteroNombre": "BALTA, IOAN RAUL",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-sud",
+    "equipoId": "llcsud-thader",
+    "equipoNombre": "C.D. Thader",
+    "porteroNombre": "PEREZ LOSA, SERGIO RAUL",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-sud",
+    "equipoId": "llcsud-santa-pola",
+    "equipoNombre": "Santa Pola C.F.",
+    "porteroNombre": "PASCUAL JARAMILLO, VICTOR",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-sud",
+    "equipoId": "llcsud-benidorm-a",
+    "equipoNombre": "C.F. Benidorm \"A\"",
+    "porteroNombre": "ARCANA, FERNANDO CATALIN",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-sud",
+    "equipoId": "llcsud-alberic",
+    "equipoNombre": "C.E. Alberic Sucemart",
+    "porteroNombre": "MARTINEZ LIBERATO, CRISTIAN",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-sud",
+    "equipoId": "llcsud-olimpic",
+    "equipoNombre": "C.D. Olímpic",
+    "porteroNombre": "DOMENECH DIAZ, JAVIER",
+    "golesEncajados": 2
+  },
+  {
+    "grupo": "llc-sud",
+    "equipoId": "llcsud-novelda-a",
+    "equipoNombre": "Novelda Unión C.F. Cableworld \"A\"",
+    "porteroNombre": "MARCANO SIERRA, ALEJANDRO",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-sud",
+    "equipoId": "llcsud-beniganim",
+    "equipoNombre": "Benigànim C.F.",
+    "porteroNombre": "ESCOBAR MONSALVE, SANTIAGO",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-sud",
+    "equipoId": "llcsud-alzira",
+    "equipoNombre": "U.D. Alzira",
+    "porteroNombre": "VIDAL ASCO, JOSEP",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "equipoId": "llcjuvnord-cf-cracks",
+    "equipoNombre": "C.F. Cracks",
+    "porteroNombre": "PEREZ MARAS, ALEJANDRO",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "equipoId": "llcjuvnord-san-jose",
+    "equipoNombre": "San José",
+    "porteroNombre": "OLCINA APARICIO, PABLO",
+    "golesEncajados": 2
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "equipoId": "llcjuvnord-patacona",
+    "equipoNombre": "Patacona",
+    "porteroNombre": "LOPEZ ARGANDOÑA, DANIEL",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "equipoId": "llcjuvnord-paterna",
+    "equipoNombre": "Paterna",
+    "porteroNombre": "MONTIN FUSTE, ORIOL",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "equipoId": "llcjuvnord-villarreal",
+    "equipoNombre": "Villarreal",
+    "porteroNombre": "DIDENKO ROHAVA, DANIIL",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "equipoId": "llcjuvnord-betera",
+    "equipoNombre": "Bétera C.F.",
+    "porteroNombre": "ROMERO CIVERA, RAUL",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "equipoId": "llcjuvnord-massamagrell",
+    "equipoNombre": "Ath. Massamagrell",
+    "porteroNombre": "GONZALEZ BELERT, DAVID",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "equipoId": "llcjuvnord-torre-levante",
+    "equipoNombre": "C.F. Torre Levante",
+    "porteroNombre": "VASSEUR GÓMEZ, GASPAR",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "equipoId": "llcjuvsud-pablo-iglesias",
+    "equipoNombre": "C.D. Pablo Iglesias",
+    "porteroNombre": "FRANCES MAESTRE, PAU",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "equipoId": "llcjuvsud-oliva",
+    "equipoNombre": "U.D. Oliva",
+    "porteroNombre": "CHANCUSIG RUIZ, ENZO FABIANO",
+    "golesEncajados": 2
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "equipoId": "llcjuvsud-eldense",
+    "equipoNombre": "C.D. Eldense",
+    "porteroNombre": "RODRÍGUEZ GARCÍA, ÁLVARO",
+    "golesEncajados": 3
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "equipoId": "llcjuvsud-orihuela",
+    "equipoNombre": "Orihuela",
+    "porteroNombre": "CONESA CHIRILA, JESUS CHRISTIAN",
+    "golesEncajados": 4
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "equipoId": "llcjuvsud-catarroja",
+    "equipoNombre": "F.B.C.D. Catarroja",
+    "porteroNombre": "ESCOBAR MUÑOZ, MARC",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "equipoId": "llcjuvsud-alcoyano",
+    "equipoNombre": "C.D. Alcoyano",
+    "porteroNombre": "CAMPOY CAMBRA, IKER",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "equipoId": "llcjuvsud-tavernes-valldigna",
+    "equipoNombre": "C.F.U.E. Tavernes de la Valldigna",
+    "porteroNombre": "BORULL CUADROS, ANDRES",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "equipoId": "llcjuvsud-benidorm",
+    "equipoNombre": "C.F. Benidorm",
+    "porteroNombre": "AMBACH, ALEX",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "equipoId": "cadete-levante",
+    "equipoNombre": "Levante",
+    "porteroNombre": "CLAIR PEREZ, HECTOR NOEL",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "equipoId": "cadete-kelme",
+    "equipoNombre": "Kelme",
+    "porteroNombre": "PARODI CACERES, MARIO",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "equipoId": "cadete-celtic-elche",
+    "equipoNombre": "Celtic Elche",
+    "porteroNombre": "MARTINEZ MUNAR, JORGE",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "equipoId": "cadete-elda-union",
+    "equipoNombre": "Elda Unión",
+    "porteroNombre": "LOZANO HERRERA, AGUSTÍN",
+    "golesEncajados": 3
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "equipoId": "cadete-la-nucia",
+    "equipoNombre": "La Nucía",
+    "porteroNombre": "ZAHONERO CANTIZANO, DAVID",
+    "golesEncajados": 5
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "equipoId": "cadete-benidorm",
+    "equipoNombre": "CF Benidorm",
+    "porteroNombre": "IRLES CASTAÑOS, MANUEL",
+    "golesEncajados": 3
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "equipoId": "cadete-scd-intangco",
+    "equipoNombre": "SCD Intangco",
+    "porteroNombre": "SANCHEZ COFRADE, IZAN",
+    "golesEncajados": 2
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "equipoId": "cadete-villarreal",
+    "equipoNombre": "Villarreal",
+    "porteroNombre": "RICO ALBERT, LEO",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-moncadense",
+    "equipoNombre": "Moncadense",
+    "porteroNombre": "CHIFOR, MARC ADRIAN",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-roda",
+    "equipoNombre": "Roda",
+    "porteroNombre": "CALAS ROMERO, ARNAU",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-tavernes-blanques",
+    "equipoNombre": "Tavernes Blanques",
+    "porteroNombre": "LUJAN MARI, SATURNINO",
+    "golesEncajados": 2
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-castellon",
+    "equipoNombre": "Castellón",
+    "porteroNombre": "MARTINAVARRO TORRES, LUCAS",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-valencia",
+    "equipoNombre": "Valencia",
+    "porteroNombre": "GARCIA CORTES, MANUEL",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-hercules",
+    "equipoNombre": "Hércules",
+    "porteroNombre": "HRISTOV, KRISTIAN ALEKSANDROV",
+    "golesEncajados": 0
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-torrent",
+    "equipoNombre": "Torrent",
+    "porteroNombre": "GARCIA MIQUEL, MATEO",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-san-pedro",
+    "equipoNombre": "San Pedro",
+    "porteroNombre": "MUSEROS ANDREU, ALBERTO",
+    "golesEncajados": 1
+  },
+  {
+    "grupo": "liga-nacional",
+    "equipoId": "liganac-alboraya",
+    "equipoNombre": "Alboraya",
+    "porteroNombre": "GOMEZ HIDALGO SANCHEZ, GABRIEL",
+    "golesEncajados": 1
+  }
+]
