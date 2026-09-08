@@ -16,10 +16,10 @@ jobs:
       - run: npm install playwright@1.48.0
       - run: npx playwright install --with-deps chromium
 
-      - run: node scripts/scraper/recon-dh7-actas-ids.mjs
+      - run: node scripts/scraper/recon-dh7-todas-actas.mjs
 
-      - name: Volcar codactas al log
+      - name: Volcar JSON al log
         run: |
-          echo "===INICIO-CODACTAS==="
-          cat recon-dh7-codactas.json
-          echo "===FIN-CODACTAS==="
+          echo "===INICIO-JSON==="
+          cat recon-dh7-todas-actas.json
+          echo "===FIN-JSON==="
