@@ -1,0 +1,25 @@
+name: Reconocimiento DH7 (temporal)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  recon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install playwright@1.48.0
+      - run: npx playwright install --with-deps chromium
+
+      - run: node scripts/scraper/recon-dh7-todas-actas.mjs
+
+      - name: Volcar JSON al log
+        run: |
+          echo "===INICIO-JSON==="
+          cat recon-dh7-todas-actas.json
+          echo "===FIN-JSON==="
