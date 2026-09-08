@@ -5,6 +5,14 @@ precacheAndRoute(self.__WB_MANIFEST)
 
 registerRoute(new NavigationRoute(createHandlerBoundToURL('/index.html')))
 
+// Sin esto, un despliegue nuevo se queda "esperando" hasta que se cierran
+// todas las pestañas de la web — activa la versión nueva en cuanto termina
+// de instalarse para que el próximo recargar ya sirva los cambios.
+self.skipWaiting()
+self.addEventListener('activate', (event) => {
+  event.waitUntil(self.clients.claim())
+})
+
 self.addEventListener('push', (event) => {
   if (!event.data) return
   const datos = event.data.json()
