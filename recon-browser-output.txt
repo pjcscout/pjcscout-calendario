@@ -1,0 +1,312 @@
+=== FFCV: página humana de resultados (varias rutas candidatas) ===
+--- https://ffcv.es/competiciones/resultados.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605&cod_jornada=1 -> status 404 url final: https://ffcv.es/competiciones/resultados.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605&cod_jornada=1 ---
+enlaces con "acta": []
+texto visible (800 chars): File not found.
+--- https://ffcv.es/competiciones/partidos.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605&cod_jornada=1 -> status 404 url final: https://ffcv.es/competiciones/partidos.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605&cod_jornada=1 ---
+enlaces con "acta": []
+texto visible (800 chars): File not found.
+--- https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605 -> status 200 url final: https://ffcv.es/competiciones/index.php?cod_temporada=22&cod_competicion=905431604&cod_grupo=905431605#partidos ---
+enlaces con "acta": []
+texto visible (800 chars): PARTIDOS
+CLASIFICACIONES
+SANCIONES
+RANKINGS
+NOTICIAS
+TERCERA FEDERACIÓN - GRUP - VI
+PUBLICIDAD
+Ver más
+Internet y telecomunicaciones
+Deportivo
+Deportes
+Privacidad
+Legislación empresarial
+privacidad
+Fútbol
+Juegos deportivos
+TEMPORADA
+Temporada
+2026-2027
+2025-2026
+2024-2025
+2023-2024
+2022-2023
+2021-2022
+2020-2021
+2019-2020
+2018-2019
+2017-2018
+2016-2017
+2015-2016
+2014-2015
+2013-2014
+2012-2013
+MODALIDAD
+MASCULÍ F11
+MASCULÍ FUTSAL
+VALENTA FUTBOL
+FUTBOL PLATJA VALENTA
+FUTBOL PLATJA MASCULÍ
+COMPETICIÓN
+Tercera Federación
+Fase Autonómica Copa Federación
+Lliga Comunitat
+Primera FFCV
+Segona FFCV
+Tercera FFCV
+VI La Nostra Copa
+Lliga de Veterans
+Liga Nacional Juvenil
+Lliga Comunitat Juvenil
+Primera FFCV Juvenil
+Segona FFCV Juvenil
+Tercera FFCV Juvenil
+Lliga Autonòmica Cadet
+Lliga Preferent Cadet
+Lliga
+--- https://ffcv.es/competiciones/ -> status 200 url final: https://ffcv.es/competiciones/#partidos ---
+enlaces con "acta": []
+texto visible (800 chars): PARTIDOS
+CLASIFICACIONES
+SANCIONES
+RANKINGS
+NOTICIAS
+TERCERA FEDERACIÓN - GRUP - VI
+PUBLICIDAD
+Ver más
+Licencias federativas
+Resultados en vivo
+Reserva Canchas Deportivas
+Calendario de partidos
+Compra Botas Fútbol
+Clasificaciones de liga
+Sanciones deportivas
+Entradas para partidos
+TEMPORADA
+Temporada
+2026-2027
+2025-2026
+2024-2025
+2023-2024
+2022-2023
+2021-2022
+2020-2021
+2019-2020
+2018-2019
+2017-2018
+2016-2017
+2015-2016
+2014-2015
+2013-2014
+2012-2013
+MODALIDAD
+MASCULÍ F11
+MASCULÍ FUTSAL
+VALENTA FUTBOL
+FUTBOL PLATJA VALENTA
+FUTBOL PLATJA MASCULÍ
+COMPETICIÓN
+Tercera Federación
+Fase Autonómica Copa Federación
+Lliga Comunitat
+Primera FFCV
+Segona FFCV
+Tercera FFCV
+VI La Nostra Copa
+Lliga de Veterans
+Liga Nacional Juvenil
+Lliga Comunitat Juvenil
+Primera FFCV Juvenil
+Segona FFCV Juvenil
+Tercera FFCV
+
+=== RFEF DH-G7: jornada 1 con navegador real ===
+status 200, url final: https://marcadores.rfef.es/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120&CodCompeticion=33836116&CodGrupo=33836123&CodTemporada=22&CodJornada=1
+texto visible tras intentar aceptar cookies:       
+Competiciones
+Acciones 
+Calendario, Clasificaciones y Resultados
+    
+  Búsqueda por competición
+Temporada 2026-2027
+Division de Honor Juvenil Grupo 7
+Jornada 1
+Siguiente  
+ Definitivo  Provisional ( Datos provisionales hasta cierre del acta oficial )
+Calendario
+Clasificación
+Tabla Cruzada
+Goleadores
+Porteros
+Resultados
+  Elche CF
+	
+ - 1
+
+  
+ 
+05-09-2026
+11:00	
+Valencia CF
+
+
+Polideportivo Mpal. Altabix - Diego Quiles
+Hierba Natural
+
+
+  
+Árbitro:
+ Selva Vicente, Cristian
+
+
+  RCD Mallorca
+	
+ - 0
+
+  
+ 
+05-09-2026
+12:30	
+FC Cartagena
+
+
+Ciudad Deportiva Antonio Asensio
+Hierba Natural
+
+
+  
+Árbitro:
+ López del Amo Franco, Angel
+
+
+  Villarreal C.F.
+	
+2 - 
+
+  
+ 
+05-09-2026
+18:00	
+Real Murcia CF
+
+
+Cdad. Dva. José Manuel Llaneza - Mini Estadi
+
+
+  
+Árbitro:
+ López Rodríguez, José Manuel
+
+
+
+
+  Patacona C.F.
+	
+1 - 
+
+  
+ 
+05-09-2026
+19:00	
+Levante U.D.
+
+
+Campo Mpal. de la Patacona F-11
+Hierba Artificial
+
+
+  
+Árbitro:
+ Castillo Lopez, Adrian
+
+
+  Murcia Promises Club de Fútbol
+	
+0 - 0
+
+  
+ 
+06-09-2026
+10:00	
+Kelme C.F.
+
+
+Universidad de Murcia
+Hierba Artificial
+
+
+  
+Árbitro:
+ Moreno Muñoz, Kevin Javier
+
+
+  CD Castellón
+	
+2 - 
+
+  
+ 
+06-09-2026
+12:00	
+Torrent C.F.
+
+
+Instalaciones Deportivas Gaetà Huguet - Campo B
+Hierba Artificial
+
+
+  
+Árbitro:
+ Valero Lucia, Javier
+
+
+
+
+  C.D. Roda
+	
+ - 
+
+  
+ 
+06-09-2026
+16:00	
+PENYA ARRABAL
+
+
+Ciutat Esptva. Pamesa Ceramica Campo 3 F-11
+Hierba Artificial
+
+
+  
+Árbitro:
+ Ortega Herrera, Francisco José
+
+
+  UCAM Universidad Catolica de Murcia CF
+	
+ - 1
+
+  
+ 
+06-09-2026
+16:30	
+C.D. San Francisco
+
+
+Municipal de Santiago el Mayor
+Hierba Artificial
+
+
+  
+Árbitro:
+ Béjar Caballero, Joaquín
+Siguiente   
+       © 2023 Real Federación Española de Fútbol
+  
+Contacto
+  
+Política de cookies
+  
+Protección de datos
+  
+Aviso legal
+     
