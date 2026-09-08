@@ -1,21 +1,376 @@
-Click en J.1 hecho.
-ancestor nivel 1 error: locator.evaluate: Timeout 30000ms exceeded.
-Call log:
-  - waiting for getByText('Ver detalles', { exact: true }).first().locator('xpath=ancestor::*[position()=1]').first()
+=== Texto completo tras cargar (jornada por defecto) ===
+PARTIDOS
+CLASIFICACIONES
+SANCIONES
+RANKINGS
+NOTICIAS
+TERCERA FEDERACIÓN - GRUP - VI
+PUBLICIDAD
+Ver más
+Fútbol
+Deportes
+Juegos deportivos
+Deportivo
+Internet y telecomunicaciones
+Legislación empresarial
+Privacidad
+privacidad
+TEMPORADA
+Temporada
+2026-2027
+2025-2026
+2024-2025
+2023-2024
+2022-2023
+2021-2022
+2020-2021
+2019-2020
+2018-2019
+2017-2018
+2016-2017
+2015-2016
+2014-2015
+2013-2014
+2012-2013
+MODALIDAD
+MASCULÍ F11
+MASCULÍ FUTSAL
+VALENTA FUTBOL
+FUTBOL PLATJA VALENTA
+FUTBOL PLATJA MASCULÍ
+COMPETICIÓN
+Tercera Federación
+Fase Autonómica Copa Federación
+Lliga Comunitat
+Primera FFCV
+Segona FFCV
+Tercera FFCV
+VI La Nostra Copa
+Lliga de Veterans
+Liga Nacional Juvenil
+Lliga Comunitat Juvenil
+Primera FFCV Juvenil
+Segona FFCV Juvenil
+Tercera FFCV Juvenil
+Lliga Autonòmica Cadet
+Lliga Preferent Cadet
+Lliga Autonòmica Infantil
+Lliga Preferent Infantil
+GRUPO
+GRUP - VI
+‹
+J.1
+06 sept
+J.2
+13 sept
+J.3
+20 sept
+J.4
+27 sept
+J.5
+04 oct
+J.6
+11 oct
+J.7
+18 oct
+J.8
+25 oct
+J.9
+01 nov
+J.10
+08 nov
+J.11
+15 nov
+J.12
+22 nov
+J.13
+29 nov
+J.14
+06 dic
+J.15
+13 dic
+J.16
+20 dic
+J.17
+10 ene
+J.18
+17 ene
+J.19
+24 ene
+J.20
+31 ene
+J.21
+06 feb
+J.22
+14 feb
+J.23
+21 feb
+J.24
+28 feb
+J.25
+07 mar
+J.26
+14 mar
+J.27
+21 mar
+J.28
+28 mar
+J.29
+04 abr
+J.30
+11 abr
+J.31
+18 abr
+J.32
+25 abr
+J.33
+02 may
+J.34
+09 may
+›
+TERCERA FEDERACIÓN - GRUP - VI
+print
+visibility
+Vista
+Tarjetas
+Lista
+Sábado 12 de Septiembre de 2026
+Jornada 2
+C.D. Utiel
+C.D. Acero
+17:30
+Ver detalles
+Levante U.D. 'B'
+C.D. Buñol 'A'
+18:30
+Ver detalles
+Domingo 13 de Septiembre de 2026
+Jornada 2
+S.C. Torrevieja C.F. 'A'
+U.D. Vall de Uxó 'A'
+11:30
+Ver detalles
+Athletic Club Torrellano
+Torrent C.F. 'A'
+11:30
+Ver detalles
+C.D. Español de San Vicente
+Hércules C.F. 'B'
+12:00
+Ver detalles
+Atzeneta U.E. 'A'
+C.D. Eldense 'B'
+17:30
+Ver detalles
+Ontinyent 1931 C.F.
+At. Saguntino
+18:00
+Ver detalles
+Villarreal C.F. 'C'
+C.D. Roda 'A'
+18:00
+Ver detalles
+Crevillente Deportivo
+C.D. Soneja
+18:30
+Ver detalles
 
-ancestor nivel 2 error: locator.evaluate: Timeout 30000ms exceeded.
-Call log:
-  - waiting for getByText('Ver detalles', { exact: true }).first().locator('xpath=ancestor::*[position()=2]').first()
+Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
 
-ancestor nivel 3 error: locator.evaluate: Timeout 30000ms exceeded.
-Call log:
-  - waiting for getByText('Ver detalles', { exact: true }).first().locator('xpath=ancestor::*[position()=3]').first()
+Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
 
-ancestor nivel 4 error: locator.evaluate: Timeout 30000ms exceeded.
-Call log:
-  - waiting for getByText('Ver detalles', { exact: true }).first().locator('xpath=ancestor::*[position()=4]').first()
+=== Buscando elemento clicable "J.1" ===
+Coincidencias exactas /^J.1$/: 1
+Coincidencias getByText("J.1") (parcial): 11
+  [0] "J.1"
+  [1] "J.10"
+  [2] "J.11"
+  [3] "J.12"
+  [4] "J.13"
+  [5] "J.14"
+  [6] "J.15"
+  [7] "J.16"
+  [8] "J.17"
+  [9] "J.18"
+  [10] "J.19"
 
+=== Texto completo tras intentar clicar J.1 ===
+PARTIDOS
+CLASIFICACIONES
+SANCIONES
+RANKINGS
+NOTICIAS
+TERCERA FEDERACIÓN - GRUP - VI
+PUBLICIDAD
+Ver más
+Fútbol
+Deportes
+Juegos deportivos
+Deportivo
+Internet y telecomunicaciones
+Legislación empresarial
+Privacidad
+privacidad
+TEMPORADA
+Temporada
+2026-2027
+2025-2026
+2024-2025
+2023-2024
+2022-2023
+2021-2022
+2020-2021
+2019-2020
+2018-2019
+2017-2018
+2016-2017
+2015-2016
+2014-2015
+2013-2014
+2012-2013
+MODALIDAD
+MASCULÍ F11
+MASCULÍ FUTSAL
+VALENTA FUTBOL
+FUTBOL PLATJA VALENTA
+FUTBOL PLATJA MASCULÍ
+COMPETICIÓN
+Tercera Federación
+Fase Autonómica Copa Federación
+Lliga Comunitat
+Primera FFCV
+Segona FFCV
+Tercera FFCV
+VI La Nostra Copa
+Lliga de Veterans
+Liga Nacional Juvenil
+Lliga Comunitat Juvenil
+Primera FFCV Juvenil
+Segona FFCV Juvenil
+Tercera FFCV Juvenil
+Lliga Autonòmica Cadet
+Lliga Preferent Cadet
+Lliga Autonòmica Infantil
+Lliga Preferent Infantil
+GRUPO
+GRUP - VI
+‹
+J.1
+06 sept
+J.2
+13 sept
+J.3
+20 sept
+J.4
+27 sept
+J.5
+04 oct
+J.6
+11 oct
+J.7
+18 oct
+J.8
+25 oct
+J.9
+01 nov
+J.10
+08 nov
+J.11
+15 nov
+J.12
+22 nov
+J.13
+29 nov
+J.14
+06 dic
+J.15
+13 dic
+J.16
+20 dic
+J.17
+10 ene
+J.18
+17 ene
+J.19
+24 ene
+J.20
+31 ene
+J.21
+06 feb
+J.22
+14 feb
+J.23
+21 feb
+J.24
+28 feb
+J.25
+07 mar
+J.26
+14 mar
+J.27
+21 mar
+J.28
+28 mar
+J.29
+04 abr
+J.30
+11 abr
+J.31
+18 abr
+J.32
+25 abr
+J.33
+02 may
+J.34
+09 may
+›
+TERCERA FEDERACIÓN - GRUP - VI
+print
+visibility
+Vista
+Tarjetas
+Lista
+Sábado 5 de Septiembre de 2026
+Jornada 1
+C.D. Acero
+Crevillente Deportivo
+0
+1
+Hércules C.F. 'B'
+S.C. Torrevieja C.F. 'A'
+1
+2
+C.D. Buñol 'A'
+Atzeneta U.E. 'A'
+2
+1
+Torrent C.F. 'A'
+C.D. Español de San Vicente
+4
+0
+Domingo 6 de Septiembre de 2026
+Jornada 1
+C.D. Eldense 'B'
+Athletic Club Torrellano
+1
+0
+C.D. Roda 'A'
+Ontinyent 1931 C.F.
+2
+1
+C.D. Soneja
+Villarreal C.F. 'C'
+0
+3
+At. Saguntino
+Levante U.D. 'B'
+2
+1
+U.D. Vall de Uxó 'A'
+C.D. Utiel
+0
+0
 
-Total "Ver detalles" en Jornada 1: 0
+Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
 
-No se encontró el partido exacto por nivel 3, abortando extracción de pestañas.
+Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
