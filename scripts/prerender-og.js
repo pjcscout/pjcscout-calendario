@@ -15,7 +15,8 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { EQUIPOS, GRUPOS } from '../src/data/equipos.js'
 import { tieneCalendario } from '../src/utils/fixtures.js'
-import { renderEquipo, renderClasificacion } from '../dist-server/entry-server.js'
+import { plantillaEquipo } from '../src/data/plantillas.js'
+import { renderEquipo, renderClasificacion, renderJugador } from '../dist-server/entry-server.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = join(__dirname, '..', 'dist')
@@ -112,6 +113,58 @@ for (const equipo of EQUIPOS) {
 }
 console.log(`prerender: generadas ${generatedEquipos} páginas de equipo con contenido real`)
 
+let generatedJugadores = 0
+for (const equipo of EQUIPOS) {
+  const grupo = GRUPOS[equipo.grupo]
+  const plantilla = plantillaEquipo(equipo.id) || []
+  const equipoUrl = `${siteUrl}/equipo/${equipo.id}`
+
+  for (const nombre of plantilla) {
+    const titulo = `${nombre} · ${equipo.nombre} · PJC Scout`
+    const descripcion = `Ficha de ${nombre} (${equipo.nombre}, ${grupo.nombre} ${grupo.subnombre}): minutos jugados, goles y tarjetas de la temporada, gratis.`
+    const urlAbsoluta = `${equipoUrl}/jugador/${encodeURIComponent(nombre)}`
+
+    let html = template
+    html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(titulo)}</title>`)
+    html = replaceMeta(html, 'name', 'description', descripcion)
+    html = replaceMeta(html, 'property', 'og:title', titulo)
+    html = replaceMeta(html, 'property', 'og:description', descripcion)
+    html = replaceMeta(html, 'property', 'og:url', urlAbsoluta)
+    html = replaceMeta(html, 'name', 'twitter:title', titulo)
+    html = replaceMeta(html, 'name', 'twitter:description', descripcion)
+    html = html.replace(
+      /<link rel="canonical" href="[^"]*" \/>/,
+      `<link rel="canonical" href="${urlAbsoluta}" />`
+    )
+    html = insertarContenido(html, renderJugador(equipo, nombre))
+    html = insertarJsonLd(html, {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: nombre,
+      url: urlAbsoluta,
+      memberOf: {
+        '@type': 'SportsTeam',
+        name: equipo.nombre,
+        url: equipoUrl,
+      },
+    })
+    html = insertarJsonLd(
+      html,
+      breadcrumb([
+        ['Inicio', `${siteUrl}/`],
+        [equipo.nombre, equipoUrl],
+        [nombre, urlAbsoluta],
+      ])
+    )
+
+    const outDir = join(distDir, 'equipo', equipo.id, 'jugador', nombre)
+    mkdirSync(outDir, { recursive: true })
+    writeFileSync(join(outDir, 'index.html'), html)
+    generatedJugadores++
+  }
+}
+console.log(`prerender: generadas ${generatedJugadores} páginas de jugador con contenido real`)
+
 let generatedClasificaciones = 0
 for (const grupoId of Object.keys(GRUPOS)) {
   if (!tieneCalendario(grupoId)) continue
@@ -149,7 +202,12 @@ for (const grupoId of Object.keys(GRUPOS)) {
 console.log(`prerender: generadas ${generatedClasificaciones} páginas de clasificación con contenido real`)
 
 const rutas = ['/']
-for (const equipo of EQUIPOS) rutas.push(`/equipo/${equipo.id}`)
+for (const equipo of EQUIPOS) {
+  rutas.push(`/equipo/${equipo.id}`)
+  for (const nombre of plantillaEquipo(equipo.id) || []) {
+    rutas.push(`/equipo/${equipo.id}/jugador/${encodeURIComponent(nombre)}`)
+  }
+}
 for (const grupoId of Object.keys(GRUPOS)) {
   if (tieneCalendario(grupoId)) rutas.push(`/clasificacion/${grupoId}`)
 }
