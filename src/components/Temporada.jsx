@@ -249,16 +249,21 @@ export default function Temporada({ equipo, onCambiar }) {
       {plantilla && plantilla.length > 0 && (
         <div className="temporada__plantilla">
           <h2 className="temporada__plantilla-titulo">Plantilla</h2>
-          {minutosJugados && (
-            <p className="temporada__plantilla-nota">Minutos jugados esta temporada, junto al nombre de quien ya ha debutado.</p>
-          )}
+          <p className="temporada__plantilla-nota">
+            Toca un jugador para ver sus goles, tarjetas y minutos jugados.
+          </p>
           <ul className="temporada__plantilla-lista">
             {plantilla.map((nombre) => (
-              <li key={nombre} className="temporada__plantilla-jugador">
-                {nombre}
-                {minutosJugados?.[nombre] != null && (
-                  <span className="temporada__plantilla-minutos"> · {minutosJugados[nombre]}'</span>
-                )}
+              <li key={nombre}>
+                <Link
+                  to={`/equipo/${equipo.id}/jugador/${encodeURIComponent(nombre)}`}
+                  className="temporada__plantilla-jugador"
+                >
+                  {nombre}
+                  {minutosJugados?.[nombre] != null && (
+                    <span className="temporada__plantilla-minutos"> · {minutosJugados[nombre]}'</span>
+                  )}
+                </Link>
               </li>
             ))}
           </ul>
