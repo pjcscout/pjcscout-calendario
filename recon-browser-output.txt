@@ -1,5 +1,18 @@
+NAVEGACION a https://ffcv.es/competiciones/
+NAVEGACION a https://ffcv.es/competiciones/#partidos
+Navegando a: https://ffcv.es/competiciones/partidos/partido.php?cod_partido=26470658#cronologia
+NAVEGACION a https://ffcv.es/competiciones/partidos/partido.php?cod_partido=26470658#cronologia
+NAVEGACION a https://ffcv.es/
+NAVEGACION a https://ffcv.es/wp/
+REDIRECT 302 https://pixel.quantserve.com/cs?a=p-t1eCwQvZQhz69&gdpr=0&sf2=1 -> https://pixel.quantserve.com/cs?a=p-t1eCwQvZQhz69&gdpr=0&sf2=1&__qcmcs=1
+REDIRECT 307 https://idsync.rlcdn.com/380609.gif?gdpr=0&partner_uid=7sEOC-iWVwr1mV4J7sVCWeiSXVj1kVsL7ZKJliL6 -> https://idsync.rlcdn.com/1000.gif?memo=CMGdFxIzCi8IARCfOBooN3NFT0MtaVdWd3IxbVY0SjdzVkNXZWlTWFZqMWtWc0w3WktKbGlMNhAAGg0Igo2A1QYSBQjoBxAAQgBKAA
+REDIRECT 302 https://dsum-sec.casalemedia.com/rum?cm_dsp_id=81&gdpr=0&external_user_id=5A7kTOJZvU3_VrRO5AqoHuJdtx__XrFM513Xz_JO -> /rum?cm_dsp_id=81&gdpr=0&external_user_id=5A7kTOJZvU3_VrRO5AqoHuJdtx__XrFM513Xz_JO&C=1
+REDIRECT 307 https://idsync.rlcdn.com/1000.gif?memo=CMGdFxIzCi8IARCfOBooN3NFT0MtaVdWd3IxbVY0SjdzVkNXZWlTWFZqMWtWc0w3WktKbGlMNhAAGg0Igo2A1QYSBQjoBxAAQgBKAA -> https://pippio.com/api/sync?pid=5324&it=1&iv=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&_=2
+REDIRECT 307 https://pippio.com/api/sync?pid=5324&it=1&iv=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&_=2 -> https://px.ads.linkedin.com/db_sync?pid=10339&puuid=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&rand=06481745
+REDIRECT 302 https://px.ads.linkedin.com/db_sync?pid=10339&puuid=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&rand=06481745 -> /db_sync?pid=10339&puuid=6d542b8cfcae0e8c41f813196e9a5a1c0f08936eef37084ea25edddeaf6a4da4791426b5417dce21&rand=06481745&expected_cookie=ed532062-a599-4d46-8025-27bdd6c6b611
 URL final: https://ffcv.es/wp/
-Titulo: Home – FFCV
+Titulo: Inicio – FFCV
+REDIRECT 301 https://ffcv.es/wp/blog/2026/02/08/%f0%9f%8f%86-la-seleccio-sub14-hace-historia-en-zaragoza-som-campions-despanya%e2%80%bc%ef%b8%8f%f0%9f%92%aa%f0%9f%8f%bd-catalunya-%f0%9f%86%9a-seleccio-valenciana-sub14-0-2/ -> https://ffcv.es/wp/blog/2026/02/%f0%9f%8f%86-la-seleccio-sub14-hace-historia-en-zaragoza-som-campions-despanya%e2%80%bc%ef%b8%8f%f0%9f%92%aa%f0%9f%8f%bd-catalunya-%f0%9f%86%9a-seleccio-valenciana-sub14-0-2/
 --- Cronología ERROR: locator.click: Timeout 5000ms exceeded.
 Call log:
   - waiting for getByText('Cronología', { exact: true }).first()
@@ -8,10 +21,12 @@ Call log:
 Call log:
   - waiting for getByText('Alineaciones', { exact: true }).first()
  ---
+REDIRECT 301 https://ffcv.es/wp/blog/2025/12/02/la-marea-valenta-hace-historia-6-300-personas-inundan-el-estadio-riyadh-air-metropolitano-de-madrid-para-celebrar-la-uefa-womens-nations-league/ -> https://ffcv.es/wp/blog/2025/12/la-marea-valenta-hace-historia-6-300-personas-inundan-el-estadio-riyadh-air-metropolitano-de-madrid-para-celebrar-la-uefa-womens-nations-league/
 --- Plantillas ERROR: locator.click: Timeout 5000ms exceeded.
 Call log:
   - waiting for getByText('Plantillas', { exact: true }).first()
  ---
+REDIRECT 301 https://ffcv.es/wp/blog/2025/09/10/la-ffcv-inaugura-la-reconstruccion-del-camp-municipal-de-benetusser-uno-de-los-mas-devastados-por-la-dana/ -> https://ffcv.es/wp/blog/2025/09/la-ffcv-inaugura-la-reconstruccion-del-camp-municipal-de-benetusser-uno-de-los-mas-devastados-por-la-dana/
 --- Información del partido ERROR: locator.click: Timeout 5000ms exceeded.
 Call log:
   - waiting for getByText('Información del partido', { exact: true }).first()
