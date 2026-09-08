@@ -38,4 +38,31 @@ if (candidatosJ1b.length > 0) {
 console.log('\n=== Texto completo tras intentar clicar J.1 ===')
 console.log(await page.evaluate(() => document.body.innerText))
 
+console.log('\n=== Intentando clicar el marcador del partido ya jugado (C.D. Acero) ===')
+try {
+  const fila = page.getByText('C.D. Acero', { exact: true }).first()
+  await fila.click({ timeout: 5000 })
+  await page.waitForTimeout(2500)
+  console.log('URL tras clic en C.D. Acero:', page.url())
+  console.log('Titulo:', await page.title())
+  if (page.url().includes('partido.php')) {
+    for (const pestana of ['Cronología', 'Alineaciones', 'Plantillas']) {
+      try {
+        const tab = page.getByText(pestana, { exact: true }).first()
+        await tab.click({ timeout: 5000 })
+        await page.waitForTimeout(1500)
+        console.log(`\n=== Pestaña: ${pestana} ===`)
+        console.log((await page.evaluate(() => document.body.innerText)).slice(0, 4500))
+      } catch (e) {
+        console.log(`--- ${pestana} ERROR: ${e.message} ---`)
+      }
+    }
+  } else {
+    console.log('No llegamos a la ficha de partido. Texto visible:')
+    console.log((await page.evaluate(() => document.body.innerText)).slice(0, 1500))
+  }
+} catch (e) {
+  console.log('ERROR clic en C.D. Acero:', e.message)
+}
+
 await browser.close()
