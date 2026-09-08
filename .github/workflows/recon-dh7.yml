@@ -1,0 +1,27 @@
+name: Reconocimiento DH7 (temporal)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  recon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install playwright@1.48.0
+      - run: npx playwright install --with-deps chromium
+
+      - run: node scripts/scraper/recon-dh7.mjs
+
+      - name: Commit resultado
+        run: |
+          git config user.name "recon-bot"
+          git config user.email "recon-bot@users.noreply.github.com"
+          git add recon-dh7-texto.txt recon-dh7-html.txt
+          git commit -m "Reconocimiento: jornada 1 DH7 (temporal)" || echo "sin cambios"
+          git push
