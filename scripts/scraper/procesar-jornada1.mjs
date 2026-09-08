@@ -1,10 +1,9 @@
 // Script local (no CI): procesa jornada1-detalle.json y genera:
 //  1. Las entradas RESULTADOS de jornada 1 con eventos reales (gol, tarjeta_amarilla,
 //     tarjeta_roja) + el portero titular de cada equipo, listas para pegar en resultados.js.
-//  2. Un volcado de nombres de la convocatoria (Plantillas) de cada partido, para
+//  2. Un volcado de las alineaciones (convocados con dorsal) de cada partido, para
 //     contrastar a mano contra PLANTILLAS y ver si hay jugadores nuevos.
 import { readFileSync, writeFileSync } from 'node:fs'
-import { COMPETICIONES_FFCV } from '../../src/data/competicionesFfcv.js'
 import { equiposPorGrupo } from '../../src/data/equipos.js'
 import { idPartido } from '../../src/data/resultados.js'
 
@@ -35,36 +34,45 @@ function nombreCortoDe(grupo, nombreFfcv) {
   return null
 }
 
-// Extrae, de un texto de "Alineaciones", el/los porteros titulares de cada
-// equipo. Formato: "<Equipo A> (form)" "<Equipo B> (form)" "<Equipo A>" "Titulares"
-// NOMBRE \n POSICION \n [C|PT|PS] \n #N ... "Suplentes" ... "<Equipo B>" "Titulares" ...
-function extraerPorterosTitulares(alineacionesTexto, nombreLocalFfcv, nombreVisitanteFfcv) {
-  const lineas = alineacionesTexto.split('\n').map((l) => l.trim())
-  const idxTitularesLocal = lineas.indexOf('Titulares')
-  const idxSuplentesLocal = lineas.indexOf('Suplentes')
-  const idxTitularesVisit = lineas.indexOf('Titulares', idxSuplentesLocal + 1)
-  const idxSuplentesVisit = lineas.indexOf('Suplentes', idxTitularesVisit + 1)
+// Cada texto de "Alineaciones" (local o visitante, ya vienen por separado) tiene
+// una sola sección Titulares/Suplentes con el formato:
+// NOMBRE, APELLIDOS \n Posición \n [C|PT|PS] \n #Dorsal
+function extraerPorteroTitular(alineacionTexto) {
+  const lineas = alineacionTexto.split('\n').map((l) => l.trim())
+  const idxTitulares = lineas.indexOf('Titulares')
+  const idxSuplentes = lineas.indexOf('Suplentes')
+  if (idxTitulares === -1) return null
+  const fin = idxSuplentes !== -1 ? idxSuplentes : lineas.length
+  for (let i = idxTitulares; i < fin; i++) {
+    if (lineas[i] === 'Portero/a') return lineas[i - 1]
+  }
+  return null
+}
 
-  function porteroEnRango(inicio, fin) {
-    for (let i = inicio; i < fin; i++) {
-      if (lineas[i] === 'Portero/a') {
-        // El nombre está 1 o 2 líneas antes (según si hay línea previa vacía).
-        return lineas[i - 1]
+// Convocados (con dorsal) de un texto de Alineaciones: junta Titulares + Suplentes.
+function extraerConvocados(alineacionTexto) {
+  const lineas = alineacionTexto.split('\n').map((l) => l.trim())
+  const idxTitulares = lineas.indexOf('Titulares')
+  const idxCuerpoTecnico = lineas.indexOf('Cuerpo técnico', idxTitulares)
+  if (idxTitulares === -1) return []
+  const fin = idxCuerpoTecnico !== -1 ? idxCuerpoTecnico : lineas.length
+  const jugadores = []
+  for (let i = idxTitulares; i < fin; i++) {
+    if (/^#\d+$/.test(lineas[i])) {
+      let j = i - 1
+      while (j >= 0 && !lineas[j].includes(',') && lineas[j] !== '') j--
+      if (j >= 0 && lineas[j].includes(',')) {
+        jugadores.push({ nombreFfcv: lineas[j], dorsal: lineas[i].slice(1) })
       }
     }
-    return null
   }
-
-  const porteroLocal = idxTitularesLocal !== -1 && idxSuplentesLocal !== -1 ? porteroEnRango(idxTitularesLocal, idxSuplentesLocal) : null
-  const porteroVisitante = idxTitularesVisit !== -1 && idxSuplentesVisit !== -1 ? porteroEnRango(idxTitularesVisit, idxSuplentesVisit) : null
-
-  return { porteroLocal, porteroVisitante }
+  return jugadores
 }
 
 const nuevasEntradas = {}
-const porterosPorPartido = [] // { grupo, equipoId, equipoNombre, porteroNombre, golesEncajados }
-const convocatoriasVolcado = {} // grupo -> [ { local, visitante, plantillasTexto } ]
+const convocatoriasVolcado = {} // grupo -> [ { local, visitante, convocadosLocal, convocadosVisitante } ]
 const sinMapear = []
+let porterosDetectados = 0
 
 for (const [grupo, partidos] of Object.entries(resultadoFinal)) {
   convocatoriasVolcado[grupo] = []
@@ -97,25 +105,32 @@ for (const [grupo, partidos] of Object.entries(resultadoFinal)) {
       })
     }
 
-    nuevasEntradas[id] = { resultado: { golesLocal, golesVisitante }, eventos }
+    const porteroLocal = p.alineacionesTexto ? extraerPorteroTitular(p.alineacionesTexto) : null
+    const porteroVisitante = p.alineacionesVisitanteTexto ? extraerPorteroTitular(p.alineacionesVisitanteTexto) : null
+    if (porteroLocal) porterosDetectados++
+    if (porteroVisitante) porterosDetectados++
 
-    const { porteroLocal, porteroVisitante } = extraerPorterosTitulares(p.alineacionesTexto, p.local, p.visitante)
-    if (porteroLocal) {
-      porterosPorPartido.push({ grupo, equipoId: eqLocal.id, equipoNombre: eqLocal.nombre, porteroNombre: porteroLocal, golesEncajados: golesVisitante })
-    }
-    if (porteroVisitante) {
-      porterosPorPartido.push({ grupo, equipoId: eqVisitante.id, equipoNombre: eqVisitante.nombre, porteroNombre: porteroVisitante, golesEncajados: golesLocal })
+    nuevasEntradas[id] = {
+      resultado: { golesLocal, golesVisitante },
+      eventos,
+      porteros: { local: porteroLocal, visitante: porteroVisitante },
     }
 
-    convocatoriasVolcado[grupo].push({ local: eqLocal.nombre, visitante: eqVisitante.nombre, plantillasTexto: p.plantillasTexto })
+    convocatoriasVolcado[grupo].push({
+      local: eqLocal.nombre,
+      visitante: eqVisitante.nombre,
+      localId: eqLocal.id,
+      visitanteId: eqVisitante.id,
+      convocadosLocal: p.alineacionesTexto ? extraerConvocados(p.alineacionesTexto) : [],
+      convocadosVisitante: p.alineacionesVisitanteTexto ? extraerConvocados(p.alineacionesVisitanteTexto) : [],
+    })
   }
 }
 
 writeFileSync('scripts/scraper/salida-eventos.json', JSON.stringify(nuevasEntradas, null, 2))
-writeFileSync('scripts/scraper/salida-porteros.json', JSON.stringify(porterosPorPartido, null, 2))
 writeFileSync('scripts/scraper/salida-convocatorias.json', JSON.stringify(convocatoriasVolcado, null, 2))
 
 console.log('Entradas de eventos generadas:', Object.keys(nuevasEntradas).length)
-console.log('Porteros titulares detectados:', porterosPorPartido.length)
+console.log('Porteros titulares detectados:', porterosDetectados, '/', Object.keys(nuevasEntradas).length * 2)
 console.log('Sin mapear a equipos.js:', sinMapear.length)
 console.log(JSON.stringify(sinMapear, null, 2))

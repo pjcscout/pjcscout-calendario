@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { GRUPOS, escudoUrl } from '../data/equipos.js'
 import { clasificacionDeGrupo } from '../utils/clasificacion.js'
+import { pichichisPorEquipo, ranquingPorteros } from '../utils/estadisticasJugadores.js'
 import { establecerCanonical } from '../utils/seo.js'
 
 const SITIO = 'https://calendario.pjcscout.es'
@@ -12,6 +13,8 @@ export default function ClasificacionPage() {
   const grupo = GRUPOS[grupoId]
   const tabla = grupo ? clasificacionDeGrupo(grupoId) : null
   const hayPartidosJugados = tabla ? !tabla.every((fila) => fila.pj === 0) : false
+  const pichichis = hayPartidosJugados ? pichichisPorEquipo(grupoId).filter((p) => p.goleadores.length > 0) : []
+  const porteros = hayPartidosJugados ? ranquingPorteros(grupoId) : []
 
   useEffect(() => {
     if (!grupo) return
@@ -112,6 +115,94 @@ export default function ClasificacionPage() {
         <p className="clasificacion__aviso">
           La clasificación se irá completando jornada a jornada en cuanto arranque la liga.
         </p>
+      )}
+
+      {pichichis.length > 0 && (
+        <div className="clasificacion__estadisticas">
+          <h2 className="clasificacion__estadisticas-titulo">Máximo goleador por equipo</h2>
+          <p className="clasificacion__estadisticas-nota">
+            Datos de las actas oficiales de la federación. No incluye asistencias: la fuente no las publica.
+          </p>
+          <div className="clasificacion__tabla-scroll">
+            <table className="clasificacion__tabla">
+              <thead>
+                <tr>
+                  <th scope="col" className="clasificacion__col-equipo">
+                    Equipo
+                  </th>
+                  <th scope="col">Goleador</th>
+                  <th scope="col">Goles</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pichichis.map(({ equipo, goleadores }) => (
+                  <tr key={equipo.id}>
+                    <td className="clasificacion__col-equipo">
+                      <img
+                        className="clasificacion__escudo"
+                        src={escudoUrl(equipo)}
+                        alt=""
+                        width={20}
+                        height={20}
+                        loading="lazy"
+                      />
+                      {equipo.nombre}
+                    </td>
+                    <td>{goleadores[0].jugador}</td>
+                    <td>{goleadores[0].goles}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {porteros.length > 0 && (
+        <div className="clasificacion__estadisticas">
+          <h2 className="clasificacion__estadisticas-titulo">Porteros · mejor promedio de goles encajados</h2>
+          <div className="clasificacion__tabla-scroll">
+            <table className="clasificacion__tabla">
+              <thead>
+                <tr>
+                  <th scope="col">Portero</th>
+                  <th scope="col" className="clasificacion__col-equipo">
+                    Equipo
+                  </th>
+                  <th scope="col">PJ</th>
+                  <th scope="col">GC</th>
+                  <th scope="col">GC/partido</th>
+                </tr>
+              </thead>
+              <tbody>
+                {porteros.map((p) => {
+                  const equipo = tabla.find((fila) => fila.equipo.id === p.equipoId)?.equipo
+                  return (
+                    <tr key={`${p.equipoId}__${p.nombre}`}>
+                      <td>{p.nombre}</td>
+                      <td className="clasificacion__col-equipo">
+                        {equipo && (
+                          <img
+                            className="clasificacion__escudo"
+                            src={escudoUrl(equipo)}
+                            alt=""
+                            width={20}
+                            height={20}
+                            loading="lazy"
+                          />
+                        )}
+                        {equipo?.nombre}
+                      </td>
+                      <td>{p.partidos}</td>
+                      <td>{p.golesEncajados}</td>
+                      <td>{p.promedio.toFixed(2)}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
       )}
     </div>
   )
