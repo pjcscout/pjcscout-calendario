@@ -1,154 +1,151 @@
-=== HTML del contenedor de Cronología ===
---- candidato ---
-<div class="container-wide" style="position:relative;">
-      <div class="header-content">
-        <div class="logo depth-3d" style="display:flex;align-items:center;justify-content:center;">
-          <a href="https://ffcv.es" style="display:block;" title="Ir a FFCV">
-            <img src="../img/logo_ffcv.png" alt="FFCV" class="logo-3d" style="width:164px;height:auto;display:block;">
-          </a>
-        </div>
-        <div class="header-right">
-          <nav class="main-nav">
-            <ul>
-              <li><a href="../index.php#partidos">Partidos</a></li>
-              <li><a id="nav-clasificaciones-header" href="../index.php?from=partido&amp;view=clasificaciones#clasificaciones">Clasificaciones</a></li>
-              <li><a id="menu-sanciones-link" href="/competiciones/sanciones/sanciones.php?codcompeticion=905431604&amp;cod_competicion=905431604&amp;codgrupo=905431605&amp;cod_grupo=905431605&amp;codtemporada=22&amp;cod_temporada=22&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658#sanciones" data-base-href="../sanciones/sanciones.php#sanciones">Sanciones</a></li>
-              <li><a id="menu-estadisticas-link" href="../estadisticas/estadisticas.php?codcompeticion=905431604&amp;codgrupo=905431605&amp;codtemporada=22">Rankings</a></li>
-              <li><a href="https://ffcv.es/wp/noticias/">Noticias</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="title-search-row">
-        <h1 id="md-title-header" class="md-title-page">Tercera Federación - GRUP - VI</h1>
-      </div>
-      <div class="header-meta">
-        <div id="md-header-top" class="header-meta-top">05 sept <span class="dot">•</span>Jornada 1</div>
-        <div class="header-meta-divider"></div>
-        <div id="md-header-mid" class="header-meta-mid"><a id="md-header-campo-link" href="../instalaciones/campo.php?codcampo=5077" rel="noopener" style="pointer-events: auto;">Estadio El Fornas F-11</a></div>
-        <div id="md-header-weather" class="header-meta-weather" style=""><span class="wx-badge">🌤️ 25°C</span><span>Poco nuboso · Viento 5 km/h</span></div>
-      </div>
-      <!-- Enfrentamiento de equipos en la cabecera -->
-      <div id="md-teams" class="teams-line"><div class="t t-local"><a class="team-link" href="../equipos/equipo.php?codigo_equipo=10537&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658" style="text-decoration:none;color:inherit;"><img src="https://appffcv.filesnovanet.es/pnfg/pimg/Clubes/00100_0074568858_logo_CDA.png?nova=1" alt="C.D. Acero "><span class="name" style="white-space: nowrap; font-size: 26.5px;">C.D. Acero </span></a></div><div class="t t-time">0 - 1</div><div class="t t-visit"><a class="team-link" href="../equipos/equipo.php?codigo_equipo=9856&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658" style="text-decoration:none;color:inherit;"><span class="name" style="white-space: nowrap; font-size: 26.5px;">Crevillente Deportivo </span><img src="https://appffcv.filesnovanet.es/pnfg/pimg/Clubes/00100_0074502475_Crevillente_Deportivo.png?nova=1" alt="Crevillente Deportivo "></a></div></div><div id="goleadores-inline" class="goleadores-inline" style="--gl-pad-left: 305px; --gl-pad-right: 0px;"><div class="goleadores-side right"><span class="gol-item"><a class="gol-link" href="../jugadores/jugador.php?codigo=9784223&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658" title="R. Muñoz"><span class="gol-nombre">R. Muñoz</span></a> <span class="gol-min">61'</span></span></div></div>
-      <!-- Espacio extra entre header y submenú -->
-      <div style="height: 22px;"></div>
-      <!-- Submenú tipo tabs en cabecera al borde inferior -->
-      <nav class="match-tabs-nav" aria-label="Navegación del partido">
-        <div id="match-tabs" class="match-tabs"><a href="#info" class="match-tab">Información del partido</a>
-<a href="#clasificacion" class="match-tab">Clasificación</a>
-<a href="#plantillas" class="match-tab">Plantillas</a>
-<a href="#alineaciones" class="match-tab">Alineaciones</a>
-<a href="#cronologia" class="match-tab active">Cronología</a></div>
-      </nav>
-      <!-- Contador de cuenta atrás -->
-      <div id="countdown-timer" style="position:absolute;right:22px;bottom:10px;z-index:10;background:#fff;border-radius:10px;padding:8px 18px;font-size:1.18em;font-weight:700;color:#011C40;box-shadow:0 2px 10px rgba(1,28,64,0.10);display:none;"></div>
-    </div>
---- fin candidato (longitud total 4573) ---
+Grupo tercera-vi: 5 partidos procesados de 9 jugados.
+Grupo llc-nord: 4 partidos procesados de 8 jugados.
+Grupo llc-sud: 4 partidos procesados de 8 jugados.
+Grupo llc-juv-nord: 4 partidos procesados de 8 jugados.
+Grupo llc-juv-sud: 4 partidos procesados de 8 jugados.
+Grupo cadete-autonomico: 4 partidos procesados de 8 jugados.
+Grupo liga-nacional: 5 partidos procesados de 9 jugados.
 
---- candidato ---
-<div class="timeline" style="--tl-bg-top: 573px; --tl-bg-offset: 225px;"><div class="tl-bg tl-bg-left" style="background-image: url(&quot;https://appffcv.filesnovanet.es/pnfg/pimg/Clubes/00100_0074568858_logo_CDA.png?nova=1&quot;);"></div><div class="tl-bg tl-bg-right" style="background-image: url(&quot;https://appffcv.filesnovanet.es/pnfg/pimg/Clubes/00100_0074502475_Crevillente_Deportivo.png?nova=1&quot;);"></div><div class="tl-marker tl-start">
-        <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 14c0-3.314 2.686-6 6-6h5a3 3 0 110 6h-1v2a4 4 0 11-8 0v-2H4z" stroke="#7aa0c8" stroke-width="1.6" fill="#eaf3ff"></path>
-          <circle cx="17" cy="11" r="1.4" fill="#7aa0c8"></circle>
-        </svg><span>Inicio</span></div><div class="tl-marker tl-end">
-        <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 14c0-3.314 2.686-6 6-6h5a3 3 0 110 6h-1v2a4 4 0 11-8 0v-2H4z" stroke="#7aa0c8" stroke-width="1.6" fill="#eaf3ff"></path>
-          <circle cx="17" cy="11" r="1.4" fill="#7aa0c8"></circle>
-        </svg><span>Final</span></div>
-          <div class="timeline-item left">
-            <span class="tl-min">4'</span>
-            <div class="tl-content"><a class="tl-link" href="../jugadores/jugador.php?codigo=17067037&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="C. Lopez"><span class="tl-player">C. Lopez</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tl-ico tl-card yellow"></span></div>
-          </div>
-          <div class="timeline-item right">
-            <span class="tl-min">23'</span>
-            <div class="tl-content"><span class="tl-ico tl-card yellow"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="tl-link" href="../jugadores/jugador.php?codigo=9784223&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="R. Muñoz"><span class="tl-player">R. Muñoz</span></a></div>
-          </div>
-          <div class="timeline-item left">
-            <span class="tl-min">43'</span>
-            <div class="tl-content"><span class="sub-chip in"><span class="tri"></span><span class="tl-dorsal">21</span> <a class="tl-link" href="../jugadores/jugador.php?codigo=9790088&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="A. Moron"><span class="tl-player">A. Moron</span></a></span><span class="sub-sep" aria-hidden="true">⇄</span><span class="sub-chip out"><span class="tri"></span><a class="tl-link" href="../jugadores/jugador.php?codigo=9118337&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="F. Cano"><span class="tl-player">F. Cano</span></a> <span class="tl-dorsal">8</span></span></div>
-          </div>
-          <div class="timeline-item left">
-            <span class="tl-min">45'</span>
-            <div class="tl-content"><a class="tl-link" href="../jugadores/jugador.php?codigo=25693142&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="Y. Drissi"><span class="tl-player">Y. Drissi</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tl-ico tl-card yellow"></span></div>
-          </div>
-          <div class="timeline-item right">
-            <span class="tl-min">45'</span>
-            <div class="tl-content"><span class="tl-ico tl-card yellow"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="tl-link" href="../jugadores/jugador.php?codigo=25872180&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="I. Peña"><span class="tl-player">I. Peña</span></a></div>
-          </div>
-          <div class="timeline-item right">
-            <span class="tl-min">46'</span>
-            <div class="tl-content"><span class="sub-chip in"><span class="tri"></span><span class="tl-dorsal">9</span> <a class="tl-link" href="../jugadores/jugador.php?codigo=9781576&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="S. Moreno"><span class="tl-player">S. Moreno</span></a></span><span class="sub-sep" aria-hidden="true">⇄</span><span class="sub-chip out"><span class="tri"></span><a class="tl-link" href="../jugadores/jugador.php?codigo=903185888&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="A. Nofiu"><span class="tl-player">A. Nofiu</span></a> <span class="tl-dorsal">15</span></span></div>
-          </div>
-          <div class="timeline-item right">
-            <span class="tl-min">49'</span>
-            <div class="tl-content"><span class="sub-chip in"><span class="tri"></span><span class="tl-dorsal">8</span> <a class="tl-link" href="../jugadores/jugador.php?codigo=9785902&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="S. Hinojosa"><span class="tl-player">S. Hinojosa</span></a></span><span class="sub-sep" aria-hidden="true">⇄</span><span class="sub-chip out"><span class="tri"></span><a class="tl-link" href="../jugadores/jugador.php?codigo=53979&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="S. Galindo"><span class="tl-player">S. Galindo</span></a> <span class="tl-dorsal">12</span></span></div>
-          </div>
-          <div class="timeline-item left">
-            <span class="tl-min">56'</span>
-            <div class="tl-content"><a class="tl-link" href="../jugadores/jugador.php?codigo=9811360&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="J. Perotti"><span class="tl
---- fin candidato (longitud total 13190) ---
-
---- candidato ---
-<main class="container-narrow" style="position:relative;z-index:1;">
-    <div class="match-actions">
-      <a href="../index.php#partidos" class="btn-back" aria-label="Volver" onclick="return window.ffcvGoBackFromPartido ? window.ffcvGoBackFromPartido(event) : true;">← Volver</a>
-    </div>
-    <div id="md-content" style="display: none;"></div>
-    <section id="info" class="info-section" aria-label="Información del partido" style="display: none;">
-      <div class="info-flex-wrap" style="display:flex;gap:32px;align-items:stretch;flex-wrap:wrap;">
-        <div class="info-photo-col" style="flex:0 0 320px;max-width:340px;min-width:180px;align-self:flex-start;position:relative;display:flex;flex-direction:column;gap:12px;">
-          <div class="info-photo-wrap" style="position:relative; border-radius:14px; overflow:hidden; aspect-ratio: 16/9; max-width: 420px;">
-            <img id="info-photo" class="info-photo photo-center-third" src="https://appffcv.filesnovanet.es/pnfg/pimg/Campos/00f9ccabaf663f9e2951bf69794f6c4f.jpg" alt="Foto del estadio" style="width:100%;height:auto;max-height:220px;object-fit:cover;display:block;border-radius:14px;box-shadow:0 2px 12px rgba(1,28,64,0.10);">
-            <div class="info-overlay" id="info-overlay" style="display: block; align-items: center; gap: 8px;">
-              <span class="material-symbols-outlined" style="font-size:1.3em;color:#00E5FF;">location_on</span>
-              <a class="campo" id="info-campo" href="../instalaciones/campo.php?codcampo=5077" rel="noopener" style="font-weight: 900; font-size: 1.1em; color: rgb(255, 255, 255); pointer-events: auto;">Estadio El Fornas F-11</a>
-              <div class="localidad" id="info-localidad" style="font-weight:600;font-size:1em;opacity:.9;">Sagunto</div>
-            </div>
-          </div>
-        </div>
-        <div class="info-datos-wrap" style="flex:1 1 220px;min-width:180px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;">
-          <div id="info-fecha" style="font-size:1.18rem;font-weight:700;color:#0b1c33;display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="font-size:1.3em;color:#00E5FF;">calendar_month</span> sábado, 5 de septiembre de 2026</div>
-          <div id="info-hora" style="font-size:1.08rem;font-weight:600;color:#31507a;display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="font-size:1.3em;color:#00E5FF;">schedule</span> 18:00</div>
-          <div id="info-pos-puntos" style="display:flex;gap:10px;margin-top:0.3em;">
-        <span style="background:#e5efff;border-radius:8px;padding:4px 10px;font-weight:700;color:#0b1c33;">C.D. Acero : Posición 16º · 0 pts</span>
-        <span style="background:#e5efff;border-radius:8px;padding:4px 10px;font-weight:700;color:#0b1c33;">Crevillente Deportivo : Posición 8º · 3 pts</span>
-      </div>
-          <div id="info-arbitros" style="margin-top:10px;display:flex;flex-direction:column;gap:8px;">
-                <div style="background:linear-gradient(120deg,#f8fbff 80%,#eaf3ff 100%);border-radius:16px;padding:18px 18px 12px 18px;box-shadow:0 2px 10px rgba(1,28,64,0.06);display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-wrap:wrap;">
-                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:2px;justify-content:flex-start;width:100%;">
-                    <span class="material-symbols-outlined" style="font-size:2.1em;color:#00E5FF;">sports</span>
-                    <span style="font-size:1.08em;font-weight:700;color:#31507a;letter-spacing:0.01em;">Equipo arbitral</span>
-                  </div>
-                  <div style="display:flex;flex-wrap:wrap;gap:10px;width:100%;">
-                    
-                      <span style="background:#e5efff;border-radius:12px;padding:6px 14px 6px 10px;display:flex;align-items:center;box-shadow:0 1px 4px #eaf3ff;font-size:1em;font-weight:500;color:#31507a;gap:7px;">
-                        <span style="background:#00E5FF;color:#fff;border-radius:8px;padding:2px 8px 2px 7px;font-size:0.98em;font-weight:700;letter-spacing:0.01em;">Árbitro principal</span>
-                        <span style="font-weight:600;">Francisco Blasco</span>
-                      </span>
-                    
-                      <span style="background:#e5efff;border-radius:12px;padding:6px 14px 6px 10px;display:flex;align-items:center;box-shadow:0 1px 4px #eaf3ff;font-size:1em;font-weight:500;color:#31507a;gap:7px;">
-                        <span style="background:#00E5FF;color:#fff;border-radius:8px;padding:2px 8px 2px 7px;font-size:0.98em;font-weight:700;letter-spacing:0.01em;">Árbitro asistente</span>
-                        <span style="font-weight:600;">Iñaki Olea</span>
-                      </span>
-                    
-                      <span style="background:#e5efff;border-radius:12px;padding:6px 14px 6px 10px;display:flex;align-items:center;box-shadow:0 1px 4px #eaf3ff;font-size:1em;font-weight:500;color:#31507a;gap:7px;">
-                        <span style="background:#00E5FF;color:#fff;border-radius:8px;padding:2px 8px 2px 7px;font-size:0.98em;font-weight:700;letter-spacing:0.01em;">Árbitro asistente</span>
-                        <span style="font-weight:600;">Joel Martínez</span>
-                      </span>
-                    
-                  </div>
-                </div>
-              </div>
-        </div>
-      </div>
-      <div id="info-team-outcomes" class="results-quick results-quick-wide" style="">
-      <div class="results-quick-title"><span class="material-symbols-outlined" style="color:#00A3FF;">insights</span>Predicciones</div>
-      <div class="results-quick-section results-quick-outcomes">
-        <div class="results-quick-section-title">Predicción del resultado</div>
-        <div class="results-quick-grid">
-          
-        <div class="results-quick-team">
-          <h4>C.D. Acero </h4>
-          <div class="results-quick-row"><span class="results-quick-label"
---- fin candidato (longitud total 21675) ---
-
+Errores: 28
+[
+  {
+    "grupo": "tercera-vi",
+    "partido": "C.D. Roda 'A' vs Ontinyent 1931 C.F.",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Roda \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "tercera-vi",
+    "partido": "C.D. Acero vs Crevillente Deportivo",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Acero', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "tercera-vi",
+    "partido": "Hércules C.F. 'B' vs S.C. Torrevieja C.F. 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Hércules C.F. \\'B\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "tercera-vi",
+    "partido": "C.D. Eldense 'B' vs Athletic Club Torrellano",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Eldense \\'B\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-nord",
+    "partido": "C.D. Burriana 'A' vs F.C. Odisea 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Burriana \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-nord",
+    "partido": "Alqueries C.F. 'A' vs U.D. Aldaia C.F. 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Alqueries C.F. \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-nord",
+    "partido": "C.D. L'Alcora vs C.D. Onda 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. L\\'Alcora', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-nord",
+    "partido": "C.F. Nou Jove Castelló 'A' vs C.D. Almazora 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Nou Jove Castelló \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-sud",
+    "partido": "U.D. Alzira vs F.B. Redován C.F. 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('U.D. Alzira', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-sud",
+    "partido": "C.F. Benidorm 'A' vs C.D.F. Jávea",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Benidorm \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-sud",
+    "partido": "C.D. Olímpic vs C.F. Gandia 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Olímpic', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-sud",
+    "partido": "Benigànim C.F. vs C.D. Almoradí 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Benigànim C.F.', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "partido": "C.F. Torre Levante 'A' vs Manises C.F. 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Torre Levante \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "partido": "C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Inter San José Valencia \\'B\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "partido": "Paterna C.F. 'A' vs C.F. At. Burriana - Salesianos 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Paterna C.F. \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-juv-nord",
+    "partido": "Bétera C.F. 'A' vs Col. Salgui E.D.E. 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Bétera C.F. \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "partido": "C.D. Pablo Iglesias 'A' vs Catral-Castrum C.F. 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Pablo Iglesias \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "partido": "C.D. Eldense 'A' vs Hércules C.F. 'B'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Eldense \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "partido": "C.F. Benidorm 'A' vs S.C.D. Intangco 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Benidorm \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "llc-juv-sud",
+    "partido": "C.D. Alcoyano 'A' vs C.D. Olímpic 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Alcoyano \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "partido": "Kelme C.F. 'A' vs Patacona C.F. 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Kelme C.F. \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "partido": "Elda Unión Cableworld C.F 'A' vs C.F. Fundació VCF 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Elda Unión Cableworld C.F \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "partido": "C.F. Benidorm 'A' vs Elche C.F. 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. Benidorm \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "cadete-autonomico",
+    "partido": "Villarreal C.F. 'A' vs C.D. Roda 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Villarreal C.F. \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "liga-nacional",
+    "partido": "C.F. At. Moncadense 'A' vs U.D. Alzira 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.F. At. Moncadense \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "liga-nacional",
+    "partido": "Tavernes Blanques C.F. 'A' vs C.F. Inter San José Valencia 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Tavernes Blanques C.F. \\'A\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "liga-nacional",
+    "partido": "C.D. Castellón 'B' vs Elda Unión Cableworld C.F 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('C.D. Castellón \\'B\\'', { exact: true }).first()\n"
+  },
+  {
+    "grupo": "liga-nacional",
+    "partido": "Hércules C.F. 'A' vs C.D. El Rumbo 'A'",
+    "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByText('Hércules C.F. \\'A\\'', { exact: true }).first()\n"
+  }
+]
