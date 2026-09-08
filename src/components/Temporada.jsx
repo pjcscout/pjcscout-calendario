@@ -4,6 +4,7 @@ import { GRUPOS, buscarEquipoPorNombre, escudoUrl } from '../data/equipos.js'
 import { fixturesDeEquipo } from '../utils/fixtures.js'
 import { fichaEquipo } from '../data/fichas.js'
 import { plantillaEquipo } from '../data/plantillas.js'
+import { minutosJugadosEquipo } from '../data/minutosJugados.js'
 import { formatearFecha } from '../utils/fecha.js'
 import { urlMapa } from '../utils/mapa.js'
 import EquipacionIcon from './EquipacionIcon.jsx'
@@ -27,6 +28,7 @@ export default function Temporada({ equipo, onCambiar }) {
   const grupo = GRUPOS[equipo.grupo]
   const ficha = fichaEquipo(equipo.id)
   const plantilla = plantillaEquipo(equipo.id)
+  const minutosJugados = minutosJugadosEquipo(equipo.id)
 
   const fixtures = useMemo(() => fixturesDeEquipo(equipo.nombre, equipo.grupo), [equipo])
 
@@ -247,10 +249,16 @@ export default function Temporada({ equipo, onCambiar }) {
       {plantilla && plantilla.length > 0 && (
         <div className="temporada__plantilla">
           <h2 className="temporada__plantilla-titulo">Plantilla</h2>
+          {minutosJugados && (
+            <p className="temporada__plantilla-nota">Minutos jugados esta temporada, junto al nombre de quien ya ha debutado.</p>
+          )}
           <ul className="temporada__plantilla-lista">
             {plantilla.map((nombre) => (
               <li key={nombre} className="temporada__plantilla-jugador">
                 {nombre}
+                {minutosJugados?.[nombre] != null && (
+                  <span className="temporada__plantilla-minutos"> · {minutosJugados[nombre]}'</span>
+                )}
               </li>
             ))}
           </ul>
