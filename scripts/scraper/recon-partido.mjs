@@ -1,12 +1,14 @@
-// Reconocimiento temporal 6: usar la URL real de ficha de partido que
-// encontró el usuario navegando a mano:
-//   https://ffcv.es/competiciones/partidos/partido.php?cod_partido=<codacta>
-// Pestañas: Información del partido / Clasificación / Plantillas /
-// Alineaciones / Cronología. Vemos qué datos estructurados hay en cada una
-// (goleadores+minuto, tarjetas, sustituciones, convocatoria, minutos jugados).
+// Reconocimiento temporal 6d: la SPA de FFCV redirige a inicio si se entra
+// directamente por URL al partido (sin estado de navegación interna). Hay
+// que llegar clicando de verdad: index -> PARTIDOS -> "Ver detalles" del
+// partido concreto -> pestañas Cronología/Alineaciones/Plantillas.
 import { chromium } from 'playwright'
+import { COMPETICIONES_FFCV, COD_TEMPORADA_2026_2027 } from '../../src/data/competicionesFfcv.js'
 
-const CODACTA_EJEMPLO = '26470658' // C.D. Acero 0-1 Crevillente Deportivo, tercera-vi jornada 1
+const cfg = COMPETICIONES_FFCV['tercera-vi']
+// C.D. Acero 0-1 Crevillente Deportivo, jornada 1, codacta 26470658
+const EQUIPO_LOCAL = 'C.D. Acero'
+const EQUIPO_VISITANTE = 'Crevillente Deportivo'
 
 const browser = await chromium.launch()
 const page = await browser.newPage({
@@ -14,26 +16,46 @@ const page = await browser.newPage({
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
 })
 
-page.on('response', (res) => {
-  if (res.status() >= 300 && res.status() < 400) {
-    console.log('REDIRECT', res.status(), res.url(), '->', res.headers()['location'])
+const url = `https://ffcv.es/competiciones/index.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}`
+await page.goto(url, { waitUntil: 'networkidle', timeout: 20000 })
+await page.waitForTimeout(1500)
+
+// Rechazar el banner de cookies si aparece, para que no tape nada.
+try {
+  await page.getByText('Rechazar', { exact: true }).first().click({ timeout: 3000 })
+} catch {}
+
+// Buscar el bloque del partido por nombre de los dos equipos y clicar su
+// "Ver detalles" (puede haber varios, cada partido tiene el suyo).
+const bloque = page.locator(`text=${EQUIPO_LOCAL}`).locator('xpath=ancestor::*[.//text()[contains(., "Ver detalles")]][1]')
+console.log('Bloques candidatos con', EQUIPO_LOCAL, ':', await page.locator(`text=${EQUIPO_LOCAL}`).count())
+
+// Alternativa más simple y robusta: recorrer todos los "Ver detalles" y
+// mirar el texto de su contenedor cercano hasta encontrar el que menciona
+// ambos equipos.
+const detalles = page.getByText('Ver detalles', { exact: true })
+const total = await detalles.count()
+console.log('Total "Ver detalles" en la página:', total)
+
+let indiceElegido = -1
+for (let i = 0; i < total; i++) {
+  const contenedor = detalles.nth(i).locator('xpath=ancestor::*[position()<=6]')
+  const texto = await contenedor.first().innerText().catch(() => '')
+  if (texto.includes(EQUIPO_LOCAL) && texto.includes(EQUIPO_VISITANTE)) {
+    indiceElegido = i
+    console.log(`Match ${i} contiene ambos equipos. Texto: ${texto.slice(0, 200)}`)
+    break
   }
-})
-page.on('framenavigated', (frame) => {
-  if (frame === page.mainFrame()) console.log('NAVEGACION a', frame.url())
-})
+}
 
-// Primero visitamos la app (no un .php suelto) para que cargue el shell/JS y
-// tengamos cookies de sesión, igual que haría un navegador real siguiendo
-// enlaces internos en vez de pegar la URL directamente.
-await page.goto('https://ffcv.es/competiciones/', { waitUntil: 'networkidle', timeout: 20000 })
-await page.waitForTimeout(1000)
+if (indiceElegido === -1) {
+  console.log('No se encontró el bloque exacto, probando el primero como fallback.')
+  indiceElegido = 0
+}
 
-const url = `https://ffcv.es/competiciones/partidos/partido.php?cod_partido=${CODACTA_EJEMPLO}#cronologia`
-console.log('Navegando a:', url)
-await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 })
-await page.waitForTimeout(3000)
-console.log('URL final:', page.url())
+await detalles.nth(indiceElegido).click({ timeout: 10000 })
+await page.waitForTimeout(2500)
+console.log('URL tras clicar Ver detalles:', page.url())
 console.log('Titulo:', await page.title())
 
 for (const pestana of ['Cronología', 'Alineaciones', 'Plantillas', 'Información del partido']) {
@@ -41,29 +63,12 @@ for (const pestana of ['Cronología', 'Alineaciones', 'Plantillas', 'Informació
     const tab = page.getByText(pestana, { exact: true }).first()
     await tab.click({ timeout: 5000 })
     await page.waitForTimeout(1500)
-    console.log(`\n=== Pestaña: ${pestana} (texto visible) ===`)
+    console.log(`\n=== Pestaña: ${pestana} ===`)
     const texto = await page.evaluate(() => document.body.innerText)
     console.log(texto.slice(0, 4000))
   } catch (e) {
     console.log(`--- ${pestana} ERROR: ${e.message} ---`)
   }
-}
-
-// Cronología: intentar sacar estructura por iconos/clases (gol, tarjeta, sustitución).
-try {
-  const tab = page.getByText('Cronología', { exact: true }).first()
-  await tab.click({ timeout: 5000 })
-  await page.waitForTimeout(1500)
-  const html = await page.evaluate(() => {
-    const posibles = document.querySelectorAll('[class*="cronolog"], [class*="event"], [class*="timeline"]')
-    return Array.from(posibles)
-      .slice(0, 5)
-      .map((el) => el.outerHTML.slice(0, 500))
-  })
-  console.log('\n=== Cronología: HTML de contenedores candidatos ===')
-  console.log(JSON.stringify(html, null, 2))
-} catch (e) {
-  console.log('ERROR estructura cronologia:', e.message)
 }
 
 await browser.close()
