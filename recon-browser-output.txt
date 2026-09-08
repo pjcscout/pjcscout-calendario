@@ -1,747 +1,154 @@
-=== Texto completo tras cargar (jornada por defecto) ===
-PARTIDOS
-CLASIFICACIONES
-SANCIONES
-RANKINGS
-NOTICIAS
-TERCERA FEDERACIÓN - GRUP - VI
-PUBLICIDAD
-Ver más
-Legislación empresarial
-Juegos deportivos
-Deportes
-privacidad
-Fútbol
-Privacidad
-Internet y telecomunicaciones
-Deportivo
-TEMPORADA
-Temporada
-2026-2027
-2025-2026
-2024-2025
-2023-2024
-2022-2023
-2021-2022
-2020-2021
-2019-2020
-2018-2019
-2017-2018
-2016-2017
-2015-2016
-2014-2015
-2013-2014
-2012-2013
-MODALIDAD
-MASCULÍ F11
-MASCULÍ FUTSAL
-VALENTA FUTBOL
-FUTBOL PLATJA VALENTA
-FUTBOL PLATJA MASCULÍ
-COMPETICIÓN
-Tercera Federación
-Fase Autonómica Copa Federación
-Lliga Comunitat
-Primera FFCV
-Segona FFCV
-Tercera FFCV
-VI La Nostra Copa
-Lliga de Veterans
-Liga Nacional Juvenil
-Lliga Comunitat Juvenil
-Primera FFCV Juvenil
-Segona FFCV Juvenil
-Tercera FFCV Juvenil
-Lliga Autonòmica Cadet
-Lliga Preferent Cadet
-Lliga Autonòmica Infantil
-Lliga Preferent Infantil
-GRUPO
-GRUP - VI
-‹
-J.1
-06 sept
-J.2
-13 sept
-J.3
-20 sept
-J.4
-27 sept
-J.5
-04 oct
-J.6
-11 oct
-J.7
-18 oct
-J.8
-25 oct
-J.9
-01 nov
-J.10
-08 nov
-J.11
-15 nov
-J.12
-22 nov
-J.13
-29 nov
-J.14
-06 dic
-J.15
-13 dic
-J.16
-20 dic
-J.17
-10 ene
-J.18
-17 ene
-J.19
-24 ene
-J.20
-31 ene
-J.21
-06 feb
-J.22
-14 feb
-J.23
-21 feb
-J.24
-28 feb
-J.25
-07 mar
-J.26
-14 mar
-J.27
-21 mar
-J.28
-28 mar
-J.29
-04 abr
-J.30
-11 abr
-J.31
-18 abr
-J.32
-25 abr
-J.33
-02 may
-J.34
-09 may
-›
-TERCERA FEDERACIÓN - GRUP - VI
-print
-visibility
-Vista
-Tarjetas
-Lista
-Sábado 12 de Septiembre de 2026
-Jornada 2
-C.D. Utiel
-C.D. Acero
-17:30
-Ver detalles
-Levante U.D. 'B'
-C.D. Buñol 'A'
-18:30
-Ver detalles
-Domingo 13 de Septiembre de 2026
-Jornada 2
-S.C. Torrevieja C.F. 'A'
-U.D. Vall de Uxó 'A'
-11:30
-Ver detalles
-Athletic Club Torrellano
-Torrent C.F. 'A'
-11:30
-Ver detalles
-C.D. Español de San Vicente
-Hércules C.F. 'B'
-12:00
-Ver detalles
-Atzeneta U.E. 'A'
-C.D. Eldense 'B'
-17:30
-Ver detalles
-Ontinyent 1931 C.F.
-At. Saguntino
-18:00
-Ver detalles
-Villarreal C.F. 'C'
-C.D. Roda 'A'
-18:00
-Ver detalles
-Crevillente Deportivo
-C.D. Soneja
-18:30
-Ver detalles
+=== HTML del contenedor de Cronología ===
+--- candidato ---
+<div class="container-wide" style="position:relative;">
+      <div class="header-content">
+        <div class="logo depth-3d" style="display:flex;align-items:center;justify-content:center;">
+          <a href="https://ffcv.es" style="display:block;" title="Ir a FFCV">
+            <img src="../img/logo_ffcv.png" alt="FFCV" class="logo-3d" style="width:164px;height:auto;display:block;">
+          </a>
+        </div>
+        <div class="header-right">
+          <nav class="main-nav">
+            <ul>
+              <li><a href="../index.php#partidos">Partidos</a></li>
+              <li><a id="nav-clasificaciones-header" href="../index.php?from=partido&amp;view=clasificaciones#clasificaciones">Clasificaciones</a></li>
+              <li><a id="menu-sanciones-link" href="/competiciones/sanciones/sanciones.php?codcompeticion=905431604&amp;cod_competicion=905431604&amp;codgrupo=905431605&amp;cod_grupo=905431605&amp;codtemporada=22&amp;cod_temporada=22&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658#sanciones" data-base-href="../sanciones/sanciones.php#sanciones">Sanciones</a></li>
+              <li><a id="menu-estadisticas-link" href="../estadisticas/estadisticas.php?codcompeticion=905431604&amp;codgrupo=905431605&amp;codtemporada=22">Rankings</a></li>
+              <li><a href="https://ffcv.es/wp/noticias/">Noticias</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="title-search-row">
+        <h1 id="md-title-header" class="md-title-page">Tercera Federación - GRUP - VI</h1>
+      </div>
+      <div class="header-meta">
+        <div id="md-header-top" class="header-meta-top">05 sept <span class="dot">•</span>Jornada 1</div>
+        <div class="header-meta-divider"></div>
+        <div id="md-header-mid" class="header-meta-mid"><a id="md-header-campo-link" href="../instalaciones/campo.php?codcampo=5077" rel="noopener" style="pointer-events: auto;">Estadio El Fornas F-11</a></div>
+        <div id="md-header-weather" class="header-meta-weather" style=""><span class="wx-badge">🌤️ 25°C</span><span>Poco nuboso · Viento 5 km/h</span></div>
+      </div>
+      <!-- Enfrentamiento de equipos en la cabecera -->
+      <div id="md-teams" class="teams-line"><div class="t t-local"><a class="team-link" href="../equipos/equipo.php?codigo_equipo=10537&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658" style="text-decoration:none;color:inherit;"><img src="https://appffcv.filesnovanet.es/pnfg/pimg/Clubes/00100_0074568858_logo_CDA.png?nova=1" alt="C.D. Acero "><span class="name" style="white-space: nowrap; font-size: 26.5px;">C.D. Acero </span></a></div><div class="t t-time">0 - 1</div><div class="t t-visit"><a class="team-link" href="../equipos/equipo.php?codigo_equipo=9856&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658" style="text-decoration:none;color:inherit;"><span class="name" style="white-space: nowrap; font-size: 26.5px;">Crevillente Deportivo </span><img src="https://appffcv.filesnovanet.es/pnfg/pimg/Clubes/00100_0074502475_Crevillente_Deportivo.png?nova=1" alt="Crevillente Deportivo "></a></div></div><div id="goleadores-inline" class="goleadores-inline" style="--gl-pad-left: 305px; --gl-pad-right: 0px;"><div class="goleadores-side right"><span class="gol-item"><a class="gol-link" href="../jugadores/jugador.php?codigo=9784223&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658" title="R. Muñoz"><span class="gol-nombre">R. Muñoz</span></a> <span class="gol-min">61'</span></span></div></div>
+      <!-- Espacio extra entre header y submenú -->
+      <div style="height: 22px;"></div>
+      <!-- Submenú tipo tabs en cabecera al borde inferior -->
+      <nav class="match-tabs-nav" aria-label="Navegación del partido">
+        <div id="match-tabs" class="match-tabs"><a href="#info" class="match-tab">Información del partido</a>
+<a href="#clasificacion" class="match-tab">Clasificación</a>
+<a href="#plantillas" class="match-tab">Plantillas</a>
+<a href="#alineaciones" class="match-tab">Alineaciones</a>
+<a href="#cronologia" class="match-tab active">Cronología</a></div>
+      </nav>
+      <!-- Contador de cuenta atrás -->
+      <div id="countdown-timer" style="position:absolute;right:22px;bottom:10px;z-index:10;background:#fff;border-radius:10px;padding:8px 18px;font-size:1.18em;font-weight:700;color:#011C40;box-shadow:0 2px 10px rgba(1,28,64,0.10);display:none;"></div>
+    </div>
+--- fin candidato (longitud total 4573) ---
 
-Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
+--- candidato ---
+<div class="timeline" style="--tl-bg-top: 573px; --tl-bg-offset: 225px;"><div class="tl-bg tl-bg-left" style="background-image: url(&quot;https://appffcv.filesnovanet.es/pnfg/pimg/Clubes/00100_0074568858_logo_CDA.png?nova=1&quot;);"></div><div class="tl-bg tl-bg-right" style="background-image: url(&quot;https://appffcv.filesnovanet.es/pnfg/pimg/Clubes/00100_0074502475_Crevillente_Deportivo.png?nova=1&quot;);"></div><div class="tl-marker tl-start">
+        <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 14c0-3.314 2.686-6 6-6h5a3 3 0 110 6h-1v2a4 4 0 11-8 0v-2H4z" stroke="#7aa0c8" stroke-width="1.6" fill="#eaf3ff"></path>
+          <circle cx="17" cy="11" r="1.4" fill="#7aa0c8"></circle>
+        </svg><span>Inicio</span></div><div class="tl-marker tl-end">
+        <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 14c0-3.314 2.686-6 6-6h5a3 3 0 110 6h-1v2a4 4 0 11-8 0v-2H4z" stroke="#7aa0c8" stroke-width="1.6" fill="#eaf3ff"></path>
+          <circle cx="17" cy="11" r="1.4" fill="#7aa0c8"></circle>
+        </svg><span>Final</span></div>
+          <div class="timeline-item left">
+            <span class="tl-min">4'</span>
+            <div class="tl-content"><a class="tl-link" href="../jugadores/jugador.php?codigo=17067037&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="C. Lopez"><span class="tl-player">C. Lopez</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tl-ico tl-card yellow"></span></div>
+          </div>
+          <div class="timeline-item right">
+            <span class="tl-min">23'</span>
+            <div class="tl-content"><span class="tl-ico tl-card yellow"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="tl-link" href="../jugadores/jugador.php?codigo=9784223&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="R. Muñoz"><span class="tl-player">R. Muñoz</span></a></div>
+          </div>
+          <div class="timeline-item left">
+            <span class="tl-min">43'</span>
+            <div class="tl-content"><span class="sub-chip in"><span class="tri"></span><span class="tl-dorsal">21</span> <a class="tl-link" href="../jugadores/jugador.php?codigo=9790088&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="A. Moron"><span class="tl-player">A. Moron</span></a></span><span class="sub-sep" aria-hidden="true">⇄</span><span class="sub-chip out"><span class="tri"></span><a class="tl-link" href="../jugadores/jugador.php?codigo=9118337&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="F. Cano"><span class="tl-player">F. Cano</span></a> <span class="tl-dorsal">8</span></span></div>
+          </div>
+          <div class="timeline-item left">
+            <span class="tl-min">45'</span>
+            <div class="tl-content"><a class="tl-link" href="../jugadores/jugador.php?codigo=25693142&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="Y. Drissi"><span class="tl-player">Y. Drissi</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tl-ico tl-card yellow"></span></div>
+          </div>
+          <div class="timeline-item right">
+            <span class="tl-min">45'</span>
+            <div class="tl-content"><span class="tl-ico tl-card yellow"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="tl-link" href="../jugadores/jugador.php?codigo=25872180&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="I. Peña"><span class="tl-player">I. Peña</span></a></div>
+          </div>
+          <div class="timeline-item right">
+            <span class="tl-min">46'</span>
+            <div class="tl-content"><span class="sub-chip in"><span class="tri"></span><span class="tl-dorsal">9</span> <a class="tl-link" href="../jugadores/jugador.php?codigo=9781576&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="S. Moreno"><span class="tl-player">S. Moreno</span></a></span><span class="sub-sep" aria-hidden="true">⇄</span><span class="sub-chip out"><span class="tri"></span><a class="tl-link" href="../jugadores/jugador.php?codigo=903185888&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="A. Nofiu"><span class="tl-player">A. Nofiu</span></a> <span class="tl-dorsal">15</span></span></div>
+          </div>
+          <div class="timeline-item right">
+            <span class="tl-min">49'</span>
+            <div class="tl-content"><span class="sub-chip in"><span class="tri"></span><span class="tl-dorsal">8</span> <a class="tl-link" href="../jugadores/jugador.php?codigo=9785902&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="S. Hinojosa"><span class="tl-player">S. Hinojosa</span></a></span><span class="sub-sep" aria-hidden="true">⇄</span><span class="sub-chip out"><span class="tri"></span><a class="tl-link" href="../jugadores/jugador.php?codigo=53979&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="S. Galindo"><span class="tl-player">S. Galindo</span></a> <span class="tl-dorsal">12</span></span></div>
+          </div>
+          <div class="timeline-item left">
+            <span class="tl-min">56'</span>
+            <div class="tl-content"><a class="tl-link" href="../jugadores/jugador.php?codigo=9811360&amp;returnTo=https%3A%2F%2Fffcv.es%2Fcompeticiones%2Fpartidos%2Fpartido.php%3Fcod_partido%3D26470658%23cronologia" title="J. Perotti"><span class="tl
+--- fin candidato (longitud total 13190) ---
 
-Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
+--- candidato ---
+<main class="container-narrow" style="position:relative;z-index:1;">
+    <div class="match-actions">
+      <a href="../index.php#partidos" class="btn-back" aria-label="Volver" onclick="return window.ffcvGoBackFromPartido ? window.ffcvGoBackFromPartido(event) : true;">← Volver</a>
+    </div>
+    <div id="md-content" style="display: none;"></div>
+    <section id="info" class="info-section" aria-label="Información del partido" style="display: none;">
+      <div class="info-flex-wrap" style="display:flex;gap:32px;align-items:stretch;flex-wrap:wrap;">
+        <div class="info-photo-col" style="flex:0 0 320px;max-width:340px;min-width:180px;align-self:flex-start;position:relative;display:flex;flex-direction:column;gap:12px;">
+          <div class="info-photo-wrap" style="position:relative; border-radius:14px; overflow:hidden; aspect-ratio: 16/9; max-width: 420px;">
+            <img id="info-photo" class="info-photo photo-center-third" src="https://appffcv.filesnovanet.es/pnfg/pimg/Campos/00f9ccabaf663f9e2951bf69794f6c4f.jpg" alt="Foto del estadio" style="width:100%;height:auto;max-height:220px;object-fit:cover;display:block;border-radius:14px;box-shadow:0 2px 12px rgba(1,28,64,0.10);">
+            <div class="info-overlay" id="info-overlay" style="display: block; align-items: center; gap: 8px;">
+              <span class="material-symbols-outlined" style="font-size:1.3em;color:#00E5FF;">location_on</span>
+              <a class="campo" id="info-campo" href="../instalaciones/campo.php?codcampo=5077" rel="noopener" style="font-weight: 900; font-size: 1.1em; color: rgb(255, 255, 255); pointer-events: auto;">Estadio El Fornas F-11</a>
+              <div class="localidad" id="info-localidad" style="font-weight:600;font-size:1em;opacity:.9;">Sagunto</div>
+            </div>
+          </div>
+        </div>
+        <div class="info-datos-wrap" style="flex:1 1 220px;min-width:180px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;">
+          <div id="info-fecha" style="font-size:1.18rem;font-weight:700;color:#0b1c33;display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="font-size:1.3em;color:#00E5FF;">calendar_month</span> sábado, 5 de septiembre de 2026</div>
+          <div id="info-hora" style="font-size:1.08rem;font-weight:600;color:#31507a;display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="font-size:1.3em;color:#00E5FF;">schedule</span> 18:00</div>
+          <div id="info-pos-puntos" style="display:flex;gap:10px;margin-top:0.3em;">
+        <span style="background:#e5efff;border-radius:8px;padding:4px 10px;font-weight:700;color:#0b1c33;">C.D. Acero : Posición 16º · 0 pts</span>
+        <span style="background:#e5efff;border-radius:8px;padding:4px 10px;font-weight:700;color:#0b1c33;">Crevillente Deportivo : Posición 8º · 3 pts</span>
+      </div>
+          <div id="info-arbitros" style="margin-top:10px;display:flex;flex-direction:column;gap:8px;">
+                <div style="background:linear-gradient(120deg,#f8fbff 80%,#eaf3ff 100%);border-radius:16px;padding:18px 18px 12px 18px;box-shadow:0 2px 10px rgba(1,28,64,0.06);display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-wrap:wrap;">
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:2px;justify-content:flex-start;width:100%;">
+                    <span class="material-symbols-outlined" style="font-size:2.1em;color:#00E5FF;">sports</span>
+                    <span style="font-size:1.08em;font-weight:700;color:#31507a;letter-spacing:0.01em;">Equipo arbitral</span>
+                  </div>
+                  <div style="display:flex;flex-wrap:wrap;gap:10px;width:100%;">
+                    
+                      <span style="background:#e5efff;border-radius:12px;padding:6px 14px 6px 10px;display:flex;align-items:center;box-shadow:0 1px 4px #eaf3ff;font-size:1em;font-weight:500;color:#31507a;gap:7px;">
+                        <span style="background:#00E5FF;color:#fff;border-radius:8px;padding:2px 8px 2px 7px;font-size:0.98em;font-weight:700;letter-spacing:0.01em;">Árbitro principal</span>
+                        <span style="font-weight:600;">Francisco Blasco</span>
+                      </span>
+                    
+                      <span style="background:#e5efff;border-radius:12px;padding:6px 14px 6px 10px;display:flex;align-items:center;box-shadow:0 1px 4px #eaf3ff;font-size:1em;font-weight:500;color:#31507a;gap:7px;">
+                        <span style="background:#00E5FF;color:#fff;border-radius:8px;padding:2px 8px 2px 7px;font-size:0.98em;font-weight:700;letter-spacing:0.01em;">Árbitro asistente</span>
+                        <span style="font-weight:600;">Iñaki Olea</span>
+                      </span>
+                    
+                      <span style="background:#e5efff;border-radius:12px;padding:6px 14px 6px 10px;display:flex;align-items:center;box-shadow:0 1px 4px #eaf3ff;font-size:1em;font-weight:500;color:#31507a;gap:7px;">
+                        <span style="background:#00E5FF;color:#fff;border-radius:8px;padding:2px 8px 2px 7px;font-size:0.98em;font-weight:700;letter-spacing:0.01em;">Árbitro asistente</span>
+                        <span style="font-weight:600;">Joel Martínez</span>
+                      </span>
+                    
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+      <div id="info-team-outcomes" class="results-quick results-quick-wide" style="">
+      <div class="results-quick-title"><span class="material-symbols-outlined" style="color:#00A3FF;">insights</span>Predicciones</div>
+      <div class="results-quick-section results-quick-outcomes">
+        <div class="results-quick-section-title">Predicción del resultado</div>
+        <div class="results-quick-grid">
+          
+        <div class="results-quick-team">
+          <h4>C.D. Acero </h4>
+          <div class="results-quick-row"><span class="results-quick-label"
+--- fin candidato (longitud total 21675) ---
 
-=== Buscando elemento clicable "J.1" ===
-Coincidencias exactas /^J.1$/: 1
-Coincidencias getByText("J.1") (parcial): 11
-  [0] "J.1"
-  [1] "J.10"
-  [2] "J.11"
-  [3] "J.12"
-  [4] "J.13"
-  [5] "J.14"
-  [6] "J.15"
-  [7] "J.16"
-  [8] "J.17"
-  [9] "J.18"
-  [10] "J.19"
-
-=== Texto completo tras intentar clicar J.1 ===
-PARTIDOS
-CLASIFICACIONES
-SANCIONES
-RANKINGS
-NOTICIAS
-TERCERA FEDERACIÓN - GRUP - VI
-PUBLICIDAD
-Ver más
-Legislación empresarial
-Juegos deportivos
-Deportes
-privacidad
-Fútbol
-Privacidad
-Internet y telecomunicaciones
-Deportivo
-TEMPORADA
-Temporada
-2026-2027
-2025-2026
-2024-2025
-2023-2024
-2022-2023
-2021-2022
-2020-2021
-2019-2020
-2018-2019
-2017-2018
-2016-2017
-2015-2016
-2014-2015
-2013-2014
-2012-2013
-MODALIDAD
-MASCULÍ F11
-MASCULÍ FUTSAL
-VALENTA FUTBOL
-FUTBOL PLATJA VALENTA
-FUTBOL PLATJA MASCULÍ
-COMPETICIÓN
-Tercera Federación
-Fase Autonómica Copa Federación
-Lliga Comunitat
-Primera FFCV
-Segona FFCV
-Tercera FFCV
-VI La Nostra Copa
-Lliga de Veterans
-Liga Nacional Juvenil
-Lliga Comunitat Juvenil
-Primera FFCV Juvenil
-Segona FFCV Juvenil
-Tercera FFCV Juvenil
-Lliga Autonòmica Cadet
-Lliga Preferent Cadet
-Lliga Autonòmica Infantil
-Lliga Preferent Infantil
-GRUPO
-GRUP - VI
-‹
-J.1
-06 sept
-J.2
-13 sept
-J.3
-20 sept
-J.4
-27 sept
-J.5
-04 oct
-J.6
-11 oct
-J.7
-18 oct
-J.8
-25 oct
-J.9
-01 nov
-J.10
-08 nov
-J.11
-15 nov
-J.12
-22 nov
-J.13
-29 nov
-J.14
-06 dic
-J.15
-13 dic
-J.16
-20 dic
-J.17
-10 ene
-J.18
-17 ene
-J.19
-24 ene
-J.20
-31 ene
-J.21
-06 feb
-J.22
-14 feb
-J.23
-21 feb
-J.24
-28 feb
-J.25
-07 mar
-J.26
-14 mar
-J.27
-21 mar
-J.28
-28 mar
-J.29
-04 abr
-J.30
-11 abr
-J.31
-18 abr
-J.32
-25 abr
-J.33
-02 may
-J.34
-09 may
-›
-TERCERA FEDERACIÓN - GRUP - VI
-print
-visibility
-Vista
-Tarjetas
-Lista
-Sábado 5 de Septiembre de 2026
-Jornada 1
-C.D. Acero
-Crevillente Deportivo
-0
-1
-Hércules C.F. 'B'
-S.C. Torrevieja C.F. 'A'
-1
-2
-C.D. Buñol 'A'
-Atzeneta U.E. 'A'
-2
-1
-Torrent C.F. 'A'
-C.D. Español de San Vicente
-4
-0
-Domingo 6 de Septiembre de 2026
-Jornada 1
-C.D. Eldense 'B'
-Athletic Club Torrellano
-1
-0
-C.D. Roda 'A'
-Ontinyent 1931 C.F.
-2
-1
-C.D. Soneja
-Villarreal C.F. 'C'
-0
-3
-At. Saguntino
-Levante U.D. 'B'
-2
-1
-U.D. Vall de Uxó 'A'
-C.D. Utiel
-0
-0
-
-Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
-
-Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
-
-=== Intentando clicar el marcador del partido ya jugado (C.D. Acero) ===
-URL tras clic en C.D. Acero: https://ffcv.es/competiciones/partidos/partido.php?cod_partido=26470658#alineaciones
-Titulo: Ficha de partido
-
-=== Pestaña: Cronología ===
-PARTIDOS
-CLASIFICACIONES
-SANCIONES
-RANKINGS
-NOTICIAS
-Tercera Federación - GRUP - VI
-05 sept •Jornada 1
-Estadio El Fornas F-11
-🌤️ 25°C
-Poco nuboso · Viento 5 km/h
-C.D. Acero
-0 - 1
-Crevillente Deportivo
-R. Muñoz
-61'
-Información del partido
-Clasificación
-Plantillas
-Alineaciones
-Cronología
-PUBLICIDAD
-Ver más
-el fútbol
-Actualidad deportiva
-Guías locales y de ciudades
-Deportivo
-Fútbol
-Referencia geográfica
-fútbol sala
-Deportes
-← Volver
-Inicio
-Final
-4'
-C. Lopez
-      
-23'
-      
-R. Muñoz
-43'
-21
-A. Moron
-⇄
-F. Cano
-8
-45'
-Y. Drissi
-      
-45'
-      
-I. Peña
-46'
-9
-S. Moreno
-⇄
-A. Nofiu
-15
-49'
-8
-S. Hinojosa
-⇄
-S. Galindo
-12
-56'
-J. Perotti
-      
-61'
-⚽
-      
-R. Muñoz
-63'
-9
-K. Keita
-⇄
-J. Perotti
-19
-68'
-18
-J. Soriano
-⇄
-D. Madrid
-16
-75'
-17
-M. Fuentes
-⇄
-A. Pinazo
-22
-75'
-15
-H. Perez
-⇄
-C. Lopez
-12
-75'
-11
-I. Royo
-⇄
-D. Megina
-7
-78'
-28
-G. Garcia
-⇄
-S. Moreno
-9
-83'
-J. Marti
-      
-88'
-A. Tendillo
-      
-90'
-      
-G. Garcia
-
-Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
-
-Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
-
-=== Pestaña: Alineaciones ===
-PARTIDOS
-CLASIFICACIONES
-SANCIONES
-RANKINGS
-NOTICIAS
-Tercera Federación - GRUP - VI
-05 sept •Jornada 1
-Estadio El Fornas F-11
-🌤️ 25°C
-Poco nuboso · Viento 5 km/h
-C.D. Acero
-0 - 1
-Crevillente Deportivo
-R. Muñoz
-61'
-Información del partido
-Clasificación
-Plantillas
-Alineaciones
-Cronología
-PUBLICIDAD
-Ver más
-el fútbol
-Actualidad deportiva
-Guías locales y de ciudades
-Deportivo
-Fútbol
-Referencia geográfica
-fútbol sala
-Deportes
-← Volver
-C.D. Acero (1-4-4-2)
-Crevillente Deportivo (1-4-4-2)
-C.D. Acero
-Titulares
-SORIANO MARIN, RAFAEL
-Portero/a
-PT
-#1
-ROIG TORMOS, VICENT
-Lateral derecho
-#2
-TENDILLO RODRIGUEZ, ALBERTO
-Central
-C
-#4
-MEGINA GARCIA, DAVID
-Delantero/a
-#7
-CANO ALCANTARILLA, FERNANDO
-Delantero/a
-#8
-GYAMPOH ZARATE, ALEXANDER
-Medio Izquierdo
-#10
-LOPEZ NARANJO, CARLOS JULIO
-Lateral izquierdo
-#12
-DRISSI BOUIBIL, YASSINE
-Medio centro
-#14
-PEROTTI MORLACHETTI, JEREMIAS
-Medio derecho
-#19
-PINAZO GONZALEZ, ADRIAN
-Medio centro
-#22
-GUILLEN GOYO, ELIAN XAVIER
-Central
-#24
-Suplentes
-IBAÑEZ OCHOA, JUAN PABLO
-Portero/a
-PS
-#13
-KEITA, KARAMOKOBA
-Delantero/a
-#9
-ROYO BELMONTE, IVAN
-Delantero/a
-#11
-PEREZ SANCHEZ, HUGO
-Medio Izquierdo
-#15
-BARRES MAXIMINO, SALVADOR
-Central
-#16
-FUENTES TAMBORERO, MAURO
-Lateral derecho
-#17
-MARTI VILA, JAVIER
-Medio centro
-#20
-MORON FERNANDEZ, ADRIAN
-Medio derecho
-#21
-BIOSCA RIPOLLÉS, ALEX
-Medio derecho
-#23
-Cuerpo técnico
-FURIO PEREZ, RUBÉN
-Entrenador
-ROYO SILLA, IVAN
-Segundo Entrenador
-SESE ZAPLANA, OSCAR
-Delegado de Campo
-Otros Técnicos
-PASTOR GARCIA, JOSE FERNANDO
-Encargado Material
-GARCÍA GÓMEZ, JUAN
-Preparador Físico
-
-Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
-
-Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
-
-=== Pestaña: Plantillas ===
-PARTIDOS
-CLASIFICACIONES
-SANCIONES
-RANKINGS
-NOTICIAS
-Tercera Federación - GRUP - VI
-05 sept •Jornada 1
-Estadio El Fornas F-11
-🌤️ 25°C
-Poco nuboso · Viento 5 km/h
-C.D. Acero
-0 - 1
-Crevillente Deportivo
-R. Muñoz
-61'
-Información del partido
-Clasificación
-Plantillas
-Alineaciones
-Cronología
-PUBLICIDAD
-Ver más
-el fútbol
-Actualidad deportiva
-Guías locales y de ciudades
-Deportivo
-Fútbol
-Referencia geográfica
-fútbol sala
-Deportes
-← Volver
-home
-C.D. Acero
-travel_explore
-Crevillente Deportivo
-sports_soccer
-Guardametas
-:
-#1
-SORIANO MARIN, RAFAEL
-Portero/a
-#13
-IBAÑEZ OCHOA, JUAN PABLO
-Portero/a
-shield
-Defensas
-:
-#2
-ROIG TORMOS, VICENT
-Lateral derecho
-#4
-TENDILLO RODRIGUEZ, ALBERTO
-Central
-#12
-LOPEZ NARANJO, CARLOS JULIO
-Lateral izquierdo
-#16
-BARRES MAXIMINO, SALVADOR
-Central
-#17
-FUENTES TAMBORERO, MAURO
-Lateral derecho
-#24
-GUILLEN GOYO, ELIAN XAVIER
-Central
-sync_alt
-Centrocampistas
-:
-#10
-GYAMPOH ZARATE, ALEXANDER
-Medio Izquierdo
-#14
-DRISSI BOUIBIL, YASSINE
-Medio centro
-#15
-PEREZ SANCHEZ, HUGO
-Medio Izquierdo
-#19
-PEROTTI MORLACHETTI, JEREMIAS
-Medio derecho
-#20
-MARTI VILA, JAVIER
-Medio centro
-#21
-MORON FERNANDEZ, ADRIAN
-Medio derecho
-#22
-PINAZO GONZALEZ, ADRIAN
-Medio centro
-#23
-BIOSCA RIPOLLÉS, ALEX
-Medio derecho
-sports_score
-Atacantes
-:
-#7
-MEGINA GARCIA, DAVID
-Delantero/a
-#8
-CANO ALCANTARILLA, FERNANDO
-Delantero/a
-#9
-KEITA , KARAMOKOBA
-Delantero/a
-#11
-ROYO BELMONTE, IVAN
-Delantero/a
-help
-Sin posición
-:
-AGUILAR ALCOVER, JOSE
-GRIMALDO LOPEZ, SERGIO
-OLTRA GONZALEZ, PABLO
-PRIETO ODENA, RAÚL
-groups Staff Técnico:
-ROYO SILLA, IVAN
-FURIO PEREZ, RUBÉN
-GARCÍA GÓMEZ, JUAN
-engineering Otros Técnicos:
-PASTOR GARCIA, JOSE FERNANDO
-supervisor_account Delegados:
-SESE ZAPLANA, OSCAR
-LOPEZ MACEDA, MARCELO
-
-Copyright © 2026. Todos los derechos reservados. Desarrollado por FFCV
-
-Aviso Legal · Política de Privacidad · Política de Cookies · Política de privacidad redes sociales
