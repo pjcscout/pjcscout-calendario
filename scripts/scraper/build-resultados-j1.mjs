@@ -89,10 +89,11 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
   }
 }
 
-console.log('=== RESULTADOS jornada 1 (pegar en resultados.js) ===')
-console.log(JSON.stringify(resultado, null, 2))
-console.log(`\nTotal partidos importados: ${Object.keys(resultado).length}`)
-console.log('\n=== Sin emparejar (revisar manualmente) ===')
-console.log(JSON.stringify(sinEmparejar, null, 2))
-console.log('\n=== Partidos crudos de FFCV para grupos con pendientes (liga-nacional) ===')
-console.log(JSON.stringify(crudo['liga-nacional'], null, 2))
+import { writeFileSync } from 'node:fs'
+writeFileSync(
+  new URL('../../resultados-j1-import.json', import.meta.url),
+  JSON.stringify({ resultado, sinEmparejar }, null, 2)
+)
+console.log(`Total partidos importados: ${Object.keys(resultado).length}`)
+console.log('Sin emparejar:', JSON.stringify(sinEmparejar))
+console.log('Escrito en resultados-j1-import.json')
