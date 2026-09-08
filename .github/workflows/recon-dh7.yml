@@ -18,8 +18,8 @@ jobs:
 
       - run: node scripts/scraper/recon-dh7.mjs
 
-      - name: Volcar texto al log
+      - name: Volcar fragmento de HTML al log
         run: |
-          echo "===INICIO-TEXTO==="
-          cat recon-dh7-texto.txt
-          echo "===FIN-TEXTO==="
+          echo "===INICIO-HTML==="
+          grep -o '.\{400\}Elche CF.\{1200\}' recon-dh7-html.txt | head -c 3000
+          echo "===FIN-HTML==="
