@@ -91,7 +91,11 @@ for (const [grupo, partidos] of Object.entries(resultadoFinal)) {
     for (const ladoInfo of p.cronologia.goleadores) {
       const equipoId = ladoInfo.lado === 'local' ? eqLocal.id : eqVisitante.id
       for (const g of ladoInfo.goles) {
-        eventos.push({ tipo: 'gol', minuto: g.minuto, jugador: g.jugador, equipoId })
+        // Un mismo jugador con varios goles en el partido viene junto, p.ej.
+        // "80', 90'" o "29' (p), 45' (p)": un evento "gol" por cada minuto.
+        for (const minutoTexto of g.minuto.split(',')) {
+          eventos.push({ tipo: 'gol', minuto: minutoTexto.replace(/\(p\)/, '').trim(), jugador: g.jugador, equipoId })
+        }
       }
     }
     for (const ev of p.cronologia.eventos) {

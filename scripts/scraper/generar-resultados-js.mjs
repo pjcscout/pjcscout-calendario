@@ -12,7 +12,10 @@ function jsString(texto) {
 }
 
 function jsEvento(e) {
-  const minuto = parseInt(String(e.minuto).replace("'", ''), 10)
+  // La FFCV a veces publica un minuto centinela ("999'") para tarjetas
+  // registradas tras el pitido final sin minuto real asociado.
+  const minutoBruto = parseInt(String(e.minuto).replace("'", ''), 10)
+  const minuto = minutoBruto > 120 ? 90 : minutoBruto
   return `{ tipo: ${jsString(e.tipo)}, minuto: ${minuto}, jugador: ${jsString(e.jugador)}, equipoId: ${jsString(e.equipoId)} }`
 }
 
