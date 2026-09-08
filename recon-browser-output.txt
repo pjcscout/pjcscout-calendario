@@ -1,95 +1,22 @@
-OK: tercera-vi - At. Saguntino vs Levante U.D. 'B'
-OK: tercera-vi - C.D. Roda 'A' vs Ontinyent 1931 C.F.
-OK: tercera-vi - C.D. Soneja vs Villarreal C.F. 'C'
-OK: tercera-vi - C.D. Acero vs Crevillente Deportivo
-OK: tercera-vi - U.D. Vall de Uxó 'A' vs C.D. Utiel
-OK: tercera-vi - Hércules C.F. 'B' vs S.C. Torrevieja C.F. 'A'
-OK: tercera-vi - Torrent C.F. 'A' vs C.D. Español de San Vicente
-OK: tercera-vi - C.D. Eldense 'B' vs Athletic Club Torrellano
-OK: tercera-vi - C.D. Buñol 'A' vs Atzeneta U.E. 'A'
-OK: llc-nord - Silla C.F. vs Ribarroja C.F. 'A'
-OK: llc-nord - C.F. At. Bº La Luz - Xirivella 'A' vs C.F. Recambios Colón Catarroja 'A'
-OK: llc-nord - Alqueries C.F. 'A' vs U.D. Aldaia C.F. 'A'
-OK: llc-nord - Manises C.F. 'A' vs Paiporta C.F.
-OK: llc-nord - C.D. L'Alcora vs C.D. Onda 'A'
-OK: llc-nord - C.F. Nou Jove Castelló 'A' vs C.D. Almazora 'A'
-OK: llc-nord - C.D. Burriana 'A' vs F.C. Odisea 'A'
-Fallo intento 1: llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A': locator.click: Timeout 5000ms exceeded.
-Call log:
-  - waiting for getByText(/^IDA C\.F\. At\. Quart 'A'\s*\(/).first()
+Pendientes: 4
+  candidatos toggle: 0
+Fallo intento 1: llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A': no se encontró el toggle del visitante
+  candidatos toggle: 0
+Fallo intento 2: llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A': no se encontró el toggle del visitante
+  candidatos toggle: 0
+Fallo intento 3: llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A': no se encontró el toggle del visitante
+  candidatos toggle: 0
+Fallo intento 1: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A': no se encontró el toggle del visitante
+  candidatos toggle: 0
+Fallo intento 2: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A': no se encontró el toggle del visitante
+  candidatos toggle: 0
+Fallo intento 3: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A': no se encontró el toggle del visitante
+  candidatos toggle: 1
+OK: llc-juv-nord - C.F. Cracks 'A' vs C.D.F. Canet 'A'
+  candidatos toggle: 1
+OK: llc-juv-nord - C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B'
 
-Fallo intento 2: llc-nord - Massanassa C.F. vs IDA C.F. At. Quart 'A': locator.click: Timeout 5000ms exceeded.
-Call log:
-  - waiting for getByText(/^IDA C\.F\. At\. Quart 'A'\s*\(/).first()
-
-OK: llc-sud - C.D. Thader vs C.F.U.D. Calpe
-OK: llc-sud - Santa Pola C.F. vs C.F.U.E. Tavernes de la Valldigna
-OK: llc-sud - C.F. Benidorm 'A' vs C.D.F. Jávea
-OK: llc-sud - C.E. Alberic Sucemart vs C.F. Independiente Alicante 'A'
-OK: llc-sud - C.D. Olímpic vs C.F. Gandia 'A'
-OK: llc-sud - Novelda Unión C.F. Cableworld 'A' vs U.D. Rayo Ibense 'A'
-Fallo intento 1: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A': locator.click: Timeout 5000ms exceeded.
-Call log:
-  - waiting for getByText(/^C\.D\. Almoradí 'A'\s*\(/).first()
-
-Fallo intento 2: llc-sud - Benigànim C.F. vs C.D. Almoradí 'A': locator.click: Timeout 5000ms exceeded.
-Call log:
-  - waiting for getByText(/^C\.D\. Almoradí 'A'\s*\(/).first()
-
-OK: llc-sud - U.D. Alzira vs F.B. Redován C.F. 'A'
-Fallo intento 1: llc-juv-nord - C.F. Cracks 'A' vs C.D.F. Canet 'A': locator.click: Timeout 8000ms exceeded.
-Call log:
-  - waiting for getByText('J.1', { exact: true }).first()
-
-Fallo intento 2: llc-juv-nord - C.F. Cracks 'A' vs C.D.F. Canet 'A': locator.click: Timeout 8000ms exceeded.
-Call log:
-  - waiting for getByText('J.1', { exact: true }).first()
-
-Fallo intento 1: llc-juv-nord - C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B': locator.click: Timeout 8000ms exceeded.
-Call log:
-  - waiting for getByText('J.1', { exact: true }).first()
-
-Fallo intento 2: llc-juv-nord - C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B': locator.click: Timeout 8000ms exceeded.
-Call log:
-  - waiting for getByText('J.1', { exact: true }).first()
-
-Fallo intento 1: llc-juv-nord - Patacona C.F. 'B' vs C.D. Acero 'A': locator.click: Timeout 8000ms exceeded.
-Call log:
-  - waiting for getByText('J.1', { exact: true }).first()
-
-OK: llc-juv-nord - Patacona C.F. 'B' vs C.D. Acero 'A'
-OK: llc-juv-nord - Paterna C.F. 'A' vs C.F. At. Burriana - Salesianos 'A'
-OK: llc-juv-nord - Villarreal C.F. 'C' vs C.F. Històrics de València 'A'
-OK: llc-juv-nord - Bétera C.F. 'A' vs Col. Salgui E.D.E. 'A'
-OK: llc-juv-nord - Ath. Massamagrell C.F. 'A' vs Primer Toque C.F. 'A'
-OK: llc-juv-nord - C.F. Torre Levante 'A' vs Manises C.F. 'A'
-OK: llc-juv-sud - C.D. Pablo Iglesias 'A' vs Catral-Castrum C.F. 'A'
-OK: llc-juv-sud - U.D. Oliva 'A' vs C.F. La Nucía 'B'
-OK: llc-juv-sud - C.D. Eldense 'A' vs Hércules C.F. 'B'
-OK: llc-juv-sud - Orihuela C.F. 'A' vs Kelme C.F. 'B'
-OK: llc-juv-sud - F.B.C.D. Catarroja - Bauhaus 'A' vs Silla C.F. 'A'
-OK: llc-juv-sud - C.D. Alcoyano 'A' vs C.D. Olímpic 'A'
-OK: llc-juv-sud - C.F.U.E. Tavernes de la Valldigna 'A' vs U.D. Aldaia C.F. 'A'
-OK: llc-juv-sud - C.F. Benidorm 'A' vs S.C.D. Intangco 'A'
-OK: cadete-autonomico - Levante U.D. 'A' vs C.F. Inter San José Valencia 'A'
-OK: cadete-autonomico - Kelme C.F. 'A' vs Patacona C.F. 'A'
-OK: cadete-autonomico - Celtic Elche C.F. 'A' vs C.F. Torre Levante 'A'
-OK: cadete-autonomico - Elda Unión Cableworld C.F 'A' vs C.F. Fundació VCF 'A'
-OK: cadete-autonomico - C.F. La Nucía 'A' vs C.D. Castellón 'A'
-OK: cadete-autonomico - C.F. Benidorm 'A' vs Elche C.F. 'A'
-OK: cadete-autonomico - S.C.D. Intangco 'A' vs Primer Toque C.F. 'A'
-OK: cadete-autonomico - Villarreal C.F. 'A' vs C.D. Roda 'A'
-OK: liga-nacional - C.F. At. Moncadense 'A' vs U.D. Alzira 'A'
-OK: liga-nacional - C.D. Roda 'B' vs Villarreal C.F. 'B'
-OK: liga-nacional - Tavernes Blanques C.F. 'A' vs C.F. Inter San José Valencia 'A'
-OK: liga-nacional - C.D. Castellón 'B' vs Elda Unión Cableworld C.F 'A'
-OK: liga-nacional - Valencia C.F. 'B' vs Elche C.F. 'B'
-OK: liga-nacional - Hércules C.F. 'A' vs C.D. El Rumbo 'A'
-OK: liga-nacional - Torrent C.F. 'B' vs C.D. Español de San Vicente 'A'
-OK: liga-nacional - C.F. San Pedro 'A' vs Levante U.D. 'B'
-OK: liga-nacional - Alboraya U.D. 'A' vs C.F. La Nucía 'A'
-
-Errores: 4
+Errores finales: 2
 [
   {
     "grupo": "llc-nord",
@@ -98,13 +25,5 @@ Errores: 4
   {
     "grupo": "llc-sud",
     "partido": "Benigànim C.F. vs C.D. Almoradí 'A'"
-  },
-  {
-    "grupo": "llc-juv-nord",
-    "partido": "C.F. Cracks 'A' vs C.D.F. Canet 'A'"
-  },
-  {
-    "grupo": "llc-juv-nord",
-    "partido": "C.F. Inter San José Valencia 'B' vs Alboraya U.D. 'B'"
   }
 ]
