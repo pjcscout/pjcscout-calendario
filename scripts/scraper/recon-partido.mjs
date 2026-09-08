@@ -9,11 +9,22 @@ import { chromium } from 'playwright'
 const CODACTA_EJEMPLO = '26470658' // C.D. Acero 0-1 Crevillente Deportivo, tercera-vi jornada 1
 
 const browser = await chromium.launch()
-const page = await browser.newPage({ userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' })
+const page = await browser.newPage({
+  userAgent:
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+})
+
+// Primero visitamos la app (no un .php suelto) para que cargue el shell/JS y
+// tengamos cookies de sesión, igual que haría un navegador real siguiendo
+// enlaces internos en vez de pegar la URL directamente.
+await page.goto('https://ffcv.es/competiciones/', { waitUntil: 'networkidle', timeout: 20000 })
+await page.waitForTimeout(1000)
 
 const url = `https://ffcv.es/competiciones/partidos/partido.php?cod_partido=${CODACTA_EJEMPLO}`
 await page.goto(url, { waitUntil: 'networkidle', timeout: 20000 })
+await page.waitForTimeout(1500)
 console.log('URL final:', page.url())
+console.log('Titulo:', await page.title())
 
 for (const pestana of ['Cronología', 'Alineaciones', 'Plantillas', 'Información del partido']) {
   try {
