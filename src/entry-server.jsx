@@ -4,10 +4,19 @@ import { Routes, Route } from 'react-router-dom'
 import Temporada from './components/Temporada.jsx'
 import EquipoSinCalendario from './components/EquipoSinCalendario.jsx'
 import FichaJugador from './components/FichaJugador.jsx'
+import SelectorEquipo from './components/SelectorEquipo.jsx'
 import ClasificacionPage from './pages/ClasificacionPage.jsx'
 import { tieneCalendario } from './utils/fixtures.js'
 import { GRUPOS } from './data/equipos.js'
 import { estadisticasJugador } from './utils/estadisticasJugador.js'
+
+export function renderInicio() {
+  return renderToStaticMarkup(
+    <StaticRouter location="/">
+      <SelectorEquipo onElegir={() => {}} />
+    </StaticRouter>
+  )
+}
 
 export function renderEquipo(equipo) {
   const Componente = tieneCalendario(equipo.grupo) ? Temporada : EquipoSinCalendario

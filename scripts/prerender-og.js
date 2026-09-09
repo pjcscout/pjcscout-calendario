@@ -1,7 +1,7 @@
-// Genera HTML real (no solo metaetiquetas) para cada página de equipo y de
-// clasificación, usando react-dom/server contra el bundle SSR generado por
-// "vite build --ssr src/entry-server.jsx --outDir dist-server" (paso previo
-// en npm run build).
+// Genera HTML real (no solo metaetiquetas) para la home, cada página de
+// equipo, de jugador y de clasificación, usando react-dom/server contra el
+// bundle SSR generado por "vite build --ssr src/entry-server.jsx --outDir
+// dist-server" (paso previo en npm run build).
 //
 // Por qué hace falta: esta app es una SPA. Sin esto, dist/equipo/<id>/index.html
 // solo tenía <div id="root"></div> vacío — los buscadores y los bots que no
@@ -16,13 +16,20 @@ import { dirname, join } from 'node:path'
 import { EQUIPOS, GRUPOS } from '../src/data/equipos.js'
 import { tieneCalendario } from '../src/utils/fixtures.js'
 import { plantillaEquipo } from '../src/data/plantillas.js'
-import { renderEquipo, renderClasificacion, renderJugador } from '../dist-server/entry-server.js'
+import { renderInicio, renderEquipo, renderClasificacion, renderJugador } from '../dist-server/entry-server.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = join(__dirname, '..', 'dist')
 const siteUrl = 'https://calendario.pjcscout.es'
 
 const template = readFileSync(join(distDir, 'index.html'), 'utf-8')
+
+// La home es una SPA pura (Inicio.jsx no renderiza nada hasta el useEffect
+// que decide si redirige al equipo guardado): sin esto dist/index.html se
+// servía con <div id="root"></div> vacío, igual que le pasaba antes a las
+// páginas de equipo y jugador.
+writeFileSync(join(distDir, 'index.html'), insertarContenido(template, renderInicio()))
+console.log('prerender: home generada con contenido real')
 
 function escapeHtml(texto) {
   return texto
@@ -212,10 +219,10 @@ for (const grupoId of Object.keys(GRUPOS)) {
   if (tieneCalendario(grupoId)) rutas.push(`/clasificacion/${grupoId}`)
 }
 
-const hoy = new Date().toISOString().slice(0, 10)
-const urlset = rutas
-  .map((ruta) => `  <url><loc>${siteUrl}${ruta}</loc><lastmod>${hoy}</lastmod></url>`)
-  .join('\n')
+// Sin <lastmod>: no tenemos fecha real de modificación por página y un valor
+// que siempre es "hoy" (la fecha de build) es una señal que Google acaba
+// ignorando o penalizando por poco fiable.
+const urlset = rutas.map((ruta) => `  <url><loc>${siteUrl}${ruta}</loc></url>`).join('\n')
 writeFileSync(
   join(distDir, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlset}\n</urlset>\n`
