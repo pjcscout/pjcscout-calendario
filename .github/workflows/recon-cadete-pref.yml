@@ -23,6 +23,3 @@ jobs:
           echo "===INICIO-JSON==="
           cat recon-cadete-preferente.json
           echo "===FIN-JSON==="
-          echo "===INICIO-B64==="
-          base64 -w 200 recon-cadete-preferente.png
-          echo "===FIN-B64==="
