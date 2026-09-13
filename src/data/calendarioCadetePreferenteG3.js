@@ -6,7 +6,7 @@
 export const JORNADAS = [
   {
     "numero": 1,
-    "fecha": "2026-09-26",
+    "fecha": "2026-09-27",
     "partidos": [
       [
         "F.B.C.D. Catarroja - Bauhaus \"A\"",
@@ -44,7 +44,7 @@ export const JORNADAS = [
   },
   {
     "numero": 2,
-    "fecha": "2026-10-03",
+    "fecha": "2026-10-04",
     "partidos": [
       [
         "C.F. La Nucía \"B\"",
@@ -82,7 +82,7 @@ export const JORNADAS = [
   },
   {
     "numero": 3,
-    "fecha": "2026-10-17",
+    "fecha": "2026-10-18",
     "partidos": [
       [
         "C.F. La Nucía \"B\"",
@@ -120,7 +120,7 @@ export const JORNADAS = [
   },
   {
     "numero": 4,
-    "fecha": "2026-10-24",
+    "fecha": "2026-10-25",
     "partidos": [
       [
         "U.D. Alzira \"A\"",
@@ -158,7 +158,7 @@ export const JORNADAS = [
   },
   {
     "numero": 5,
-    "fecha": "2026-10-31",
+    "fecha": "2026-11-01",
     "partidos": [
       [
         "U.D. Alzira \"A\"",
@@ -196,7 +196,7 @@ export const JORNADAS = [
   },
   {
     "numero": 6,
-    "fecha": "2026-11-07",
+    "fecha": "2026-11-08",
     "partidos": [
       [
         "Racing d'Algemesí \"A\"",
@@ -234,7 +234,7 @@ export const JORNADAS = [
   },
   {
     "numero": 7,
-    "fecha": "2026-11-14",
+    "fecha": "2026-11-15",
     "partidos": [
       [
         "Racing d'Algemesí \"A\"",
@@ -272,7 +272,7 @@ export const JORNADAS = [
   },
   {
     "numero": 8,
-    "fecha": "2026-11-21",
+    "fecha": "2026-11-22",
     "partidos": [
       [
         "U.D. Oliva \"A\"",
@@ -310,7 +310,7 @@ export const JORNADAS = [
   },
   {
     "numero": 9,
-    "fecha": "2026-11-28",
+    "fecha": "2026-11-29",
     "partidos": [
       [
         "U.D. Oliva \"A\"",
@@ -348,7 +348,7 @@ export const JORNADAS = [
   },
   {
     "numero": 10,
-    "fecha": "2026-12-12",
+    "fecha": "2026-12-13",
     "partidos": [
       [
         "Levante U.D. \"B\"",
@@ -386,7 +386,7 @@ export const JORNADAS = [
   },
   {
     "numero": 11,
-    "fecha": "2026-12-19",
+    "fecha": "2026-12-20",
     "partidos": [
       [
         "Levante U.D. \"B\"",
@@ -424,7 +424,7 @@ export const JORNADAS = [
   },
   {
     "numero": 12,
-    "fecha": "2027-01-09",
+    "fecha": "2027-01-10",
     "partidos": [
       [
         "Ciutat de Xàtiva C.F.B. \"A\"",
@@ -462,7 +462,7 @@ export const JORNADAS = [
   },
   {
     "numero": 13,
-    "fecha": "2027-01-16",
+    "fecha": "2027-01-17",
     "partidos": [
       [
         "Ciutat de Xàtiva C.F.B. \"A\"",
@@ -500,7 +500,7 @@ export const JORNADAS = [
   },
   {
     "numero": 14,
-    "fecha": "2027-01-23",
+    "fecha": "2027-01-24",
     "partidos": [
       [
         "C.F.U.E. Tavernes de la Valldigna \"A\"",
@@ -538,7 +538,7 @@ export const JORNADAS = [
   },
   {
     "numero": 15,
-    "fecha": "2027-01-30",
+    "fecha": "2027-01-31",
     "partidos": [
       [
         "C.D.F. Jávea \"A\"",
@@ -576,7 +576,7 @@ export const JORNADAS = [
   },
   {
     "numero": 16,
-    "fecha": "2027-02-06",
+    "fecha": "2027-02-07",
     "partidos": [
       [
         "C.F. La Nucía \"B\"",
@@ -614,7 +614,7 @@ export const JORNADAS = [
   },
   {
     "numero": 17,
-    "fecha": "2027-02-13",
+    "fecha": "2027-02-14",
     "partidos": [
       [
         "C.F.U.E. Tavernes de la Valldigna \"A\"",
@@ -652,7 +652,7 @@ export const JORNADAS = [
   },
   {
     "numero": 18,
-    "fecha": "2027-02-20",
+    "fecha": "2027-02-21",
     "partidos": [
       [
         "U.D. Alzira \"A\"",
@@ -690,7 +690,7 @@ export const JORNADAS = [
   },
   {
     "numero": 19,
-    "fecha": "2027-02-27",
+    "fecha": "2027-02-28",
     "partidos": [
       [
         "C.F.U.E. Tavernes de la Valldigna \"A\"",
@@ -728,7 +728,7 @@ export const JORNADAS = [
   },
   {
     "numero": 20,
-    "fecha": "2027-03-06",
+    "fecha": "2027-03-07",
     "partidos": [
       [
         "Racing d'Algemesí \"A\"",
@@ -766,7 +766,7 @@ export const JORNADAS = [
   },
   {
     "numero": 21,
-    "fecha": "2027-03-13",
+    "fecha": "2027-03-14",
     "partidos": [
       [
         "C.F.U.E. Tavernes de la Valldigna \"A\"",
@@ -804,7 +804,7 @@ export const JORNADAS = [
   },
   {
     "numero": 22,
-    "fecha": "2027-04-03",
+    "fecha": "2027-04-04",
     "partidos": [
       [
         "U.D. Oliva \"A\"",
@@ -842,7 +842,7 @@ export const JORNADAS = [
   },
   {
     "numero": 23,
-    "fecha": "2027-04-10",
+    "fecha": "2027-04-11",
     "partidos": [
       [
         "C.F.U.E. Tavernes de la Valldigna \"A\"",
@@ -880,7 +880,7 @@ export const JORNADAS = [
   },
   {
     "numero": 24,
-    "fecha": "2027-04-17",
+    "fecha": "2027-04-18",
     "partidos": [
       [
         "Levante U.D. \"B\"",
@@ -918,7 +918,7 @@ export const JORNADAS = [
   },
   {
     "numero": 25,
-    "fecha": "2027-04-24",
+    "fecha": "2027-04-25",
     "partidos": [
       [
         "C.F.U.E. Tavernes de la Valldigna \"A\"",
@@ -956,7 +956,7 @@ export const JORNADAS = [
   },
   {
     "numero": 26,
-    "fecha": "2027-05-01",
+    "fecha": "2027-05-02",
     "partidos": [
       [
         "Ciutat de Xàtiva C.F.B. \"A\"",
@@ -994,7 +994,7 @@ export const JORNADAS = [
   },
   {
     "numero": 27,
-    "fecha": "2027-05-08",
+    "fecha": "2027-05-09",
     "partidos": [
       [
         "C.F.U.E. Tavernes de la Valldigna \"A\"",
@@ -1032,7 +1032,7 @@ export const JORNADAS = [
   },
   {
     "numero": 28,
-    "fecha": "2027-05-15",
+    "fecha": "2027-05-16",
     "partidos": [
       [
         "C.D.F. Jávea \"A\"",
@@ -1070,7 +1070,7 @@ export const JORNADAS = [
   },
   {
     "numero": 29,
-    "fecha": "2027-05-22",
+    "fecha": "2027-05-23",
     "partidos": [
       [
         "C.D.F. Jávea \"A\"",
@@ -1108,7 +1108,7 @@ export const JORNADAS = [
   },
   {
     "numero": 30,
-    "fecha": "2027-05-29",
+    "fecha": "2027-05-30",
     "partidos": [
       [
         "U.D. Portuarios - Disarp \"A\"",
