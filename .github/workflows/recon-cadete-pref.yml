@@ -16,10 +16,10 @@ jobs:
       - run: npm install playwright@1.48.0
       - run: npx playwright install --with-deps chromium
 
-      - run: node scripts/scraper/recon-cadete-preferente.mjs
+      - run: node scripts/scraper/recon-cadete-pref-calendario.mjs
 
       - name: Volcar JSON al log
         run: |
           echo "===INICIO-JSON==="
-          cat recon-cadete-preferente.json
+          cat recon-cadete-pref-calendario.json
           echo "===FIN-JSON==="
