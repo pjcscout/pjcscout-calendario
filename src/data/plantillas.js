@@ -1026,6 +1026,83 @@ export const PLANTILLAS = {
     "Nico Tudor", "Llatzer", "Diego", "Moliner",
     "Hector", "Aquiles David Ocanto Queralés",
   ],
+
+  // Cadete Preferente Grupo III (fuente: app oficial FFCV, plantillas
+  // enviadas por los propios equipos; algunas incompletas o con solo el
+  // nombre de pila cuando así lo publica la app).
+  "cadetepref-levante": [
+    "Alan Scola Gimenez", "Miguel Santiago Muñoz", "Pau Sánchez Aparicio", "Oriol Piedra Solé",
+    "Gerard Perez Aristizabal", "Alvaro Muñoz Escarabajal", "Diego Moyano Ribera", "Cruz Maisano",
+    "Francesc Lopez Ojeda", "Prince Chinchangah Kamakyi Bawah", "Erik Jabaloyas Garcia", "Lucas Fuentes Gimenez",
+    "Jose Vicente Espi Martinez", "Rayan El Alami El Idrissi Jaddioui", "Josep Diaz Gil", "Alejandro Desco Maiques",
+    "Fabio Da Silva Sacristan", "Martin Cejalvo Giner", "Marc Cañizares Martinez", "Josep Canals Bocanegra",
+    "Pablo Berrocal Verdejo", "Alberto Barres Ros",
+  ],
+  "cadetepref-portuarios": [
+    "Rayhan Fouad Poggi", "Cristian Georgiev Penev", "Iván Pellicer Hidalgo", "Alexis Peiro Cano",
+    "Miquel Miñana Colomer", "Rayane Mansori", "Kristiyan Ivanov Ivanov", "Ismael Hajji El Ouaghmiri",
+    "Alex Gregori Escriva", "Marti Garcia Llorca", "Miquel Gallego Simo", "Pol Cremades Castello",
+    "Sandro Bosca Cuquerella", "Roberto Balbastre Vitoria", "Gullem Almiñana Lopez", "Ayoube Aksasse Alibhouche",
+  ],
+  "cadetepref-gandia": [
+    "Lucas Sendra Garcia", "Javier Sapiña Pereira", "David Sapiña Pereira", "Alejandro Ramón Borja",
+    "Lucca Perez Morant", "Gonzalo Mallo Hernandez", "Aidan Lilov Angelov", "Lucas Leonardi",
+    "Anas Lach Hab El Gourche", "Axel Gonzalez Martin", "Enzo Garcia Signes", "Arnau Ferrer Mengual",
+    "Daniel Ferragut Marti", "Josep Femenia Perez", "Ferran Escriva Serrano", "Gerard Escriva Catala",
+    "Joan Escriva Borja", "Arnau Castellano Pelegri", "Joel Borreda Lledo", "Khalil Azemmat Chourrib",
+  ],
+  "cadetepref-massanassa": [
+    "Nacho Zaragozá Abizanda", "Marc Tolosa Saez", "Aaron Rodenas Gonzalez", "Marcos Marrades Ferrando",
+    "Marcos Manzanera Escriva", "Cristhofer Abdiel Lopez Oseguera", "Izan", "Eric",
+    "Enric Gonzalez Alfonso", "Kenneth Garcia Sanchez", "Darian Ferro Paredes", "Marc Dougall Albiñana",
+    "Francisco Javier De Pedro Cintas", "Jaime Contreras Diago", "Adrian Cañas Garcia", "Moad Ahabchane Arara",
+  ],
+  "cadetepref-tavernes": [
+    "Adrià Vidal Pellicer", "Victor Talens Peris", "Valerià Saiz Sifres", "Guillem Ribera Folguera",
+    "Alex Pelegri Palomares", "Nahuel Nicolas Martinez", "Salva Magraner Ciscar", "Marc Llorca Catala",
+    "Jose Grau Vercher", "Gabriel Figueres Andres", "Aitor Estrugo Calabuig", "Bernat Dauder Talens",
+    "Miquel Caparros Forquet", "Jorge Andres Caicedo Rueda", "Romero Alberola Sanchis",
+  ],
+  "cadetepref-torrent": [
+    "Jesus Mateo Vivo Mendia", "Pau Ruiz Rodriguez", "Mario Romero Algarra", "Jose Quilis Martinez",
+    "Lucas Pardo Tudorache", "Diego", "Xavi Meseguer Campillo", "Lucas Lopez Campillos",
+    "Jorge Julve Casañ", "Jorge Garcia Galarzo", "Yoel Gallego Martinez", "Jorge Fernandez Renau",
+    "Jordi Domenech Taberner", "Aitor Del Puerto Ruiz", "Christian De Dios Tarantino", "Aitor Climent Gomez",
+    "Pau Cantero Planells", "Victor Bueno Marzal", "Ishaq Aquil Osma",
+  ],
+  "cadetepref-xativa": [
+    "Jordi Torregrosa Vidal", "Tyler Sempere Jackson", "Izan Rodriguez Gomis", "Fran Rodrigo Martinez",
+    "Bruno Pons Pons", "Sergio Pico Ciges", "Rodrigo Peñarrubia Larrosa", "Yoel Ortega Lopez",
+    "Antonio Morillo Segui", "Dersu Gonzalvez Barber", "Ricardo Gonzalez Adame", "Daniel Giner Tortosa",
+    "Victor Garcia Gil", "Marc Furio Girbes", "Jordi Cebria Barbera", "Josep Carbonell Donet",
+    "Carles Carbonell Donet", "Lucas Broseta Mataix",
+  ],
+  "cadetepref-la-nucia": [
+    "Ruben Toquero Gregori", "Collin Stefan Schultes", "Borja Rodenas Garcia", "Andreu Ramon Gregori",
+    "Julen Piñero Alarcon", "Roberto James Peñalver Simm", "Dylan Andres Mosquera Ocoro", "Vicente Marcos Martinez",
+    "Antonio Manzanero Jimenez", "Guillermo Lopez Gonzalez", "Marc Ivars Ramos", "Preslav Petiov Hristov",
+    "Jairo Guirado Marques", "Rafa Garcia Caba", "Pablo Gallo Carmona", "Mohamed Amin El Mellali Ghoufairi",
+    "Xavi Chacón Molina", "Nicolas Castro Svetlozarov", "Vicent Camarena Ferrer", "Eros Almeida Rojas",
+  ],
+  // Plantilla incompleta: en Drive solo había 2 capturas para este equipo.
+  "cadetepref-alcudia": [
+    "Marc Vercher Nogues", "Pablo Sentamans Ruiz", "Marcos Puchades Zornoza", "Emilio Antonio Martinez Herrero",
+    "Miguel Esteban Cervera", "Ayoub Dahbani", "Angel Adrian Crisan", "Nacho Benavent Alcover",
+    "Izan Ahullo Romero",
+  ],
+  "cadetepref-catarroja": [
+    "Juan Bautista Sargues Archilla", "Jorge Sanchez Lopez", "Victor Perez Lopez", "Brian Perez Anel",
+    "Pablo Orellana Ibañez", "Marcos Monleon Garcia", "Jairo Mellado Perez", "Carlos Marco Esparza",
+    "Oriol Gil Serra", "Stefan Stefanov Georgiev", "David Gallego Martinez", "Adrian Calvo Segrelles",
+    "Sergi Beltran Gallardo", "Alvaro Aullana Nacher", "Javier Joaquin Alarcon Lopez",
+  ],
+  "cadetepref-alzira": [
+    "David Viñals Mitu", "Pablo Torres Castro", "Pau Tomas Balaguer", "Carles Talens Ripoll",
+    "Roberto Ramos Collado", "Alvaro Pareja Olmedo", "Pau Ogayar Campos", "Gorka Nacher Baldovi",
+    "Jorge Montés Lupión", "Yeray Lopez Veses", "Yago Fuset Marti", "Arnau Ferrer Martinez",
+    "Xavi Correas Albuixech", "Ivan Borras Maravilla", "Sandro Bonete Tovy", "Alejandro Blazquez Canet",
+    "Sergio Bella Esteve",
+  ],
 }
 
 export function plantillaEquipo(id) {
