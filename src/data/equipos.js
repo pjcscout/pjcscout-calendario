@@ -15,6 +15,7 @@ export const GRUPOS = {
   'llc-juv-nord': { id: 'llc-juv-nord', nombre: 'Lliga Comunitat Juvenil', subnombre: 'Grup Nord', temporada: '2026-2027' },
   'llc-juv-sud': { id: 'llc-juv-sud', nombre: 'Lliga Comunitat Juvenil', subnombre: 'Grup Sud', temporada: '2026-2027' },
   'cadete-autonomico': { id: 'cadete-autonomico', nombre: 'Cadete Autonómico', subnombre: '', temporada: '2026-2027' },
+  'cadete-pref-g3': { id: 'cadete-pref-g3', nombre: 'Cadete Preferente', subnombre: 'Grupo III', temporada: '2026-2027' },
 }
 
 export const EQUIPOS = [
@@ -164,6 +165,22 @@ export const EQUIPOS = [
   { id: "llcjuvnord-acero", nombre: "C.D. Acero", grupo: "llc-juv-nord", localidad: "Sagunto", color: "#C81E2C" },
   { id: "llcjuvnord-patacona", nombre: "Patacona", grupo: "llc-juv-nord", localidad: "Alboraia", color: "#F07C1E" },
   { id: "llcjuvnord-villarreal", nombre: "Villarreal", grupo: "llc-juv-nord", localidad: "Vila-real", color: "#F7D117" },
+  { id: "cadetepref-catarroja", nombre: "F.B.C.D. Catarroja - Bauhaus \"A\"", grupo: "cadete-pref-g3", localidad: "Catarroja", color: "#F07C1E" },
+  { id: "cadetepref-la-nucia", nombre: "C.F. La Nucía \"B\"", grupo: "cadete-pref-g3", localidad: "La Nucía", color: "#0A5FA8" },
+  { id: "cadetepref-ontinyent", nombre: "C.D.S.B. Ontinyent \"A\"", grupo: "cadete-pref-g3", localidad: "Ontinyent", color: "#111111" },
+  { id: "cadetepref-alzira", nombre: "U.D. Alzira \"A\"", grupo: "cadete-pref-g3", localidad: "Alzira", color: "#0A5FA8" },
+  { id: "cadetepref-gandia", nombre: "Real de Gandia C.F. \"A\"", grupo: "cadete-pref-g3", localidad: "Gandia", color: "#0A5FA8" },
+  { id: "cadetepref-algemesi", nombre: "Racing d'Algemesí \"A\"", grupo: "cadete-pref-g3", localidad: "Algemesí", color: "#FBF8EF" },
+  { id: "cadetepref-alcoy", nombre: "C.F. Ciudad Alcoy \"A\"", grupo: "cadete-pref-g3", localidad: "Alcoy", color: "#FBF8EF" },
+  { id: "cadetepref-oliva", nombre: "U.D. Oliva \"A\"", grupo: "cadete-pref-g3", localidad: "Oliva", color: "#0A5FA8" },
+  { id: "cadetepref-torrent", nombre: "Torrent C.F. \"A\"", grupo: "cadete-pref-g3", localidad: "Torrent", color: "#FBF8EF" },
+  { id: "cadetepref-levante", nombre: "Levante U.D. \"B\"", grupo: "cadete-pref-g3", localidad: "Valencia", color: "#0A5FA8" },
+  { id: "cadetepref-alcudia", nombre: "U.E. L'Alcúdia \"A\"", grupo: "cadete-pref-g3", localidad: "L'Alcúdia", color: "#F7D117" },
+  { id: "cadetepref-xativa", nombre: "Ciutat de Xàtiva C.F.B. \"A\"", grupo: "cadete-pref-g3", localidad: "Xàtiva", color: "#C81E2C" },
+  { id: "cadetepref-massanassa", nombre: "C.D.B. Massanassa \"A\"", grupo: "cadete-pref-g3", localidad: "Massanassa", color: "#0A5FA8" },
+  { id: "cadetepref-javea", nombre: "C.D.F. Jávea \"A\"", grupo: "cadete-pref-g3", localidad: "Jávea", color: "#C81E2C" },
+  { id: "cadetepref-tavernes", nombre: "C.F.U.E. Tavernes de la Valldigna \"A\"", grupo: "cadete-pref-g3", localidad: "Tavernes de la Valldigna", color: "#C81E2C" },
+  { id: "cadetepref-portuarios", nombre: "U.D. Portuarios - Disarp \"A\"", grupo: "cadete-pref-g3", localidad: "Puerto de Sagunto", color: "#C81E2C" },
 ]
 
 export function equiposPorGrupo(grupo) {
