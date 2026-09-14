@@ -11,6 +11,7 @@ import EquipacionIcon from './EquipacionIcon.jsx'
 import CompartirProximoPartido from './CompartirProximoPartido.jsx'
 import BotonFavorito from './BotonFavorito.jsx'
 import BotonVolverArriba from './BotonVolverArriba.jsx'
+import ClasificacionLiga from './ClasificacionLiga.jsx'
 import { descargarCalendarioPDF } from '../utils/calendarioPdf.js'
 import { descargarCalendarioCSV } from '../utils/calendarioCsv.js'
 import BotonAvisos from './BotonAvisos.jsx'
@@ -98,9 +99,9 @@ export default function Temporada({ equipo, onCambiar }) {
         )}
         <BotonAvisos equipoId={equipo.id} />
         <div className="temporada__acciones-header">
-          <Link className="temporada__clasificacion-link" to={`/clasificacion/${equipo.grupo}`}>
-            Ver clasificación →
-          </Link>
+          <a className="temporada__clasificacion-link" href="#clasificacion-liga">
+            Ver clasificación ↓
+          </a>
           <button
             type="button"
             className="temporada__pdf-link"
@@ -245,6 +246,11 @@ export default function Temporada({ equipo, onCambiar }) {
           )}
         </div>
       )}
+
+      <div id="clasificacion-liga" className="temporada__clasificacion">
+        <h2 className="temporada__plantilla-titulo">Clasificación · {grupo.nombre} {grupo.subnombre}</h2>
+        <ClasificacionLiga grupoId={equipo.grupo} equipoDestacadoId={equipo.id} />
+      </div>
 
       {plantilla && plantilla.length > 0 && (
         <div className="temporada__plantilla">
