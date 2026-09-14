@@ -270,15 +270,17 @@ export default function Temporada({ equipo, onCambiar }) {
         </div>
       )}
 
-      <div className="temporada__stats-teaser">
-        <span className="temporada__stats-icono" aria-hidden="true">▲</span>
-        <div>
-          <p className="temporada__stats-titulo">Estadísticas de jugadores</p>
-          <p className="temporada__stats-texto">
-            Goles, asistencias y minutos se irán activando jornada a jornada en cuanto arranque la liga.
-          </p>
+      {racha.length === 0 && (
+        <div className="temporada__stats-teaser">
+          <span className="temporada__stats-icono" aria-hidden="true">▲</span>
+          <div>
+            <p className="temporada__stats-titulo">Estadísticas de jugadores</p>
+            <p className="temporada__stats-texto">
+              Goles, asistencias y minutos se irán activando jornada a jornada en cuanto arranque la liga.
+            </p>
+          </div>
         </div>
-      </div>
+      )}
 
       <BotonVolverArriba />
     </div>
