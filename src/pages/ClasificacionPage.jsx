@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { GRUPOS, escudoUrl } from '../data/equipos.js'
 import { clasificacionDeGrupo } from '../utils/clasificacion.js'
-import { pichichisPorEquipo, ranquingPorteros } from '../utils/estadisticasJugadores.js'
+import { pichichiDeGrupo, ranquingPorteros, tarjetasDeGrupo } from '../utils/estadisticasJugadores.js'
 import { establecerCanonical } from '../utils/seo.js'
 
 const SITIO = 'https://calendario.pjcscout.es'
@@ -13,8 +13,11 @@ export default function ClasificacionPage() {
   const grupo = GRUPOS[grupoId]
   const tabla = grupo ? clasificacionDeGrupo(grupoId) : null
   const hayPartidosJugados = tabla ? !tabla.every((fila) => fila.pj === 0) : false
-  const pichichis = hayPartidosJugados ? pichichisPorEquipo(grupoId).filter((p) => p.goleadores.length > 0) : []
+  const pichichi = hayPartidosJugados ? pichichiDeGrupo(grupoId) : []
   const porteros = hayPartidosJugados ? ranquingPorteros(grupoId) : []
+  const tarjetas = hayPartidosJugados ? tarjetasDeGrupo(grupoId) : []
+
+  const equipoDe = (equipoId) => tabla.find((fila) => fila.equipo.id === equipoId)?.equipo
 
   useEffect(() => {
     if (!grupo) return
@@ -117,9 +120,9 @@ export default function ClasificacionPage() {
         </p>
       )}
 
-      {pichichis.length > 0 && (
+      {pichichi.length > 0 && (
         <div className="clasificacion__estadisticas">
-          <h2 className="clasificacion__estadisticas-titulo">Máximo goleador por equipo</h2>
+          <h2 className="clasificacion__estadisticas-titulo">🥇 Pichichi</h2>
           <p className="clasificacion__estadisticas-nota">
             Datos de las actas oficiales de la federación. No incluye asistencias: la fuente no las publica.
           </p>
@@ -127,31 +130,38 @@ export default function ClasificacionPage() {
             <table className="clasificacion__tabla">
               <thead>
                 <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Jugador</th>
                   <th scope="col" className="clasificacion__col-equipo">
                     Equipo
                   </th>
-                  <th scope="col">Goleador</th>
                   <th scope="col">Goles</th>
                 </tr>
               </thead>
               <tbody>
-                {pichichis.map(({ equipo, goleadores }) => (
-                  <tr key={equipo.id}>
-                    <td className="clasificacion__col-equipo">
-                      <img
-                        className="clasificacion__escudo"
-                        src={escudoUrl(equipo)}
-                        alt=""
-                        width={20}
-                        height={20}
-                        loading="lazy"
-                      />
-                      {equipo.nombre}
-                    </td>
-                    <td>{goleadores[0].jugador}</td>
-                    <td>{goleadores[0].goles}</td>
-                  </tr>
-                ))}
+                {pichichi.map((fila, indice) => {
+                  const equipo = equipoDe(fila.equipoId)
+                  return (
+                    <tr key={`${fila.equipoId}__${fila.jugador}`}>
+                      <td>{indice + 1}</td>
+                      <td>{fila.jugador}</td>
+                      <td className="clasificacion__col-equipo">
+                        {equipo && (
+                          <img
+                            className="clasificacion__escudo"
+                            src={escudoUrl(equipo)}
+                            alt=""
+                            width={20}
+                            height={20}
+                            loading="lazy"
+                          />
+                        )}
+                        {equipo?.nombre}
+                      </td>
+                      <td>{fila.goles}</td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
@@ -160,7 +170,8 @@ export default function ClasificacionPage() {
 
       {porteros.length > 0 && (
         <div className="clasificacion__estadisticas">
-          <h2 className="clasificacion__estadisticas-titulo">Porteros · mejor promedio de goles encajados</h2>
+          <h2 className="clasificacion__estadisticas-titulo">🧤 Trofeo Zamora</h2>
+          <p className="clasificacion__estadisticas-nota">Portero con mejor promedio de goles encajados por partido.</p>
           <div className="clasificacion__tabla-scroll">
             <table className="clasificacion__tabla">
               <thead>
@@ -176,7 +187,7 @@ export default function ClasificacionPage() {
               </thead>
               <tbody>
                 {porteros.map((p) => {
-                  const equipo = tabla.find((fila) => fila.equipo.id === p.equipoId)?.equipo
+                  const equipo = equipoDe(p.equipoId)
                   return (
                     <tr key={`${p.equipoId}__${p.nombre}`}>
                       <td>{p.nombre}</td>
@@ -196,6 +207,53 @@ export default function ClasificacionPage() {
                       <td>{p.partidos}</td>
                       <td>{p.golesEncajados}</td>
                       <td>{p.promedio.toFixed(2)}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {tarjetas.length > 0 && (
+        <div className="clasificacion__estadisticas">
+          <h2 className="clasificacion__estadisticas-titulo">🟨 Clasificación de tarjetas</h2>
+          <div className="clasificacion__tabla-scroll">
+            <table className="clasificacion__tabla">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Jugador</th>
+                  <th scope="col" className="clasificacion__col-equipo">
+                    Equipo
+                  </th>
+                  <th scope="col">🟨</th>
+                  <th scope="col">🟥</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tarjetas.map((fila, indice) => {
+                  const equipo = equipoDe(fila.equipoId)
+                  return (
+                    <tr key={`${fila.equipoId}__${fila.jugador}`}>
+                      <td>{indice + 1}</td>
+                      <td>{fila.jugador}</td>
+                      <td className="clasificacion__col-equipo">
+                        {equipo && (
+                          <img
+                            className="clasificacion__escudo"
+                            src={escudoUrl(equipo)}
+                            alt=""
+                            width={20}
+                            height={20}
+                            loading="lazy"
+                          />
+                        )}
+                        {equipo?.nombre}
+                      </td>
+                      <td>{fila.amarillas}</td>
+                      <td>{fila.rojas}</td>
                     </tr>
                   )
                 })}
