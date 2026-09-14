@@ -1,0 +1,28 @@
+name: Reconocimiento jornada 2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recon-jornada2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install playwright@1.48.0
+      - run: npx playwright install --with-deps chromium
+      - run: JORNADA=2 node scripts/scraper/scrape-jornada-ffcv.mjs > recon-j2-ffcv-output.txt 2>&1 || true
+      - run: JORNADA=2 node scripts/scraper/scrape-jornada-dh7.mjs > recon-j2-dh7-output.txt 2>&1 || true
+      - name: Subir resultados
+        run: |
+          git config user.name "recon-bot"
+          git config user.email "recon-bot@users.noreply.github.com"
+          git add recon-j2-ffcv-output.txt recon-j2-dh7-output.txt jornada2-detalle.json jornada2-dh7-actas.json
+          git commit -m "Reconocimiento: detalle de jornada 2 (temporal)" || echo "sin cambios"
+          git push
