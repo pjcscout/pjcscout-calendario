@@ -1,0 +1,76 @@
+name: Scrapear y fusionar jornada
+
+on:
+  workflow_dispatch:
+    inputs:
+      jornada:
+        description: Número de jornada a scrapear (FFCV + DH7)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-jornada:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      JORNADA: ${{ inputs.jornada }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - run: npx playwright install --with-deps chromium
+
+      - name: Scrapear FFCV (7 categorías)
+        run: node scripts/scraper/scrape-jornada-ffcv.mjs
+
+      - name: Scrapear DH7 (RFEF)
+        run: node scripts/scraper/scrape-jornada-dh7.mjs
+
+      - name: Procesar eventos + convocatorias FFCV
+        run: node scripts/scraper/procesar-jornada.mjs
+
+      - name: Procesar eventos + convocatorias DH7
+        run: node scripts/scraper/procesar-dh7-jornada.mjs
+
+      - name: Calcular minutos FFCV
+        run: node scripts/scraper/calcular-minutos-ffcv.mjs
+
+      - name: Calcular minutos DH7
+        run: node scripts/scraper/calcular-minutos-dh7.mjs
+
+      - name: Fusionar resultados en resultados.js
+        run: node scripts/scraper/aplicar-jornada-resultados.mjs
+
+      - name: Fusionar minutos en minutosJugados.js
+        run: node scripts/scraper/aplicar-jornada-minutos.mjs
+
+      - run: npm test
+
+      - run: npm run build
+
+      - name: Generar datos + imágenes de la jornada
+        run: |
+          node scripts/graficas/generar-datos.mjs
+          node scripts/graficas/generar-imagenes.mjs
+
+      - name: Subir gráficas como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: graficas-jornada-${{ inputs.jornada }}
+          path: scripts/graficas/salida/
+
+      - name: Commitear y subir a main
+        run: |
+          git config user.name "scrape-bot"
+          git config user.email "scrape-bot@users.noreply.github.com"
+          git add src/data/resultados.js src/data/minutosJugados.js
+          git commit -m "Jornada ${{ inputs.jornada }}: resultados reales con goles, tarjetas, porteros y minutos" || echo "sin cambios"
+          git push
