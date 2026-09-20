@@ -2,3 +2,9 @@ node_modules
 dist
 dist-server
 .DS_Store
+
+# Salidas del pipeline semanal de gráficas: se regeneran cada jornada y se
+# envían directamente al usuario, no se versionan.
+scripts/graficas/datos-resultados.json
+scripts/graficas/datos-clasificacion.json
+scripts/graficas/salida/

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+:root{
+  --bg:#faf7ee;
+  --borde:#ddd3ba;
+  --oro:#a9762e;
+  --oro-suave:#7a5220;
+  --texto:#201d14;
+  --texto-atenuado:#6b6455;
+  --display:"Barlow Condensed", system-ui, sans-serif;
+  --cuerpo:"Barlow", system-ui, sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+body{ width:1080px; background:var(--bg); color:var(--texto); font-family:var(--cuerpo); }
+.pagina{ padding:64px 80px 70px; }
+.cabecera{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:2px; margin-bottom:8px; }
+.marca{ font-family:var(--display); font-weight:800; letter-spacing:.04em; font-size:42px; line-height:1; }
+.marca span{ font-weight:600; font-size:.42em; letter-spacing:.24em; color:var(--oro-suave); display:block; margin-top:7px; }
+.marca-raya{ width:80px; height:3px; background:var(--oro); margin:14px 0 18px; }
+.jornada-titulo{ font-family:var(--display); font-weight:800; font-size:70px; line-height:1; }
+.fecha{ font-family:var(--cuerpo); font-weight:500; letter-spacing:.1em; text-transform:uppercase; font-size:18px; color:var(--texto-atenuado); margin-top:8px; }
+.grupo__nombre{ font-family:var(--display); font-weight:700; letter-spacing:.03em; font-size:32px; color:var(--oro-suave); margin-top:22px; }
+.raya-gruesa{ height:2px; background:var(--texto); margin:22px 0 6px; }
+
+.tabla__cabecera, .fila{
+  display:grid;
+  grid-template-columns: 34px 34px 1fr 46px 46px 46px 46px 58px 66px;
+  align-items:center;
+  column-gap:10px;
+}
+.tabla__cabecera{
+  padding:10px 0 8px;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--texto-atenuado);
+  border-bottom:1px solid var(--borde);
+}
+.fila{ padding:11px 0; border-bottom:1px solid var(--borde); }
+.fila:last-child{ border-bottom:none }
+.fila:nth-child(even){ background:rgba(169,118,46,.05); }
+.num{ font-family:var(--display); font-weight:700; font-size:20px; color:var(--texto-atenuado); text-align:center; }
+.escudo{ width:32px; height:32px; object-fit:contain; }
+.nombre-eq{ font-weight:600; font-size:22px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.dato{ font-family:var(--cuerpo); font-weight:600; font-size:20px; text-align:center; font-variant-numeric:tabular-nums; }
+.dg-pos{ color:#3f7a52 }
+.dg-neg{ color:#a83f36 }
+.pts{ font-family:var(--display); font-weight:800; font-size:25px; color:var(--oro); text-align:center; font-variant-numeric:tabular-nums; }
+.col-c{ text-align:center; }
+
+.pie{ display:flex; justify-content:center; padding-top:34px; }
+.sitio{ font-family:var(--display); font-weight:700; letter-spacing:.16em; font-size:22px; color:var(--oro); }
+</style>
+</head>
+<body>
+<div class="pagina" id="pagina"></div>
+
+<script>
+const D = __GRUPO__;
+
+// Solo para esta gráfica: algunos nombres oficiales (sobre todo en DH7) son
+// demasiado largos para una fila y se cortarían con "...". No se toca
+// equipos.js (esos nombres completos sí hacen falta en el resto del sitio).
+const NOMBRE_CORTO = {
+  "dh7-cartagena": "FC Cartagena",
+  "dh7-penya-arrabal": "Penya Arrabal",
+  "dh7-ucam": "UCAM Murcia",
+  "dh7-murcia-promises": "Murcia Promises",
+  "dh7-san-francisco": "CD San Francisco",
+};
+function nombreCorto(id, nombre){ return NOMBRE_CORTO[id] || nombre; }
+
+const pagina = document.getElementById('pagina');
+pagina.innerHTML = `
+  <div class="cabecera">
+    <div class="marca">PJC SCOUT<span>&amp; ANALYTICS</span></div>
+    <div class="marca-raya"></div>
+    <h1 class="jornada-titulo">CLASIFICACIÓN</h1>
+    <div class="fecha">TRAS LA JORNADA ${D.jornada} &middot; ${D.fechaTexto}</div>
+    <div class="grupo__nombre">${D.subnombre ? D.nombre + ' · ' + D.subnombre : D.nombre}</div>
+  </div>
+  <div class="raya-gruesa"></div>
+  <div class="tabla__cabecera">
+    <span></span><span></span><span>Equipo</span>
+    <span class="col-c">PJ</span><span class="col-c">PG</span><span class="col-c">PE</span><span class="col-c">PP</span>
+    <span class="col-c">DG</span><span class="col-c">Pts</span>
+  </div>
+  <div id="filas"></div>
+  <div class="pie"><span class="sitio">PJCSCOUT.ES</span></div>
+`;
+
+const filas = document.getElementById('filas');
+D.tabla.forEach((fila, i) => {
+  const dgTexto = fila.dg > 0 ? `+${fila.dg}` : `${fila.dg}`;
+  const dgClase = fila.dg > 0 ? 'dg-pos' : fila.dg < 0 ? 'dg-neg' : '';
+  const el = document.createElement('div');
+  el.className = 'fila';
+  el.innerHTML = `
+    <span class="num">${i+1}</span>
+    <img class="escudo" src="escudos/${fila.id}.png" alt="">
+    <span class="nombre-eq">${nombreCorto(fila.id, fila.nombre)}</span>
+    <span class="dato">${fila.pj}</span>
+    <span class="dato">${fila.pg}</span>
+    <span class="dato">${fila.pe}</span>
+    <span class="dato">${fila.pp}</span>
+    <span class="dato ${dgClase}">${dgTexto}</span>
+    <span class="pts">${fila.pts}</span>
+  `;
+  filas.appendChild(el);
+});
+</script>
+</body>
+</html>
