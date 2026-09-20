@@ -1,9 +1,13 @@
-// Calcula minutos jugados por convocado de jornada 1 en DH7, a partir de las
-// actas (titulares/suplentes con dorsal + sustituciones con dorsal y minuto).
+// Calcula minutos jugados por convocado de la jornada N (env JORNADA) en
+// DH7, a partir de las actas (titulares/suplentes con dorsal +
+// sustituciones con dorsal y minuto).
 import { readFileSync, writeFileSync } from 'node:fs'
 import { equiposPorGrupo } from '../../src/data/equipos.js'
 
-const actas = JSON.parse(readFileSync('scripts/scraper/recon-dh7-todas-actas.json', 'utf8'))
+const JORNADA = parseInt(process.env.JORNADA, 10)
+if (!JORNADA) throw new Error('Falta la env var JORNADA (número de jornada)')
+
+const actas = JSON.parse(readFileSync(`jornada${JORNADA}-dh7-actas.json`, 'utf8'))
 
 const ALIAS_RFEF = { fccartagena: 'dh7-cartagena' }
 function nombreCortoDe(nombreRfef) {
@@ -62,7 +66,6 @@ function extraerSustituciones(lineas, idxInicio, idxFin) {
       const mMin = lineas[j].match(/^\((\d+)'(?:\+\d+)?\)/)
       if (mMin) minuto = parseInt(mMin[1], 10)
       j++
-      // Una nueva sustitución empieza si encontramos otro "dorsal\tnombre" antes de cerrar esta.
       if (j < idxFin && /^(\d+)\t+(.+,.+)$/.test(lineas[j]) && minuto === null) break
     }
     if (dorsalSale !== null && minuto !== null) {
@@ -76,7 +79,7 @@ function extraerSustituciones(lineas, idxInicio, idxFin) {
 const MINUTOS = {}
 
 for (const [codActa, textoBruto] of Object.entries(actas)) {
-  const texto = textoBruto.replace(/ /g, ' ')
+  const texto = textoBruto.replace(/ /g, ' ')
   const lineas = texto.split('\n').map((l) => l.trim())
 
   const [nombreLocalRfef, nombreVisitanteRfef] = texto
@@ -92,18 +95,20 @@ for (const [codActa, textoBruto] of Object.entries(actas)) {
   const idxSuplentesA = lineas.indexOf('Suplentes', idxTitularesA)
   const idxTitularesB = lineas.indexOf('Titulares', idxSuplentesA)
   const idxSuplentesB = lineas.indexOf('Suplentes', idxTitularesB)
-  const idxCuerpoTecnicoA = lineas.indexOf('Cuerpo Técnico', idxSuplentesA)
   const idxCuerpoTecnicoB = lineas.indexOf('Cuerpo Técnico', idxSuplentesB)
-  const idxSustA = lineas.indexOf('Sustituciones', idxCuerpoTecnicoA)
+  const idxSustA = lineas.indexOf('Sustituciones', idxSuplentesA)
   const idxTarjetasA = lineas.indexOf('Tarjetas', idxSustA)
-  const idxSustB = lineas.indexOf('Sustituciones', idxCuerpoTecnicoB)
+  const idxSustB = lineas.indexOf('Sustituciones', idxSuplentesB)
   const idxTarjetasB = lineas.indexOf('Tarjetas', idxSustB)
 
+  // Igual que en procesar-dh7-jornada.mjs: idxTitularesB es un límite fiable
+  // para el rango de "suplentes de A" en los dos formatos de acta que usa
+  // la RFEF (Cuerpo Técnico/Sustituciones por equipo, o agrupado al final).
   const titularesA = extraerConvocados(lineas, idxTitularesA, idxSuplentesA)
-  const suplentesA = extraerConvocados(lineas, idxSuplentesA, idxCuerpoTecnicoA)
+  const suplentesA = extraerConvocados(lineas, idxSuplentesA, idxTitularesB)
   const titularesB = extraerConvocados(lineas, idxTitularesB, idxSuplentesB)
   const suplentesB = extraerConvocados(lineas, idxSuplentesB, idxCuerpoTecnicoB)
-  const sustA = idxSustA !== -1 ? extraerSustituciones(lineas, idxSustA, idxTarjetasA !== -1 ? idxTarjetasA : lineas.length) : []
+  const sustA = idxSustA !== -1 && idxSustA < idxTitularesB ? extraerSustituciones(lineas, idxSustA, idxTarjetasA !== -1 && idxTarjetasA < idxTitularesB ? idxTarjetasA : idxTitularesB) : []
   const sustB = idxSustB !== -1 ? extraerSustituciones(lineas, idxSustB, idxTarjetasB !== -1 ? idxTarjetasB : lineas.length) : []
 
   for (const [eq, titulares, suplentes, sustituciones] of [
@@ -132,6 +137,5 @@ for (const [codActa, textoBruto] of Object.entries(actas)) {
   }
 }
 
-writeFileSync('scripts/scraper/salida-minutos-dh7.json', JSON.stringify(MINUTOS, null, 2))
-console.log('Equipos con minutos DH7:', Object.keys(MINUTOS).length, '/ 16')
-console.log(JSON.stringify(MINUTOS['dh7-elche'], null, 2))
+writeFileSync(`scripts/scraper/salida-minutos-dh7-j${JORNADA}.json`, JSON.stringify(MINUTOS, null, 2))
+console.log('Equipos con minutos DH7 jornada', JORNADA, ':', Object.keys(MINUTOS).length, '/ 16')
