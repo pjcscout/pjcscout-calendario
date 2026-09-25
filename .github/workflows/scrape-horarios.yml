@@ -35,6 +35,9 @@ jobs:
           npx playwright install --with-deps chromium
           node scripts/graficas/generar-imagenes-previa.mjs
 
+      - name: Generar vídeo de la previa (carrusel de las ligas)
+        run: node scripts/graficas/generar-video-previa.mjs
+
       - name: Subir previa como artefacto
         uses: actions/upload-artifact@v4
         with:
