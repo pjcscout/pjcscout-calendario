@@ -1,0 +1,50 @@
+name: Scrapear horarios de la próxima jornada
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-horarios:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Descargar fecha+hora de cada categoría FFCV
+        run: node scripts/scraper/scrape-horarios-ffcv.mjs
+
+      - name: Fusionar en horarios.js
+        run: node scripts/scraper/aplicar-horarios.mjs
+
+      - run: npm test
+
+      - run: npm run build
+
+      - name: Generar previa (una imagen por liga)
+        run: |
+          node scripts/graficas/generar-datos-previa.mjs
+          npx playwright install --with-deps chromium
+          node scripts/graficas/generar-imagenes-previa.mjs
+
+      - name: Subir previa como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: previa-proxima-jornada
+          path: scripts/graficas/salida/
+
+      - name: Commitear y subir a main
+        run: |
+          git config user.name "scrape-bot"
+          git config user.email "scrape-bot@users.noreply.github.com"
+          git add src/data/horarios.js
+          git commit -m "Horarios: fecha y hora confirmadas de la próxima jornada" || echo "sin cambios"
+          git push

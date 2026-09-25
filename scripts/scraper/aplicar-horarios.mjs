@@ -1,17 +1,16 @@
-// Fusiona en horarios.js la fecha+hora confirmada de la jornada N (env
-// JORNADA), a partir de jornada<N>-horarios.json (generado por
-// scrape-horarios-ffcv.mjs). Solo añade partidos con hora confirmada — si la
-// FFCV todavía no la ha publicado para alguno, se deja fuera (nunca se
-// inventa una hora, como pide el propio comentario de horarios.js).
+// Fusiona en horarios.js la fecha+hora confirmada de la próxima jornada de
+// cada categoría, a partir de horarios-proxima-jornada.json (generado por
+// scrape-horarios-ffcv.mjs, que ya lleva el número de jornada de cada
+// categoría porque no siempre coinciden entre sí). Solo añade partidos con
+// hora confirmada — si la FFCV todavía no la ha publicado para alguno, se
+// deja fuera (nunca se inventa una hora, como pide el propio comentario de
+// horarios.js).
 import { readFileSync, writeFileSync } from 'node:fs'
 import { equiposPorGrupo } from '../../src/data/equipos.js'
 import { idPartido } from '../../src/data/resultados.js'
 import { HORARIOS } from '../../src/data/horarios.js'
 
-const JORNADA = process.env.JORNADA
-if (!JORNADA) throw new Error('Falta la env var JORNADA (número de jornada)')
-
-const datos = JSON.parse(readFileSync(`jornada${JORNADA}-horarios.json`, 'utf8'))
+const datos = JSON.parse(readFileSync('horarios-proxima-jornada.json', 'utf8'))
 
 function slug(t) {
   return t
@@ -47,7 +46,7 @@ const total = structuredClone(HORARIOS)
 let añadidos = 0
 const sinMapear = []
 
-for (const [grupo, partidos] of Object.entries(datos)) {
+for (const [grupo, { jornada, partidos }] of Object.entries(datos)) {
   for (const p of partidos) {
     if (!p.hora || !p.fecha) continue
     const eqLocal = nombreCortoDe(grupo, p.local)
@@ -56,7 +55,7 @@ for (const [grupo, partidos] of Object.entries(datos)) {
       sinMapear.push(`${grupo}: ${p.local} vs ${p.visitante}`)
       continue
     }
-    const id = idPartido(grupo, parseInt(JORNADA, 10), eqLocal.nombre, eqVisitante.nombre)
+    const id = idPartido(grupo, jornada, eqLocal.nombre, eqVisitante.nombre)
     total[id] = { fecha: fechaIso(p.fecha), hora: p.hora }
     añadidos++
   }
