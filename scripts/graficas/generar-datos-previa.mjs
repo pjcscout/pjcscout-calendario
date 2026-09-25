@@ -9,12 +9,15 @@
 import { writeFileSync } from 'node:fs'
 import { GRUPOS, equiposPorGrupo } from '../../src/data/equipos.js'
 import { jornadasDeGrupo, tieneCalendario } from '../../src/utils/fixtures.js'
+import { idPartido } from '../../src/data/resultados.js'
+import { HORARIOS } from '../../src/data/horarios.js'
 
+// Cadete Preferente Grupo III queda fuera de la previa a petición expresa
+// del usuario (igual que ya se excluyó de la gráfica de resultados).
 const ORDEN = [
   'tercera-vi',
   'liga-nacional',
   'cadete-autonomico',
-  'cadete-pref-g3',
   'llc-nord',
   'llc-sud',
   'llc-juv-nord',
@@ -29,6 +32,13 @@ const MESES = [
 function formatearFecha(fechaIso) {
   const [a, m, d] = fechaIso.split('-').map((n) => parseInt(n, 10))
   return `${d} ${MESES[m - 1]} ${a}`
+}
+
+const DIAS = ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB']
+function formatearDiaCorto(fechaIso) {
+  const [a, m, d] = fechaIso.split('-').map((n) => parseInt(n, 10))
+  const fecha = new Date(Date.UTC(a, m - 1, d))
+  return `${DIAS[fecha.getUTCDay()]} ${d}`
 }
 
 const hoy = new Date().toISOString().slice(0, 10)
@@ -56,11 +66,14 @@ for (const [grupoId, siguiente] of Object.entries(siguientesPorGrupo)) {
     const eqLocal = equiposPorGrupo(grupoId).find((e) => e.nombre === local)
     const eqVisitante = equiposPorGrupo(grupoId).find((e) => e.nombre === visitante)
     if (!eqLocal || !eqVisitante) continue
+    const horario = HORARIOS[idPartido(grupoId, siguiente.numero, eqLocal.nombre, eqVisitante.nombre)]
     partidos.push({
       localId: eqLocal.id,
       localNombre: eqLocal.nombre,
       visitanteId: eqVisitante.id,
       visitanteNombre: eqVisitante.nombre,
+      diaTexto: horario ? formatearDiaCorto(horario.fecha) : null,
+      hora: horario?.hora ?? null,
     })
   }
   if (partidos.length === 0) continue

@@ -4,9 +4,70 @@
 // normalmente el miércoles previo a cada fin de semana en su web de
 // resultados — salvo que el partido se aplace, que es un caso aparte.
 //
-// Vacío hasta que el scraper (previsto) la vaya rellenando semana a semana.
-// Mientras una jornada no tenga entrada aquí, cualquier aviso/recordatorio
-// debe hablar solo del día, nunca inventar una hora.
+// Se va rellenando semana a semana con scrape-horarios-ffcv.mjs +
+// aplicar-horarios.mjs. Mientras una jornada no tenga entrada aquí,
+// cualquier aviso/recordatorio debe hablar solo del día, nunca inventar una
+// hora.
 //
-// @type {Record<string, { hora: string }>} indexado por idPartido(...)
-export const HORARIOS = {}
+// @type {Record<string, { fecha: string, hora: string }>} indexado por idPartido(...)
+export const HORARIOS = {
+  "tercera-vi__j4__ontinyent-1931-c-f__c-d-bunol-a": { fecha: "2026-09-27", hora: "18:00" },
+  "tercera-vi__j4__villarreal-c-f-c__levante-u-d-b": { fecha: "2026-09-26", hora: "12:00" },
+  "tercera-vi__j4__crevillente-deportivo__at-saguntino": { fecha: "2026-09-27", hora: "18:00" },
+  "tercera-vi__j4__c-d-utiel__c-d-roda-a": { fecha: "2026-09-27", hora: "17:30" },
+  "tercera-vi__j4__s-c-torrevieja-c-f-a__c-d-soneja": { fecha: "2026-09-27", hora: "11:30" },
+  "tercera-vi__j4__c-d-espanol-de-san-vicente__c-d-acero": { fecha: "2026-09-26", hora: "17:00" },
+  "tercera-vi__j4__athletic-club-torrellano__u-d-vall-de-uxo-a": { fecha: "2026-09-27", hora: "11:30" },
+  "tercera-vi__j4__atzeneta-u-e-a__hercules-c-f-b": { fecha: "2026-09-26", hora: "17:00" },
+  "tercera-vi__j4__c-d-eldense-b__torrent-c-f-a": { fecha: "2026-09-26", hora: "16:00" },
+  "llc-nord__j4__f-c-odisea-a__c-f-nou-jove-castello-a": { fecha: "2026-09-26", hora: "15:00" },
+  "llc-nord__j4__c-f-recambios-colon-catarroja-a__ribarroja-c-f-a": { fecha: "2026-09-27", hora: "11:30" },
+  "llc-nord__j4__u-d-aldaia-c-f-a__silla-c-f": { fecha: "2026-09-26", hora: "17:15" },
+  "llc-nord__j4__paiporta-c-f__c-d-burriana-a": { fecha: "2026-09-27", hora: "13:00" },
+  "llc-nord__j4__c-d-onda-a__c-f-at-b-la-luz-xirivella-a": { fecha: "2026-09-26", hora: "17:00" },
+  "llc-nord__j4__ida-c-f-at-quart-a__alqueries-c-f-a": { fecha: "2026-09-27", hora: "11:00" },
+  "llc-nord__j4__c-d-almazora-a__manises-c-f-a": { fecha: "2026-09-26", hora: "18:00" },
+  "llc-nord__j4__massanassa-c-f__c-d-l-alcora": { fecha: "2026-09-26", hora: "18:30" },
+  "llc-sud__j4__f-b-redovan-c-f-a__beniganim-c-f": { fecha: "2026-09-27", hora: "11:30" },
+  "llc-sud__j4__c-f-u-e-tavernes-de-la-valldigna__c-f-u-d-calpe": { fecha: "2026-09-23", hora: "20:30" },
+  "llc-sud__j4__c-d-f-javea__c-d-thader": { fecha: "2026-09-27", hora: "17:30" },
+  "llc-sud__j4__c-f-independiente-alicante-a__u-d-alzira": { fecha: "2026-09-27", hora: "17:30" },
+  "llc-sud__j4__c-f-gandia-a__santa-pola-c-f": { fecha: "2026-09-27", hora: "18:00" },
+  "llc-sud__j4__u-d-rayo-ibense-a__c-f-benidorm-a": { fecha: "2026-09-27", hora: "17:00" },
+  "llc-sud__j4__c-d-almoradi-a__c-e-alberic-sucemart": { fecha: "2026-09-26", hora: "18:00" },
+  "llc-sud__j4__novelda-union-c-f-cableworld-a__c-d-olimpic": { fecha: "2026-09-27", hora: "18:00" },
+  "llc-juv-nord__j4__manises-c-f__betera-c-f": { fecha: "2026-09-26", hora: "19:00" },
+  "llc-juv-nord__j4__c-d-f-canet__primer-toque": { fecha: "2026-09-27", hora: "19:15" },
+  "llc-juv-nord__j4__alboraya__ath-massamagrell": { fecha: "2026-09-27", hora: "19:15" },
+  "llc-juv-nord__j4__c-d-acero__c-f-torre-levante": { fecha: "2026-09-27", hora: "19:15" },
+  "llc-juv-nord__j4__at-burriana-salesianos__c-f-cracks": { fecha: "2026-09-27", hora: "19:30" },
+  "llc-juv-nord__j4__historics-de-valencia__san-jose": { fecha: "2026-09-27", hora: "11:00" },
+  "llc-juv-nord__j4__col-salgui__patacona": { fecha: "2026-09-26", hora: "17:00" },
+  "llc-juv-nord__j4__villarreal__paterna": { fecha: "2026-09-27", hora: "10:00" },
+  "llc-juv-sud__j4__catral-castrum__c-d-alcoyano": { fecha: "2026-09-25", hora: "19:00" },
+  "llc-juv-sud__j4__la-nucia__u-d-aldaia": { fecha: "2026-09-26", hora: "18:00" },
+  "llc-juv-sud__j4__hercules-c-f__c-f-u-e-tavernes-de-la-valldigna": { fecha: "2026-09-26", hora: "18:15" },
+  "llc-juv-sud__j4__kelme-c-f__c-d-pablo-iglesias": { fecha: "2026-09-26", hora: "17:00" },
+  "llc-juv-sud__j4__scd-intangco__u-d-oliva": { fecha: "2026-09-26", hora: "17:00" },
+  "llc-juv-sud__j4__silla-c-f__c-d-eldense": { fecha: "2026-09-26", hora: "18:45" },
+  "llc-juv-sud__j4__c-d-olimpic__orihuela": { fecha: "2026-09-26", hora: "19:00" },
+  "llc-juv-sud__j4__f-b-c-d-catarroja__c-f-benidorm": { fecha: "2026-09-27", hora: "12:00" },
+  "cadete-autonomico__j4__patacona__villarreal": { fecha: "2026-09-27", hora: "11:00" },
+  "cadete-autonomico__j4__cf-torre-levante__san-jose": { fecha: "2026-09-25", hora: "20:15" },
+  "cadete-autonomico__j4__alboraya__levante": { fecha: "2026-09-26", hora: "10:45" },
+  "cadete-autonomico__j4__fundacion-valencia__kelme": { fecha: "2026-09-27", hora: "11:00" },
+  "cadete-autonomico__j4__castellon__celtic-elche": { fecha: "2026-09-26", hora: "12:00" },
+  "cadete-autonomico__j4__elche__valencia": { fecha: "2026-09-26", hora: "10:45" },
+  "cadete-autonomico__j4__primer-toque__elda-union": { fecha: "2026-09-26", hora: "17:15" },
+  "cadete-autonomico__j4__roda__la-nucia": { fecha: "2026-09-26", hora: "12:45" },
+  "cadete-autonomico__j4__scd-intangco__cf-benidorm": { fecha: "2026-09-26", hora: "19:00" },
+  "liga-nacional__j4__alzira__torrent": { fecha: "2026-09-26", hora: "17:00" },
+  "liga-nacional__j4__villarreal__levante": { fecha: "2026-09-26", hora: "16:00" },
+  "liga-nacional__j4__san-jose__san-pedro": { fecha: "2026-09-26", hora: "17:30" },
+  "liga-nacional__j4__la-nucia__moncadense": { fecha: "2026-09-26", hora: "16:00" },
+  "liga-nacional__j4__elda-union__roda": { fecha: "2026-09-26", hora: "17:00" },
+  "liga-nacional__j4__elche__tavernes-blanques": { fecha: "2026-09-26", hora: "16:00" },
+  "liga-nacional__j4__rumbo__alboraya": { fecha: "2026-09-27", hora: "17:00" },
+  "liga-nacional__j4__jove-espanol__castellon": { fecha: "2026-09-26", hora: "19:30" },
+  "liga-nacional__j4__hercules__valencia": { fecha: "2026-09-27", hora: "18:00" },
+}
