@@ -7,4 +7,5 @@ dist-server
 # envían directamente al usuario, no se versionan.
 scripts/graficas/datos-resultados.json
 scripts/graficas/datos-clasificacion.json
+scripts/graficas/datos-previa.json
 scripts/graficas/salida/
