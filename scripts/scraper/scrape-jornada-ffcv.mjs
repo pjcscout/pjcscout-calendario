@@ -11,9 +11,21 @@ import { COMPETICIONES_FFCV, COD_TEMPORADA_2026_2027 } from '../../src/data/comp
 
 const JORNADA = process.env.JORNADA || '2'
 
-async function fetchJson(url) {
-  const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })
-  return res.json()
+// La API de la FFCV a veces entra en "modo degradación" (503, cuerpo de
+// texto en vez de JSON) durante unos minutos. Reintenta con espera antes de
+// rendirse, para no perder toda la jornada por un bache puntual.
+async function fetchJson(url, intentos = 3) {
+  for (let intento = 1; intento <= intentos; intento++) {
+    const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+    const texto = await res.text()
+    try {
+      return JSON.parse(texto)
+    } catch {
+      if (intento === intentos) throw new Error(`Respuesta no válida de ${url}: ${texto.slice(0, 200)}`)
+      console.log(`Respuesta no válida (intento ${intento}/${intentos}), reintentando en 20s:`, texto.slice(0, 150))
+      await new Promise((r) => setTimeout(r, 20000))
+    }
+  }
 }
 
 function escapeRegex(s) {
@@ -39,10 +51,18 @@ async function irAJornada(indexUrl) {
   await page.waitForTimeout(1800)
 }
 
+try {
 for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
   resultadoFinal[grupo] = []
   const jornadaUrl = `https://ffcv.es/competiciones/api/partidos/resultados_por_grupo_jornada_data.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}&cod_jornada=${JORNADA}&grupo_nombre=${encodeURIComponent(cfg.nombreGrupo)}&competicion_nombre=x`
-  const jornadaData = await fetchJson(jornadaUrl)
+  let jornadaData
+  try {
+    jornadaData = await fetchJson(jornadaUrl)
+  } catch (e) {
+    console.log(`Grupo ${grupo}: no se pudo obtener el listado de partidos, se salta este grupo. ${e.message}`)
+    errores.push({ grupo, partido: '(listado de la jornada)', error: e.message })
+    continue
+  }
   const partidosJugados = jornadaData.partidos.filter((p) => p.estado === '1')
 
   const indexUrl = `https://ffcv.es/competiciones/index.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}`
@@ -125,9 +145,12 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
   }
   console.log(`Grupo ${grupo}: ${resultadoFinal[grupo].length} partidos procesados de ${partidosJugados.length} jugados.`)
 }
-
-writeFileSync(`jornada${JORNADA}-detalle.json`, JSON.stringify({ resultadoFinal, errores }, null, 2))
-console.log('\nErrores:', errores.length)
-console.log(JSON.stringify(errores, null, 2))
-
-await browser.close()
+} finally {
+  // Guarda lo conseguido hasta el momento aunque un grupo posterior haya
+  // fallado del todo (p. ej. la FFCV entra en modo degradación a mitad de
+  // la jornada) — mejor una jornada parcial que perderlo todo por un grupo.
+  writeFileSync(`jornada${JORNADA}-detalle.json`, JSON.stringify({ resultadoFinal, errores }, null, 2))
+  console.log('\nErrores:', errores.length)
+  console.log(JSON.stringify(errores, null, 2))
+  await browser.close()
+}
