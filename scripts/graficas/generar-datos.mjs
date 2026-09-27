@@ -62,6 +62,9 @@ for (const grupoId of ORDEN) {
     const eqLocal = equiposPorGrupo(grupoId).find((e) => e.nombre === local)
     const eqVisitante = equiposPorGrupo(grupoId).find((e) => e.nombre === visitante)
     if (!eqLocal || !eqVisitante) continue
+    const goles = (info.eventos || [])
+      .filter((e) => e.tipo === 'gol')
+      .sort((a, b) => parseInt(a.minuto, 10) - parseInt(b.minuto, 10))
     partidosJugados.push({
       localId: eqLocal.id,
       localNombre: eqLocal.nombre,
@@ -69,6 +72,8 @@ for (const grupoId of ORDEN) {
       visitanteNombre: eqVisitante.nombre,
       golesLocal: info.resultado.golesLocal,
       golesVisitante: info.resultado.golesVisitante,
+      goleadoresLocal: goles.filter((g) => g.equipoId === eqLocal.id).map((g) => ({ jugador: g.jugador, minuto: g.minuto })),
+      goleadoresVisitante: goles.filter((g) => g.equipoId === eqVisitante.id).map((g) => ({ jugador: g.jugador, minuto: g.minuto })),
     })
   }
   if (partidosJugados.length === 0) continue
