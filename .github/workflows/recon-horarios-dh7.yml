@@ -14,7 +14,7 @@ permissions:
 jobs:
   recon:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     env:
       JORNADA: ${{ inputs.jornada }}
     steps:
@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
       - run: node scripts/scraper/recon-horarios-dh7.mjs
       - name: Subir resultado
         run: |
