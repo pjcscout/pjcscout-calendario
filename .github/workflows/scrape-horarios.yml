@@ -39,6 +39,9 @@ jobs:
           node scripts/graficas/generar-datos-previa.mjs
           node scripts/graficas/generar-imagenes-previa.mjs
 
+      - name: Instalar ffmpeg (con libx264 y xfade) para el vídeo de la previa
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+
       - name: Generar vídeo de la previa (carrusel de las ligas)
         run: node scripts/graficas/generar-video-previa.mjs
 

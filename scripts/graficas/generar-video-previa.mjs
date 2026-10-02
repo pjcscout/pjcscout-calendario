@@ -1,11 +1,11 @@
 // Junta las imágenes de previa-<liga>-jornadaN.png ya generadas en
 // scripts/graficas/salida/ (por generar-imagenes-previa.mjs) en un único
 // vídeo corto tipo carrusel, con transición de fundido entre cada liga.
-// Necesita ffmpeg en el PATH (con libx264 y el filtro xfade — el ffmpeg de
-// los runners de GitHub Actions ya lo trae; en este entorno de desarrollo
-// hace falta `apt-get install -y ffmpeg`, porque el ffmpeg que trae
-// Playwright preinstalado es una build mínima solo para grabar vídeo del
-// navegador, sin libx264 ni xfade).
+// Necesita ffmpeg en el PATH, con libx264 y el filtro xfade. Ni los runners
+// de GitHub Actions ni este entorno de desarrollo lo traen instalado por
+// defecto (el ffmpeg que trae Playwright preinstalado es una build mínima
+// solo para grabar vídeo del navegador, sin libx264 ni xfade) — hace falta
+// `apt-get install -y ffmpeg` antes (ver el paso dedicado en scrape-horarios.yml).
 import { existsSync, readFileSync, rmSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 
