@@ -1,0 +1,32 @@
+name: Reconocimiento horarios DH7
+
+on:
+  workflow_dispatch:
+    inputs:
+      jornada:
+        description: Número de jornada RFEF a inspeccionar
+        required: true
+        default: '4'
+
+permissions:
+  contents: write
+
+jobs:
+  recon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      JORNADA: ${{ inputs.jornada }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/scraper/recon-horarios-dh7.mjs
+      - name: Subir resultado
+        run: |
+          git config user.name "recon-bot"
+          git config user.email "recon-bot@users.noreply.github.com"
+          git add recon-horarios-dh7.html
+          git commit -m "Reconocimiento: horarios DH7 (temporal)" || echo "sin cambios"
+          git push
