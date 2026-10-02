@@ -25,12 +25,15 @@ const ALIAS = {
   'Fundación Valencia': ['fundacio vcf', 'fundacion vcf'],
   'Jove Español': ['español de san vicente', 'espanol de san vicente'],
 }
-function nombreCortoDe(grupo, nombreFfcv) {
+// La RFEF (dh-g7) nombra algunos equipos de forma muy distinta a equipos.js.
+const ALIAS_RFEF = { fccartagena: 'dh7-cartagena' }
+function nombreCortoDe(grupo, nombre) {
   const equipos = equiposPorGrupo(grupo)
-  const cp = compacto(nombreFfcv)
+  const cp = compacto(nombre)
+  if (grupo === 'dh-g7' && ALIAS_RFEF[cp]) return equipos.find((eq) => eq.id === ALIAS_RFEF[cp])
   for (const eq of equipos) {
     const candidatos = [compacto(eq.nombre), ...(ALIAS[eq.nombre] || []).map(compacto)]
-    if (candidatos.some((c) => cp.includes(c))) return eq
+    if (candidatos.some((c) => cp.includes(c) || c.includes(cp))) return eq
   }
   return null
 }

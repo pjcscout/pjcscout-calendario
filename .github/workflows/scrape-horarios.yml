@@ -19,8 +19,13 @@ jobs:
 
       - run: npm ci
 
+      - run: npx playwright install --with-deps chromium
+
       - name: Descargar fecha+hora de cada categoría FFCV
         run: node scripts/scraper/scrape-horarios-ffcv.mjs
+
+      - name: Descargar fecha+hora de DH7 (RFEF)
+        run: node scripts/scraper/scrape-horarios-dh7.mjs
 
       - name: Fusionar en horarios.js
         run: node scripts/scraper/aplicar-horarios.mjs
@@ -32,7 +37,6 @@ jobs:
       - name: Generar previa (una imagen por liga)
         run: |
           node scripts/graficas/generar-datos-previa.mjs
-          npx playwright install --with-deps chromium
           node scripts/graficas/generar-imagenes-previa.mjs
 
       - name: Generar vídeo de la previa (carrusel de las ligas)
