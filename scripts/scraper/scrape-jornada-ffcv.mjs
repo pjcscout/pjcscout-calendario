@@ -15,6 +15,29 @@ function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
+// La FFCV ha empezado a mostrar anuncios interstitial de pantalla completa
+// (Google "Vignette", se ve por el fragmento #google_vignette en la URL)
+// tras navegar, que tapan la página varios segundos e interceptan cualquier
+// clic. Se intenta cerrarlos con los botones de cierre habituales y, si no
+// aparece ninguno, simplemente se espera a que se cierren solos.
+async function esquivarAnuncio() {
+  const selectoresCierre = [
+    '#dismiss-button',
+    '[aria-label="Close ad"]',
+    '[aria-label="Cerrar anuncio"]',
+    '[aria-label="Saltar anuncio"]',
+    '.dismiss-button',
+    '.ns-anchor-close-button',
+  ]
+  for (const sel of selectoresCierre) {
+    try {
+      await page.locator(sel).first().click({ timeout: 1500 })
+      await page.waitForTimeout(500)
+    } catch {}
+  }
+  await page.waitForTimeout(4000)
+}
+
 const browser = await chromium.launch()
 const page = await browser.newPage({
   userAgent:
@@ -61,11 +84,13 @@ async function irAJornada(indexUrl) {
   try {
     await page.getByText('Rechazar', { exact: true }).first().click({ timeout: 3000 })
   } catch {}
-  await page.getByText(`J.${JORNADA}`, { exact: true }).first().click({ timeout: 8000 })
+  await esquivarAnuncio()
+  await page.getByText(`J.${JORNADA}`, { exact: true }).first().click({ timeout: 20000 })
   await page.waitForTimeout(1800)
   try {
     await page.waitForLoadState('networkidle', { timeout: 5000 })
   } catch {}
+  await esquivarAnuncio()
 }
 
 try {
@@ -93,8 +118,9 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
     for (let intento = 1; intento <= 3 && !exito; intento++) {
       try {
         await irAJornada(indexUrl)
-        await page.getByText(partido.local, { exact: true }).first().click({ timeout: 15000 })
+        await page.getByText(partido.local, { exact: true }).first().click({ timeout: 25000 })
         await page.waitForTimeout(2000)
+        await esquivarAnuncio()
         if (!page.url().includes('partido.php')) throw new Error('no llegó a partido.php')
 
         await page.waitForTimeout(500)
@@ -133,7 +159,7 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
           return { goleadores, eventos }
         })
 
-        await page.getByText('Alineaciones', { exact: true }).first().click({ timeout: 5000 })
+        await page.getByText('Alineaciones', { exact: true }).first().click({ timeout: 20000 })
         await page.waitForTimeout(1200)
         const alineacionesTexto = await page.evaluate(() => document.body.innerText)
 
