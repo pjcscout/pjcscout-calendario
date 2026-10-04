@@ -63,6 +63,11 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
     errores.push({ grupo, partido: '(listado de la jornada)', error: e.message })
     continue
   }
+  if (!Array.isArray(jornadaData?.partidos)) {
+    console.log(`Grupo ${grupo}: respuesta sin "partidos" (${JSON.stringify(jornadaData).slice(0, 200)}), se salta este grupo.`)
+    errores.push({ grupo, partido: '(listado de la jornada)', error: 'respuesta sin "partidos"' })
+    continue
+  }
   const partidosJugados = jornadaData.partidos.filter((p) => p.estado === '1')
 
   const indexUrl = `https://ffcv.es/competiciones/index.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}`
