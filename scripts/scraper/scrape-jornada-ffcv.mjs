@@ -27,7 +27,7 @@ const page = await browser.newPage({
 // sesión/cookies) y se pide el JSON desde dentro del propio navegador, para
 // que viaje con esa misma sesión. También reintenta ante el "modo
 // degradación" ocasional (503, cuerpo de texto en vez de JSON).
-async function fetchJsonConSesion(url, indexUrl, intentos = 3) {
+async function fetchJsonConSesion(url, indexUrl, intentos = 5) {
   let ultimoError
   for (let intento = 1; intento <= intentos; intento++) {
     try {
@@ -45,8 +45,8 @@ async function fetchJsonConSesion(url, indexUrl, intentos = 3) {
       return json
     } catch (e) {
       ultimoError = e
-      console.log(`Respuesta no válida (intento ${intento}/${intentos}), reintentando en 20s:`, e.message)
-      await new Promise((r) => setTimeout(r, 20000))
+      console.log(`Respuesta no válida (intento ${intento}/${intentos}), reintentando en 30s:`, e.message)
+      await new Promise((r) => setTimeout(r, 30000))
     }
   }
   throw new Error(`Respuesta no válida de ${url}: ${ultimoError.message}`)
@@ -63,6 +63,9 @@ async function irAJornada(indexUrl) {
   } catch {}
   await page.getByText(`J.${JORNADA}`, { exact: true }).first().click({ timeout: 8000 })
   await page.waitForTimeout(1800)
+  try {
+    await page.waitForLoadState('networkidle', { timeout: 5000 })
+  } catch {}
 }
 
 try {
@@ -90,7 +93,7 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
     for (let intento = 1; intento <= 3 && !exito; intento++) {
       try {
         await irAJornada(indexUrl)
-        await page.getByText(partido.local, { exact: true }).first().click({ timeout: 8000 })
+        await page.getByText(partido.local, { exact: true }).first().click({ timeout: 15000 })
         await page.waitForTimeout(2000)
         if (!page.url().includes('partido.php')) throw new Error('no llegó a partido.php')
 
@@ -156,6 +159,10 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
         exito = true
       } catch (e) {
         console.log(`Fallo intento ${intento}: ${grupo} - ${partido.local} vs ${partido.visitante}: ${e.message}`)
+        try {
+          const extracto = await page.evaluate(() => document.body.innerText.slice(0, 400))
+          console.log(`  Diagnóstico: url=${page.url()} | texto="${extracto.replace(/\s+/g, ' ')}"`)
+        } catch {}
         await page.waitForTimeout(2000)
       }
     }
