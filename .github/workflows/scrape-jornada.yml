@@ -14,7 +14,7 @@ permissions:
 jobs:
   scrape-jornada:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 150
     env:
       JORNADA: ${{ inputs.jornada }}
     steps:
