@@ -12,6 +12,18 @@ import { clasificacionDeGrupo } from '../../src/utils/clasificacion.js'
 const JORNADA = parseInt(process.env.JORNADA, 10)
 if (!JORNADA) throw new Error('Falta la env var JORNADA (número de jornada)')
 
+// DH7 puede ir desincronizada de las categorías FFCV (p. ej. si descansó un
+// fin de semana), así que lleva su propio número de jornada en vez del
+// JORNADA que se le pasa a las demás — igual que ya hace
+// generar-datos-previa.mjs para la previa.
+function jornadaDelGrupo(grupoId) {
+  if (grupoId !== 'dh-g7') return JORNADA
+  const hoy = new Date().toISOString().slice(0, 10)
+  return jornadasDeGrupo('dh-g7')
+    .filter((j) => j.fecha <= hoy)
+    .at(-1)?.numero
+}
+
 const ORDEN = [
   'tercera-vi',
   'liga-nacional',
@@ -51,13 +63,15 @@ const fechasEncontradas = []
 
 for (const grupoId of ORDEN) {
   if (!tieneCalendario(grupoId)) continue
+  const jornadaGrupo = jornadaDelGrupo(grupoId)
+  if (!jornadaGrupo) continue
   const jornadas = jornadasDeGrupo(grupoId)
-  const jornada = jornadas.find((j) => j.numero === JORNADA)
+  const jornada = jornadas.find((j) => j.numero === jornadaGrupo)
   if (!jornada) continue
 
   const partidosJugados = []
   for (const [local, visitante] of jornada.partidos) {
-    const info = RESULTADOS[idPartido(grupoId, JORNADA, local, visitante)]
+    const info = RESULTADOS[idPartido(grupoId, jornadaGrupo, local, visitante)]
     if (!info?.resultado) continue
     const eqLocal = equiposPorGrupo(grupoId).find((e) => e.nombre === local)
     const eqVisitante = equiposPorGrupo(grupoId).find((e) => e.nombre === visitante)
@@ -82,6 +96,7 @@ for (const grupoId of ORDEN) {
   gruposResultados[grupoId] = {
     nombre: GRUPOS[grupoId].nombre,
     subnombre: GRUPOS[grupoId].subnombre,
+    jornada: jornadaGrupo,
     partidos: partidosJugados,
   }
 }
@@ -104,7 +119,7 @@ for (const grupoId of ORDEN) {
   clasificaciones[grupoId] = {
     nombre: GRUPOS[grupoId].nombre,
     subnombre: GRUPOS[grupoId].subnombre,
-    jornada: JORNADA,
+    jornada: jornadaDelGrupo(grupoId) ?? JORNADA,
     fechaTexto: datosResultados.fechaTexto,
     tabla: tabla.map((fila) => ({
       id: fila.equipo.id,

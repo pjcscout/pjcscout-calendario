@@ -29,8 +29,10 @@ const browser = await chromium.launch(rutaChromium ? { executablePath: rutaChrom
 const page = await browser.newPage({ viewport: { width: 1080, height: 1080 } })
 
 // --- Resultados: una imagen independiente por cada liga ---
+// Cada liga lleva su propio número de jornada (datos.jornada) en vez del
+// JORNADA global, porque DH7 puede ir desincronizada de las categorías FFCV.
 for (const [grupoId, datos] of Object.entries(datosResultados.grupos)) {
-  const datosGrupo = { ...datos, jornada: datosResultados.jornada, fechaTexto: datosResultados.fechaTexto }
+  const datosGrupo = { ...datos, fechaTexto: datosResultados.fechaTexto }
   const html = plantillaResultadosLiga.replace('__GRUPO__', JSON.stringify(datosGrupo))
   writeFileSync(TMP_HTML_RESULTADOS, html)
   await page.setViewportSize({ width: 1080, height: 1080 })
@@ -38,8 +40,8 @@ for (const [grupoId, datos] of Object.entries(datosResultados.grupos)) {
   await page.waitForTimeout(300)
   const alto = await page.evaluate(() => document.body.scrollHeight)
   await page.setViewportSize({ width: 1080, height: alto })
-  await page.screenshot({ path: `${DIR_SALIDA}/resultados-${grupoId}-jornada${JORNADA}.png` })
-  console.log('Resultados:', grupoId, '->', `resultados-${grupoId}-jornada${JORNADA}.png`)
+  await page.screenshot({ path: `${DIR_SALIDA}/resultados-${grupoId}-jornada${datos.jornada}.png` })
+  console.log('Resultados:', grupoId, '->', `resultados-${grupoId}-jornada${datos.jornada}.png`)
 }
 
 // --- Clasificación: una imagen independiente por cada liga ---
@@ -51,8 +53,8 @@ for (const [grupoId, datos] of Object.entries(datosClasificacion)) {
   await page.waitForTimeout(300)
   const alto = await page.evaluate(() => document.body.scrollHeight)
   await page.setViewportSize({ width: 1080, height: alto })
-  await page.screenshot({ path: `${DIR_SALIDA}/clasificacion-${grupoId}-jornada${JORNADA}.png` })
-  console.log('Clasificación:', grupoId, '->', `clasificacion-${grupoId}-jornada${JORNADA}.png`)
+  await page.screenshot({ path: `${DIR_SALIDA}/clasificacion-${grupoId}-jornada${datos.jornada}.png` })
+  console.log('Clasificación:', grupoId, '->', `clasificacion-${grupoId}-jornada${datos.jornada}.png`)
 }
 
 await browser.close()

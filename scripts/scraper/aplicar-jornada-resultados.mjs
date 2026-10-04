@@ -1,12 +1,20 @@
-// Añade las entradas RESULTADOS de la jornada N (env JORNADA, FFCV + DH7) a
-// resultados.js, sin tocar las jornadas anteriores que ya hubiera.
+// Añade las entradas RESULTADOS de la jornada N (env JORNADA, FFCV) y de la
+// jornada actual de DH7 a resultados.js, sin tocar las jornadas anteriores
+// que ya hubiera. DH7 lleva su propio número de jornada porque puede ir
+// desincronizada de las categorías FFCV (ver scrape-jornada-dh7.mjs).
 import { readFileSync, writeFileSync } from 'node:fs'
+import { jornadasDeGrupo } from '../../src/utils/fixtures.js'
 
 const JORNADA = parseInt(process.env.JORNADA, 10)
 if (!JORNADA) throw new Error('Falta la env var JORNADA (número de jornada)')
 
+const hoy = new Date().toISOString().slice(0, 10)
+const jornadaDh7 = jornadasDeGrupo('dh-g7')
+  .filter((j) => j.fecha <= hoy)
+  .at(-1)?.numero
+
 const eventosFfcv = JSON.parse(readFileSync(`scripts/scraper/salida-eventos-j${JORNADA}.json`, 'utf8'))
-const eventosDh7 = JSON.parse(readFileSync(`scripts/scraper/salida-dh7-eventos-j${JORNADA}.json`, 'utf8'))
+const eventosDh7 = jornadaDh7 ? JSON.parse(readFileSync(`scripts/scraper/salida-dh7-eventos-j${jornadaDh7}.json`, 'utf8')) : {}
 
 function jsString(texto) {
   return JSON.stringify(texto)
@@ -51,5 +59,5 @@ if (idxCierre === -1) throw new Error('No se encontró el cierre del objeto RESU
 const nuevoContenido = resultadosJs.slice(0, idxCierre) + '\n' + nuevasLineas.join('\n') + resultadosJs.slice(idxCierre)
 writeFileSync('src/data/resultados.js', nuevoContenido)
 
-console.log('Añadidas', nuevasLineas.length, 'entradas de jornada', JORNADA, 'a resultados.js')
-console.log('  FFCV:', Object.keys(eventosFfcv).length, '- DH7:', Object.keys(eventosDh7).length)
+console.log('Añadidas', nuevasLineas.length, 'entradas a resultados.js')
+console.log('  FFCV jornada', JORNADA, ':', Object.keys(eventosFfcv).length, '- DH7 jornada', jornadaDh7, ':', Object.keys(eventosDh7).length)

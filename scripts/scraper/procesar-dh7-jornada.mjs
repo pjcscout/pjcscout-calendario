@@ -1,6 +1,8 @@
-// Procesa las actas de la jornada N (env JORNADA) de DH7 —
-// jornada<N>-dh7-actas.json — y genera eventos reales (gol,
-// tarjeta_amarilla/roja) + portero titular + convocados.
+// Procesa las actas de la jornada actual de DH7 — jornada<N>-dh7-actas.json
+// — y genera eventos reales (gol, tarjeta_amarilla/roja) + portero titular +
+// convocados. Calcula su propia jornada (la más reciente ya jugada según el
+// calendario de DH7) igual que scrape-jornada-dh7.mjs, porque DH7 puede ir
+// desincronizada de las categorías FFCV.
 //
 // OJO: "Cuerpo Técnico"/"Tarjetas" a veces aparecen una vez por equipo justo
 // detrás de sus suplentes, y a veces agrupadas al final para los dos
@@ -12,9 +14,14 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { equiposPorGrupo } from '../../src/data/equipos.js'
 import { idPartido } from '../../src/data/resultados.js'
+import { jornadasDeGrupo } from '../../src/utils/fixtures.js'
 
-const JORNADA = parseInt(process.env.JORNADA, 10)
-if (!JORNADA) throw new Error('Falta la env var JORNADA (número de jornada)')
+const hoy = new Date().toISOString().slice(0, 10)
+const jornadaActual = jornadasDeGrupo('dh-g7')
+  .filter((j) => j.fecha <= hoy)
+  .at(-1)
+const JORNADA = jornadaActual?.numero
+if (!JORNADA) throw new Error('DH7 todavía no ha empezado esta temporada')
 
 const actas = JSON.parse(readFileSync(`jornada${JORNADA}-dh7-actas.json`, 'utf8'))
 
