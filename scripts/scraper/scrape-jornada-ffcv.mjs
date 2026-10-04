@@ -11,23 +11,6 @@ import { COMPETICIONES_FFCV, COD_TEMPORADA_2026_2027 } from '../../src/data/comp
 
 const JORNADA = process.env.JORNADA || '2'
 
-// La API de la FFCV a veces entra en "modo degradación" (503, cuerpo de
-// texto en vez de JSON) durante unos minutos. Reintenta con espera antes de
-// rendirse, para no perder toda la jornada por un bache puntual.
-async function fetchJson(url, intentos = 3) {
-  for (let intento = 1; intento <= intentos; intento++) {
-    const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })
-    const texto = await res.text()
-    try {
-      return JSON.parse(texto)
-    } catch {
-      if (intento === intentos) throw new Error(`Respuesta no válida de ${url}: ${texto.slice(0, 200)}`)
-      console.log(`Respuesta no válida (intento ${intento}/${intentos}), reintentando en 20s:`, texto.slice(0, 150))
-      await new Promise((r) => setTimeout(r, 20000))
-    }
-  }
-}
-
 function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
@@ -37,6 +20,37 @@ const page = await browser.newPage({
   userAgent:
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
 })
+
+// La API de la FFCV exige una sesión de navegador válida: un fetch() suelto
+// (sin haber visitado antes el index) devuelve {"sesion_ok":"0"} en vez del
+// listado de partidos. Por eso se visita primero el index (que establece la
+// sesión/cookies) y se pide el JSON desde dentro del propio navegador, para
+// que viaje con esa misma sesión. También reintenta ante el "modo
+// degradación" ocasional (503, cuerpo de texto en vez de JSON).
+async function fetchJsonConSesion(url, indexUrl, intentos = 3) {
+  let ultimoError
+  for (let intento = 1; intento <= intentos; intento++) {
+    try {
+      await page.goto(indexUrl, { waitUntil: 'domcontentloaded', timeout: 25000 })
+      await page.waitForTimeout(1000)
+      try {
+        await page.getByText('Rechazar', { exact: true }).first().click({ timeout: 3000 })
+      } catch {}
+      const texto = await page.evaluate(async (u) => {
+        const res = await fetch(u, { credentials: 'include' })
+        return await res.text()
+      }, url)
+      const json = JSON.parse(texto)
+      if (json?.sesion_ok === '0') throw new Error(`sesión no válida: ${texto.slice(0, 200)}`)
+      return json
+    } catch (e) {
+      ultimoError = e
+      console.log(`Respuesta no válida (intento ${intento}/${intentos}), reintentando en 20s:`, e.message)
+      await new Promise((r) => setTimeout(r, 20000))
+    }
+  }
+  throw new Error(`Respuesta no válida de ${url}: ${ultimoError.message}`)
+}
 
 const resultadoFinal = {}
 const errores = []
@@ -54,10 +68,11 @@ async function irAJornada(indexUrl) {
 try {
 for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
   resultadoFinal[grupo] = []
+  const indexUrl = `https://ffcv.es/competiciones/index.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}`
   const jornadaUrl = `https://ffcv.es/competiciones/api/partidos/resultados_por_grupo_jornada_data.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}&cod_jornada=${JORNADA}&grupo_nombre=${encodeURIComponent(cfg.nombreGrupo)}&competicion_nombre=x`
   let jornadaData
   try {
-    jornadaData = await fetchJson(jornadaUrl)
+    jornadaData = await fetchJsonConSesion(jornadaUrl, indexUrl)
   } catch (e) {
     console.log(`Grupo ${grupo}: no se pudo obtener el listado de partidos, se salta este grupo. ${e.message}`)
     errores.push({ grupo, partido: '(listado de la jornada)', error: e.message })
@@ -69,8 +84,6 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
     continue
   }
   const partidosJugados = jornadaData.partidos.filter((p) => p.estado === '1')
-
-  const indexUrl = `https://ffcv.es/competiciones/index.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}`
 
   for (const partido of partidosJugados) {
     let exito = false
