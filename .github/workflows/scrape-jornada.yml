@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   scrape-jornada:
@@ -76,9 +77,25 @@ jobs:
           path: scripts/graficas/salida/
 
       - name: Commitear y subir a main
+        id: commit
         run: |
           git config user.name "scrape-bot"
           git config user.email "scrape-bot@users.noreply.github.com"
           git add src/data/resultados.js src/data/minutosJugados.js
-          git commit -m "Jornada ${{ inputs.jornada }}: resultados reales con goles, tarjetas, porteros y minutos" || echo "sin cambios"
+          if git commit -m "Jornada ${{ inputs.jornada }}: resultados reales con goles, tarjetas, porteros y minutos"; then
+            echo "hubo_cambios=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "sin cambios"
+            echo "hubo_cambios=false" >> "$GITHUB_OUTPUT"
+          fi
           git push
+
+      # Un push hecho con el GITHUB_TOKEN de la Action no dispara el "on:
+      # push" de deploy.yml (GitHub lo bloquea para evitar bucles), así que
+      # sin esto los datos de la jornada se quedaban fusionados en main pero
+      # nunca llegaban a desplegarse solos a la web.
+      - name: Disparar deploy a Netlify
+        if: steps.commit.outputs.hubo_cambios == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
