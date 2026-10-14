@@ -1,0 +1,17 @@
+{
+  "_nota": "Partido en directo por el canal 8 Mediterráneo (patrocinado por FFCV/RFEF/EFE) de Tercera Federación Grupo VI, primera vuelta. Sacado de https://ffcv.es/wp/blog/2026/10/partidos-tercera-federacion-la-8-mediterraneo-primera-vuelta/ el 2026-10-14. Al generar la previa de cada jornada, si coincide el número aquí abajo, destacar ese partido como 'en directo por 8 Mediterráneo'.",
+  "grupo": "tercera-vi",
+  "porJornada": {
+    "7": { "fecha": "2026-10-18", "local": "saguntino", "visitante": "espanol-sv" },
+    "8": { "fecha": "2026-10-25", "local": "espanol-sv", "visitante": "levante-b" },
+    "9": { "fecha": "2026-11-01", "local": "acero", "visitante": "hercules-b" },
+    "10": { "fecha": "2026-11-08", "local": "torrellano", "visitante": "ontinyent" },
+    "11": { "fecha": "2026-11-15", "local": "ontinyent", "visitante": "atzeneta" },
+    "12": { "fecha": "2026-11-22", "local": "atzeneta", "visitante": "villarreal-c" },
+    "13": { "fecha": "2026-11-29", "local": "villarreal-c", "visitante": "eldense-b" },
+    "14": { "fecha": "2026-12-06", "local": "torrent-a", "visitante": "villarreal-c" },
+    "15": { "fecha": "2026-12-13", "local": "levante-b", "visitante": "acero" },
+    "16": { "fecha": "2026-12-20", "local": "bunol-a", "visitante": "torrellano" },
+    "17": { "fecha": "2027-01-10", "local": "torrevieja-a", "visitante": "torrent-a" }
+  }
+}
