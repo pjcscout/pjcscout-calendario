@@ -5,6 +5,7 @@ import { tieneCalendario } from '../../src/utils/fixtures.js'
 import { fixturesDeEquipo } from '../../src/utils/fixtures.js'
 import { idPartido } from '../../src/data/resultados.js'
 import { HORARIOS } from '../../src/data/horarios.js'
+import { endpointPushValido } from '../../src/utils/suscripcionPush.js'
 
 const VAPID_PUBLIC_KEY =
   'BD-9Ju_lmoruECOYwNjcw3nGT5rvQ4IdB4IGXU_y97xLo-rvY23qWFK9n8w0NMkQm0VEUx6CO5Nc5UPqBhYFwhY'
@@ -13,7 +14,27 @@ function hoyEnMadrid() {
   return new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' })
 }
 
-export default async () => {
+function respuestaJson(status, cuerpo) {
+  return new Response(JSON.stringify(cuerpo), { status, headers: { 'content-type': 'application/json' } })
+}
+
+// Esta función es alcanzable por HTTP además de por el cron: solo se ejecuta si
+// la dispara el planificador de Netlify o quien presente CRON_SECRET.
+function autorizada(req) {
+  if (req.headers.get('x-nf-event') === 'schedule') return true
+  const secreto = process.env.CRON_SECRET
+  return Boolean(secreto) && req.headers.get('authorization') === `Bearer ${secreto}`
+}
+
+export default async (req) => {
+  if (!autorizada(req)) return respuestaJson(401, { ok: false, error: 'no_autorizado' })
+
+  const estado = getStore('recordatorios-estado')
+  const hoyMadrid = hoyEnMadrid()
+  // Idempotencia: como mucho una tanda de avisos al día, aunque se invoque varias veces.
+  if ((await estado.get('ultima-tanda')) === hoyMadrid) return respuestaJson(200, { ok: true, enviados: 0, omitido: true })
+  await estado.set('ultima-tanda', hoyMadrid)
+
   webpush.setVapidDetails(process.env.VAPID_SUBJECT, VAPID_PUBLIC_KEY, process.env.VAPID_PRIVATE_KEY)
 
   const hoy = hoyEnMadrid()
@@ -29,8 +50,10 @@ export default async () => {
       const partidoDeHoy = fixtures?.find((f) => !f.bye && f.fecha === hoy)
       if (!partidoDeHoy) continue
 
-      const suscripciones = await store.get(equipo.id, { type: 'json' })
-      if (!suscripciones?.length) continue
+      const guardadas = await store.get(equipo.id, { type: 'json' })
+      if (!guardadas?.length) continue
+      // Defensa en profundidad: nunca enviar a un endpoint que no sea un servicio push conocido.
+      const suscripciones = guardadas.filter((s) => endpointPushValido(s?.endpoint))
 
       const local = partidoDeHoy.esLocal ? equipo.nombre : partidoDeHoy.rival
       const visitante = partidoDeHoy.esLocal ? partidoDeHoy.rival : equipo.nombre
@@ -63,10 +86,7 @@ export default async () => {
     }
   }
 
-  return new Response(JSON.stringify({ ok: true, enviados }), {
-    status: 200,
-    headers: { 'content-type': 'application/json' },
-  })
+  return respuestaJson(200, { ok: true, enviados })
 }
 
 export const config = {

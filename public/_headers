@@ -3,3 +3,5 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-p+jfNtp/9a/RCbKrxM8NYIciFJCcgIyZ+Mx0EJILs+w=' https://cloud.umami.is; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://cloud.umami.is https://api-gateway.umami.is; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
