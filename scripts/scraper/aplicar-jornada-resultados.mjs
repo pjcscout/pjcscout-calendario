@@ -2,7 +2,7 @@
 // jornada actual de DH7 a resultados.js, sin tocar las jornadas anteriores
 // que ya hubiera. DH7 lleva su propio número de jornada porque puede ir
 // desincronizada de las categorías FFCV (ver scrape-jornada-dh7.mjs).
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { jornadasDeGrupo } from '../../src/utils/fixtures.js'
 
 const JORNADA = parseInt(process.env.JORNADA, 10)
@@ -13,8 +13,10 @@ const jornadaDh7 = jornadasDeGrupo('dh-g7')
   .filter((j) => j.fecha <= hoy)
   .at(-1)?.numero
 
+const ficheroDh7 = jornadaDh7 ? `scripts/scraper/salida-dh7-eventos-j${jornadaDh7}.json` : null
+
 const eventosFfcv = JSON.parse(readFileSync(`scripts/scraper/salida-eventos-j${JORNADA}.json`, 'utf8'))
-const eventosDh7 = jornadaDh7 ? JSON.parse(readFileSync(`scripts/scraper/salida-dh7-eventos-j${jornadaDh7}.json`, 'utf8')) : {}
+const eventosDh7 = ficheroDh7 && existsSync(ficheroDh7) ? JSON.parse(readFileSync(ficheroDh7, 'utf8')) : {}
 
 function jsString(texto) {
   return JSON.stringify(texto)

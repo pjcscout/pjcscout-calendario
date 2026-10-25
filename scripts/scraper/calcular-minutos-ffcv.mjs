@@ -77,7 +77,8 @@ function extraerXI(alineacionTexto) {
 const MINUTOS = {}
 const sinAlineacion = []
 
-for (const [grupo, partidos] of Object.entries(resultadoFinal)) {
+for (const [grupo, datosGrupo] of Object.entries(resultadoFinal)) {
+  const partidos = datosGrupo.partidos ?? datosGrupo
   for (const p of partidos) {
     const eqLocal = nombreCortoDe(grupo, p.local)
     const eqVisitante = nombreCortoDe(grupo, p.visitante)

@@ -72,7 +72,12 @@ const convocatoriasVolcado = {}
 const sinMapear = []
 let porterosDetectados = 0
 
-for (const [grupo, partidos] of Object.entries(resultadoFinal)) {
+for (const [grupo, datosGrupo] of Object.entries(resultadoFinal)) {
+  // Cada grupo lleva su propia jornada (puede ir desincronizado si tuvo un
+  // descanso que los demás no tuvieron), guardada por scrape-jornada-ffcv.mjs
+  // junto a sus partidos — nunca asumir la JORNADA global de este run.
+  const jornadaGrupo = datosGrupo.jornada ?? JORNADA
+  const partidos = datosGrupo.partidos ?? datosGrupo
   convocatoriasVolcado[grupo] = []
   for (const p of partidos) {
     const eqLocal = nombreCortoDe(grupo, p.local)
@@ -83,7 +88,7 @@ for (const [grupo, partidos] of Object.entries(resultadoFinal)) {
     }
 
     const [golesLocal, golesVisitante] = p.resultado.split('-').map((n) => parseInt(n.trim(), 10))
-    const id = idPartido(grupo, JORNADA, eqLocal.nombre, eqVisitante.nombre)
+    const id = idPartido(grupo, jornadaGrupo, eqLocal.nombre, eqVisitante.nombre)
 
     const eventos = []
     for (const ladoInfo of p.cronologia.goleadores) {

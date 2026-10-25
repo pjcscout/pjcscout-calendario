@@ -3,7 +3,7 @@
 // indica el propio comentario del fichero: las jornadas se acumulan, no se
 // sustituyen. DH7 lleva su propio número de jornada porque puede ir
 // desincronizada de las categorías FFCV (ver scrape-jornada-dh7.mjs).
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { MINUTOS_JUGADOS } from '../../src/data/minutosJugados.js'
 import { jornadasDeGrupo } from '../../src/utils/fixtures.js'
 
@@ -15,8 +15,10 @@ const jornadaDh7 = jornadasDeGrupo('dh-g7')
   .filter((j) => j.fecha <= hoy)
   .at(-1)?.numero
 
+const ficheroDh7 = jornadaDh7 ? `scripts/scraper/salida-minutos-dh7-j${jornadaDh7}.json` : null
+
 const nuevosFfcv = JSON.parse(readFileSync(`scripts/scraper/salida-minutos-ffcv-j${JORNADA}.json`, 'utf8'))
-const nuevosDh7 = jornadaDh7 ? JSON.parse(readFileSync(`scripts/scraper/salida-minutos-dh7-j${jornadaDh7}.json`, 'utf8')) : {}
+const nuevosDh7 = ficheroDh7 && existsSync(ficheroDh7) ? JSON.parse(readFileSync(ficheroDh7, 'utf8')) : {}
 const nuevos = { ...nuevosFfcv, ...nuevosDh7 }
 
 const total = structuredClone(MINUTOS_JUGADOS)

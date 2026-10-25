@@ -7,6 +7,15 @@ on:
         description: Número de jornada a scrapear (FFCV + DH7)
         required: true
         type: string
+      grupos_ffcv:
+        description: 'Opcional: limitar el scraping de FFCV a estos grupos (coma-separados, p. ej. "llc-juv-nord,llc-juv-sud"). Vacío = los 7 grupos.'
+        required: false
+        type: string
+      incluir_dh7:
+        description: Scrapear también DH7 (RFEF). Desactívalo en un catch-up parcial de solo FFCV para no re-tocar DH7.
+        required: false
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -18,6 +27,7 @@ jobs:
     timeout-minutes: 150
     env:
       JORNADA: ${{ inputs.jornada }}
+      GRUPOS_FFCV: ${{ inputs.grupos_ffcv }}
     steps:
       - uses: actions/checkout@v4
 
@@ -33,18 +43,21 @@ jobs:
         run: node scripts/scraper/scrape-jornada-ffcv.mjs
 
       - name: Scrapear DH7 (RFEF)
+        if: inputs.incluir_dh7
         run: node scripts/scraper/scrape-jornada-dh7.mjs
 
       - name: Procesar eventos + convocatorias FFCV
         run: node scripts/scraper/procesar-jornada.mjs
 
       - name: Procesar eventos + convocatorias DH7
+        if: inputs.incluir_dh7
         run: node scripts/scraper/procesar-dh7-jornada.mjs
 
       - name: Calcular minutos FFCV
         run: node scripts/scraper/calcular-minutos-ffcv.mjs
 
       - name: Calcular minutos DH7
+        if: inputs.incluir_dh7
         run: node scripts/scraper/calcular-minutos-dh7.mjs
 
       - name: Fusionar resultados en resultados.js

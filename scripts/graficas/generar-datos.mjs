@@ -12,14 +12,14 @@ import { clasificacionDeGrupo } from '../../src/utils/clasificacion.js'
 const JORNADA = parseInt(process.env.JORNADA, 10)
 if (!JORNADA) throw new Error('Falta la env var JORNADA (número de jornada)')
 
-// DH7 puede ir desincronizada de las categorías FFCV (p. ej. si descansó un
-// fin de semana), así que lleva su propio número de jornada en vez del
-// JORNADA que se le pasa a las demás — igual que ya hace
-// generar-datos-previa.mjs para la previa.
+// Cualquier grupo puede ir desincronizado de los demás si tuvo un descanso
+// que los otros no tuvieron (le pasó a DH7, y también a Lliga Comunitat
+// Juvenil Nord/Sud el 11-10-2026), así que cada uno calcula su propia
+// jornada actual por fecha en vez de asumir la JORNADA que se pasa a este
+// script — igual que ya hace generar-datos-previa.mjs para la previa.
+const hoy = new Date().toISOString().slice(0, 10)
 function jornadaDelGrupo(grupoId) {
-  if (grupoId !== 'dh-g7') return JORNADA
-  const hoy = new Date().toISOString().slice(0, 10)
-  return jornadasDeGrupo('dh-g7')
+  return jornadasDeGrupo(grupoId)
     .filter((j) => j.fecha <= hoy)
     .at(-1)?.numero
 }

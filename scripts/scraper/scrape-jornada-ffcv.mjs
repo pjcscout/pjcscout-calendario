@@ -8,8 +8,24 @@
 import { chromium } from 'playwright'
 import { writeFileSync } from 'node:fs'
 import { COMPETICIONES_FFCV, COD_TEMPORADA_2026_2027 } from '../../src/data/competicionesFfcv.js'
+import { jornadasDeGrupo } from '../../src/utils/fixtures.js'
 
+// JORNADA es la jornada "general" de referencia (la que comparten la
+// mayoría de categorías), usada solo para nombrar el fichero de salida. Pero
+// cada grupo puede ir desincronizado si tuvo un descanso que los demás no
+// tuvieron (p. ej. Lliga Comunitat Juvenil Nord/Sud, que descansaron el
+// 11-10-2026 y desde entonces van una jornada por detrás) — por eso cada
+// grupo calcula su PROPIA jornada actual por fecha, igual que ya hace DH7.
 const JORNADA = process.env.JORNADA || '2'
+const hoy = new Date().toISOString().slice(0, 10)
+function jornadaActualDe(grupo) {
+  return jornadasDeGrupo(grupo).filter((j) => j.fecha <= hoy).at(-1)?.numero
+}
+
+// Opcional: limitar el scraping a solo estos grupos (catch-up parcial, p.
+// ej. tras arreglar la desincronización de un grupo concreto sin tener que
+// volver a scrapear los que ya están bien). Vacío = los 7 grupos.
+const GRUPOS_FFCV = (process.env.GRUPOS_FFCV || '').split(',').map((g) => g.trim()).filter(Boolean)
 
 function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -78,14 +94,14 @@ async function fetchJsonConSesion(url, indexUrl, intentos = 5) {
 const resultadoFinal = {}
 const errores = []
 
-async function irAJornada(indexUrl) {
+async function irAJornada(indexUrl, jornadaGrupo) {
   await page.goto(indexUrl, { waitUntil: 'domcontentloaded', timeout: 25000 })
   await page.waitForTimeout(1500)
   try {
     await page.getByText('Rechazar', { exact: true }).first().click({ timeout: 3000 })
   } catch {}
   await esquivarAnuncio()
-  await page.getByText(`J.${JORNADA}`, { exact: true }).first().click({ timeout: 20000 })
+  await page.getByText(`J.${jornadaGrupo}`, { exact: true }).first().click({ timeout: 20000 })
   await page.waitForTimeout(1800)
   try {
     await page.waitForLoadState('networkidle', { timeout: 5000 })
@@ -95,9 +111,22 @@ async function irAJornada(indexUrl) {
 
 try {
 for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
-  resultadoFinal[grupo] = []
+  if (GRUPOS_FFCV.length > 0 && !GRUPOS_FFCV.includes(grupo)) {
+    console.log(`Grupo ${grupo}: fuera de GRUPOS_FFCV, se salta.`)
+    continue
+  }
+  const jornadaGrupo = jornadaActualDe(grupo)
+  if (!jornadaGrupo) {
+    console.log(`Grupo ${grupo}: no se pudo determinar su jornada actual por fecha, se salta.`)
+    errores.push({ grupo, partido: '(cálculo de jornada)', error: 'sin jornada actual por fecha' })
+    continue
+  }
+  if (String(jornadaGrupo) !== String(JORNADA)) {
+    console.log(`Grupo ${grupo}: va desincronizado — su jornada actual es ${jornadaGrupo}, no ${JORNADA}.`)
+  }
+  resultadoFinal[grupo] = { jornada: jornadaGrupo, partidos: [] }
   const indexUrl = `https://ffcv.es/competiciones/index.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}`
-  const jornadaUrl = `https://ffcv.es/competiciones/api/partidos/resultados_por_grupo_jornada_data.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}&cod_jornada=${JORNADA}&grupo_nombre=${encodeURIComponent(cfg.nombreGrupo)}&competicion_nombre=x`
+  const jornadaUrl = `https://ffcv.es/competiciones/api/partidos/resultados_por_grupo_jornada_data.php?cod_temporada=${COD_TEMPORADA_2026_2027}&cod_competicion=${cfg.codCompeticion}&cod_grupo=${cfg.codGrupo}&cod_jornada=${jornadaGrupo}&grupo_nombre=${encodeURIComponent(cfg.nombreGrupo)}&competicion_nombre=x`
   let jornadaData
   try {
     jornadaData = await fetchJsonConSesion(jornadaUrl, indexUrl)
@@ -117,7 +146,7 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
     let exito = false
     for (let intento = 1; intento <= 3 && !exito; intento++) {
       try {
-        await irAJornada(indexUrl)
+        await irAJornada(indexUrl, jornadaGrupo)
         await page.getByText(partido.local, { exact: true }).first().click({ timeout: 25000 })
         await page.waitForTimeout(2000)
         await esquivarAnuncio()
@@ -172,7 +201,7 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
           alineacionesVisitanteTexto = await page.evaluate(() => document.body.innerText)
         }
 
-        resultadoFinal[grupo].push({
+        resultadoFinal[grupo].partidos.push({
           local: partido.local,
           visitante: partido.visitante,
           codacta: partido.codacta,
@@ -194,7 +223,7 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
     }
     if (!exito) errores.push({ grupo, partido: `${partido.local} vs ${partido.visitante}` })
   }
-  console.log(`Grupo ${grupo}: ${resultadoFinal[grupo].length} partidos procesados de ${partidosJugados.length} jugados.`)
+  console.log(`Grupo ${grupo} (jornada ${jornadaGrupo}): ${resultadoFinal[grupo].partidos.length} partidos procesados de ${partidosJugados.length} jugados.`)
 }
 } finally {
   // Guarda lo conseguido hasta el momento aunque un grupo posterior haya
