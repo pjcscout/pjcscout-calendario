@@ -27,6 +27,13 @@ function jornadaActualDe(grupo) {
 // volver a scrapear los que ya están bien). Vacío = los 7 grupos.
 const GRUPOS_FFCV = (process.env.GRUPOS_FFCV || '').split(',').map((g) => g.trim()).filter(Boolean)
 
+// Opcional: dentro de los grupos elegidos, limitar a solo los partidos cuyo
+// "local vs visitante" contenga alguno de estos fragmentos (coma-separados).
+// Para reintentar un partido concreto que falló por timeout sin volver a
+// tocar (y duplicar en minutosJugados.js, que es una SUMA acumulativa) los
+// que ya se scrapearon bien la vez anterior.
+const SOLO_PARTIDOS = (process.env.SOLO_PARTIDOS || '').split(',').map((p) => p.trim().toLowerCase()).filter(Boolean)
+
 function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
@@ -140,7 +147,13 @@ for (const [grupo, cfg] of Object.entries(COMPETICIONES_FFCV)) {
     errores.push({ grupo, partido: '(listado de la jornada)', error: 'respuesta sin "partidos"' })
     continue
   }
-  const partidosJugados = jornadaData.partidos.filter((p) => p.estado === '1')
+  let partidosJugados = jornadaData.partidos.filter((p) => p.estado === '1')
+  if (SOLO_PARTIDOS.length > 0) {
+    partidosJugados = partidosJugados.filter((p) => {
+      const clave = `${p.local} vs ${p.visitante}`.toLowerCase()
+      return SOLO_PARTIDOS.some((frag) => clave.includes(frag))
+    })
+  }
 
   for (const partido of partidosJugados) {
     let exito = false
