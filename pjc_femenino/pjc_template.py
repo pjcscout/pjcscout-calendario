@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import font_manager as fm
-from mplsoccer import Pitch
+from mplsoccer import Pitch, VerticalPitch
 
 # --- Marca PJC Scout (extraída del logo) ---
 BG, GOLD, CREAM = "#0E100F", "#BB9447", "#F4F3EE"
@@ -30,7 +30,7 @@ def _logo():
     return np.asarray(Image.open(LOGO).convert("RGBA"))
 
 
-def canvas(ep, titulo, subtitulo, pitch_h=662):
+def canvas(ep, titulo, subtitulo, modo="full", pitch_h=662):
     """Devuelve fig y eje del campo; el resto del diseño ya está colocado."""
     fig = plt.figure(figsize=(W / DPI, H / DPI), dpi=DPI, facecolor=BG)
     full = fig.add_axes([0, 0, 1, 1]); full.set_xlim(0, W); full.set_ylim(H, 0); full.axis("off")
@@ -47,7 +47,8 @@ def canvas(ep, titulo, subtitulo, pitch_h=662):
     # campo
     top = 418
     ax = fig.add_axes([54 / W, 1 - (top + pitch_h) / H, (W - 108) / W, pitch_h / H])
-    pitch = Pitch(pitch_type="statsbomb", pitch_color=PANEL, line_color=LINE, linewidth=1.4, pad_left=1, pad_right=1, pad_top=1, pad_bottom=1)
+    kw = dict(pitch_type="statsbomb", pitch_color=PANEL, line_color=LINE, linewidth=1.4, pad_left=1, pad_right=1, pad_top=1, pad_bottom=1)
+    pitch = VerticalPitch(half=True, **kw) if modo == "half" else Pitch(**kw)
     pitch.draw(ax=ax)
     # pie
     full.plot([54, W - 54], [1262, 1262], color=LINE, lw=1)
@@ -57,6 +58,14 @@ def canvas(ep, titulo, subtitulo, pitch_h=662):
     full.set_xlim(0, W); full.set_ylim(H, 0)
     full.text(W - 54, 1300, WEB, color=MUTED, fontsize=px(24), va="center", ha="right")
     return fig, ax, pitch, full
+
+
+def pie(full, destacado, nota1, nota2=""):
+    """Bloque inferior: dato destacado + 2 notas metodológicas."""
+    full.text(54, 1124, destacado, color=GOLD, fontsize=px(36 if len(destacado) <= 46 else 31), fontweight="bold", va="center")
+    full.text(54, 1178, nota1, color=MUTED, fontsize=px(22), va="center")
+    if nota2:
+        full.text(54, 1222, nota2, color=MUTED, fontsize=px(22), va="center")
 
 
 def guardar(fig, ruta):
