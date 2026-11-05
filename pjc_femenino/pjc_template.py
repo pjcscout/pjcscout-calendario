@@ -15,6 +15,7 @@ W, H, DPI = 1080, 1350, 100
 SERIE = "PJC FEMENINO"
 WEB = "www.pjcscout.es"
 LOGO = "assets/logo_pjc.png"
+LOGO_SB = "assets/logo_statsbomb.png"
 
 for f in glob.glob("/usr/share/fonts/opentype/inter/Inter-*.otf"):
     fm.fontManager.addfont(f)
@@ -50,7 +51,10 @@ def canvas(ep, titulo, subtitulo, pitch_h=662):
     pitch.draw(ax=ax)
     # pie
     full.plot([54, W - 54], [1262, 1262], color=LINE, lw=1)
-    full.text(54, 1300, "Datos: StatsBomb", color=CREAM, fontsize=px(24), fontweight="semibold", va="center")
+    full.text(54, 1300, "Datos:", color=CREAM, fontsize=px(24), fontweight="semibold", va="center")
+    sb = np.asarray(Image.open(LOGO_SB).convert("RGBA")); sh = 40; sw = sh * sb.shape[1] / sb.shape[0]
+    full.imshow(sb, extent=(150, 150 + sw, 1300 + sh / 2, 1300 - sh / 2), aspect="auto", zorder=5)
+    full.set_xlim(0, W); full.set_ylim(H, 0)
     full.text(W - 54, 1300, WEB, color=MUTED, fontsize=px(24), va="center", ha="right")
     return fig, ax, pitch, full
 
