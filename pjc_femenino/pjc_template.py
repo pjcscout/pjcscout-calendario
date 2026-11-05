@@ -14,7 +14,7 @@ MUTED, LINE, PANEL = "#9A9A92", "#3A3D38", "#151816"
 W, H, DPI = 1080, 1350, 100
 SERIE = "PJC FEMENINO"
 WEB = "www.pjcscout.es"
-LOGO = "assets/logo_pjc.jpg"
+LOGO = "assets/logo_pjc.png"
 
 for f in glob.glob("/usr/share/fonts/opentype/inter/Inter-*.otf"):
     fm.fontManager.addfont(f)
@@ -26,11 +26,7 @@ def px(v):  # píxeles -> puntos
 
 
 def _logo():
-    im = Image.open(LOGO).convert("RGB").crop((0, 0, 1024, 700))
-    a = np.asarray(im).astype(int)
-    bg = np.array([14, 16, 15])
-    alpha = np.clip(np.abs(a - bg).max(axis=2) * 6, 0, 255)
-    return np.dstack([a, alpha]).astype("uint8")
+    return np.asarray(Image.open(LOGO).convert("RGBA"))
 
 
 def canvas(ep, titulo, subtitulo, pitch_h=662):
