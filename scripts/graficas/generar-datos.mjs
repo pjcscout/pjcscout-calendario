@@ -71,10 +71,19 @@ for (const grupoId of ORDEN) {
 
   const partidosJugados = []
   for (const [local, visitante] of jornada.partidos) {
-    const info = RESULTADOS[idPartido(grupoId, jornadaGrupo, local, visitante)]
+    // El cruce local/visitante que predice nuestro calendario no siempre
+    // coincide con el que FFCV asignó realmente al partido (puede venir
+    // invertido), así que probamos también el orden contrario antes de
+    // descartar el partido como no encontrado.
+    let info = RESULTADOS[idPartido(grupoId, jornadaGrupo, local, visitante)]
+    let [nombreLocal, nombreVisitante] = [local, visitante]
+    if (!info?.resultado) {
+      info = RESULTADOS[idPartido(grupoId, jornadaGrupo, visitante, local)]
+      if (info?.resultado) [nombreLocal, nombreVisitante] = [visitante, local]
+    }
     if (!info?.resultado) continue
-    const eqLocal = equiposPorGrupo(grupoId).find((e) => e.nombre === local)
-    const eqVisitante = equiposPorGrupo(grupoId).find((e) => e.nombre === visitante)
+    const eqLocal = equiposPorGrupo(grupoId).find((e) => e.nombre === nombreLocal)
+    const eqVisitante = equiposPorGrupo(grupoId).find((e) => e.nombre === nombreVisitante)
     if (!eqLocal || !eqVisitante) continue
     const goles = (info.eventos || [])
       .filter((e) => e.tipo === 'gol')
