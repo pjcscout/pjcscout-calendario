@@ -8,7 +8,8 @@ export default function CompartirProximoPartido({ equipo, partido, ficha }) {
   const lugar = partido.esLocal ? 'en casa' : 'fuera'
   const texto =
     `⚽ Próximo partido de ${equipo.nombre}: ${dia} ${fecha} vs ${partido.rival} (${lugar}).\n` +
-    `Calendario completo: ${SITIO}/equipo/${equipo.id}`
+    `Calendario completo: ${SITIO}/equipo/${equipo.id}\n` +
+    `Síguenos en Instagram: @pjcscout`
   const urlWhatsapp = `https://wa.me/?text=${encodeURIComponent(texto)}`
 
   const titulo = partido.esLocal

@@ -30,6 +30,10 @@ export default function Layout() {
             PJC Scout & Analytics
           </a>
           <span>·</span>
+          <a href="https://www.instagram.com/pjcscout" target="_blank" rel="noreferrer">
+            @pjcscout
+          </a>
+          <span>·</span>
           <span>Datos: FFCV</span>
         </div>
         <div className="app__footer-legal">
