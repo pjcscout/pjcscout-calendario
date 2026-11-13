@@ -66,12 +66,24 @@ for (const [grupoId, siguiente] of Object.entries(siguientesPorGrupo)) {
     const eqLocal = equiposPorGrupo(grupoId).find((e) => e.nombre === local)
     const eqVisitante = equiposPorGrupo(grupoId).find((e) => e.nombre === visitante)
     if (!eqLocal || !eqVisitante) continue
-    const horario = HORARIOS[idPartido(grupoId, siguiente.numero, eqLocal.nombre, eqVisitante.nombre)]
+    // El cruce local/visitante que predice nuestro calendario no siempre
+    // coincide con el que FFCV asignó realmente al partido (puede venir
+    // invertido), así que probamos también el orden contrario antes de
+    // dar el horario por no confirmado (mismo caso que generar-datos.mjs).
+    let horario = HORARIOS[idPartido(grupoId, siguiente.numero, eqLocal.nombre, eqVisitante.nombre)]
+    let [idLocal, nombreLocal, idVisitante, nombreVisitante] = [eqLocal.id, eqLocal.nombre, eqVisitante.id, eqVisitante.nombre]
+    if (!horario) {
+      const horarioInvertido = HORARIOS[idPartido(grupoId, siguiente.numero, eqVisitante.nombre, eqLocal.nombre)]
+      if (horarioInvertido) {
+        horario = horarioInvertido
+        ;[idLocal, nombreLocal, idVisitante, nombreVisitante] = [eqVisitante.id, eqVisitante.nombre, eqLocal.id, eqLocal.nombre]
+      }
+    }
     partidos.push({
-      localId: eqLocal.id,
-      localNombre: eqLocal.nombre,
-      visitanteId: eqVisitante.id,
-      visitanteNombre: eqVisitante.nombre,
+      localId: idLocal,
+      localNombre: nombreLocal,
+      visitanteId: idVisitante,
+      visitanteNombre: nombreVisitante,
       diaTexto: horario ? formatearDiaCorto(horario.fecha) : null,
       hora: horario?.hora ?? null,
     })
