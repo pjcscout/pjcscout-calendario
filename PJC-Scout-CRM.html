@@ -450,24 +450,6 @@ function sanitize(raw) {
 }
 
 /* =====================================================================
-   2. DATOS DE EJEMPLO (fechas relativas a hoy)
-   ===================================================================== */
-function sampleData() {
-  return [
-    { nombre: 'Lucía Ferrer', empresa: 'Academia Costa Azahar', email: 'lucia.ferrer@costaazahar.example', telefono: '+34 600 111 222', valor: 3500, etapa: 'nuevo',
-      proximoPaso: 'Enviar dossier de servicios de scouting', fecha: addDays(2), notas: 'Directora de cantera. Interesada en informes de captación para categorías sub-14 y sub-16.' },
-    { nombre: 'Andrés Ruiz', empresa: 'Atlético Ribera CF', email: 'aruiz@atleticoribera.example', telefono: '+34 611 333 444', valor: 8000, etapa: 'contactado',
-      proximoPaso: 'Llamar para concretar informes de rivales', fecha: addDays(0), notas: 'Director deportivo. Busca análisis de rival semanal para el primer equipo.' },
-    { nombre: 'Sergio Olmos', empresa: 'Olmos Sports Management', email: 'sergio@olmossports.example', telefono: '+34 622 555 666', valor: 12500, etapa: 'propuesta',
-      proximoPaso: 'Revisar propuesta de abono de informes de jugador', fecha: addDays(-3), notas: 'Agente con 12 jugadores en Segunda RFEF. Pide tarifa por volumen.' },
-    { nombre: 'Raquel Domínguez', empresa: 'UD Montaña Alta', email: 'rdominguez@udmontanaalta.example', telefono: '+34 633 777 888', valor: 18000, etapa: 'negociacion',
-      proximoPaso: 'Reunión para cerrar condiciones de temporada', fecha: addDays(5), notas: 'Coordinadora de fútbol base y primer equipo. Valoran contrato de dos temporadas.' },
-    { nombre: 'Javier Soler', empresa: 'Escuela Fútbol Mediterráneo', email: 'jsoler@efmediterraneo.example', telefono: '+34 644 999 000', valor: 4800, etapa: 'ganado',
-      proximoPaso: 'Enviar factura del primer trimestre', fecha: addDays(-10), notas: 'Cliente cerrado. Paquete de análisis táctico para 3 equipos.' }
-  ].map(sanitize);
-}
-
-/* =====================================================================
    3. ESTADO Y PERSISTENCIA (localStorage con manejo de errores)
    ===================================================================== */
 let clients = [];
@@ -481,19 +463,19 @@ function loadStore() {
   } catch (e) {
     storageOK = false;
     banner = 'No se puede guardar en este navegador (almacenamiento bloqueado o modo privado). Puedes trabajar, pero los cambios se perderán al cerrar: usa Exportar CSV para conservarlos.';
-    return sampleData();
+    return [];
   }
   let raw = null;
   try { raw = localStorage.getItem(STORE_KEY); } catch (e) { storageOK = false; }
-  if (raw === null) return sampleData();            // primera vez
+  if (raw === null) return [];            // primera vez
   try {
     const arr = JSON.parse(raw);
     if (!Array.isArray(arr)) throw new Error('formato');
     return arr.slice(0, 5000).map(sanitize).filter(Boolean);
   } catch (e) {
     try { localStorage.setItem(STORE_KEY + '-corrupto', raw); } catch (_) { /* nada */ }
-    banner = 'Los datos guardados estaban dañados y no se pudieron leer. Se han cargado los datos de ejemplo (la copia dañada se conservó aparte).';
-    return sampleData();
+    banner = 'Los datos guardados estaban dañados y no se pudieron leer. Se ha iniciado un CRM vacío (la copia dañada se conservó aparte).';
+    return [];
   }
 }
 function saveStore() {
